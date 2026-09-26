@@ -1,0 +1,322 @@
+{
+  "values": {
+    "famli": {
+      "rate": "0.9%",
+      "half": "0.45%"
+    },
+    "wages": {
+      "state": "$15.00",
+      "stateTipped": "$3.63",
+      "howard": "$16.00",
+      "mcLarge": "$18.00",
+      "mcMid": "$16.50",
+      "mcSmall": "$15.95",
+      "mcTipped": "$4.00",
+      "princeGeorges": "$15.30",
+      "countyEffective": "July 1, 2026"
+    },
+    "taxRates": {
+      "fiscalYear": "FY 2026",
+      "rates": {
+        "Allegany County": {
+          "admissions": 7.5,
+          "hotel": 8
+        },
+        "Anne Arundel County": {
+          "admissions": 10,
+          "hotel": 8
+        },
+        "Baltimore City": {
+          "admissions": 10,
+          "hotel": 9.5
+        },
+        "Baltimore County": {
+          "admissions": 10,
+          "hotel": 9.5
+        },
+        "Calvert County": {
+          "admissions": 1,
+          "hotel": 5
+        },
+        "Caroline County": {
+          "admissions": 0,
+          "hotel": 5
+        },
+        "Carroll County": {
+          "admissions": 10,
+          "hotel": 5
+        },
+        "Cecil County": {
+          "admissions": 6,
+          "hotel": 6
+        },
+        "Charles County": {
+          "admissions": 10,
+          "hotel": 5
+        },
+        "Dorchester County": {
+          "admissions": 0.5,
+          "hotel": 5
+        },
+        "Frederick County": {
+          "admissions": 0,
+          "hotel": 5
+        },
+        "Garrett County": {
+          "admissions": 6,
+          "hotel": 8
+        },
+        "Harford County": {
+          "admissions": 5,
+          "hotel": 6
+        },
+        "Howard County": {
+          "admissions": 7.5,
+          "hotel": 7
+        },
+        "Kent County": {
+          "admissions": 4.5,
+          "hotel": 5
+        },
+        "Montgomery County": {
+          "admissions": 7,
+          "hotel": 7
+        },
+        "Prince George's County": {
+          "admissions": 10,
+          "hotel": 7
+        },
+        "Queen Anne's County": {
+          "admissions": 5,
+          "hotel": 5
+        },
+        "St. Mary's County": {
+          "admissions": 2,
+          "hotel": 5
+        },
+        "Somerset County": {
+          "admissions": 4,
+          "hotel": 5
+        },
+        "Talbot County": {
+          "admissions": 5,
+          "hotel": 4
+        },
+        "Washington County": {
+          "admissions": 5,
+          "hotel": 6
+        },
+        "Wicomico County": {
+          "admissions": 6,
+          "hotel": 6
+        },
+        "Worcester County": {
+          "admissions": 3,
+          "hotel": 5
+        }
+      }
+    }
+  },
+  "sources": {
+    "wages": {
+      "id": "wages",
+      "name": "MD Labor minimum wage page",
+      "url": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+      "status": "live",
+      "fetchedAt": "2026-09-26T21:08:52.982Z"
+    },
+    "famli": {
+      "id": "famli",
+      "name": "FAMLI contributions page",
+      "url": "https://paidleave.maryland.gov/employers/make-contributions/",
+      "status": "live",
+      "fetchedAt": "2026-09-26T21:08:52.988Z"
+    },
+    "taxRates": {
+      "id": "taxRates",
+      "name": "DLS County Local Tax Rates",
+      "url": "https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf",
+      "status": "live",
+      "fetchedAt": "2026-09-26T21:08:58.004Z"
+    }
+  },
+  "verification": {
+    "famli-withholding": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "famli-employer-share": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "montgomery-tipped-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "howard-min-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "prince-georges-min-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "state-minimum-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "state-tipped-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "food-service-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "famli-register": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "mhic-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "sdat-annual-report": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "alcohol-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "baltimore-city-ban-the-box": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "federal-boi": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "famli-contributions": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "salon-permit": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "montgomery-min-wage-large": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "montgomery-min-wage-mid": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "montgomery-min-wage-small": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "marylandsaves": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "irs-941": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "irs-940": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "ssa-w2": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "workers-comp": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "traders-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "restaurant-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "construction-firm-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "famli-employee-notice": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "sick-leave-paid": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "sick-leave-unpaid": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "irs-1099-nec": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "famli-private-plan": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "parental-leave": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "worker-freedom-act": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "md-unemployment-insurance": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "sales-use-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "sales-use-tax-returns": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "state-ban-the-box": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "md-business-income-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "online-data-privacy": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "admissions-amusement-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "hotel-rental-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "md-withholding-returns": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    },
+    "md-withholding-annual": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T21:08:58.004Z"
+    }
+  },
+  "refreshedAt": "2026-09-26T21:09:20.540Z"
+}
