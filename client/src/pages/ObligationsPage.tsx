@@ -4,7 +4,7 @@ import type { ObligationResult } from "../../../shared/types";
 import FilingSchedule, { Details, WhereLink } from "../components/FilingSchedule";
 import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates";
 import { IconAlert, IconCalendar, IconCheck, IconChevron, IconClipboard, IconDownload, IconMapPin } from "../components/icons";
-import { LiveStatusBar, VerificationBadge } from "../components/LiveStatus";
+import { LiveStatusBar, VerificationBadge, needsBadge } from "../components/LiveStatus";
 import { jurisdictionLabel } from "../components/profileOptions";
 import { allUpcoming } from "../components/schedule";
 import { Card, LoadingPage, Notice, PageHeader, buttonStyles } from "../components/ui";
@@ -41,7 +41,7 @@ function ExpandableCard({ r, tone }: { r: ObligationResult; tone: "green" | "amb
       <button onClick={() => setOpen(!open)} aria-expanded={open} className="flex w-full items-start gap-2 p-4 pl-5 text-left">
         <span className="flex-1">
           <span className="block font-semibold text-slate-900">{r.rule.title}</span>
-          {r.verification && (
+          {needsBadge(r.verification) && (
             <span className="mt-1.5 block">
               <VerificationBadge v={r.verification} />
             </span>
@@ -79,29 +79,30 @@ export default function ObligationsPage() {
 
   return (
     <div className="space-y-12">
-      <PageHeader
-        eyebrow={
-          <span className="inline-flex items-center gap-1.5">
-            <IconMapPin /> {jurisdictionLabel(profile.jurisdiction)}, Maryland
-          </span>
-        }
-        title="What your business needs to do"
-        subtitle={
-          <>
-            For {profile.businessName} ·{" "}
-            <Link to="/settings" className="font-medium text-brand-700 hover:underline">
-              Edit business details
-            </Link>
-          </>
-        }
-        actions={
-          <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.secondary}>
-            <IconDownload /> Add deadlines to my calendar
-          </a>
-        }
-      />
-
-      <LiveStatusBar data={data} checking={checking} onCheck={checkNow} />
+      <div className="space-y-3">
+        <PageHeader
+          eyebrow={
+            <span className="inline-flex items-center gap-1.5">
+              <IconMapPin /> {jurisdictionLabel(profile.jurisdiction)}, Maryland
+            </span>
+          }
+          title="What your business needs to do"
+          subtitle={
+            <>
+              For {profile.businessName} ·{" "}
+              <Link to="/settings" className="font-medium text-brand-700 hover:underline">
+                Edit business details
+              </Link>
+            </>
+          }
+          actions={
+            <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.secondary}>
+              <IconDownload /> Add deadlines to my calendar
+            </a>
+          }
+        />
+        <LiveStatusBar data={data} checking={checking} onCheck={checkNow} />
+      </div>
 
       <Card className="flex flex-wrap items-center gap-x-8 gap-y-3 px-6 py-5">
         <p className="text-lg text-slate-700">

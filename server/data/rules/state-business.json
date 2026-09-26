@@ -189,5 +189,33 @@
     "sourceUrl": "https://mgaleg.maryland.gov/2024RS/Chapters_noln/CH_455_sb0541e.pdf",
     "sourceName": "Maryland Online Data Privacy Act: SB 541 (2024), Chapter 455",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "emma-registration",
+    "title": "Register on eMMA to sell to Maryland governments",
+    "category": "registration",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.sellsToGovernment",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "Maryland state agencies, local governments, and schools post their bids on eMaryland Marketplace Advantage (eMMA). The state asks every business that wants to sell to it to register. Registration is free.",
+    "action": "Register your business on eMMA and list the products and services you sell to get bid notices.",
+    "agency": "Maryland Department of General Services",
+    "frequency": "once",
+    "filingUrl": "https://emma.maryland.gov/",
+    "filingSiteName": "eMMA",
+    "verify": [
+      "ALL BUSINESSES should register on eMaryland Marketplace Advantage (eMMA)"
+    ],
+    "sourceUrl": "https://procurement.maryland.gov/how-to-do-business-with-the-state-of-maryland/",
+    "sourceName": "Maryland Procurement: How to do business with the State",
+    "reviewedOn": "2026-09-26"
   }
 ]

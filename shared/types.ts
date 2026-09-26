@@ -180,6 +180,14 @@ export interface Milestone {
   changes: { ruleId: string; title: string; from: ObligationResult["status"]; to: ObligationResult["status"]; reason: string }[];
 }
 
+// POST /api/obligations/new-location: the Growth Planner's "open another
+// location" what-if. Both views use the combined headcount.
+export interface NewLocationResponse {
+  location: BusinessProfile["jurisdiction"];
+  atNewLocation: ObligationsResponse; // rules as they apply at the new site
+  atHome: ObligationsResponse; // rules at the current site with the added staff
+}
+
 // GET /api/obligations and POST /api/obligations/what-if
 export interface ObligationsResponse {
   results: ObligationResult[];

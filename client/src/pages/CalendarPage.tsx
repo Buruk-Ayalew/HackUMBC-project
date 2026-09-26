@@ -48,22 +48,23 @@ export default function CalendarPage() {
 
   return (
     <div className="space-y-8">
-      <PageHeader
-        eyebrow={
-          <span className="inline-flex items-center gap-1.5">
-            <IconCalendar /> Compliance calendar
-          </span>
-        }
-        title="Your deadlines"
-        subtitle="Every filing, payment, and renewal due in the next 12 months."
-        actions={
-          <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.primary}>
-            <IconDownload /> Download all (.ics)
-          </a>
-        }
-      />
-
-      <LiveStatusBar data={data} checking={checking} onCheck={checkNow} />
+      <div className="space-y-3">
+        <PageHeader
+          eyebrow={
+            <span className="inline-flex items-center gap-1.5">
+              <IconCalendar /> Compliance calendar
+            </span>
+          }
+          title="Your deadlines"
+          subtitle="Every filing, payment, and renewal due in the next 12 months."
+          actions={
+            <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.primary}>
+              <IconDownload /> Download all (.ics)
+            </a>
+          }
+        />
+        <LiveStatusBar data={data} checking={checking} onCheck={checkNow} />
+      </div>
 
       <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
         <Card className="p-4 sm:p-5">

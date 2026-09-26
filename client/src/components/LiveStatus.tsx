@@ -1,5 +1,5 @@
 import type { ObligationResult, ObligationsResponse, RuleVerification } from "../../../shared/types";
-import { IconAlert, IconCheck, IconInfo } from "./icons";
+import { IconAlert, IconCheck } from "./icons";
 import { Badge, buttonStyles } from "./ui";
 
 // Labels for the live checks: each item is re-checked against its official
@@ -16,14 +16,14 @@ function when(iso: string): string {
     : d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
+// Items only get a label when something needs attention; a passing check is
+// shown once, at the top of the page.
+export function needsBadge(v?: RuleVerification): v is RuleVerification {
+  return !!v && v.status !== "verified";
+}
+
 export function VerificationBadge({ v }: { v?: RuleVerification }) {
-  if (!v) return null;
-  if (v.status === "verified")
-    return (
-      <Badge tone="green">
-        <IconCheck /> {isToday(v.checkedAt) ? "Checked live today" : `Checked live ${when(v.checkedAt)}`}
-      </Badge>
-    );
+  if (!needsBadge(v)) return null;
   if (v.status === "changed")
     return (
       <Badge tone="amber">
@@ -38,7 +38,6 @@ export function VerificationBadge({ v }: { v?: RuleVerification }) {
 export function VerificationNote({ r }: { r: ObligationResult }) {
   const v = r.verification;
   const parts: string[] = [];
-  if (v?.status === "verified") parts.push(`We checked this against the official page ${when(v.checkedAt)} and the key facts still match.`);
   if (v?.status === "changed")
     parts.push(
       `The official page changed: it no longer says ${v.missing?.map((m) => `"${m}"`).join(", ") ?? "one of the key facts"}. This item may be out of date until we review it. Check the official source.`,
@@ -52,47 +51,35 @@ export function VerificationNote({ r }: { r: ObligationResult }) {
 
 export function LiveStatusBar({ data, checking, onCheck }: { data: ObligationsResponse; checking: boolean; onCheck: () => void }) {
   const checks = data.results.map((r) => r.verification).filter((v): v is RuleVerification => !!v);
-  const verified = checks.filter((v) => v.status === "verified").length;
   const changed = checks.filter((v) => v.status === "changed").length;
   const saved = data.sources.filter((s) => s.status === "saved");
   const down = data.sources.filter((s) => s.status === "unavailable");
   const busy = checking || data.refreshing;
   const allGood = !!data.liveRefreshedAt && !changed && !saved.length && !down.length;
 
+  const issues: string[] = [];
+  if (changed) issues.push(`${changed} ${changed === 1 ? "source has" : "sources have"} changed (marked below)`);
+  for (const s of saved) issues.push(`showing saved results from ${s.fetchedAt ? when(s.fetchedAt) : "an earlier check"} for ${s.name}`);
+  for (const s of down) issues.push(`${s.name} is unavailable`);
+
   return (
-    <div
-      className={`flex flex-wrap items-center justify-between gap-3 rounded-2xl border px-5 py-4 text-sm ${
-        allGood ? "border-emerald-200 bg-emerald-50/60 text-emerald-900" : "border-amber-200 bg-amber-50 text-amber-900"
-      }`}
-    >
-      <div className="flex gap-3">
-        <span className="mt-0.5 shrink-0 text-base">{allGood ? <IconCheck /> : busy && !data.liveRefreshedAt ? <IconInfo /> : <IconAlert />}</span>
-        <div className="space-y-0.5">
-          {data.liveRefreshedAt ? (
-            <p className="font-semibold">
-              Checked live {when(data.liveRefreshedAt)}: {verified} of {checks.length} items match their official source.
-            </p>
-          ) : (
-            <p className="font-semibold">{busy ? "Checking official sources now…" : "Not checked against official sources yet."}</p>
-          )}
-          {changed > 0 && (
-            <p>
-              {changed} {changed === 1 ? "source has" : "sources have"} changed. Those items are marked "Source changed" until we review them.
-            </p>
-          )}
-          {saved.map((s) => (
-            <p key={s.id}>
-              Showing saved results from {s.fetchedAt ? when(s.fetchedAt) : "an earlier check"} for {s.name} (couldn't reach it just now).
-            </p>
-          ))}
-          {down.map((s) => (
-            <p key={s.id}>{s.name} is unavailable, so amounts from it aren't shown. Check the official source.</p>
-          ))}
-          {allGood && <p>Wages, tax rates, and the FAMLI rate were read from official pages.</p>}
-        </div>
-      </div>
-      <button onClick={onCheck} disabled={busy} className={buttonStyles.secondary}>
-        {busy ? "Checking…" : "Check now"}
+    <div className={`flex flex-wrap items-center gap-x-3 gap-y-1 text-xs ${allGood ? "text-slate-500" : "text-amber-800"}`}>
+      <span className="inline-flex items-center gap-1.5">
+        {allGood ? <IconCheck className="text-emerald-600" /> : <IconAlert />}
+        {data.liveRefreshedAt
+          ? `Checked Live ${when(data.liveRefreshedAt).replace(/^today/, "Today")}`
+          : busy
+            ? "Checking official sources…"
+            : "Not checked against official sources yet"}
+        {issues.length > 0 && `: ${issues.join("; ")}.`}
+      </span>
+      <button
+        onClick={onCheck}
+        disabled={busy}
+        className="inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 font-semibold text-brand-700 transition hover:border-brand-500 hover:bg-brand-100 disabled:opacity-60"
+      >
+        {busy && <span className="h-3 w-3 animate-spin rounded-full border-2 border-brand-200 border-t-brand-700" aria-hidden />}
+        {busy ? "Checking…" : "Check Now"}
       </button>
     </div>
   );

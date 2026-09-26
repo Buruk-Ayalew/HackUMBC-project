@@ -231,5 +231,93 @@
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "md-new-hire-reporting",
+    "title": "Report each new hire to the state within 20 days",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "summary": "Maryland employers must report every newly hired or rehired employee to the Maryland State Directory of New Hires within 20 days. The state uses the reports for child support and unemployment insurance checks. Missing reports can be fined.",
+    "action": "Report each new or rehired employee within 20 days of hire.",
+    "agency": "Maryland Department of Human Services, Child Support Administration",
+    "frequency": "ongoing",
+    "frequencyNote": "Within 20 days of every hire",
+    "filingUrl": "https://www.mdnewhire.com/",
+    "filingSiteName": "Maryland New Hire Reporting",
+    "verify": [
+      "report newly hired or rehired employees within 20 days"
+    ],
+    "sourceUrl": "https://dhs.maryland.gov/child-support-services/report-new-hires/",
+    "sourceName": "Maryland DHS: Report new hires",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "mosh-poster",
+    "title": "Put up the MOSH safety poster and report serious injuries",
+    "category": "posting",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "summary": "Maryland Occupational Safety and Health (MOSH) requires employers to post the MOSH poster where employees will see it. Report any work-related death to MOSH within 8 hours, and any in-patient hospitalization, amputation, or loss of an eye within 24 hours.",
+    "action": "Download the free MOSH poster and put it up in a prominent place. Save MOSH's phone number for injury reports.",
+    "agency": "Maryland Department of Labor (MOSH)",
+    "frequency": "ongoing",
+    "verify": [
+      "Post, at a prominent location within the workplace, the MOSH Poster",
+      "within 8 hours"
+    ],
+    "sourceUrl": "https://labor.maryland.gov/labor/mosh/moshempresponsibilities.shtml",
+    "sourceName": "MOSH: Employer's responsibilities",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "mosh-injury-log",
+    "title": "Keep an injury and illness log (OSHA Form 300)",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 11
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "Employers with more than 10 employees must keep a log of work-related injuries and illnesses and post the yearly summary (Form 300A) from February 1 to April 30. Some low-hazard industries are partly exempt, so check whether yours is.",
+    "action": "Check if your industry is exempt. If not, keep Form 300 up to date and post Form 300A each February 1 through April 30.",
+    "agency": "Maryland Department of Labor (MOSH)",
+    "frequency": "yearly",
+    "frequencyNote": "Log ongoing; post the summary Feb 1 to Apr 30",
+    "recurring": {
+      "every": "year",
+      "month": 2,
+      "day": 1,
+      "label": "Post injury summary (Form 300A) for {period}"
+    },
+    "verify": [
+      "10 or fewer employees",
+      "February 1st through April 30th"
+    ],
+    "sourceUrl": "https://labor.maryland.gov/labor/mosh/moshempresponsibilities.shtml",
+    "sourceName": "MOSH: Employer's responsibilities",
+    "reviewedOn": "2026-09-26"
   }
 ]

@@ -22,12 +22,12 @@ export function scaledCounts(profile: BusinessProfile, n: number): Counts {
   };
 }
 
-interface Change {
+export interface Change {
   result: ObligationResult;
   from: ObligationResult["status"];
 }
 
-function diff(base: ObligationResult[], next: ObligationResult[]) {
+export function diff(base: ObligationResult[], next: ObligationResult[]) {
   const before = new Map(base.map((r) => [r.rule.id, r.status]));
   const starts: Change[] = [];
   const maybe: Change[] = [];
@@ -316,7 +316,17 @@ export default function GrowthPlanner({
   );
 }
 
-function ChangeGroup({ title, tone, items }: { title: string; tone: "red" | "amber" | "slate"; items: Change[] }) {
+export function ChangeGroup({
+  title,
+  tone,
+  items,
+  describe = (r) => r.reasons.find((x) => /employee/.test(x)) ?? r.reasons[0] ?? "",
+}: {
+  title: string;
+  tone: "red" | "amber" | "slate";
+  items: Change[];
+  describe?: (r: ObligationResult) => string;
+}) {
   if (!items.length) return null;
   const bar = { red: "bg-rose-500", amber: "bg-amber-500", slate: "bg-slate-300" }[tone];
   return (
@@ -330,7 +340,7 @@ function ChangeGroup({ title, tone, items }: { title: string; tone: "red" | "amb
           <li key={result.rule.id} className="relative overflow-hidden rounded-xl border border-slate-200 bg-white py-3 pr-3 pl-4">
             <span className={`absolute inset-y-0 left-0 w-1 ${bar}`} />
             <p className="font-semibold text-slate-900">{result.rule.title}</p>
-            <p className="mt-0.5 text-sm text-slate-600">{result.reasons.find((r) => /employee/.test(r)) ?? result.reasons[0]}</p>
+            <p className="mt-0.5 text-sm text-slate-600">{describe(result)}</p>
             <a href={result.rule.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:underline">
               Official source <IconExternal />
             </a>

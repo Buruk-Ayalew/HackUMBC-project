@@ -145,5 +145,169 @@
     "sourceUrl": "https://www.fincen.gov/boi",
     "sourceName": "FinCEN: Beneficial Ownership Information Reporting",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "federal-ein",
+    "title": "Get a federal Employer Identification Number (EIN)",
+    "category": "registration",
+    "jurisdiction": {
+      "level": "federal"
+    },
+    "conditions": [
+      {
+        "field": "employees.totalAllStates",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "mightConditions": [
+      {
+        "field": "entityType",
+        "op": "in",
+        "value": [
+          "corporation",
+          "general_partnership",
+          "lp",
+          "llp",
+          "llc"
+        ]
+      }
+    ],
+    "summary": "You generally need an EIN from the IRS to hire employees or to run a partnership or corporation. Form your LLC or corporation with the state first, then apply. An EIN is free from the IRS.",
+    "action": "Apply for an EIN directly on IRS.gov. Never pay a website to get one.",
+    "agency": "IRS",
+    "frequency": "once",
+    "filingUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+    "filingSiteName": "IRS.gov",
+    "verify": [
+      "Hire employees",
+      "Operate a partnership or corporation",
+      "You never have to pay a fee for an EIN"
+    ],
+    "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+    "sourceName": "IRS: Get an employer identification number",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "federal-i9",
+    "title": "Complete Form I-9 for every new hire",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "federal"
+    },
+    "conditions": [
+      {
+        "field": "employees.totalAllStates",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "summary": "Every U.S. employer must fill out Form I-9 with each person it hires, including U.S. citizens, to check identity and permission to work. Keep each form for 3 years after the hire date or 1 year after the job ends, whichever is later.",
+    "action": "Complete Form I-9 with each new hire and keep the forms on file, ready for inspection.",
+    "agency": "U.S. Citizenship and Immigration Services",
+    "frequency": "ongoing",
+    "frequencyNote": "Every time you hire",
+    "verify": [
+      "for every individual they hire",
+      "for three years after the date of hire"
+    ],
+    "sourceUrl": "https://www.uscis.gov/i-9",
+    "sourceName": "USCIS: Form I-9, Employment Eligibility Verification",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "federal-posters",
+    "title": "Put up the federal workplace posters that apply to you",
+    "category": "posting",
+    "jurisdiction": {
+      "level": "federal"
+    },
+    "conditions": [
+      {
+        "field": "employees.totalAllStates",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "Several federal labor laws require notices to be posted where employees can see them. Which posters you need depends on which laws cover your business.",
+    "action": "Use the U.S. Department of Labor's poster page to find and print the posters that apply to you, free.",
+    "agency": "U.S. Department of Labor",
+    "frequency": "ongoing",
+    "verify": [
+      "require that notices be provided to employees and/or posted in the workplace",
+      "not all employers are covered"
+    ],
+    "sourceUrl": "https://www.dol.gov/general/topics/posters",
+    "sourceName": "U.S. Department of Labor: Workplace posters",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "eeo-1-report",
+    "title": "File the yearly EEO-1 workforce report",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "federal"
+    },
+    "conditions": [
+      {
+        "field": "employees.totalAllStates",
+        "op": "gte",
+        "value": 100
+      }
+    ],
+    "mightConditions": [
+      {
+        "field": "employees.totalAllStates",
+        "op": "gte",
+        "value": 50
+      },
+      {
+        "field": "flags.sellsToGovernment",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "Private employers with 100 or more employees must send workforce data (job category, sex, race or ethnicity) to the EEOC each year. Some federal contractors with 50 or more employees must file too.",
+    "action": "Watch the EEOC's EEO-1 page for when the yearly collection opens, then file by its deadline.",
+    "agency": "U.S. Equal Employment Opportunity Commission",
+    "frequency": "yearly",
+    "frequencyNote": "When the EEOC opens the yearly collection",
+    "verify": [
+      "private sector employers with 100 or more employees",
+      "federal contractors with 50 or more employees"
+    ],
+    "sourceUrl": "https://www.eeoc.gov/data/eeo-1-data-collection",
+    "sourceName": "EEOC: EEO-1 Component 1 data collection",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "sam-registration",
+    "title": "Register in SAM.gov to bid on federal contracts",
+    "category": "registration",
+    "jurisdiction": {
+      "level": "federal"
+    },
+    "conditions": [
+      {
+        "field": "flags.sellsToGovernment",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "To bid on federal contracts or apply for federal awards directly, you need an active SAM.gov registration, which gives you a Unique Entity ID. You don't need one if you only sell to state or local agencies.",
+    "action": "If you sell to federal agencies, register at SAM.gov and renew every 365 days.",
+    "agency": "U.S. General Services Administration",
+    "frequency": "yearly",
+    "frequencyNote": "Renew every 365 days",
+    "filingUrl": "https://sam.gov/entity-registration",
+    "filingSiteName": "SAM.gov",
+    "verify": [
+      "You must renew your registration every 365 days"
+    ],
+    "sourceUrl": "https://sam.gov/entity-registration",
+    "sourceName": "SAM.gov: Entity registration",
+    "reviewedOn": "2026-09-26"
   }
 ]

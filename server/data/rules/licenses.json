@@ -233,5 +233,33 @@
     "sourceUrl": "https://atcc.maryland.gov/org-directory/maryland-counties-liquor-board-directory/",
     "sourceName": "Maryland ATCC: Liquor board directory",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "childcare-license",
+    "title": "Get a child care license before you open",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "childcare"
+        ]
+      }
+    ],
+    "summary": "Child care centers and family child care homes need a license from the Maryland State Department of Education's Office of Child Care. Your Regional Licensing Office runs orientations, applications, and inspections.",
+    "action": "Contact your Regional Licensing Office to start the licensing process and keep your license current.",
+    "agency": "Maryland State Department of Education, Office of Child Care",
+    "frequency": "varies",
+    "frequencyNote": "By the date on your license",
+    "verify": [
+      "Become licensed to operate a child care program"
+    ],
+    "sourceUrl": "https://earlychildhood.marylandpublicschools.org/child-care-providers/licensing",
+    "sourceName": "MSDE Office of Child Care: Licensing",
+    "reviewedOn": "2026-09-26"
   }
 ]

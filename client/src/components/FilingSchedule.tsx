@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ObligationResult } from "../../../shared/types";
 import { daysLabel, daysUntil, formatDate } from "./dates";
 import { IconChevron, IconExternal } from "./icons";
-import { VerificationBadge, VerificationNote } from "./LiveStatus";
+import { VerificationBadge, VerificationNote, needsBadge } from "./LiveStatus";
 import { FREQUENCY_LABELS } from "./schedule";
 
 export function WhereLink({ r, className = "" }: { r: ObligationResult; className?: string }) {
@@ -89,7 +89,7 @@ export default function FilingSchedule({ results }: { results: ObligationResult[
                   <span>
                     <span className="block font-semibold text-slate-900">{r.rule.title}</span>
                     <span className="block text-xs text-slate-500">{r.rule.agency}</span>
-                    {r.verification && (
+                    {needsBadge(r.verification) && (
                       <span className="mt-1.5 block">
                         <VerificationBadge v={r.verification} />
                       </span>

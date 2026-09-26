@@ -78,5 +78,37 @@
       "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
     ],
     "cachedAt": "2026-09-26T20:01:18.492Z"
+  },
+  "100 maryland ave rockville md 20850": {
+    "lat": 39.081232092993,
+    "lng": -77.151188054842,
+    "matchedAddress": "100 MARYLAND AVE, ROCKVILLE, MD, 20850",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Montgomery County",
+      "isBaltimoreCity": false,
+      "municipality": "Rockville"
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T21:26:48.709Z"
+  },
+  "13209 schubert pl silver spring md": {
+    "lat": 39.073541665538,
+    "lng": -76.948154789783,
+    "matchedAddress": "13209 SCHUBERT PL, SILVER SPRING, MD, 20904",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Montgomery County",
+      "isBaltimoreCity": false,
+      "municipality": null
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T21:29:08.614Z"
   }
 }

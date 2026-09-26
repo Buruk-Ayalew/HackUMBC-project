@@ -108,6 +108,21 @@ expect("contractor", get("state-ban-the-box"), "affects");
 expect("contractor", get("federal-boi"), "not_applicable");
 console.log("      notes:", coverageNotes(contractor));
 
+console.log("\n# Hiring, posting, and government-sales rules");
+get = run(restaurant);
+for (const id of ["federal-i9", "md-new-hire-reporting", "mosh-poster", "federal-ein"]) expect("restaurant", get(id), "affects");
+for (const id of ["federal-posters", "mosh-injury-log"]) expect("restaurant", get(id), "might");
+for (const id of ["eeo-1-report", "sam-registration", "emma-registration", "childcare-license"]) expect("restaurant", get(id), "not_applicable");
+get = run(consultant);
+expect("consultant (LLC, 0 staff)", get("federal-ein"), "might");
+for (const id of ["federal-i9", "md-new-hire-reporting", "mosh-poster", "mosh-injury-log"]) expect("consultant", get(id), "not_applicable");
+get = run(salon);
+expect("salon (6 staff)", get("mosh-injury-log"), "not_applicable");
+get = run(contractor);
+for (const id of ["eeo-1-report", "sam-registration", "emma-registration"]) expect("contractor (60, sells to gov)", get(id), "might");
+expect("contractor@100", run(withEmployees(contractor, { totalAllStates: 100 }))("eeo-1-report"), "affects");
+expect("childcare", run({ ...consultant, industry: "childcare" })("childcare-license"), "affects");
+
 console.log("\nthresholds:", employeeThresholds(rules).join(", "));
 
 console.log("\n# Growth milestones for the restaurant (single-slider scale)");
