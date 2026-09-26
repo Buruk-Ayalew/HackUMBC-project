@@ -230,3 +230,42 @@ export interface LocalRiskNewCount {
   newCount: number;
   highCount: number;
 }
+
+// ---------- Regulatory Radar ----------
+
+// "mga" = Maryland General Assembly effective-date lists (enacted bills).
+export type RadarSource = "md_register" | "legiscan" | "mga" | "agency_news";
+export type Relevance = "affects" | "might" | "not_applicable";
+
+export interface RadarItem {
+  id: string; // stable, e.g. "mdr-26-153-P" or "bill-2026RS-HB1221"
+  source: RadarSource;
+  title: string;
+  agency: string | null;
+  kind: "proposed_regulation" | "final_regulation" | "bill" | "news";
+  citation: string | null; // COMAR citation or bill number
+  summary: string; // OUR short summary, max 2 sentences (never copied regulation text)
+  publishedDate: string | null; // ISO date
+  effectiveDate: string | null;
+  commentDeadline: string | null;
+  hearingDate: string | null;
+  sourceUrl: string; // official page
+  fetchedAt: string;
+  isNew?: boolean; // agency news not seen in the last 7 days
+}
+
+export interface RadarResult {
+  item: RadarItem;
+  relevance: Relevance;
+  reason: string; // one sentence, references specific profile fields
+  actionNeeded: string | null;
+  autoSorted: boolean; // false when Claude sorting was unavailable
+}
+
+export interface RadarResponse {
+  results: RadarResult[];
+  lastChecked: string;
+  usingCachedData: boolean;
+  savedResultsFrom: string | null; // oldest saved-data date when usingCachedData
+  unavailableSources: string[];
+}

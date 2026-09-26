@@ -17,6 +17,7 @@
     "express-session": "^1.19.0",
     "ics": "^3.12.0",
     "node-cron": "^4.6.0",
+    "pdf-parse": "^2.4.5",
     "zod": "^4.6.5"
   },
   "devDependencies": {

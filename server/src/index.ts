@@ -8,6 +8,7 @@ import radarRouter from "./routes/radar.js";
 import localRiskRouter from "./routes/localRisk.js";
 import { seedDemoUser } from "./lib/users.js";
 import { startRiskJob } from "./jobs/riskJob.js";
+import { startRadarJob } from "./jobs/radarJob.js";
 
 const PORT = Number(process.env.PORT ?? 3001);
 
@@ -51,6 +52,7 @@ app.use((err: unknown, _req: express.Request, res: express.Response, _next: expr
 
 await seedDemoUser();
 startRiskJob();
+startRadarJob();
 app.listen(PORT, () => {
   console.log(`CivicPulse MD API on http://localhost:${PORT}`);
 });

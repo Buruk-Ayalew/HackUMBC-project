@@ -67,3 +67,35 @@ Obligations are **data, not code**. Every `server/data/rules/*.json` file (excep
 3. For a town, use `"level": "municipality", "name": "Annapolis"` (the name as shown in MD iMAP, title case).
 4. Local tax rates live in `server/data/rules/local-tax-rates.json`, keyed by county. They come from the DLS "County Local Tax Rates" table. Update the whole table when DLS publishes a new year, and update `fiscalYear` and `reviewedOn`.
 5. Counties other than Baltimore City and Baltimore County automatically show a "coverage limited" note. Towns always show "We haven't reviewed [Town]'s local code yet."
+
+## Regulatory Radar
+
+The Radar (`/radar`) pulls new and upcoming Maryland law and regulation changes from four sources. Claude then sorts each one for the logged-in business into **Affects you**, **Might affect you** or **Doesn't apply**.
+
+| Source | Code | Cache file | Refreshed |
+|---|---|---|---|
+| Maryland Register (latest issue + 2 previous) | `server/src/lib/radar/mdRegister.ts` | `md-register.json` | 24 h |
+| General Assembly effective-date lists (enacted bills, July + October 2026) | `server/src/lib/radar/mgaChapters.ts` | `mga-effective-dates.json` | 24 h |
+| LegiScan bills (needs `LEGISCAN_API_KEY`) | `server/src/lib/radar/legiscan.ts` | `legiscan.json` | 12 h |
+| Agency news (Labor, FAMLI, Comptroller, SDAT) | `server/src/lib/radar/agencyNews.ts` | `agency-news.json` | 24 h |
+
+All cache files live in `server/data/cache/`. The combined list is saved to `radar-items.json`. Claude's sorting results are saved to `radar-classifications.json`, keyed by item and by the profile fields that matter, so each business pays for an item only once. If a live fetch fails, the saved copy is served and the page says "Showing saved results from [date]." Sorting needs `ANTHROPIC_API_KEY`. Without it, every item shows as "Might affect you" with a note.
+
+### Refreshing data
+
+- **In the app:** click **Check now** on the Radar page. It calls `POST /api/radar/refresh`, which re-fetches every source.
+- **Automatically:** `server/src/jobs/radarJob.ts` runs daily at 6:00 AM America/New_York. It refreshes all sources and pre-sorts items for every saved profile. On server start it also warms up stale sources in the background.
+- **Before the demo:** log in, click **Check now**, then commit `server/data/cache/*.json` so the app works offline.
+- **Testing a sample profile (temporary, remove before the demo):** `GET /api/radar?profileId=sample-salon-rockville`. This only works when `NODE_ENV` is not `production`.
+
+### Adding an agency news source
+
+1. Open the agency's news page in a browser. Make sure it loads without being blocked.
+2. Find a CSS selector that matches only the news links (use your browser's dev tools).
+3. Add an entry to `server/data/radar/agency-news-sources.json`:
+   ```json
+   { "id": "md-example", "agency": "Maryland Example Agency", "url": "https://example.maryland.gov/news/", "linkSelector": "ul.news a", "maxItems": 10 }
+   ```
+4. Click **Check now**. Dates are picked up automatically when they appear next to the link (e.g. `September 18, 2026` or `09/18/2026`) or in the link URL. If nothing matches, the server logs a warning and the source is listed as unavailable. If a site returns HTTP 403, it's skipped and reported. We never try to get around a block.
+
+When MGA publishes a new effective-date list (e.g. `2027rs-effective-dates-january.pdf`), update `SESSION` and `LISTS` in `mgaChapters.ts`.

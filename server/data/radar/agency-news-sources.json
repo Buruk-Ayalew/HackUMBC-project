@@ -1,0 +1,30 @@
+[
+  {
+    "id": "md-labor",
+    "agency": "Maryland Department of Labor",
+    "url": "https://labor.maryland.gov/whatsnews/",
+    "linkSelector": "a.sub",
+    "maxItems": 15
+  },
+  {
+    "id": "md-famli",
+    "agency": "Maryland FAMLI (Paid Family and Medical Leave)",
+    "url": "https://paidleave.maryland.gov/",
+    "linkSelector": "#press-releases + div a",
+    "maxItems": 10
+  },
+  {
+    "id": "md-comptroller",
+    "agency": "Comptroller of Maryland",
+    "url": "https://www.marylandcomptroller.gov/about/newsroom/media.html",
+    "linkSelector": "a[href*='/content/dam/mdcomp/md/media/']",
+    "maxItems": 15
+  },
+  {
+    "id": "md-sdat",
+    "agency": "Maryland State Department of Assessments and Taxation (SDAT)",
+    "url": "https://dat.maryland.gov/newsroom/Pages/default.aspx",
+    "linkSelector": "a[href*='/newsroom/SiteAssets/'], a[href*='Press%20Releases'], a[href*='/newsroom/Pages/20']",
+    "maxItems": 10
+  }
+]
