@@ -16,12 +16,40 @@ const MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
 // Only business types with a clear OpenStreetMap match. Retail, professional
 // services, contractors, healthcare, and manufacturing are too broad to call competitors.
-const TYPES: Record<string, { label: string; filter: string }> = {
-  restaurant: { label: "restaurants, cafés, and bars", filter: '["amenity"~"^(restaurant|fast_food|cafe|bar|pub)$"]' },
-  food_truck: { label: "restaurants and fast-food places", filter: '["amenity"~"^(restaurant|fast_food)$"]' },
-  salon: { label: "hair and beauty salons", filter: '["shop"~"^(hairdresser|beauty)$"]' },
-  hotel: { label: "hotels, motels, and guest houses", filter: '["tourism"~"^(hotel|motel|guest_house|hostel)$"]' },
-  childcare: { label: "childcare centers and preschools", filter: '["amenity"~"^(childcare|kindergarten)$"]' },
+//
+// `filter` is what we fetch (kept broad, so one cached fetch serves every profile of
+// that type). `match` picks which of those kinds actually compete with this business,
+// e.g. a restaurant doesn't compete with a coffee shop.
+interface CompetitorType {
+  filter: string;
+  match: (p: BusinessProfile) => { kinds: string[]; label: string };
+}
+
+const TYPES: Record<string, CompetitorType> = {
+  restaurant: {
+    filter: '["amenity"~"^(restaurant|fast_food|cafe|bar|pub)$"]',
+    match: (p) =>
+      p.flags.servesAlcohol
+        ? { kinds: ["restaurant", "bar", "pub"], label: "restaurants and bars" }
+        : { kinds: ["restaurant"], label: "restaurants" },
+  },
+  food_truck: {
+    filter: '["amenity"~"^(restaurant|fast_food)$"]',
+    match: () => ({ kinds: ["fast_food", "restaurant"], label: "fast-food places and restaurants" }),
+  },
+  salon: {
+    // The profile can't tell a hair salon from a nail salon, so both count.
+    filter: '["shop"~"^(hairdresser|beauty)$"]',
+    match: () => ({ kinds: ["hairdresser", "beauty"], label: "hair and beauty salons" }),
+  },
+  hotel: {
+    filter: '["tourism"~"^(hotel|motel|guest_house|hostel)$"]',
+    match: () => ({ kinds: ["hotel", "motel"], label: "hotels and motels" }),
+  },
+  childcare: {
+    filter: '["amenity"~"^(childcare|kindergarten)$"]',
+    match: () => ({ kinds: ["childcare", "kindergarten"], label: "childcare centers and preschools" }),
+  },
 };
 
 const KIND_LABEL: Record<string, string> = {
@@ -118,9 +146,15 @@ export async function getCompetitors(profile: BusinessProfile, radiusMeters: num
     () => fetchPlaces(profile.lat, profile.lng, type.filter),
   );
 
+  // Cached places carry their display label (e.g. "Café"), so match on labels;
+  // this keeps existing caches valid and reacts right away to profile changes.
+  const { kinds, label } = type.match(profile);
+  const competingKinds = new Set(kinds.map((k) => KIND_LABEL[k]));
+
   const self = normName(profile.businessName);
   const center = { lat: profile.lat, lng: profile.lng };
   const items: Competitor[] = r.items
+    .filter((p) => competingKinds.has(p.kind))
     .filter((p) => !(p.name && self && normName(p.name) === self)) // don't list the business itself
     .map((p) => ({ ...p, distanceMeters: Math.round(distanceMeters(center, p)) }))
     .filter((p) => p.distanceMeters <= radiusMeters)
@@ -135,7 +169,7 @@ export async function getCompetitors(profile: BusinessProfile, radiusMeters: num
     sourceUrl: SOURCE_URL,
     fetchedAt: r.fetchedAt,
     impacts: items.length > 0 ? ["competition"] : [],
-    label: type.label,
+    label,
     radiusMeters,
     items,
     message: r.message,
