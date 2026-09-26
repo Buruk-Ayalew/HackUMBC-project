@@ -215,6 +215,17 @@ export type RiskCategory =
 
 export type RiskLevel = "high" | "medium" | "low";
 
+// How something nearby could affect the business, in general terms. Assigned by
+// rules (server/src/lib/risk/impacts.ts); the client shows a general blurb per tag.
+export type ImpactTag =
+  | "access_parking"
+  | "noise_dust"
+  | "future_development"
+  | "competition"
+  | "property_rules"
+  | "flood_risk"
+  | "minor_activity";
+
 export interface RiskItem {
   id: string; // `${source}:${native id}`, stable across refreshes
   source: RiskSourceId;
@@ -234,6 +245,7 @@ export interface RiskItem {
   reference?: string; // permit / case number or reporting agency
   riskLevel: RiskLevel; // rule-based estimate (distance, type, timing)
   riskReasons: string[];
+  impacts: ImpactTag[];
   isNew: boolean; // first seen for this location within the last 7 days
 }
 
@@ -273,6 +285,7 @@ export interface ContextSource {
   sourceUrl: string; // official dataset or lookup page
   fetchedAt: string | null; // ISO
   message?: string; // e.g. "Showing saved results from 2026-09-26."
+  impacts: ImpactTag[]; // empty when there's nothing to flag
 }
 
 export interface ZoningInfo extends ContextSource {
