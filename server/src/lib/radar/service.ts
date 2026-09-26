@@ -16,14 +16,27 @@ function sortKey(r: RadarResponse["results"][number]): number {
 export async function buildRadarResponse(profile: BusinessProfile, forceRefresh = false): Promise<RadarResponse> {
   const snapshot: RadarItemsSnapshot = forceRefresh ? await getAllRadarItems(true) : await getRadarItems();
   // Wait briefly for sorting; anything not done yet shows as "might" and the page polls.
-  const { results, sortingInProgress } = await classifyItems(snapshot.items, profile, SORT_WAIT_MS);
+  const sorted = await classifyItems(snapshot.items, profile, SORT_WAIT_MS);
+  const { sortingInProgress } = sorted;
+  // Bills: show only the ones the sorter confirmed affect (or might affect)
+  // this business. Bills it hasn't checked yet are held back, not guessed at.
+  const unchecked = sorted.results.filter((r) => r.item.kind === "bill" && !r.autoSorted).length;
+  const results = sorted.results.filter((r) => r.item.kind !== "bill" || (r.autoSorted && r.relevance !== "not_applicable"));
+  const notices = [...snapshot.unavailableSources];
+  if (unchecked > 0) {
+    notices.push(
+      sortingInProgress
+        ? `${unchecked} bills are still being checked against your business. They'll appear here if they affect you.`
+        : `Bill sorting is unavailable right now, so ${unchecked} bills haven't been checked against your business yet and aren't shown.`,
+    );
+  }
   results.sort((a, b) => ORDER[a.relevance] - ORDER[b.relevance] || sortKey(a) - sortKey(b));
   return {
     results,
     lastChecked: snapshot.fetchedAt,
     usingCachedData: snapshot.usingCachedData,
     savedResultsFrom: snapshot.savedResultsFrom,
-    unavailableSources: snapshot.unavailableSources,
+    unavailableSources: notices,
     sortingInProgress,
   };
 }
