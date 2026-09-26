@@ -51,6 +51,11 @@ Obligations are **data, not code**. Every `server/data/rules/*.json` file (excep
 - `statusWhenMet` (optional): use `"might"` when the profile can't decide the question (e.g. the privacy act), or `"not_applicable"` for items that no longer apply (e.g. the federal BOI report).
 - Any **"Not sure"** answer a rule depends on (e.g. FMLA coverage) automatically makes the result "might".
 - `summary` and `action` can use `{{county}}`, `{{municipality}}`, `{{admissionsRate}}`, and `{{hotelRate}}`.
+- Filing schedule fields (all optional, shown in the Obligations table and calendar):
+  - `agency`: who you file with (rows are grouped by it), e.g. `"Comptroller of Maryland"`.
+  - `frequency`: `once`, `ongoing`, `every_payroll`, `monthly`, `quarterly`, `yearly`, `every_2_years`, or `varies`, plus an optional `frequencyNote`.
+  - `recurring`: repeating due dates, e.g. `{ "every": "quarter", "day": "last", "label": "Form 941, {period}" }`, `{ "every": "month", "day": 15, ... }`, or `{ "every": "year", "month": 4, "day": 15, ... }`. `{period}` becomes "Q3 2026", "September 2026", or "2027". Add `startsOn` for filings that begin later. Dates on weekends or federal holidays move to the next business day automatically.
+  - `filingUrl` / `filingSiteName`: the portal where the filing is actually done.
 - Employee-count thresholds on the "What if I hire" slider come from these numeric conditions automatically.
 
 3. Run `npm run check:obligations -w server` and add a check for the new rule if it matters for a sample profile.

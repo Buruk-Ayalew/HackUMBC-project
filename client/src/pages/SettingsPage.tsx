@@ -8,7 +8,7 @@ import { employeeErrors, toDraft, type ProfileDraft } from "../components/profil
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+    <section className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card">
       <h2 className="mb-4 text-lg font-semibold">{title}</h2>
       {children}
     </section>
@@ -86,12 +86,12 @@ export default function SettingsPage() {
 
       <div className="sticky bottom-0 -mx-4 border-t border-slate-200 bg-slate-50/95 px-4 py-3 backdrop-blur">
         {error && (
-          <p role="alert" className="mb-2 rounded-md bg-red-50 p-3 text-sm text-red-800">
+          <p role="alert" className="mb-2 rounded-xl bg-red-50 p-3 text-sm text-red-800">
             {error}
           </p>
         )}
         {saved && (
-          <p className="mb-2 rounded-md bg-green-50 p-3 text-sm text-green-900">
+          <p className="mb-2 rounded-xl bg-green-50 p-3 text-sm text-green-900">
             Your results have been updated.{" "}
             <Link to="/obligations" className="font-semibold underline">
               See your obligations
@@ -101,7 +101,7 @@ export default function SettingsPage() {
         <button
           onClick={save}
           disabled={saving}
-          className="rounded-md bg-blue-700 px-5 py-2 font-semibold text-white hover:bg-blue-800 disabled:opacity-50"
+          className="rounded-xl bg-brand-600 px-5 py-2 font-semibold text-white hover:bg-brand-700 disabled:opacity-50"
         >
           {saving ? "Saving…" : "Save changes"}
         </button>
@@ -117,7 +117,7 @@ export default function SettingsPage() {
             await logout();
             navigate("/");
           }}
-          className="rounded-md border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+          className="rounded-xl border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
         >
           Log out
         </button>
@@ -152,8 +152,8 @@ function PasswordSection() {
         <Field label="New password" why="At least 8 characters.">
           <input type="password" className={inputClass} value={next} onChange={(e) => setNext(e.target.value)} autoComplete="new-password" />
         </Field>
-        {msg && <p className={`rounded-md p-3 text-sm ${msg.ok ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>{msg.text}</p>}
-        <button className="rounded-md border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50">Change password</button>
+        {msg && <p className={`rounded-xl p-3 text-sm ${msg.ok ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>{msg.text}</p>}
+        <button className="rounded-xl border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50">Change password</button>
       </form>
     </Section>
   );
@@ -176,7 +176,7 @@ function SampleSwitcher({ onLoaded }: { onLoaded: (p: BusinessProfile) => void }
           <button
             key={s.id}
             onClick={async () => onLoaded(await apiPost<BusinessProfile>("/api/profile/load-sample", { sampleId: s.id }))}
-            className="rounded-md border border-amber-400 bg-white px-3 py-1.5 text-sm hover:bg-amber-100"
+            className="rounded-xl border border-amber-400 bg-white px-3 py-1.5 text-sm hover:bg-amber-100"
           >
             {s.businessName} ({s.county})
           </button>

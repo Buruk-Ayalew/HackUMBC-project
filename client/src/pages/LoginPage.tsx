@@ -1,7 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../auth";
+import { IconLogo } from "../components/icons";
 import { Field, inputClass } from "../components/ProfileFields";
+import { buttonStyles } from "../components/ui";
 
 export default function LoginPage() {
   const { user, hasProfile, loading, login, register } = useAuth();
@@ -36,75 +38,79 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="mx-auto max-w-md py-8">
-      <h1 className="text-2xl font-bold">{mode === "login" ? "Log in" : "Create your account"}</h1>
-      <form onSubmit={submit} className="mt-6 space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-        {mode === "register" && (
-          <Field label="Your name">
-            <input className={inputClass} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" required />
+    <div className="mx-auto max-w-md py-6 sm:py-10">
+      <div className="text-center">
+        <IconLogo className="mx-auto text-5xl text-brand-600" />
+        <h1 className="mt-4 text-2xl font-bold tracking-tight text-slate-900">{mode === "login" ? "Welcome back" : "Create your account"}</h1>
+        <p className="mt-1 text-slate-600">{mode === "login" ? "Log in to see your business's obligations." : "It takes about 3 minutes to set up."}</p>
+      </div>
+
+      <div className="mt-8 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-lift sm:p-8">
+        <div className="mb-6 grid grid-cols-2 rounded-xl bg-slate-100 p-1 text-sm font-semibold">
+          {(["login", "register"] as const).map((m) => (
+            <button
+              key={m}
+              type="button"
+              onClick={() => {
+                setMode(m);
+                setError(null);
+              }}
+              className={`rounded-lg py-2 transition ${mode === m ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"}`}
+            >
+              {m === "login" ? "Log in" : "Sign up"}
+            </button>
+          ))}
+        </div>
+
+        <form onSubmit={submit} className="space-y-4">
+          {mode === "register" && (
+            <Field label="Your name">
+              <input className={inputClass} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" required />
+            </Field>
+          )}
+          <Field label="Email">
+            <input className={inputClass} type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required />
           </Field>
-        )}
-        <Field label="Email">
-          <input
-            className={inputClass}
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            autoComplete="email"
-            required
-          />
-        </Field>
-        <Field label="Password" why={mode === "register" ? "At least 8 characters." : undefined}>
-          <input
-            className={inputClass}
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete={mode === "login" ? "current-password" : "new-password"}
-            required
-          />
-        </Field>
+          <Field label="Password" why={mode === "register" ? "At least 8 characters." : undefined}>
+            <input
+              className={inputClass}
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete={mode === "login" ? "current-password" : "new-password"}
+              required
+            />
+          </Field>
 
-        {error && (
-          <p role="alert" className="rounded-md bg-red-50 p-3 text-sm text-red-800">
-            {error}
-          </p>
-        )}
+          {error && (
+            <p role="alert" className="rounded-xl bg-rose-50 p-3 text-sm text-rose-800">
+              {error}
+            </p>
+          )}
 
-        <button
-          type="submit"
-          disabled={busy}
-          className="w-full rounded-md bg-blue-700 px-4 py-2.5 font-semibold text-white hover:bg-blue-800 disabled:opacity-50"
-        >
-          {busy ? "Please wait…" : mode === "login" ? "Log in" : "Create account"}
-        </button>
+          <button type="submit" disabled={busy} className={`${buttonStyles.primary} w-full py-3 text-base`}>
+            {busy ? "Please wait…" : mode === "login" ? "Log in" : "Create account"}
+          </button>
+        </form>
 
         {mode === "login" && (
-          <button
-            type="button"
-            onClick={() => {
-              setEmail("demo@civicpulse.test");
-              setPassword("demo1234");
-            }}
-            className="w-full rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-900 hover:bg-amber-100"
-          >
-            Use test account
-          </button>
+          <div className="mt-6 rounded-xl border border-dashed border-amber-300 bg-amber-50/70 p-4 text-center">
+            <p className="text-sm text-amber-900">
+              Just looking? Use the test account <strong>demo@civicpulse.test</strong>
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setEmail("demo@civicpulse.test");
+                setPassword("demo1234");
+              }}
+              className="mt-2 text-sm font-semibold text-amber-900 underline underline-offset-2 hover:text-amber-700"
+            >
+              Fill in the test account
+            </button>
+          </div>
         )}
-      </form>
-
-      <p className="mt-4 text-center text-sm text-slate-600">
-        {mode === "login" ? "New here? " : "Already have an account? "}
-        <button
-          className="font-medium text-blue-700 underline"
-          onClick={() => {
-            setMode(mode === "login" ? "register" : "login");
-            setError(null);
-          }}
-        >
-          {mode === "login" ? "Create an account" : "Log in"}
-        </button>
-      </p>
+      </div>
     </div>
   );
 }

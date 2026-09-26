@@ -3,7 +3,8 @@
 import type { BusinessProfile, ObligationResult } from "../../shared/types.js";
 import { getSampleProfiles } from "../src/lib/profile.js";
 import { loadLocalTaxRates, loadRules } from "../src/lib/obligations/rules.js";
-import { coverageNotes, employeeThresholds, evaluate } from "../src/lib/obligations/engine.js";
+import { coverageNotes, employeeThresholds, evaluate, milestones } from "../src/lib/obligations/engine.js";
+import { nextBusinessDay } from "../src/lib/obligations/schedule.js";
 
 const rules = await loadRules();
 const taxRates = await loadLocalTaxRates();
@@ -35,8 +36,28 @@ const [restaurant, salon, consultant, hotel, contractor] = samples as [
 
 console.log("\n# 1. Baltimore City restaurant (14 employees)");
 let get = run(restaurant);
-for (const id of ["famli-register", "famli-contributions", "sick-leave-unpaid", "baltimore-city-ban-the-box", "state-tipped-wage", "state-minimum-wage", "alcohol-license"])
-  expect("restaurant", get(id), id === "alcohol-license" ? "might" : "affects");
+for (const id of ["famli-register", "famli-contributions", "sick-leave-unpaid", "baltimore-city-ban-the-box", "state-tipped-wage", "state-minimum-wage", "alcohol-license",
+  "md-unemployment-insurance", "md-withholding-returns", "sales-use-tax-returns", "restaurant-license", "food-service-license", "irs-941", "workers-comp"])
+  expect("restaurant", get(id), "affects");
+expect("restaurant", get("traders-license"), "might");
+expect("restaurant", get("marylandsaves"), "might");
+
+console.log("\n# Due dates (today = 2026-09-26)");
+function expectDate(label: string, actual: string | undefined, want: string) {
+  const ok = actual === want;
+  if (!ok) failures++;
+  console.log(`${ok ? "PASS" : "FAIL"}  ${label}: ${actual}${ok ? "" : ` (expected ${want})`}`);
+}
+expectDate("UI Q3 2026 (Oct 31 is a Saturday)", get("md-unemployment-insurance").upcoming[0]?.date, "2026-11-02");
+expectDate("Form 941 Q3 2026", get("irs-941").upcoming[0]?.date, "2026-11-02");
+expectDate("MW506 for September", get("md-withholding-returns").upcoming[0]?.date, "2026-10-15");
+expectDate("Sales tax Q3 2026", get("sales-use-tax-returns").upcoming[0]?.date, "2026-10-20");
+expectDate("MW508 (Jan 31 2027 is a Sunday)", get("md-withholding-annual").upcoming[0]?.date, "2027-02-01");
+expectDate("First FAMLI contribution", get("famli-contributions").upcoming[0]?.date, "2027-04-30");
+expectDate("SDAT annual report", get("sdat-annual-report").upcoming[0]?.date, "2027-04-15");
+expectDate("Restaurant license (May 1 2027 is a Saturday)", get("restaurant-license").upcoming[0]?.date, "2027-05-03");
+expectDate("Veterans Day roll-forward", nextBusinessDay("2026-11-11"), "2026-11-12");
+expectDate("Thanksgiving roll-forward", nextBusinessDay("2026-11-26"), "2026-11-27");
 for (const id of ["famli-employer-share", "sick-leave-paid", "parental-leave", "state-ban-the-box", "montgomery-min-wage-small", "admissions-amusement-tax"])
   expect("restaurant", get(id), "not_applicable");
 
@@ -85,5 +106,14 @@ expect("contractor", get("federal-boi"), "not_applicable");
 console.log("      notes:", coverageNotes(contractor));
 
 console.log("\nthresholds:", employeeThresholds(rules).join(", "));
+
+console.log("\n# Growth milestones for the restaurant (single-slider scale)");
+const steps = milestones(restaurant, rules, taxRates);
+for (const m of steps) console.log(`  at ${m.employees}: ${m.changes.map((c) => `${c.ruleId} ${c.from}->${c.to}`).join(", ")}`);
+const at15 = steps.find((m) => m.employees === 15);
+if (!at15?.changes.some((c) => c.ruleId === "famli-employer-share" && c.to === "affects")) {
+  failures++;
+  console.log("FAIL  milestone at 15 should turn on the FAMLI employer share");
+}
 console.log(failures ? `\n${failures} check(s) FAILED` : "\nAll checks passed");
 process.exit(failures ? 1 : 0);

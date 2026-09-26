@@ -1,159 +1,173 @@
 import { useMemo, useState } from "react";
-import type { ObligationResult } from "../../../shared/types";
 import { daysLabel, daysUntil, formatDate, parseDay, todayIso } from "../components/dates";
+import { IconCalendar, IconDownload, IconExternal } from "../components/icons";
+import { allUpcoming, type UpcomingItem } from "../components/schedule";
+import { Badge, Card, LoadingPage, Notice, PageHeader, buttonStyles } from "../components/ui";
 import { useObligations } from "../components/useObligations";
 
-interface CalEvent {
-  title: string;
-  date: string;
-  ruleId: string;
-  ruleTitle: string;
-  status: "affects" | "might";
-  action: string;
-  sourceUrl: string;
-}
-
-function collect(results: ObligationResult[]): CalEvent[] {
-  return results
-    .filter((r): r is ObligationResult & { status: "affects" | "might" } => r.status !== "not_applicable")
-    .flatMap((r) =>
-      (r.rule.deadlines ?? []).map((d) => ({
-        title: d.label,
-        date: d.date,
-        ruleId: r.rule.id,
-        ruleTitle: r.rule.title,
-        status: r.status,
-        action: r.rule.action,
-        sourceUrl: r.rule.sourceUrl,
-      })),
-    )
-    .sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function googleLink(e: CalEvent): string {
+function googleLink(e: UpcomingItem): string {
   const start = e.date.replaceAll("-", "");
   const d = parseDay(e.date);
   d.setDate(d.getDate() + 1);
   const end = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}`;
   const params = new URLSearchParams({
     action: "TEMPLATE",
-    text: e.title,
+    text: e.label,
     dates: `${start}/${end}`,
-    details: `What to do: ${e.action}\n\nOfficial source: ${e.sourceUrl}\n\nFrom CivicPulse MD. Information, not legal advice.`,
+    details: `What to do: ${e.result.rule.action}\n\nOfficial source: ${e.result.rule.sourceUrl}\n\nFrom CivicPulse MD. Information, not legal advice.`,
   });
   return `https://calendar.google.com/calendar/render?${params}`;
 }
 
-const DOT = { affects: "bg-red-600", might: "bg-amber-500" } as const;
-const CHIP = { affects: "bg-red-100 text-red-900", might: "bg-amber-100 text-amber-900" } as const;
+const CHIP = {
+  affects: "bg-rose-100 text-rose-800 hover:bg-rose-200",
+  might: "bg-amber-100 text-amber-900 hover:bg-amber-200",
+} as const;
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export default function CalendarPage() {
   const { data, error } = useObligations();
-  const events = useMemo(() => (data ? collect(data.results) : []), [data]);
+  const events = useMemo(() => (data ? allUpcoming(data.results) : []), [data]);
   const [month, setMonth] = useState(() => {
     const t = parseDay(todayIso());
     return new Date(t.getFullYear(), t.getMonth(), 1);
   });
+  const [selected, setSelected] = useState<string | null>(null);
 
-  if (error) return <p className="rounded-md bg-red-50 p-4 text-red-800">{error}</p>;
-  if (!data) return <p className="text-slate-500">Loading your deadlines…</p>;
+  if (error) return <Notice tone="red">{error}</Notice>;
+  if (!data) return <LoadingPage />;
 
-  const upcoming = events.filter((e) => daysUntil(e.date) >= 0);
   const monthKey = `${month.getFullYear()}-${String(month.getMonth() + 1).padStart(2, "0")}`;
   const firstWeekday = month.getDay();
   const daysInMonth = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
   const cells: (number | null)[] = [...Array(firstWeekday).fill(null), ...Array.from({ length: daysInMonth }, (_, i) => i + 1)];
+  while (cells.length % 7) cells.push(null);
   const today = todayIso();
+  const list = selected ? events.filter((e) => e.date === selected) : events;
 
   return (
-    <div className="space-y-6">
-      <header className="flex flex-wrap items-center justify-between gap-3">
-        <h1 className="text-2xl font-bold">Compliance calendar</h1>
-        <a
-          href="/api/obligations/calendar.ics"
-          className="rounded-md bg-blue-700 px-4 py-2 font-semibold text-white hover:bg-blue-800"
-          download="civicpulse-deadlines.ics"
-        >
-          Download all (.ics)
-        </a>
-      </header>
-      <p className="flex gap-4 text-sm text-slate-600">
-        <span className="flex items-center gap-1.5">
-          <span className={`h-3 w-3 rounded-full ${DOT.affects}`} /> Affects you
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className={`h-3 w-3 rounded-full ${DOT.might}`} /> Might affect you
-        </span>
-      </p>
+    <div className="space-y-8">
+      <PageHeader
+        eyebrow={
+          <span className="inline-flex items-center gap-1.5">
+            <IconCalendar /> Compliance calendar
+          </span>
+        }
+        title="Your deadlines"
+        subtitle="Every filing, payment, and renewal due in the next 12 months."
+        actions={
+          <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.primary}>
+            <IconDownload /> Download all (.ics)
+          </a>
+        }
+      />
 
-      <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
-        <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <div className="mb-3 flex items-center justify-between">
+      <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
+        <Card className="p-4 sm:p-5">
+          <div className="mb-4 flex items-center justify-between">
             <button
               onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))}
-              className="rounded border border-slate-300 px-3 py-1 hover:bg-slate-50"
+              className={buttonStyles.secondary + " px-3 py-1.5"}
               aria-label="Previous month"
             >
               ←
             </button>
-            <h2 className="font-semibold">{month.toLocaleDateString("en-US", { month: "long", year: "numeric" })}</h2>
+            <h2 className="text-lg font-bold text-slate-900">{month.toLocaleDateString("en-US", { month: "long", year: "numeric" })}</h2>
             <button
               onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))}
-              className="rounded border border-slate-300 px-3 py-1 hover:bg-slate-50"
+              className={buttonStyles.secondary + " px-3 py-1.5"}
               aria-label="Next month"
             >
               →
             </button>
           </div>
-          <div className="grid grid-cols-7 gap-px overflow-hidden rounded-md border border-slate-200 bg-slate-200 text-sm">
+          <div className="grid grid-cols-7 gap-1 text-sm">
             {WEEKDAYS.map((d) => (
-              <div key={d} className="bg-slate-50 p-1 text-center text-xs font-semibold text-slate-500">
+              <div key={d} className="pb-1 text-center text-xs font-semibold text-slate-400">
                 {d}
               </div>
             ))}
             {cells.map((day, i) => {
               const iso = day ? `${monthKey}-${String(day).padStart(2, "0")}` : "";
               const dayEvents = day ? events.filter((e) => e.date === iso) : [];
+              const isSel = selected === iso;
               return (
-                <div key={i} className={`min-h-20 bg-white p-1 ${iso === today ? "ring-2 ring-blue-600 ring-inset" : ""}`}>
-                  {day && <div className="text-xs text-slate-500">{day}</div>}
-                  {dayEvents.map((e) => (
-                    <div key={e.ruleId + e.title} className={`mt-0.5 truncate rounded px-1 text-xs ${CHIP[e.status]}`} title={e.title}>
-                      {e.title}
-                    </div>
+                <button
+                  key={i}
+                  disabled={!day}
+                  onClick={() => setSelected(isSel || !dayEvents.length ? null : iso)}
+                  className={`min-h-20 rounded-xl border p-1.5 text-left align-top transition sm:min-h-24 ${
+                    !day
+                      ? "border-transparent"
+                      : isSel
+                        ? "border-brand-500 bg-brand-50"
+                        : iso === today
+                          ? "border-brand-300 bg-white"
+                          : "border-slate-100 bg-white hover:border-slate-300"
+                  }`}
+                >
+                  {day && (
+                    <span className={`text-xs font-semibold ${iso === today ? "rounded-full bg-brand-600 px-1.5 py-0.5 text-white" : "text-slate-500"}`}>
+                      {day}
+                    </span>
+                  )}
+                  {dayEvents.slice(0, 2).map((e) => (
+                    <span key={e.label} className={`mt-1 block truncate rounded-md px-1.5 py-0.5 text-[11px] font-medium ${CHIP[e.result.status as "affects" | "might"]}`} title={e.label}>
+                      {e.label}
+                    </span>
                   ))}
-                </div>
+                  {dayEvents.length > 2 && <span className="mt-0.5 block text-[11px] font-medium text-slate-500">+{dayEvents.length - 2} more</span>}
+                </button>
               );
             })}
           </div>
-        </section>
+          <div className="mt-4 flex gap-4 text-xs text-slate-500">
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-rose-400" /> Applies to you
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-400" /> Might apply
+            </span>
+          </div>
+        </Card>
 
         <section>
-          <h2 className="mb-3 text-lg font-semibold">Upcoming</h2>
-          {upcoming.length === 0 ? (
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-lg font-bold text-slate-900">{selected ? formatDate(selected) : "Upcoming"}</h2>
+            {selected && (
+              <button onClick={() => setSelected(null)} className="text-sm font-semibold text-brand-700 hover:underline">
+                Show all
+              </button>
+            )}
+          </div>
+          {list.length === 0 ? (
             <p className="text-slate-500">No upcoming deadlines for your business.</p>
           ) : (
-            <ul className="space-y-3">
-              {upcoming.map((e) => (
-                <li key={e.ruleId + e.title} className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${DOT[e.status]}`} />
-                    <span className="font-semibold">{formatDate(e.date)}</span>
-                    <span className="text-sm text-slate-500">{daysLabel(e.date)}</span>
-                  </div>
-                  <p className="mt-1 text-sm">{e.title}</p>
-                  {e.status === "might" && <p className="text-xs text-amber-800">Might apply to you</p>}
-                  <div className="mt-2 flex gap-3 text-sm">
-                    <a href={googleLink(e)} target="_blank" rel="noreferrer" className="text-blue-700 underline">
-                      Add to Google Calendar
-                    </a>
-                    <a href={e.sourceUrl} target="_blank" rel="noreferrer" className="text-blue-700 underline">
-                      Source ↗
-                    </a>
-                  </div>
-                </li>
-              ))}
+            <ul className="max-h-[42rem] space-y-2 overflow-y-auto pr-1">
+              {list.map((e) => {
+                const soon = daysUntil(e.date) <= 14;
+                return (
+                  <li key={e.date + e.label} className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-card">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className={`text-sm font-bold ${soon ? "text-rose-700" : "text-slate-900"}`}>{formatDate(e.date)}</span>
+                      <span className="text-xs text-slate-500">{daysLabel(e.date)}</span>
+                    </div>
+                    <p className="mt-1 font-medium text-slate-900">{e.label}</p>
+                    <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
+                      <span>{e.result.rule.agency}</span>
+                      {e.result.status === "might" && <Badge tone="amber">Might apply</Badge>}
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-4 text-sm">
+                      <a href={googleLink(e)} target="_blank" rel="noreferrer" className="font-semibold text-brand-700 hover:underline">
+                        + Google Calendar
+                      </a>
+                      <a href={e.result.rule.filingUrl ?? e.result.rule.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-semibold text-brand-700 hover:underline">
+                        {e.result.rule.filingSiteName ?? "Source"} <IconExternal className="text-xs" />
+                      </a>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </section>

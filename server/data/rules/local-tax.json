@@ -3,10 +3,23 @@
     "id": "admissions-amusement-tax",
     "title": "Collect the local admissions and amusement tax",
     "category": "tax",
-    "jurisdiction": { "level": "county" },
-    "conditions": [{ "field": "flags.chargesAdmission", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "county"
+    },
+    "conditions": [
+      {
+        "field": "flags.chargesAdmission",
+        "op": "is",
+        "value": true
+      }
+    ],
     "summary": "Counties and towns tax admission charges and amusement fees. The {{county}} rate is {{admissionsRate}} (state table for fiscal year 2026).",
     "action": "Register with the Comptroller of Maryland and file admissions and amusement tax returns, even for periods with no taxable receipts.",
+    "agency": "Comptroller of Maryland",
+    "frequency": "varies",
+    "frequencyNote": "Filing schedule set by the Comptroller",
+    "filingUrl": "https://interactive.marylandtaxes.gov/mdtaxconnect/",
+    "filingSiteName": "Maryland Tax Connect",
     "sourceUrl": "https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf",
     "sourceName": "Department of Legislative Services: 2026 County Local Tax Rates",
     "reviewedOn": "2026-09-26"
@@ -15,10 +28,21 @@
     "id": "hotel-rental-tax",
     "title": "Collect the local hotel rental tax",
     "category": "tax",
-    "jurisdiction": { "level": "county" },
-    "conditions": [{ "field": "flags.rentsLodging", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "county"
+    },
+    "conditions": [
+      {
+        "field": "flags.rentsLodging",
+        "op": "is",
+        "value": true
+      }
+    ],
     "summary": "Counties tax room rentals. The {{county}} hotel rental tax rate is {{hotelRate}} (state table for fiscal year 2026).",
     "action": "Contact the {{county}} finance office to register and learn its filing schedule.",
+    "agency": "County finance office",
+    "frequency": "varies",
+    "frequencyNote": "Filing schedule set by your county",
     "sourceUrl": "https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf",
     "sourceName": "Department of Legislative Services: 2026 County Local Tax Rates",
     "reviewedOn": "2026-09-26"

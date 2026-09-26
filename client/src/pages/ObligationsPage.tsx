@@ -1,120 +1,143 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import type { ObligationCategory, ObligationResult } from "../../../shared/types";
-import ObligationCard, { CATEGORY_LABELS } from "../components/ObligationCard";
-import { formatDate } from "../components/dates";
+import type { ObligationCategory } from "../../../shared/types";
+import FilingSchedule from "../components/FilingSchedule";
+import GrowthPlanner from "../components/GrowthPlanner";
+import { daysUntil, formatDate } from "../components/dates";
+import { IconCalendar, IconChevron, IconClipboard, IconDownload, IconMapPin, IconTrending } from "../components/icons";
 import { jurisdictionLabel } from "../components/profileOptions";
-import { nextDeadlineOf, useObligations } from "../components/useObligations";
+import { CATEGORY_LABELS } from "../components/schedule";
+import { Card, LoadingPage, Notice, PageHeader, SectionHeading, Stat, buttonStyles } from "../components/ui";
+import { nextDeadlineOf, useMilestones, useObligations } from "../components/useObligations";
 
 export default function ObligationsPage() {
   const { data, profile, error } = useObligations();
+  const { milestones } = useMilestones();
   const [category, setCategory] = useState<ObligationCategory | "all">("all");
-  const [deadlineOnly, setDeadlineOnly] = useState(false);
   const [showNA, setShowNA] = useState(false);
 
-  const filtered = useMemo(
-    () =>
-      (data?.results ?? []).filter(
-        (r) => (category === "all" || r.rule.category === category) && (!deadlineOnly || (r.rule.deadlines?.length ?? 0) > 0),
-      ),
-    [data, category, deadlineOnly],
-  );
+  const applicable = useMemo(() => (data?.results ?? []).filter((r) => r.status !== "not_applicable"), [data]);
+  const filtered = useMemo(() => applicable.filter((r) => category === "all" || r.rule.category === category), [applicable, category]);
 
-  if (error) return <p className="rounded-md bg-red-50 p-4 text-red-800">{error}</p>;
-  if (!data || !profile) return <p className="text-slate-500">Loading your obligations…</p>;
+  if (error) return <Notice tone="red">{error}</Notice>;
+  if (!data || !profile) return <LoadingPage />;
 
-  const affects = filtered.filter((r) => r.status === "affects");
-  const might = filtered.filter((r) => r.status === "might");
-  const na = filtered.filter((r) => r.status === "not_applicable");
+  const affects = data.results.filter((r) => r.status === "affects").length;
+  const might = data.results.filter((r) => r.status === "might").length;
+  const na = data.results.filter((r) => r.status === "not_applicable");
   const next = nextDeadlineOf(data.results);
-  const totalAffects = data.results.filter((r) => r.status === "affects").length;
-  const totalMight = data.results.filter((r) => r.status === "might").length;
+  const dueSoon = applicable.filter((r) => r.upcoming[0] && daysUntil(r.upcoming[0].date) <= 30).length;
+  const categories = [...new Set(applicable.map((r) => r.rule.category))];
 
   return (
-    <div className="space-y-6">
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold">{profile.businessName}</h1>
-          <p className="text-slate-600">
-            {jurisdictionLabel(profile.jurisdiction)}, Maryland · Profile updated {formatDate(profile.updatedAt)} ·{" "}
-            <Link to="/settings" className="text-blue-700 underline">
+    <div className="space-y-10">
+      <PageHeader
+        eyebrow={
+          <span className="inline-flex items-center gap-1.5">
+            <IconMapPin /> {jurisdictionLabel(profile.jurisdiction)}, Maryland
+          </span>
+        }
+        title={profile.businessName}
+        subtitle={
+          <>
+            Business details updated {formatDate(profile.updatedAt)} ·{" "}
+            <Link to="/settings" className="font-medium text-brand-700 hover:underline">
               Edit details
             </Link>
+          </>
+        }
+        actions={
+          <>
+            <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.secondary}>
+              <IconDownload /> Export deadlines
+            </a>
+            <Link to="/calendar" className={buttonStyles.primary}>
+              <IconCalendar /> Calendar
+            </Link>
+          </>
+        }
+      />
+
+      <Card className="grid grid-cols-2 gap-6 p-6 sm:grid-cols-4">
+        <Stat value={affects} label="apply to you" tone="red" />
+        <Stat value={might} label="might apply" tone="amber" />
+        <Stat value={dueSoon} label="due in the next 30 days" tone="brand" />
+        <div>
+          <p className="text-3xl font-bold tracking-tight text-slate-900">{next ? formatDate(next.date) : "—"}</p>
+          <p className="truncate text-sm text-slate-500" title={next?.label}>
+            {next ? `Next: ${next.label}` : "No upcoming deadline"}
           </p>
         </div>
-        <Link to="/obligations/what-if" className="rounded-md border border-blue-700 px-4 py-2 font-medium text-blue-800 hover:bg-blue-50">
-          What if I hire more people?
-        </Link>
-      </header>
+      </Card>
 
-      <div className="rounded-lg bg-slate-900 px-5 py-3 text-white">
-        <strong>{totalAffects}</strong> obligations affect you · <strong>{totalMight}</strong> might
-        {next && (
-          <>
-            {" "}
-            · next deadline: <strong>{formatDate(next.date)}</strong> ({next.label})
-          </>
-        )}
-      </div>
-
-      {data.coverageNotes.map((n) => (
-        <p key={n} className="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-          {n}
-        </p>
-      ))}
-
-      <div className="flex flex-wrap items-center gap-3 text-sm">
-        <label className="flex items-center gap-2">
-          Category
-          <select
-            className="rounded-md border border-slate-300 bg-white px-2 py-1.5"
-            value={category}
-            onChange={(e) => setCategory(e.target.value as ObligationCategory | "all")}
-          >
-            <option value="all">All</option>
-            {Object.entries(CATEGORY_LABELS).map(([k, v]) => (
-              <option key={k} value={k}>
-                {v}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex items-center gap-2">
-          <input type="checkbox" checked={deadlineOnly} onChange={(e) => setDeadlineOnly(e.target.checked)} />
-          Only items with a deadline
-        </label>
-      </div>
-
-      <Group title="Affects you" count={affects.length} color="text-red-700" items={affects} empty="Nothing here with these filters." />
-      <Group title="Might affect you" count={might.length} color="text-amber-700" items={might} empty="Nothing here with these filters." />
+      {data.coverageNotes.length > 0 && (
+        <div className="space-y-2">
+          {data.coverageNotes.map((n) => (
+            <Notice key={n}>{n}</Notice>
+          ))}
+        </div>
+      )}
 
       <section>
-        <button onClick={() => setShowNA(!showNA)} className="flex items-center gap-2 text-lg font-semibold text-slate-500">
-          <span>{showNA ? "▾" : "▸"}</span> Doesn't apply ({na.length})
-        </button>
-        {showNA && (
-          <div className="mt-3 space-y-3 opacity-80">
-            {na.map((r) => (
-              <ObligationCard key={r.rule.id} result={r} />
-            ))}
-          </div>
+        <SectionHeading
+          icon={<IconClipboard />}
+          title="Filing schedule"
+          subtitle="Every filing, payment, license renewal, and ongoing rule for your business, with where to do it. Click a row for details."
+        />
+        <div className="mb-4 flex flex-wrap gap-2">
+          {(["all", ...categories] as const).map((c) => (
+            <button
+              key={c}
+              onClick={() => setCategory(c)}
+              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${
+                category === c ? "bg-slate-900 text-white" : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-50"
+              }`}
+            >
+              {c === "all" ? `All (${applicable.length})` : `${CATEGORY_LABELS[c]} (${applicable.filter((r) => r.rule.category === c).length})`}
+            </button>
+          ))}
+        </div>
+        <FilingSchedule results={filtered} />
+        <p className="mt-3 text-xs text-slate-500">
+          Due dates that fall on a weekend or federal holiday are moved to the next business day. Dates for filings whose schedule the agency assigns
+          (like withholding and sales tax) assume the most common schedule; follow any notice the agency sends you.
+        </p>
+      </section>
+
+      <section className="rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-50 via-white to-white p-5 sm:p-8">
+        <SectionHeading
+          icon={<IconTrending />}
+          title="Growth planner: what changes when you hire?"
+          subtitle={`You have ${profile.employees.inMaryland} employees in Maryland today. See which rules start at each size before you hire.`}
+        />
+        {milestones ? (
+          <GrowthPlanner profile={profile} baseline={data} milestones={milestones} compact />
+        ) : (
+          <p className="text-slate-500">Loading milestones…</p>
         )}
       </section>
 
-      <p className="text-sm text-slate-500">Information, not legal advice. Always confirm with the official source.</p>
+      <section>
+        <button onClick={() => setShowNA(!showNA)} className="flex items-center gap-2 text-left" aria-expanded={showNA}>
+          <IconChevron className={`text-slate-400 transition ${showNA ? "rotate-90" : ""}`} />
+          <span className="text-lg font-bold text-slate-700">Doesn't apply to you ({na.length})</span>
+        </button>
+        {showNA && (
+          <Card className="mt-3 divide-y divide-slate-100">
+            {na.map((r) => (
+              <div key={r.rule.id} className="animate-fade-up px-5 py-3.5">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <p className="font-medium text-slate-800">{r.rule.title}</p>
+                  <a href={r.rule.sourceUrl} target="_blank" rel="noreferrer" className="text-xs font-medium text-brand-700 hover:underline">
+                    Source
+                  </a>
+                </div>
+                <p className="text-sm text-slate-500">{r.reasons.join(" ")}</p>
+              </div>
+            ))}
+          </Card>
+        )}
+      </section>
     </div>
-  );
-}
-
-function Group({ title, count, color, items, empty }: { title: string; count: number; color: string; items: ObligationResult[]; empty: string }) {
-  return (
-    <section>
-      <h2 className={`text-lg font-semibold ${color}`}>
-        {title} ({count})
-      </h2>
-      <div className="mt-3 space-y-3">
-        {items.length === 0 ? <p className="text-slate-500">{empty}</p> : items.map((r) => <ObligationCard key={r.rule.id} result={r} />)}
-      </div>
-    </section>
   );
 }

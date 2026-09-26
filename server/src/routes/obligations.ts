@@ -4,7 +4,7 @@ import type { BusinessProfile, ObligationsResponse } from "../../../shared/types
 import { requireAuth } from "../middleware/auth.js";
 import { getProfileForUser } from "../lib/profile.js";
 import { loadLocalTaxRates, loadRules } from "../lib/obligations/rules.js";
-import { coverageNotes, employeeThresholds, evaluate } from "../lib/obligations/engine.js";
+import { coverageNotes, employeeThresholds, evaluate, milestones } from "../lib/obligations/engine.js";
 import { buildIcs, collectEvents } from "../lib/obligations/calendar.js";
 
 const router = Router();
@@ -27,6 +27,17 @@ router.get("/", async (req, res) => {
     return;
   }
   res.json(await evaluateFor(profile));
+});
+
+// What changes at each headcount on the growth planner's single-slider scale.
+router.get("/milestones", async (req, res) => {
+  const profile = await getProfileForUser(req.session.userId!);
+  if (!profile) {
+    res.status(404).json({ error: "Set up your business profile first." });
+    return;
+  }
+  const [rules, taxRates] = await Promise.all([loadRules(), loadLocalTaxRates()]);
+  res.json(milestones(profile, rules, taxRates));
 });
 
 const whatIfBody = z

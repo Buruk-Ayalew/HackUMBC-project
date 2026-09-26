@@ -13,7 +13,7 @@ import {
 } from "./profileOptions";
 
 export const inputClass =
-  "mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 focus:outline-none";
+  "mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 focus:outline-none";
 
 export function Field({ label, why, children }: { label: string; why?: string; children: ReactNode }) {
   return (
@@ -126,24 +126,24 @@ export function LocationFields({
             type="button"
             onClick={runLookup}
             disabled={looking || draft.address.trim().length < 5}
-            className="shrink-0 rounded-md bg-blue-700 px-4 py-2 font-medium text-white hover:bg-blue-800 disabled:opacity-50"
+            className="shrink-0 rounded-xl bg-brand-600 px-4 py-2 font-medium text-white hover:bg-brand-700 disabled:opacity-50"
           >
             {looking ? "Looking up…" : "Look up address"}
           </button>
         </div>
       </Field>
 
-      {error && <p className="rounded-md bg-red-50 p-3 text-sm text-red-800">{error}</p>}
+      {error && <p className="rounded-xl bg-red-50 p-3 text-sm text-red-800">{error}</p>}
 
       {hasLocation && !error && (
-        <div className="space-y-3 rounded-lg border border-slate-200 bg-white p-4">
+        <div className="space-y-3 rounded-2xl border border-slate-200/80 bg-white p-4">
           {lookup && <p className="text-sm text-slate-500">Matched: {lookup.matchedAddress}</p>}
           <p className="text-lg">
             We found: <strong>{jurisdictionLabel(draft.jurisdiction)}</strong>
           </p>
           {draft.lat !== 0 && <MiniMap lat={draft.lat} lng={draft.lng} />}
           {lookup?.confidence === "check" && (
-            <p className="rounded-md bg-amber-50 p-2 text-sm text-amber-900">Please double-check this location.</p>
+            <p className="rounded-xl bg-amber-50 p-2 text-sm text-amber-900">Please double-check this location.</p>
           )}
           {lookup?.notes.map((n) => (
             <p key={n} className="text-sm text-slate-500">
@@ -193,7 +193,7 @@ export function LocationFields({
                 setConfirmed(true);
                 setEditing(false);
               }}
-              className={`rounded-md px-4 py-2 font-medium ${confirmed ? "bg-green-700 text-white" : "bg-green-600 text-white hover:bg-green-700"}`}
+              className={`rounded-xl px-4 py-2 font-medium ${confirmed ? "bg-emerald-700 text-white" : "bg-emerald-600 text-white hover:bg-emerald-700"}`}
             >
               {confirmed ? "✓ Location confirmed" : "Yes, that's right"}
             </button>
@@ -204,7 +204,7 @@ export function LocationFields({
                   setEditing(true);
                   setConfirmed(false);
                 }}
-                className="rounded-md border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+                className="rounded-xl border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
               >
                 No, let me fix it
               </button>
@@ -256,7 +256,7 @@ export function EmployeeFields({ draft, update }: { draft: ProfileDraft; update:
               key={o.value}
               type="button"
               onClick={() => set({ coveredByFMLA: o.value })}
-              className={`rounded-md border px-4 py-2 ${e.coveredByFMLA === o.value ? "border-blue-700 bg-blue-50 font-semibold text-blue-800" : "border-slate-300 text-slate-700 hover:bg-slate-50"}`}
+              className={`rounded-xl border px-4 py-2 ${e.coveredByFMLA === o.value ? "border-brand-600 bg-brand-50 font-semibold text-brand-700" : "border-slate-300 text-slate-700 hover:bg-slate-50"}`}
             >
               {o.label}
             </button>
@@ -269,7 +269,7 @@ export function EmployeeFields({ draft, update }: { draft: ProfileDraft; update:
 
 export function FlagFields({ draft, update }: { draft: ProfileDraft; update: Update }) {
   return (
-    <div className="divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
+    <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200/80 bg-white">
       {FLAG_QUESTIONS.map((q) => {
         const on = draft.flags[q.key];
         return (
@@ -278,14 +278,14 @@ export function FlagFields({ draft, update }: { draft: ProfileDraft; update: Upd
               <p className="font-medium text-slate-800">{q.question}</p>
               <p className="text-sm text-slate-500">{q.why}</p>
             </div>
-            <div className="flex shrink-0 overflow-hidden rounded-md border border-slate-300">
+            <div className="flex shrink-0 overflow-hidden rounded-xl border border-slate-300">
               {[true, false].map((v) => (
                 <button
                   key={String(v)}
                   type="button"
                   aria-pressed={on === v}
                   onClick={() => update({ flags: { ...draft.flags, [q.key]: v } })}
-                  className={`px-3 py-1.5 text-sm ${on === v ? "bg-blue-700 text-white" : "bg-white text-slate-700 hover:bg-slate-50"}`}
+                  className={`px-3 py-1.5 text-sm ${on === v ? "bg-brand-600 text-white" : "bg-white text-slate-700 hover:bg-slate-50"}`}
                 >
                   {v ? "Yes" : "No"}
                 </button>

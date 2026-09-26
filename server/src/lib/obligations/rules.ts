@@ -37,6 +37,21 @@ const ruleSchema = z.object({
   summary: z.string().min(1),
   action: z.string().min(1),
   deadlines: z.array(z.object({ label: z.string(), date: isoDate })).optional(),
+  agency: z.string().min(1).optional(),
+  frequency: z.enum(["once", "ongoing", "every_payroll", "monthly", "quarterly", "yearly", "every_2_years", "varies"]).optional(),
+  frequencyNote: z.string().optional(),
+  recurring: z
+    .object({
+      every: z.enum(["month", "quarter", "year"]),
+      day: z.union([z.number().int().min(1).max(31), z.literal("last")]),
+      month: z.number().int().min(1).max(12).optional(),
+      label: z.string().min(1),
+      startsOn: isoDate.optional(),
+    })
+    .refine((r) => r.every !== "year" || r.month !== undefined, { message: "yearly schedules need a month" })
+    .optional(),
+  filingUrl: z.url().optional(),
+  filingSiteName: z.string().optional(),
   sourceUrl: z.url(),
   sourceName: z.string().min(1),
   reviewedOn: isoDate,

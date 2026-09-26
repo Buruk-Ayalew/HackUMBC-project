@@ -10,12 +10,12 @@ export interface CalendarEvent {
   sourceUrl: string;
 }
 
-// Every deadline from "affects" and "might" results.
+// Every due date in the next 12 months from "affects" and "might" results.
 export function collectEvents(results: ObligationResult[]): CalendarEvent[] {
   const events: CalendarEvent[] = [];
   for (const r of results) {
     if (r.status === "not_applicable") continue;
-    for (const d of r.rule.deadlines ?? []) {
+    for (const d of r.upcoming) {
       events.push({
         title: d.label,
         date: d.date,

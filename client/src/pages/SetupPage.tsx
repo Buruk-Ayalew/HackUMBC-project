@@ -63,19 +63,30 @@ export default function SetupPage() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h1 className="text-2xl font-bold">Set up your business</h1>
+      <h1 className="text-3xl font-bold tracking-tight">Set up your business</h1>
       <p className="mt-1 text-slate-600">A few questions so we can show what applies to you. Takes about 3 minutes.</p>
 
-      <ol className="mt-6 flex gap-1" aria-label="Progress">
+      <ol className="mt-8 flex items-start" aria-label="Progress">
         {STEPS.map((s, i) => (
-          <li key={s} className="flex-1">
-            <div className={`h-2 rounded-full ${i <= step ? "bg-blue-700" : "bg-slate-200"}`} />
-            <span className={`mt-1 hidden text-xs sm:block ${i === step ? "font-semibold text-blue-800" : "text-slate-500"}`}>{s}</span>
+          <li key={s} className="flex flex-1 flex-col items-center text-center">
+            <div className="flex w-full items-center">
+              <span className={`h-0.5 flex-1 ${i === 0 ? "invisible" : i <= step ? "bg-brand-600" : "bg-slate-200"}`} />
+              <span
+                className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-bold transition ${
+                  i < step ? "bg-brand-600 text-white" : i === step ? "bg-white text-brand-700 ring-2 ring-brand-600" : "bg-slate-100 text-slate-400"
+                }`}
+                aria-current={i === step ? "step" : undefined}
+              >
+                {i < step ? "✓" : i + 1}
+              </span>
+              <span className={`h-0.5 flex-1 ${i === STEPS.length - 1 ? "invisible" : i < step ? "bg-brand-600" : "bg-slate-200"}`} />
+            </div>
+            <span className={`mt-2 hidden text-xs sm:block ${i === step ? "font-semibold text-brand-700" : "text-slate-500"}`}>{s}</span>
           </li>
         ))}
       </ol>
 
-      <section className="mt-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="mt-6 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card">
         <h2 className="mb-4 text-xl font-semibold">
           Step {step + 1} of {STEPS.length}: {STEPS[step]}
         </h2>
@@ -88,7 +99,7 @@ export default function SetupPage() {
         {step === 4 && <Review draft={draft} goTo={setStep} />}
 
         {error && (
-          <p role="alert" className="mt-4 rounded-md bg-red-50 p-3 text-sm text-red-800">
+          <p role="alert" className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-800">
             {error}
           </p>
         )}
@@ -101,12 +112,12 @@ export default function SetupPage() {
               setStep((s) => s - 1);
             }}
             disabled={step === 0}
-            className="rounded-md border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50 disabled:invisible"
+            className="rounded-xl border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50 disabled:invisible"
           >
             Back
           </button>
           {step < STEPS.length - 1 ? (
-            <button type="button" onClick={next} className="rounded-md bg-blue-700 px-5 py-2 font-semibold text-white hover:bg-blue-800">
+            <button type="button" onClick={next} className="rounded-xl bg-brand-600 px-5 py-2 font-semibold text-white hover:bg-brand-700">
               Next
             </button>
           ) : (
@@ -114,7 +125,7 @@ export default function SetupPage() {
               type="button"
               onClick={save}
               disabled={saving}
-              className="rounded-md bg-green-700 px-5 py-2 font-semibold text-white hover:bg-green-800 disabled:opacity-50"
+              className="rounded-xl bg-emerald-700 px-5 py-2 font-semibold text-white hover:bg-emerald-800 disabled:opacity-50"
             >
               {saving ? "Saving…" : "Save and see my results"}
             </button>
@@ -149,7 +160,7 @@ function Review({ draft, goTo }: { draft: ProfileDraft; goTo: (step: number) => 
           <dt className="text-slate-600">{r.label}</dt>
           <dd className="flex items-center gap-3 text-right font-medium">
             {r.value}
-            <button type="button" onClick={() => goTo(r.step)} className="text-sm font-normal text-blue-700 underline">
+            <button type="button" onClick={() => goTo(r.step)} className="text-sm font-normal text-brand-600 underline">
               Edit
             </button>
           </dd>

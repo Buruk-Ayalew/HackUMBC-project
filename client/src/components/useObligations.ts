@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import type { BusinessProfile, ObligationResult, ObligationsResponse } from "../../../shared/types";
-import { todayIso } from "./dates";
+import type { BusinessProfile, DueDate, Milestone, ObligationResult, ObligationsResponse } from "../../../shared/types";
 import { apiGet } from "../api";
 
 export function useObligations() {
@@ -20,12 +19,23 @@ export function useObligations() {
   return { data, profile, error };
 }
 
-export function nextDeadlineOf(results: ObligationResult[]): { date: string; label: string } | null {
-  const today = todayIso();
-  const all = results
-    .filter((r) => r.status === "affects")
-    .flatMap((r) => r.rule.deadlines ?? [])
-    .filter((d) => d.date >= today)
-    .sort((a, b) => a.date.localeCompare(b.date));
-  return all[0] ?? null;
+export function useMilestones() {
+  const [milestones, setMilestones] = useState<Milestone[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  useEffect(() => {
+    apiGet<Milestone[]>("/api/obligations/milestones")
+      .then(setMilestones)
+      .catch((e) => setError((e as Error).message));
+  }, []);
+  return { milestones, error };
+}
+
+// Soonest due date among obligations that affect the business.
+export function nextDeadlineOf(results: ObligationResult[]): DueDate | null {
+  return (
+    results
+      .filter((r) => r.status === "affects")
+      .flatMap((r) => r.upcoming)
+      .sort((a, b) => a.date.localeCompare(b.date))[0] ?? null
+  );
 }

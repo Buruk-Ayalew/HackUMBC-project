@@ -1,10 +1,12 @@
 import type {
   BusinessProfile,
   Condition,
+  Milestone,
   ObligationResult,
   ObligationRule,
 } from "../../../../shared/types.js";
 import type { LocalTaxRates } from "./rules.js";
+import { upcomingDates } from "./schedule.js";
 
 // Evaluates data-driven obligation rules against a business profile.
 // Nothing here knows about any particular business or law.
@@ -172,7 +174,12 @@ function fillTemplate(text: string, vars: Record<string, string>): string {
   return text.replace(/\{\{(\w+)\}\}/g, (m, key: string) => vars[key] ?? m);
 }
 
-export function evaluateRule(rule: ObligationRule, profile: BusinessProfile, taxRates: LocalTaxRates): ObligationResult {
+export function evaluateRule(
+  rule: ObligationRule,
+  profile: BusinessProfile,
+  taxRates: LocalTaxRates,
+  today = new Date().toISOString().slice(0, 10),
+): ObligationResult {
   const checks = rule.conditions.map((c) => checkCondition(c, rule, profile));
   const main = combine(checks);
   const reasons = checks.map((c) => c.reason);
@@ -222,15 +229,14 @@ export function evaluateRule(rule: ObligationRule, profile: BusinessProfile, tax
     coverage = "limited";
   }
 
-  return { rule: filled, status, reasons, coverage, ...(coverageNote ? { coverageNote } : {}) };
-}
-
-// Soonest deadline on or after `today` (YYYY-MM-DD), or undefined.
-export function nextDeadline(rule: ObligationRule, today: string): string | undefined {
-  return (rule.deadlines ?? [])
-    .map((d) => d.date)
-    .filter((d) => d >= today)
-    .sort()[0];
+  return {
+    rule: filled,
+    status,
+    reasons,
+    coverage,
+    ...(coverageNote ? { coverageNote } : {}),
+    upcoming: upcomingDates(filled, today),
+  };
 }
 
 const STATUS_ORDER = { affects: 0, might: 1, not_applicable: 2 } as const;
@@ -241,12 +247,12 @@ export function evaluate(
   taxRates: LocalTaxRates,
   today = new Date().toISOString().slice(0, 10),
 ): ObligationResult[] {
-  const results = rules.map((r) => evaluateRule(r, profile, taxRates));
+  const results = rules.map((r) => evaluateRule(r, profile, taxRates, today));
   return results.sort((a, b) => {
     const s = STATUS_ORDER[a.status] - STATUS_ORDER[b.status];
     if (s !== 0) return s;
-    const da = nextDeadline(a.rule, today) ?? "9999-12-31";
-    const db = nextDeadline(b.rule, today) ?? "9999-12-31";
+    const da = a.upcoming[0]?.date ?? "9999-12-31";
+    const db = b.upcoming[0]?.date ?? "9999-12-31";
     return da.localeCompare(db) || a.rule.title.localeCompare(b.rule.title);
   });
 }
@@ -280,4 +286,52 @@ export function employeeThresholds(rules: ObligationRule[]): number[] {
     }
   }
   return [...points].filter((n) => n > 0).sort((a, b) => a - b);
+}
+
+// Single-slider scaling used by the growth planner: Maryland headcount = n,
+// full-time scaled by today's full-time ratio, total never below today's.
+export function scaledCounts(profile: BusinessProfile, n: number) {
+  const e = profile.employees;
+  const ratio = e.inMaryland > 0 ? e.fullTimeInMaryland / e.inMaryland : 1;
+  return {
+    inMaryland: n,
+    fullTimeInMaryland: Math.min(n, Math.round(n * ratio)),
+    totalAllStates: Math.max(e.totalAllStates, n),
+  };
+}
+
+// For each headcount where some rule could change, what actually changes
+// compared with one employee fewer (on the single-slider scale).
+export function milestones(
+  profile: BusinessProfile,
+  rules: ObligationRule[],
+  taxRates: LocalTaxRates,
+  max = 100,
+): Milestone[] {
+  const statusAt = (n: number) => {
+    const p = { ...profile, employees: { ...profile.employees, ...scaledCounts(profile, n) } };
+    return new Map(rules.map((r) => [r.id, evaluateRule(r, p, taxRates)]));
+  };
+  // Full-time scaling can move thresholds, so check every headcount.
+  const out: Milestone[] = [];
+  let prev = statusAt(0);
+  for (let n = 1; n <= max; n++) {
+    const cur = statusAt(n);
+    const changes: Milestone["changes"] = [];
+    for (const [id, r] of cur) {
+      const before = prev.get(id)!;
+      if (before.status !== r.status) {
+        changes.push({
+          ruleId: id,
+          title: r.rule.title,
+          from: before.status,
+          to: r.status,
+          reason: r.reasons.find((x) => /employee/.test(x)) ?? r.reasons[0] ?? "",
+        });
+      }
+    }
+    if (changes.length) out.push({ employees: n, counts: scaledCounts(profile, n), changes });
+    prev = cur;
+  }
+  return out;
 }
