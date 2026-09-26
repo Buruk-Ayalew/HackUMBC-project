@@ -2,6 +2,7 @@ import type { BusinessProfile, RadarResponse } from "../../../../shared/types.js
 import { classifyItems } from "./classify.js";
 import { getAllRadarItems, getRadarItems, type RadarItemsSnapshot } from "./index.js";
 
+const SORT_WAIT_MS = 20000;
 const ORDER = { affects: 0, might: 1, not_applicable: 2 } as const;
 
 // Soonest upcoming date first, then most recently published.
@@ -14,7 +15,8 @@ function sortKey(r: RadarResponse["results"][number]): number {
 
 export async function buildRadarResponse(profile: BusinessProfile, forceRefresh = false): Promise<RadarResponse> {
   const snapshot: RadarItemsSnapshot = forceRefresh ? await getAllRadarItems(true) : await getRadarItems();
-  const results = await classifyItems(snapshot.items, profile);
+  // Wait briefly for sorting; anything not done yet shows as "might" and the page polls.
+  const { results, sortingInProgress } = await classifyItems(snapshot.items, profile, SORT_WAIT_MS);
   results.sort((a, b) => ORDER[a.relevance] - ORDER[b.relevance] || sortKey(a) - sortKey(b));
   return {
     results,
@@ -22,5 +24,6 @@ export async function buildRadarResponse(profile: BusinessProfile, forceRefresh 
     usingCachedData: snapshot.usingCachedData,
     savedResultsFrom: snapshot.savedResultsFrom,
     unavailableSources: snapshot.unavailableSources,
+    sortingInProgress,
   };
 }

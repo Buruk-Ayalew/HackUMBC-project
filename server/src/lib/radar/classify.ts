@@ -1,20 +1,24 @@
-// Relevance sorting with Claude: RadarItem[] + BusinessProfile -> RadarResult[].
+// Relevance sorting with Gemini (via Vertex AI): RadarItem[] + BusinessProfile -> RadarResult[].
 // Results are cached per item + the profile fields that matter, so each
 // business only pays for items it hasn't seen yet.
+//
+// Sorting runs in the background through a rate limiter (GEMINI_RPM). Callers can wait a bounded time and
+// get partial results; unsorted items show as "might" until sorting finishes.
 
 import { createHash } from "node:crypto";
-import Anthropic from "@anthropic-ai/sdk";
-import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 import type { BusinessProfile, RadarItem, RadarResult } from "../../../../shared/types.js";
+import { GeminiApiError, ThinkingLevel, generateText } from "../gemini.js";
 import { dataPath, readJson, writeJson } from "../jsonStore.js";
 import type { RadarItemInternal } from "./common.js";
 
-const MODEL = "claude-sonnet-5";
-const BATCH_SIZE = 10;
-const CONCURRENCY = 5;
+const GEMINI_RPM = Number(process.env.GEMINI_RPM) || 30;
+const BATCH_SIZE = 25;
+const PARALLEL_BATCHES = 5;
+const MAX_RETRIES = 3;
 const CACHE_FILE = dataPath("cache", "radar-classifications.json");
 const FALLBACK_REASON = "Automatic sorting unavailable, review manually.";
+const PENDING_REASON = "Still sorting this item. Check back in a few minutes.";
 
 const SYSTEM_PROMPT = `You sort Maryland regulatory changes by whether they apply to one specific small business. You are careful and conservative.
 
@@ -45,7 +49,7 @@ const ResultSchema = z.object({
     }),
   ),
 });
-type ClaudeResult = z.infer<typeof ResultSchema>["results"][number];
+type LlmResult = z.infer<typeof ResultSchema>["results"][number];
 
 interface CachedClassification {
   relevance: RadarResult["relevance"];
@@ -105,99 +109,162 @@ function itemForPrompt(i: RadarItemInternal) {
   };
 }
 
-let client: Anthropic | null = null;
-let warnedNoKey = false;
-function getClient(): Anthropic | null {
-  if (!process.env.ANTHROPIC_API_KEY) return null;
-  client ??= new Anthropic();
-  return client;
+// ---------- Gemini call with rate limiting ----------
+
+class QuotaError extends Error {}
+class AuthError extends Error {}
+
+let nextSlot = 0;
+let pausedUntil = 0; // set when the daily quota runs out
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// Space requests evenly so we stay under GEMINI_RPM.
+async function waitForSlot() {
+  const gap = Math.ceil(60000 / GEMINI_RPM);
+  const now = Date.now();
+  const slot = Math.max(now, nextSlot);
+  nextSlot = slot + gap;
+  if (slot > now) await sleep(slot - now);
 }
 
-async function callClaude(profile: BusinessProfile, batch: RadarItemInternal[]): Promise<ClaudeResult[]> {
-  const anthropic = getClient();
-  if (!anthropic) throw new Error("ANTHROPIC_API_KEY is not set");
+function userMessage(profile: BusinessProfile, batch: RadarItemInternal[]): string {
   const today = new Date().toISOString().slice(0, 10);
-  const response = await anthropic.messages.parse({
-    model: MODEL,
-    max_tokens: 16000,
-    system: SYSTEM_PROMPT,
-    output_config: { effort: "medium", format: zodOutputFormat(ResultSchema) },
-    messages: [
-      {
-        role: "user",
-        content:
-          `Today is ${today}.\n\nBusiness profile:\n${JSON.stringify(profileForPrompt(profile), null, 2)}\n\n` +
-          `Regulatory items:\n${JSON.stringify(batch.map(itemForPrompt), null, 2)}`,
-      },
-    ],
-  });
-  if (response.stop_reason === "refusal") throw new Error("Claude declined to classify this batch");
-  if (!response.parsed_output) throw new Error(`Unparseable Claude response (stop_reason: ${response.stop_reason})`);
-  return response.parsed_output.results;
+  return (
+    `Today is ${today}.\n\nBusiness profile:\n${JSON.stringify(profileForPrompt(profile), null, 2)}\n\n` +
+    `Regulatory items:\n${JSON.stringify(batch.map(itemForPrompt), null, 2)}`
+  );
 }
 
-async function classifyBatch(profile: BusinessProfile, batch: RadarItemInternal[]): Promise<Map<string, ClaudeResult>> {
+// Vertex AI returns 429 when we're over quota; back off and retry a few times.
+async function callGemini(profile: BusinessProfile, batch: RadarItemInternal[]): Promise<LlmResult[]> {
+  for (let attempt = 0; ; attempt++) {
+    if (Date.now() < pausedUntil) throw new QuotaError("Gemini sorting is paused after an earlier failure");
+    await waitForSlot();
+    let text: string;
+    try {
+      // LOW thinking: ~3x faster than the default and matched it on 22 of 25 test items.
+      text = await generateText(userMessage(profile, batch), {
+        system: SYSTEM_PROMPT,
+        jsonSchema: z.toJSONSchema(ResultSchema),
+        thinkingLevel: ThinkingLevel.LOW,
+      });
+    } catch (err) {
+      if (err instanceof GeminiApiError) {
+        if (err.status === 401 || err.status === 403) {
+          pausedUntil = Date.now() + 10 * 60 * 1000;
+          throw new AuthError(`Vertex AI refused the request (HTTP ${err.status}); check credentials and that the API is enabled`);
+        }
+        if (err.status === 429 || err.status >= 500) {
+          if (attempt >= MAX_RETRIES) throw new QuotaError(`Vertex AI is rate limiting us (HTTP ${err.status})`);
+          const delay = 15 * (attempt + 1);
+          console.warn(`[radar] Vertex AI HTTP ${err.status}; retrying in ${delay}s`);
+          nextSlot = Math.max(nextSlot, Date.now() + delay * 1000);
+          continue;
+        }
+        throw new Error(`Vertex AI returned HTTP ${err.status}`);
+      }
+      // Missing or invalid Application Default Credentials surface as plain errors.
+      if (err instanceof Error && /credential|authenticat/i.test(err.message)) {
+        pausedUntil = Date.now() + 10 * 60 * 1000;
+        throw new AuthError("No Google Cloud credentials found (run gcloud auth application-default login)");
+      }
+      throw err;
+    }
+    const parsed = ResultSchema.safeParse(JSON.parse(text));
+    if (!parsed.success) throw new Error("Gemini response did not match the expected shape");
+    return parsed.data.results;
+  }
+}
+
+// One retry for bad output; quota and auth errors are not worth retrying here.
+async function classifyBatch(profile: BusinessProfile, batch: RadarItemInternal[]): Promise<Map<string, LlmResult>> {
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const results = await callClaude(profile, batch);
+      const results = await callGemini(profile, batch);
       const ids = new Set(batch.map((i) => i.id));
       return new Map(results.filter((r) => ids.has(r.id)).map((r) => [r.id, r]));
     } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      console.warn(`[radar] classification attempt ${attempt} failed: ${msg}`);
-      if (msg.includes("ANTHROPIC_API_KEY") || err instanceof Anthropic.AuthenticationError) break;
+      console.warn(`[radar] sorting batch failed: ${err instanceof Error ? err.message : String(err)}`);
+      if (err instanceof QuotaError || err instanceof AuthError) throw err;
     }
   }
   return new Map();
 }
 
-async function runPool<T>(tasks: (() => Promise<T>)[], limit: number): Promise<T[]> {
-  const out: T[] = new Array(tasks.length);
-  let next = 0;
-  await Promise.all(
-    Array.from({ length: Math.min(limit, tasks.length) }, async () => {
-      while (next < tasks.length) {
-        const i = next++;
-        out[i] = await tasks[i]();
-      }
-    }),
-  );
-  return out;
+// ---------- Background sorting per profile ----------
+
+const running = new Map<string, Promise<void>>(); // profile key -> sorting job
+
+// Read-modify-write of the cache file, one at a time so parallel batches
+// (and parallel profiles) never overwrite each other's results.
+let saveChain: Promise<void> = Promise.resolve();
+function saveClassifications(entries: Record<string, CachedClassification>): Promise<void> {
+  const run = saveChain.then(async () => {
+    const cache = await readJson<Record<string, CachedClassification>>(CACHE_FILE, {});
+    await writeJson(CACHE_FILE, Object.assign(cache, entries));
+  });
+  saveChain = run.catch(() => {});
+  return run;
 }
 
-export async function classifyItems(items: RadarItemInternal[], profile: BusinessProfile): Promise<RadarResult[]> {
-  const pKey = profileKey(profile);
-  const cache = await readJson<Record<string, CachedClassification>>(CACHE_FILE, {});
-  const key = (i: RadarItemInternal) => `${i.id}|${itemKey(i)}|${pKey}`;
-
-  const todo = items.filter((i) => !cache[key(i)]);
-  if (todo.length > 0 && !getClient()) {
-    if (!warnedNoKey) console.warn("[radar] ANTHROPIC_API_KEY is not set; unsorted items default to \"might\".");
-    warnedNoKey = true;
-  } else if (todo.length > 0) {
-    const batches: RadarItemInternal[][] = [];
-    for (let i = 0; i < todo.length; i += BATCH_SIZE) batches.push(todo.slice(i, i + BATCH_SIZE));
-    const maps = await runPool(batches.map((b) => () => classifyBatch(profile, b)), CONCURRENCY);
-    // Re-read in case another request wrote classifications meanwhile.
-    const latest = await readJson<Record<string, CachedClassification>>(CACHE_FILE, {});
-    const now = new Date().toISOString();
-    let added = 0;
-    for (const m of maps) {
-      for (const item of todo) {
-        const r = m.get(item.id);
-        if (!r) continue;
-        latest[key(item)] = { relevance: r.relevance, reason: r.reason, actionNeeded: r.actionNeeded, summary: r.summary, classifiedAt: now };
-        added++;
+async function sortInBackground(todo: RadarItemInternal[], profile: BusinessProfile, key: (i: RadarItemInternal) => string) {
+  const batches: RadarItemInternal[][] = [];
+  for (let i = 0; i < todo.length; i += BATCH_SIZE) batches.push(todo.slice(i, i + BATCH_SIZE));
+  let stopped = false;
+  let next = 0;
+  // A few batches in flight at once; waitForSlot() still caps requests per minute.
+  const worker = async () => {
+    while (!stopped && next < batches.length) {
+      const batch = batches[next++];
+      let results: Map<string, LlmResult>;
+      try {
+        results = await classifyBatch(profile, batch);
+      } catch {
+        stopped = true; // quota or credentials problem: stop; unsorted items stay "might"
+        return;
       }
+      if (results.size === 0) continue;
+      // Save after every batch so the page can show progress.
+      const now = new Date().toISOString();
+      const entries: Record<string, CachedClassification> = {};
+      for (const item of batch) {
+        const r = results.get(item.id);
+        if (r) entries[key(item)] = { relevance: r.relevance, reason: r.reason, actionNeeded: r.actionNeeded, summary: r.summary, classifiedAt: now };
+      }
+      await saveClassifications(entries);
     }
-    if (added > 0) await writeJson(CACHE_FILE, latest);
-    Object.assign(cache, latest);
+  };
+  await Promise.all(Array.from({ length: Math.min(PARALLEL_BATCHES, batches.length) }, worker));
+}
+
+export interface ClassifyOutcome {
+  results: RadarResult[];
+  sortingInProgress: boolean;
+}
+
+// waitMs: how long to wait for background sorting before answering with what we have.
+export async function classifyItems(items: RadarItemInternal[], profile: BusinessProfile, waitMs = Infinity): Promise<ClassifyOutcome> {
+  const pKey = profileKey(profile);
+  const key = (i: RadarItemInternal) => `${i.id}|${itemKey(i)}|${pKey}`;
+  let cache = await readJson<Record<string, CachedClassification>>(CACHE_FILE, {});
+  const todo = items.filter((i) => !cache[key(i)]);
+
+  if (todo.length > 0 && Date.now() >= pausedUntil) {
+    let job = running.get(pKey);
+    if (!job) {
+      job = sortInBackground(todo, profile, key).finally(() => running.delete(pKey));
+      running.set(pKey, job);
+    }
+    if (waitMs === Infinity) await job;
+    else await Promise.race([job, sleep(waitMs)]);
+    cache = await readJson<Record<string, CachedClassification>>(CACHE_FILE, {});
   }
 
-  return items.map((item): RadarResult => {
+  const inProgress = running.has(pKey);
+  const results = items.map((item): RadarResult => {
     const c = cache[key(item)];
     if (!c) {
-      return { item: toPublic(item), relevance: "might", reason: FALLBACK_REASON, actionNeeded: null, autoSorted: false };
+      return { item: toPublic(item), relevance: "might", reason: inProgress ? PENDING_REASON : FALLBACK_REASON, actionNeeded: null, autoSorted: false };
     }
     return {
       item: { ...toPublic(item), summary: c.summary || item.summary },
@@ -207,4 +274,5 @@ export async function classifyItems(items: RadarItemInternal[], profile: Busines
       autoSorted: true,
     };
   });
+  return { results, sortingInProgress: inProgress };
 }

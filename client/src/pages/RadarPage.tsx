@@ -66,6 +66,16 @@ export default function RadarPage() {
       .finally(() => setLoading(false));
   }, []);
 
+  // Sorting runs in the background on the server; poll until it's done.
+  const sorting = data?.sortingInProgress ?? false;
+  useEffect(() => {
+    if (!sorting || refreshing) return;
+    const t = setTimeout(() => {
+      apiGet<RadarResponse>("/api/radar").then(setData).catch(() => {});
+    }, 20000);
+    return () => clearTimeout(t);
+  }, [sorting, data, refreshing]);
+
   async function checkNow() {
     setRefreshing(true);
     setError(null);
@@ -95,7 +105,7 @@ export default function RadarPage() {
   }, [data, source, deadlineOnly, from, to]);
 
   const bySection = (r: Relevance) => filtered.filter((x) => x.relevance === r);
-  const anyUnsorted = data?.results.some((r) => !r.autoSorted);
+  const unsortedCount = data?.results.filter((r) => !r.autoSorted).length ?? 0;
   const nothingRelevant = data && data.results.every((r) => r.relevance === "not_applicable");
 
   return (
@@ -137,9 +147,16 @@ export default function RadarPage() {
           )}
         </div>
       )}
-      {data && anyUnsorted && (
+      {data && sorting && (
+        <p className="rounded border border-blue-200 bg-blue-50 p-3 text-sm text-blue-900">
+          Sorting {unsortedCount} item{unsortedCount === 1 ? "" : "s"} for your business… They're listed under "Might affect you" for now. This page updates by
+          itself.
+        </p>
+      )}
+      {data && !sorting && unsortedCount > 0 && (
         <p className="rounded border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700">
-          Automatic sorting isn't available for some items, so they're listed under "Might affect you." Please review them yourself.
+          Automatic sorting isn't available for {unsortedCount} item{unsortedCount === 1 ? "" : "s"} right now, so they're listed under "Might affect you." Please
+          review them yourself, or click "Check now" later.
         </p>
       )}
 

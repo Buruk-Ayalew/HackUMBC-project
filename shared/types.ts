@@ -362,4 +362,5 @@ export interface RadarResponse {
   usingCachedData: boolean;
   savedResultsFrom: string | null; // oldest saved-data date when usingCachedData
   unavailableSources: string[];
+  sortingInProgress: boolean; // background sorting still running; poll again soon
 }
