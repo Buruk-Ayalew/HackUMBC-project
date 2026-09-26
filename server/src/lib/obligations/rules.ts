@@ -3,12 +3,11 @@ import { z } from "zod";
 import type { ObligationRule } from "../../../../shared/types.js";
 import { dataPath, readJson } from "../jsonStore.js";
 
-// Rules are data: every server/data/rules/*.json file (except the tax-rate
-// table) holds an array of ObligationRule records. Invalid rules are skipped
+// Rules are data: every server/data/rules/*.json file holds an array of
+// ObligationRule records. Invalid rules are skipped
 // with a warning so one typo can't take down the whole page.
 
 const RULES_DIR = dataPath("rules");
-const TAX_RATES_FILE = "local-tax-rates.json";
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "must be YYYY-MM-DD");
 
@@ -52,13 +51,14 @@ const ruleSchema = z.object({
     .optional(),
   filingUrl: z.url().optional(),
   filingSiteName: z.string().optional(),
+  verify: z.array(z.string().min(1)).optional(),
   sourceUrl: z.url(),
   sourceName: z.string().min(1),
   reviewedOn: isoDate,
 });
 
 export async function loadRules(): Promise<ObligationRule[]> {
-  const files = (await fs.readdir(RULES_DIR)).filter((f) => f.endsWith(".json") && f !== TAX_RATES_FILE);
+  const files = (await fs.readdir(RULES_DIR)).filter((f) => f.endsWith(".json"));
   const rules: ObligationRule[] = [];
   const seen = new Set<string>();
   for (const file of files.sort()) {
@@ -78,13 +78,4 @@ export async function loadRules(): Promise<ObligationRule[]> {
     }
   }
   return rules;
-}
-
-export interface LocalTaxRates {
-  fiscalYear: string;
-  rates: Record<string, { admissions: number; hotel: number }>;
-}
-
-export function loadLocalTaxRates(): Promise<LocalTaxRates> {
-  return readJson<LocalTaxRates>(dataPath("rules", TAX_RATES_FILE), { fiscalYear: "", rates: {} });
 }

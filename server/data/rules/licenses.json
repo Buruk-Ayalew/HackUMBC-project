@@ -34,6 +34,10 @@
     },
     "filingUrl": "https://www.marylandcomptroller.gov/businesses/new-business/business-licenses.html",
     "filingSiteName": "Your county's Clerk of the Circuit Court",
+    "verify": [
+      "May 1 through April 30",
+      "renewed by May 1"
+    ],
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip64.pdf",
     "sourceName": "Comptroller of Maryland: A Guide to Business Licenses (Tip #64)",
     "reviewedOn": "2026-09-26"
@@ -66,6 +70,10 @@
     },
     "filingUrl": "https://www.marylandcomptroller.gov/businesses/new-business/business-licenses.html",
     "filingSiteName": "Your county's Clerk of the Circuit Court",
+    "verify": [
+      "Restaurants",
+      "renewed by May 1"
+    ],
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip64.pdf",
     "sourceName": "Comptroller of Maryland: A Guide to Business Licenses (Tip #64)",
     "reviewedOn": "2026-09-26"
@@ -98,6 +106,10 @@
     },
     "filingUrl": "https://www.marylandcomptroller.gov/businesses/new-business/business-licenses.html",
     "filingSiteName": "Your county's Clerk of the Circuit Court",
+    "verify": [
+      "Construction",
+      "renewed by May 1"
+    ],
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip64.pdf",
     "sourceName": "Comptroller of Maryland: A Guide to Business Licenses (Tip #64)",
     "reviewedOn": "2026-09-26"
@@ -126,6 +138,9 @@
     "frequencyNote": "By the date on your license",
     "filingUrl": "https://labor.maryland.gov/license/mhic/",
     "filingSiteName": "MD Labor licensing",
+    "verify": [
+      "$175.00 every two years"
+    ],
     "sourceUrl": "https://labor.maryland.gov/license/mhic/",
     "sourceName": "Maryland Home Improvement Commission",
     "reviewedOn": "2026-09-26"
@@ -153,6 +168,9 @@
     "frequencyNote": "By the date on your permit",
     "filingUrl": "https://labor.maryland.gov/license/cos/",
     "filingSiteName": "MD Labor licensing",
+    "verify": [
+      "must be affiliated with a licensed salon"
+    ],
     "sourceUrl": "https://labor.maryland.gov/license/cos/",
     "sourceName": "Maryland Board of Cosmetologists",
     "reviewedOn": "2026-09-26"
@@ -181,6 +199,9 @@
     "frequencyNote": "Renewal date set by your county",
     "filingUrl": "https://health.maryland.gov/phpa/OEHFP/OFPCHS/Pages/FoodLicensePermit.aspx",
     "filingSiteName": "Your local health department",
+    "verify": [
+      "local Health Department"
+    ],
     "sourceUrl": "https://health.maryland.gov/phpa/OEHFP/OFPCHS/Pages/FoodLicensePermit.aspx",
     "sourceName": "Maryland Department of Health: Food licenses and permits",
     "reviewedOn": "2026-09-26"
@@ -206,6 +227,9 @@
     "frequencyNote": "Renewal date set by your liquor board",
     "filingUrl": "https://atcc.maryland.gov/org-directory/maryland-counties-liquor-board-directory/",
     "filingSiteName": "Liquor board directory",
+    "verify": [
+      "liquor"
+    ],
     "sourceUrl": "https://atcc.maryland.gov/org-directory/maryland-counties-liquor-board-directory/",
     "sourceName": "Maryland ATCC: Liquor board directory",
     "reviewedOn": "2026-09-26"

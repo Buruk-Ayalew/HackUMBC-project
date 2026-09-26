@@ -1,18 +1,21 @@
 // Runs the obligations engine against every sample profile and checks the
-// behaviour the project requires. Usage: npm run check:obligations -w server
+// behaviour the project requires. Statuses and dates are checked with no live
+// data at all, so they never depend on the network.
+// Usage: npm run check:obligations -w server [-- --live]
+//   --live  also fetches the official pages and checks live values and rule checks
 import type { BusinessProfile, ObligationResult } from "../../shared/types.js";
 import { getSampleProfiles } from "../src/lib/profile.js";
-import { loadLocalTaxRates, loadRules } from "../src/lib/obligations/rules.js";
-import { coverageNotes, employeeThresholds, evaluate, milestones } from "../src/lib/obligations/engine.js";
+import { loadRules } from "../src/lib/obligations/rules.js";
+import { EMPTY_LIVE, coverageNotes, employeeThresholds, evaluate, milestones, type LiveContext } from "../src/lib/obligations/engine.js";
+import { refreshLiveData } from "../src/lib/obligations/live/index.js";
 import { nextBusinessDay } from "../src/lib/obligations/schedule.js";
 
 const rules = await loadRules();
-const taxRates = await loadLocalTaxRates();
 const samples = await getSampleProfiles();
 let failures = 0;
 
-function run(p: BusinessProfile) {
-  const results = evaluate(p, rules, taxRates, "2026-09-26");
+function run(p: BusinessProfile, live: LiveContext = EMPTY_LIVE) {
+  const results = evaluate(p, rules, live, "2026-09-26");
   return (id: string): ObligationResult => {
     const r = results.find((x) => x.rule.id === id);
     if (!r) throw new Error(`rule ${id} missing`);
@@ -84,7 +87,7 @@ get = run(consultant);
 expect("consultant", get("sdat-annual-report"), "affects");
 for (const id of ["famli-register", "famli-contributions", "sick-leave-unpaid", "state-minimum-wage", "worker-freedom-act", "famli-private-plan", "parental-leave"])
   expect("consultant", get(id), "not_applicable");
-const employerRules = evaluate(consultant, rules, taxRates).filter((r) => r.rule.category === "employment" && r.status !== "not_applicable");
+const employerRules = evaluate(consultant, rules, EMPTY_LIVE).filter((r) => r.rule.category === "employment" && r.status !== "not_applicable");
 if (employerRules.length) { failures++; console.log("FAIL  consultant has employment rules:", employerRules.map((r) => r.rule.id)); }
 
 console.log("\n# 4. Ocean City hotel (40 employees)");
@@ -108,12 +111,47 @@ console.log("      notes:", coverageNotes(contractor));
 console.log("\nthresholds:", employeeThresholds(rules).join(", "));
 
 console.log("\n# Growth milestones for the restaurant (single-slider scale)");
-const steps = milestones(restaurant, rules, taxRates);
+const steps = milestones(restaurant, rules, EMPTY_LIVE);
 for (const m of steps) console.log(`  at ${m.employees}: ${m.changes.map((c) => `${c.ruleId} ${c.from}->${c.to}`).join(", ")}`);
 const at15 = steps.find((m) => m.employees === 15);
 if (!at15?.changes.some((c) => c.ruleId === "famli-employer-share" && c.to === "affects")) {
   failures++;
   console.log("FAIL  milestone at 15 should turn on the FAMLI employer share");
 }
+function check(ok: boolean, label: string) {
+  if (!ok) failures++;
+  console.log(`${ok ? "PASS" : "FAIL"}  ${label}`);
+}
+
+// Leftover placeholders or a "not available" gap in the text.
+const leftovers = (r: ObligationResult) =>
+  [r.rule.title, r.rule.summary, r.rule.action].filter((t) => /\{\{|\}\}|\[\[|\]\]|\(not available\)/.test(t));
+
+console.log("\n# Templates with no live values: no leftover placeholders");
+for (const p of samples) {
+  const bad = evaluate(p, rules, EMPTY_LIVE).flatMap(leftovers);
+  check(bad.length === 0, `${p.businessName}: text reads cleanly${bad.length ? `: ${bad[0]}` : ""}`);
+}
+const noLiveWage = run(salon)("montgomery-min-wage-small");
+check(noLiveWage.coverage === "limited" && !!noLiveWage.coverageNote, "a missing live wage is labeled coverage limited");
+
+if (process.argv.includes("--live")) {
+  console.log("\n# Live values and source checks (fetching official pages)");
+  const live = await refreshLiveData(rules);
+  for (const s of Object.values(live.sources)) console.log(`      ${s.status.padEnd(11)} ${s.name}${s.error ? ` (${s.error})` : ""}`);
+  const at15 = withEmployees(restaurant, { totalAllStates: 15, inMaryland: 15, fullTimeInMaryland: 15 });
+  const wage = run(salon, live)("montgomery-min-wage-small");
+  const hotelTax = run(hotel, live)("hotel-rental-tax");
+  console.log(`      salon: ${wage.rule.title}\n      hotel: ${hotelTax.rule.summary}`);
+  console.log(`      restaurant@15: ${run(at15, live)("famli-employer-share").rule.action}`);
+  if (live.values.wages) check(/\$\d/.test(wage.rule.title) && wage.coverage === "reviewed", "salon title shows the Montgomery small-employer wage");
+  if (live.values.taxRates) check(/\d%/.test(hotelTax.rule.summary), "hotel summary shows the Worcester hotel tax rate");
+  const v = Object.entries(live.verification);
+  const by = (st: string) => v.filter(([, x]) => x.status === st);
+  console.log(`      rule checks: ${by("verified").length} verified, ${by("changed").length} changed, ${by("saved").length} saved, ${by("unavailable").length} unavailable (of ${v.length})`);
+  for (const [id, x] of by("changed")) console.log(`      CHANGED ${id}: missing ${JSON.stringify(x.missing)}`);
+  for (const [id, x] of [...by("unavailable"), ...by("saved")]) console.log(`      ${x.status.toUpperCase()} ${id}: ${x.error}`);
+}
+
 console.log(failures ? `\n${failures} check(s) FAILED` : "\nAll checks passed");
 process.exit(failures ? 1 : 0);

@@ -103,6 +103,8 @@ export interface ObligationRule {
   recurring?: RecurringSchedule;
   filingUrl?: string; // where the filing or payment is actually done
   filingSiteName?: string;
+  // Key facts that must appear on the source page; re-checked live.
+  verify?: string[];
   sourceUrl: string;
   sourceName: string;
   reviewedOn: string; // ISO date
@@ -139,6 +141,31 @@ export interface ObligationResult {
   coverageNote?: string;
   // Due dates in the next 12 months (one-time deadlines + recurring), sorted.
   upcoming: DueDate[];
+  // Result of the live check of this rule against its official source page.
+  verification?: RuleVerification;
+  // Live sources (LiveSourceStatus ids) whose values appear in this item's text.
+  valueSources?: string[];
+}
+
+export interface RuleVerification {
+  // verified: every key fact was found on the official page just now
+  // changed:  the page no longer says one of them (needs human review)
+  // saved:    the page is unreachable; showing the last successful check
+  // unavailable: never reached
+  status: "verified" | "changed" | "saved" | "unavailable";
+  checkedAt: string;
+  missing?: string[];
+  error?: string;
+}
+
+// A live data source used by the obligations module.
+export interface LiveSourceStatus {
+  id: string;
+  name: string;
+  url: string;
+  status: "live" | "saved" | "unavailable";
+  fetchedAt: string | null;
+  error?: string;
 }
 
 export interface DueDate {
@@ -161,6 +188,9 @@ export interface ObligationsResponse {
   // Employee counts where some rule changes, from rules' numeric conditions.
   thresholds: number[];
   evaluatedAt: string;
+  sources: LiveSourceStatus[];
+  liveRefreshedAt: string | null;
+  refreshing: boolean;
 }
 
 // ---------- Local Risk ----------

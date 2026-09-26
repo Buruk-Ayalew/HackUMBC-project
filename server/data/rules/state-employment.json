@@ -17,6 +17,11 @@
     "action": "Track leave for each employee, put your leave policy in writing, and display the state's sick and safe leave poster. A paid time off policy that gives at least as much leave also counts.",
     "agency": "Maryland Department of Labor",
     "frequency": "ongoing",
+    "verify": [
+      "one hour for every 30 hours",
+      "40 hours",
+      "average monthly number of employees"
+    ],
     "sourceUrl": "https://labor.maryland.gov/paidleave/paidleavefaqs.shtml",
     "sourceName": "Maryland Department of Labor: Sick and Safe Leave FAQs",
     "reviewedOn": "2026-09-26"
@@ -42,6 +47,10 @@
     "action": "Track leave for each employee and follow the same tracking and notice rules as larger employers. You may choose to make the leave paid.",
     "agency": "Maryland Department of Labor",
     "frequency": "ongoing",
+    "verify": [
+      "one hour for every 30 hours",
+      "unpaid sick and safe leave"
+    ],
     "sourceUrl": "https://labor.maryland.gov/paidleave/paidleavefaqs.shtml",
     "sourceName": "Maryland Department of Labor: Sick and Safe Leave FAQs",
     "reviewedOn": "2026-09-26"
@@ -72,6 +81,9 @@
     "action": "Add parental leave to your written policies. If you're not sure whether the federal FMLA covers you, check with the U.S. Department of Labor.",
     "agency": "Maryland Department of Labor",
     "frequency": "ongoing",
+    "verify": [
+      "six (6) workweeks of unpaid parental leave"
+    ],
     "sourceUrl": "https://labor.maryland.gov/labor/wages/essguide.shtml#parental",
     "sourceName": "Maryland Department of Labor: Leave laws (Parental Leave); SB 785 (2025), Chapter 296",
     "reviewedOn": "2026-09-26"
@@ -95,6 +107,10 @@
     "agency": "Maryland Department of Labor",
     "frequency": "ongoing",
     "frequencyNote": "Every time you hire",
+    "verify": [
+      "15 or more full time employees",
+      "first in-person interview"
+    ],
     "sourceUrl": "https://labor.maryland.gov/labor/wages/esscrimscreenfaqs.pdf",
     "sourceName": "Maryland Department of Labor: Criminal Record Screening (Ban the Box) FAQs",
     "reviewedOn": "2026-09-26"
@@ -124,13 +140,17 @@
     "agency": "Maryland Department of Labor",
     "frequency": "ongoing",
     "frequencyNote": "Plus a notice to each new hire",
+    "verify": [
+      "Chapter 221",
+      "October 1, 2026"
+    ],
     "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0417?ys=2026RS",
     "sourceName": "Maryland General Assembly: SB 417 (2026), Chapter 221",
     "reviewedOn": "2026-09-26"
   },
   {
     "id": "state-minimum-wage",
-    "title": "Pay at least $15.00 an hour",
+    "title": "Pay at least the Maryland minimum wage[[ ({{wage.state}} an hour)]]",
     "category": "employment",
     "jurisdiction": {
       "level": "state"
@@ -151,17 +171,20 @@
         ]
       }
     ],
-    "summary": "Most employees in Maryland must be paid at least $15.00 per hour. Employees under 18 must get at least 85% of that. Some jobs are exempt. Overtime is 1.5 times the regular rate after 40 hours a week.",
-    "action": "Check that every employee earns at least $15.00 per hour and display the state minimum wage poster.",
+    "summary": "Most employees in Maryland must be paid at least the state minimum wage[[, currently {{wage.state}} per hour]]. Employees under 18 must get at least 85% of it. Some jobs are exempt. Overtime is 1.5 times the regular rate after 40 hours a week.",
+    "action": "Check that every employee earns at least the state minimum wage[[ of {{wage.state}}]] and display the state minimum wage poster.",
     "agency": "Maryland Department of Labor",
     "frequency": "ongoing",
+    "verify": [
+      "State Minimum Wage Rate of"
+    ],
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
     "reviewedOn": "2026-09-26"
   },
   {
     "id": "state-tipped-wage",
-    "title": "Tipped staff: pay at least $3.63 an hour, plus tips up to minimum wage",
+    "title": "Tipped staff: follow the tipped wage rules[[ ({{wage.stateTipped}} an hour plus tips)]]",
     "category": "employment",
     "jurisdiction": {
       "level": "state"
@@ -197,10 +220,14 @@
         ]
       }
     ],
-    "summary": "For tipped employees (more than $30 a month in tips), you must pay at least $3.63 per hour, and that plus tips must reach the full minimum wage. You cover any gap. Restaurants using tips toward minimum wage must give a Tip Credit Wage Statement each pay period.",
+    "summary": "For tipped employees (more than $30 a month in tips), you must pay at least the tipped cash wage[[ of {{wage.stateTipped}} per hour]], and that plus tips must reach the full minimum wage. You cover any gap. Restaurants using tips toward minimum wage must give a Tip Credit Wage Statement each pay period.",
     "action": "Check each pay period that cash wage plus tips reaches the minimum wage, and give tipped staff their wage statement. In counties with their own minimum wage, check the county's tipped-wage rules.",
     "agency": "Maryland Department of Labor",
     "frequency": "every_payroll",
+    "verify": [
+      "earning more than $30 per month in tips",
+      "Tip Credit Wage Statement"
+    ],
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
     "reviewedOn": "2026-09-26"

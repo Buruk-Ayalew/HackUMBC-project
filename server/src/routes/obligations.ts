@@ -1,23 +1,33 @@
 import { Router } from "express";
 import { z } from "zod";
-import type { BusinessProfile, ObligationsResponse } from "../../../shared/types.js";
+import type { BusinessProfile, ObligationRule, ObligationsResponse } from "../../../shared/types.js";
 import { requireAuth } from "../middleware/auth.js";
 import { getProfileForUser } from "../lib/profile.js";
-import { loadLocalTaxRates, loadRules } from "../lib/obligations/rules.js";
+import { loadRules } from "../lib/obligations/rules.js";
 import { coverageNotes, employeeThresholds, evaluate, milestones } from "../lib/obligations/engine.js";
+import { getLiveData, isRefreshing, refreshLiveData } from "../lib/obligations/live/index.js";
 import { buildIcs, collectEvents } from "../lib/obligations/calendar.js";
 
 const router = Router();
 router.use(requireAuth);
 
-async function evaluateFor(profile: BusinessProfile): Promise<ObligationsResponse> {
-  const [rules, taxRates] = await Promise.all([loadRules(), loadLocalTaxRates()]);
+type Snapshot = Awaited<ReturnType<typeof getLiveData>>;
+
+function respond(profile: BusinessProfile, rules: ObligationRule[], live: Snapshot): ObligationsResponse {
   return {
-    results: evaluate(profile, rules, taxRates),
+    results: evaluate(profile, rules, live),
     coverageNotes: coverageNotes(profile),
     thresholds: employeeThresholds(rules),
     evaluatedAt: new Date().toISOString(),
+    sources: Object.values(live.sources),
+    liveRefreshedAt: live.refreshedAt,
+    refreshing: isRefreshing(),
   };
+}
+
+async function evaluateFor(profile: BusinessProfile): Promise<ObligationsResponse> {
+  const rules = await loadRules();
+  return respond(profile, rules, await getLiveData(rules));
 }
 
 router.get("/", async (req, res) => {
@@ -29,15 +39,26 @@ router.get("/", async (req, res) => {
   res.json(await evaluateFor(profile));
 });
 
-// What changes at each headcount on the growth planner's single-slider scale.
+// "Check now": re-read every live value and re-check every rule's source.
+router.post("/refresh", async (req, res) => {
+  const profile = await getProfileForUser(req.session.userId!);
+  if (!profile) {
+    res.status(404).json({ error: "Set up your business profile first." });
+    return;
+  }
+  const rules = await loadRules();
+  res.json(respond(profile, rules, await refreshLiveData(rules)));
+});
+
+// What changes at each headcount on the Growth Planner's single-slider scale.
 router.get("/milestones", async (req, res) => {
   const profile = await getProfileForUser(req.session.userId!);
   if (!profile) {
     res.status(404).json({ error: "Set up your business profile first." });
     return;
   }
-  const [rules, taxRates] = await Promise.all([loadRules(), loadLocalTaxRates()]);
-  res.json(milestones(profile, rules, taxRates));
+  const rules = await loadRules();
+  res.json(milestones(profile, rules, await getLiveData(rules)));
 });
 
 const whatIfBody = z

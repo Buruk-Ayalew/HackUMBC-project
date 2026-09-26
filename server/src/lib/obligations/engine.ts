@@ -4,8 +4,9 @@ import type {
   Milestone,
   ObligationResult,
   ObligationRule,
+  RuleVerification,
 } from "../../../../shared/types.js";
-import type { LocalTaxRates } from "./rules.js";
+import type { LiveValues } from "./live/index.js";
 import { upcomingDates } from "./schedule.js";
 
 // Evaluates data-driven obligation rules against a business profile.
@@ -17,6 +18,14 @@ interface Checked {
   outcome: Outcome;
   reason: string;
 }
+
+// Live values read from official pages, plus each rule's latest source check.
+export interface LiveContext {
+  values: LiveValues;
+  verification: Record<string, RuleVerification>;
+}
+
+export const EMPTY_LIVE: LiveContext = { values: {}, verification: {} };
 
 // Counties where we've reviewed local rules in depth (launch area).
 const DEEP_COVERAGE = new Set(["Baltimore City", "Baltimore County"]);
@@ -166,18 +175,57 @@ function combine(checks: Checked[]): Outcome {
   return "pass";
 }
 
-function formatRate(n: number | undefined): string {
-  return n === undefined ? "not available (no data)" : `${n.toFixed(1)}%`;
+// Template variables from the profile and the live values. A value that
+// couldn't be read live is simply absent: never a guess.
+function templateVars(profile: BusinessProfile, values: LiveValues): Record<string, string> {
+  const county = profile.jurisdiction.county;
+  const vars: Record<string, string> = { county, municipality: profile.jurisdiction.municipality ?? "" };
+  const rate = values.taxRates?.rates[county];
+  if (values.taxRates) vars.taxYear = values.taxRates.fiscalYear;
+  if (rate) {
+    vars.admissionsRate = `${rate.admissions}%`;
+    vars.hotelRate = `${rate.hotel}%`;
+  }
+  for (const [k, v] of Object.entries(values.wages ?? {})) if (typeof v === "string") vars[`wage.${k}`] = v;
+  for (const [k, v] of Object.entries(values.famli ?? {})) if (typeof v === "string") vars[`famli.${k}`] = v;
+  return vars;
 }
 
-function fillTemplate(text: string, vars: Record<string, string>): string {
-  return text.replace(/\{\{(\w+)\}\}/g, (m, key: string) => vars[key] ?? m);
+// Which live source a template variable comes from.
+function sourceOf(key: string): string | null {
+  if (key.startsWith("wage.")) return "wages";
+  if (key.startsWith("famli.")) return "famli";
+  if (key === "admissionsRate" || key === "hotelRate" || key === "taxYear") return "taxRates";
+  return null;
+}
+
+const VAR = /\{\{([\w.]+)\}\}/g;
+
+// "[[ ... {{key}} ... ]]" is an optional part: dropped if any value in it is
+// missing, so the sentence still reads well without the number.
+function fillTemplate(text: string, vars: Record<string, string>): { text: string; missing: boolean } {
+  let missing = false;
+  const out = text
+    .replace(/\[\[(.*?)\]\]/g, (_, part: string) => {
+      const keys = [...part.matchAll(VAR)].map((m) => m[1]!);
+      if (keys.some((k) => vars[k] === undefined)) {
+        missing = true;
+        return "";
+      }
+      return part.replace(VAR, (_m, k: string) => vars[k]!);
+    })
+    .replace(VAR, (_m, k: string) => {
+      if (vars[k] !== undefined) return vars[k];
+      missing = true;
+      return "(not available)";
+    });
+  return { text: out, missing };
 }
 
 export function evaluateRule(
   rule: ObligationRule,
   profile: BusinessProfile,
-  taxRates: LocalTaxRates,
+  live: LiveContext,
   today = new Date().toISOString().slice(0, 10),
 ): ObligationResult {
   const checks = rule.conditions.map((c) => checkCondition(c, rule, profile));
@@ -199,35 +247,34 @@ export function evaluateRule(
     if (status === "might") reasons.push("Businesses like yours may be covered. Check the official source to be sure.");
   }
 
-  // Fill local data into the text.
+  // Fill local data and live values into the text.
   const county = profile.jurisdiction.county;
-  const rate = taxRates.rates[county];
-  const vars: Record<string, string> = {
-    county,
-    municipality: profile.jurisdiction.municipality ?? "",
-    admissionsRate: formatRate(rate?.admissions),
-    hotelRate: formatRate(rate?.hotel),
-  };
-  const filled: ObligationRule = {
-    ...rule,
-    summary: fillTemplate(rule.summary, vars),
-    action: fillTemplate(rule.action, vars),
-  };
+  const vars = templateVars(profile, live.values);
+  const title = fillTemplate(rule.title, vars);
+  const summary = fillTemplate(rule.summary, vars);
+  const action = fillTemplate(rule.action, vars);
+  const filled: ObligationRule = { ...rule, title: title.text, summary: summary.text, action: action.text };
+  const allText = rule.title + rule.summary + rule.action;
+  const valueSources = [...new Set([...allText.matchAll(VAR)].map((m) => sourceOf(m[1]!)).filter((x): x is string => !!x))];
 
-  // Coverage: we reviewed every rule in the library against its source. Local
-  // rates can still be missing, and towns can add their own rates on top.
+  // Coverage: we reviewed every rule in the library against its source. Live
+  // values can still be missing, and towns can add their own rates on top.
   let coverage: ObligationResult["coverage"] = "reviewed";
   let coverageNote: string | undefined;
   const usesLocalRate = /\{\{(admissionsRate|hotelRate)\}\}/.test(rule.summary);
-  if (usesLocalRate && !rate) {
+  if (usesLocalRate && live.values.taxRates && !live.values.taxRates.rates[county]) {
     coverage = "limited";
     coverageNote = `No data available for ${county}'s rate. Check with the county.`;
+  } else if (title.missing || summary.missing || action.missing) {
+    coverage = "limited";
+    coverageNote = "We couldn't read the current amount from the official page. Check the official source for the exact figure.";
   } else if (usesLocalRate && profile.jurisdiction.municipality) {
     coverage = "limited";
     coverageNote = `Your town may charge its own rate. Check with ${profile.jurisdiction.municipality}.`;
   } else if (rule.jurisdiction.level === "municipality") {
     coverage = "limited";
   }
+  const verification = live.verification[rule.id];
 
   return {
     rule: filled,
@@ -236,6 +283,8 @@ export function evaluateRule(
     coverage,
     ...(coverageNote ? { coverageNote } : {}),
     upcoming: upcomingDates(filled, today),
+    ...(verification ? { verification } : {}),
+    ...(valueSources.length ? { valueSources } : {}),
   };
 }
 
@@ -244,10 +293,10 @@ const STATUS_ORDER = { affects: 0, might: 1, not_applicable: 2 } as const;
 export function evaluate(
   profile: BusinessProfile,
   rules: ObligationRule[],
-  taxRates: LocalTaxRates,
+  live: LiveContext,
   today = new Date().toISOString().slice(0, 10),
 ): ObligationResult[] {
-  const results = rules.map((r) => evaluateRule(r, profile, taxRates, today));
+  const results = rules.map((r) => evaluateRule(r, profile, live, today));
   return results.sort((a, b) => {
     const s = STATUS_ORDER[a.status] - STATUS_ORDER[b.status];
     if (s !== 0) return s;
@@ -288,7 +337,7 @@ export function employeeThresholds(rules: ObligationRule[]): number[] {
   return [...points].filter((n) => n > 0).sort((a, b) => a - b);
 }
 
-// Single-slider scaling used by the growth planner: Maryland headcount = n,
+// Single-slider scaling used by the Growth Planner: Maryland headcount = n,
 // full-time scaled by today's full-time ratio, total never below today's.
 export function scaledCounts(profile: BusinessProfile, n: number) {
   const e = profile.employees;
@@ -305,12 +354,12 @@ export function scaledCounts(profile: BusinessProfile, n: number) {
 export function milestones(
   profile: BusinessProfile,
   rules: ObligationRule[],
-  taxRates: LocalTaxRates,
+  live: LiveContext,
   max = 100,
 ): Milestone[] {
   const statusAt = (n: number) => {
     const p = { ...profile, employees: { ...profile.employees, ...scaledCounts(profile, n) } };
-    return new Map(rules.map((r) => [r.id, evaluateRule(r, p, taxRates)]));
+    return new Map(rules.map((r) => [r.id, evaluateRule(r, p, live)]));
   };
   // Full-time scaling can move thresholds, so check every headcount.
   const out: Milestone[] = [];

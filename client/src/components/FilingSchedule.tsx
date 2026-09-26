@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { ObligationResult } from "../../../shared/types";
 import { daysLabel, daysUntil, formatDate } from "./dates";
 import { IconChevron, IconExternal } from "./icons";
+import { VerificationBadge, VerificationNote } from "./LiveStatus";
 import { FREQUENCY_LABELS } from "./schedule";
 
 export function WhereLink({ r, className = "" }: { r: ObligationResult; className?: string }) {
@@ -52,6 +53,7 @@ export function Details({ r }: { r: ObligationResult }) {
         Why we think this applies: {r.reasons.join(" ")}
         {r.coverageNote && <span className="text-amber-800"> {r.coverageNote}</span>}
       </p>
+      <VerificationNote r={r} />
       <a href={r.rule.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:underline">
         Official source: {r.rule.sourceName} (checked {formatDate(r.rule.reviewedOn)}) <IconExternal />
       </a>
@@ -87,6 +89,11 @@ export default function FilingSchedule({ results }: { results: ObligationResult[
                   <span>
                     <span className="block font-semibold text-slate-900">{r.rule.title}</span>
                     <span className="block text-xs text-slate-500">{r.rule.agency}</span>
+                    {r.verification && (
+                      <span className="mt-1.5 block">
+                        <VerificationBadge v={r.verification} />
+                      </span>
+                    )}
                   </span>
                 </span>
                 <span className="pl-6 text-sm text-slate-700 md:pl-0">

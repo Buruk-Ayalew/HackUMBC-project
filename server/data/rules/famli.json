@@ -25,6 +25,10 @@
     "frequency": "once",
     "filingUrl": "https://paidleave.maryland.gov/register/",
     "filingSiteName": "paidleave.maryland.gov",
+    "verify": [
+      "Only an Authorized Officer can register an employer",
+      "TPAs cannot complete registration on behalf of their clients"
+    ],
     "sourceUrl": "https://paidleave.maryland.gov/employers/understand-employer-registration/",
     "sourceName": "Maryland FAMLI: Understand employer registration",
     "reviewedOn": "2026-09-26"
@@ -43,7 +47,7 @@
         "value": 1
       }
     ],
-    "summary": "From January 1, 2027, the FAMLI rate is 0.9% of each Maryland employee's wages (up to the Social Security wage cap). You may withhold up to half (0.45%) from each paycheck. Deductions must happen in the regular pay cycle.",
+    "summary": "From January 1, 2027, FAMLI contributions are a share of each Maryland employee's wages[[ ({{famli.rate}}, up to the Social Security wage cap)]]. You may withhold up to half[[ ({{famli.half}})]] from each paycheck. Deductions must happen in the regular pay cycle.",
     "action": "Set up payroll to withhold the employee share starting with January 2027 pay.",
     "deadlines": [
       {
@@ -55,6 +59,10 @@
     "frequency": "every_payroll",
     "filingUrl": "https://paidleave.maryland.gov/employers/make-contributions/",
     "filingSiteName": "paidleave.maryland.gov",
+    "verify": [
+      "initial contribution rate",
+      "January 1, 2027"
+    ],
     "sourceUrl": "https://paidleave.maryland.gov/employers/make-contributions/",
     "sourceName": "Maryland FAMLI: Make contributions",
     "reviewedOn": "2026-09-26"
@@ -85,6 +93,12 @@
     },
     "filingUrl": "https://paidleave.maryland.gov/employers/submit-quarterly-reports/",
     "filingSiteName": "paidleave.maryland.gov",
+    "verify": [
+      "Reports due: April 30",
+      "Reports due: July 31",
+      "Reports due: October 31",
+      "Reports due: January 31"
+    ],
     "sourceUrl": "https://paidleave.maryland.gov/employers/submit-quarterly-reports/",
     "sourceName": "Maryland FAMLI: Submit quarterly reports",
     "reviewedOn": "2026-09-26"
@@ -103,8 +117,8 @@
         "value": 15
       }
     ],
-    "summary": "Employers with 15 or more employees must pay the full 0.9% FAMLI rate: the 0.45% employee share plus a 0.45% employer share. Size counts every employee under your federal tax ID (EIN), in all states. Employers with fewer than 15 only send the employee half.",
-    "action": "Budget for the employer share of 0.45% of Maryland wages. During 2027, FAMLI decides your size each quarter from your wage reports, so a quarter with fewer than 15 employees gets the lower rate.",
+    "summary": "Employers with 15 or more employees must pay the full FAMLI rate[[ of {{famli.rate}}]]: the employee half plus an equal employer half[[ ({{famli.half}} each)]]. Size counts every employee under your federal tax ID (EIN), in all states. Employers with fewer than 15 only send the employee half.",
+    "action": "Budget for the employer share[[ of {{famli.half}} of Maryland wages]]. During 2027, FAMLI decides your size each quarter from your wage reports, so a quarter with fewer than 15 employees gets the lower rate.",
     "agency": "Maryland FAMLI (Department of Labor)",
     "frequency": "quarterly",
     "frequencyNote": "Paid with your quarterly FAMLI contributions",
@@ -116,6 +130,10 @@
     },
     "filingUrl": "https://paidleave.maryland.gov/employers/make-contributions/",
     "filingSiteName": "paidleave.maryland.gov",
+    "verify": [
+      "fewer than 15 total employees",
+      "only responsible for remitting 50% of the contribution rate"
+    ],
     "sourceUrl": "https://paidleave.maryland.gov/employers/make-contributions/",
     "sourceName": "Maryland FAMLI: Make contributions",
     "reviewedOn": "2026-09-26"
@@ -145,6 +163,10 @@
     "agency": "Maryland FAMLI (Department of Labor)",
     "frequency": "yearly",
     "frequencyNote": "Plus at hire and when leave is requested",
+    "verify": [
+      "Starting July 2027",
+      "Once per year"
+    ],
     "sourceUrl": "https://paidleave.maryland.gov/employers/",
     "sourceName": "Maryland FAMLI: For employers",
     "reviewedOn": "2026-09-26"
@@ -176,6 +198,9 @@
     "frequency": "once",
     "filingUrl": "https://paidleave.maryland.gov/employers/understand-your-plan/",
     "filingSiteName": "paidleave.maryland.gov",
+    "verify": [
+      "September 1-November 15, 2026"
+    ],
     "sourceUrl": "https://paidleave.maryland.gov/employers/understand-your-plan/",
     "sourceName": "Maryland FAMLI: Understand your plan",
     "reviewedOn": "2026-09-26"

@@ -4,6 +4,7 @@ import type { ObligationResult } from "../../../shared/types";
 import FilingSchedule, { Details, WhereLink } from "../components/FilingSchedule";
 import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates";
 import { IconAlert, IconCalendar, IconCheck, IconChevron, IconClipboard, IconDownload, IconMapPin } from "../components/icons";
+import { LiveStatusBar, VerificationBadge } from "../components/LiveStatus";
 import { jurisdictionLabel } from "../components/profileOptions";
 import { allUpcoming } from "../components/schedule";
 import { Card, LoadingPage, Notice, PageHeader, buttonStyles } from "../components/ui";
@@ -40,6 +41,11 @@ function ExpandableCard({ r, tone }: { r: ObligationResult; tone: "green" | "amb
       <button onClick={() => setOpen(!open)} aria-expanded={open} className="flex w-full items-start gap-2 p-4 pl-5 text-left">
         <span className="flex-1">
           <span className="block font-semibold text-slate-900">{r.rule.title}</span>
+          {r.verification && (
+            <span className="mt-1.5 block">
+              <VerificationBadge v={r.verification} />
+            </span>
+          )}
           <span className="mt-1 block text-sm text-slate-600">{tone === "amber" ? r.rule.summary.split(". ")[0] + "." : r.rule.action}</span>
         </span>
         <IconChevron className={`mt-1 shrink-0 text-slate-400 transition ${open ? "rotate-90" : ""}`} />
@@ -54,7 +60,7 @@ function ExpandableCard({ r, tone }: { r: ObligationResult; tone: "green" | "amb
 }
 
 export default function ObligationsPage() {
-  const { data, profile, error } = useObligations();
+  const { data, profile, error, checking, checkNow } = useObligations();
   const [showNA, setShowNA] = useState(false);
 
   if (error) return <Notice tone="red">{error}</Notice>;
@@ -94,6 +100,8 @@ export default function ObligationsPage() {
           </a>
         }
       />
+
+      <LiveStatusBar data={data} checking={checking} onCheck={checkNow} />
 
       <Card className="flex flex-wrap items-center gap-x-8 gap-y-3 px-6 py-5">
         <p className="text-lg text-slate-700">

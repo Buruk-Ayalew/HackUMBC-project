@@ -24,6 +24,10 @@
     },
     "filingUrl": "https://labor.maryland.gov/unemployment-insurance/technical-support/employers.shtml",
     "filingSiteName": "BEACON (MD unemployment insurance)",
+    "verify": [
+      "within 1 month of the end of each calendar quarter",
+      "$35 for each late report"
+    ],
     "sourceUrl": "https://labor.maryland.gov/unemployment-insurance/employer-agent/tax-rate.shtml",
     "sourceName": "Maryland Department of Labor: Tax rates and quarterly reporting",
     "reviewedOn": "2026-09-26"
@@ -54,6 +58,9 @@
     },
     "filingUrl": "https://interactive.marylandtaxes.gov/mdtaxconnect/",
     "filingSiteName": "Maryland Tax Connect",
+    "verify": [
+      "$700"
+    ],
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/withholding/2025/Withholding-Guide.pdf",
     "sourceName": "Comptroller of Maryland: Employer Withholding Guide",
     "reviewedOn": "2026-09-26"
@@ -84,6 +91,9 @@
     },
     "filingUrl": "https://interactive.marylandtaxes.gov/mdtaxconnect/",
     "filingSiteName": "Maryland Tax Connect",
+    "verify": [
+      "January 31"
+    ],
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/withholding/2025/Withholding-Guide.pdf",
     "sourceName": "Comptroller of Maryland: Employer Withholding Guide",
     "reviewedOn": "2026-09-26"
@@ -107,6 +117,9 @@
     "agency": "Maryland Workers' Compensation Commission",
     "frequency": "ongoing",
     "frequencyNote": "Renew with your insurer",
+    "verify": [
+      "Employers in the State of Maryland are required to obtain"
+    ],
     "sourceUrl": "https://www.wcc.state.md.us/Gen_Info/FAQ%20Employers.html",
     "sourceName": "Maryland Workers' Compensation Commission: Employer FAQs",
     "reviewedOn": "2026-09-26"
@@ -133,6 +146,10 @@
     "frequencyNote": "Fee waiver claimed each year",
     "filingUrl": "https://www.marylandsaves.org/employers/",
     "filingSiteName": "marylandsaves.org",
+    "verify": [
+      "required to either offer a retirement plan or sign their employees up for the MarylandSaves program",
+      "$300 per year"
+    ],
     "sourceUrl": "https://www.marylandsaves.org/marylandsaves-and-the-law/",
     "sourceName": "MarylandSaves: MarylandSaves and the law",
     "reviewedOn": "2026-09-26"

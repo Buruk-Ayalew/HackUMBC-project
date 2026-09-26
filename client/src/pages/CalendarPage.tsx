@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { daysLabel, daysUntil, formatDate, parseDay, todayIso } from "../components/dates";
 import { IconCalendar, IconDownload, IconExternal } from "../components/icons";
+import { LiveStatusBar, VerificationBadge } from "../components/LiveStatus";
 import { allUpcoming, type UpcomingItem } from "../components/schedule";
 import { Badge, Card, LoadingPage, Notice, PageHeader, buttonStyles } from "../components/ui";
 import { useObligations } from "../components/useObligations";
@@ -26,7 +27,7 @@ const CHIP = {
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export default function CalendarPage() {
-  const { data, error } = useObligations();
+  const { data, error, checking, checkNow } = useObligations();
   const events = useMemo(() => (data ? allUpcoming(data.results) : []), [data]);
   const [month, setMonth] = useState(() => {
     const t = parseDay(todayIso());
@@ -61,6 +62,8 @@ export default function CalendarPage() {
           </a>
         }
       />
+
+      <LiveStatusBar data={data} checking={checking} onCheck={checkNow} />
 
       <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
         <Card className="p-4 sm:p-5">
@@ -156,6 +159,7 @@ export default function CalendarPage() {
                     <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
                       <span>{e.result.rule.agency}</span>
                       {e.result.status === "might" && <Badge tone="amber">Might apply</Badge>}
+                      <VerificationBadge v={e.result.verification} />
                     </div>
                     <div className="mt-3 flex flex-wrap gap-4 text-sm">
                       <a href={googleLink(e)} target="_blank" rel="noreferrer" className="font-semibold text-brand-700 hover:underline">

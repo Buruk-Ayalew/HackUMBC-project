@@ -24,6 +24,9 @@
     },
     "filingUrl": "https://www.eftps.gov/",
     "filingSiteName": "IRS e-file / EFTPS",
+    "verify": [
+      "last day of the month that follows the end of the quarter"
+    ],
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-due-dates",
     "sourceName": "IRS: Employment tax due dates",
     "reviewedOn": "2026-09-26"
@@ -54,6 +57,10 @@
     },
     "filingUrl": "https://www.eftps.gov/",
     "filingSiteName": "IRS e-file / EFTPS",
+    "verify": [
+      "Form 940",
+      "10 additional calendar days"
+    ],
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-due-dates",
     "sourceName": "IRS: Employment tax due dates",
     "reviewedOn": "2026-09-26"
@@ -84,6 +91,9 @@
     },
     "filingUrl": "https://www.ssa.gov/employer/",
     "filingSiteName": "SSA Business Services Online",
+    "verify": [
+      "Forms W-2 are required to be provided to employees by Jan. 31"
+    ],
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-due-dates",
     "sourceName": "IRS: Employment tax due dates",
     "reviewedOn": "2026-09-26"
@@ -109,6 +119,9 @@
     },
     "filingUrl": "https://www.irs.gov/filing/e-file-information-returns-with-iris",
     "filingSiteName": "IRS IRIS",
+    "verify": [
+      "file Form 1099-NEC on or before January 31"
+    ],
     "sourceUrl": "https://www.irs.gov/instructions/i1099mec",
     "sourceName": "IRS: Instructions for Forms 1099-MISC and 1099-NEC",
     "reviewedOn": "2026-09-26"
@@ -126,6 +139,9 @@
     "action": "Nothing to file if your company was formed in the U.S.",
     "agency": "FinCEN",
     "frequency": "once",
+    "verify": [
+      "U.S. companies are exempt from BOI reporting requirements"
+    ],
     "sourceUrl": "https://www.fincen.gov/boi",
     "sourceName": "FinCEN: Beneficial Ownership Information Reporting",
     "reviewedOn": "2026-09-26"
