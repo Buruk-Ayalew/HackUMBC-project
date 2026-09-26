@@ -42,9 +42,20 @@ const cityPrefix = (p: CityPermit) => clean(p.CaseNumber).match(/^[A-Z]+/)?.[0] 
 // Some older records include city, state, and ZIP in the address.
 const stripCityZip = (a: string) => a.replace(/,?\s+Baltimore(,?\s+(Maryland|MD))?(\s+[\d-]+)?$/i, "");
 
+// City permits have free-text scopes, so keywords can appear in phrases that mean
+// the opposite ("no grading, excavation, or structural work", "no new construction")
+// or refer to later work under another permit ("in preparation for new construction
+// to be permitted separately"). Drop those phrases before matching keywords.
+function scrubScope(text: string): string {
+  return text
+    .replace(/\b(no|not|without)\b[^.;:!?]*/g, " ") // "no ..." up to the end of the sentence
+    .replace(/\b(in preparation for|prior to|ahead of|for future)\s+new construction\b/g, " ")
+    .replace(/\bnew construction\b[^.;:!?]{0,60}\b(permitted separately|separate permit)/g, " ");
+}
+
 export function cityCategory(p: CityPermit): RiskCategory {
   const prefix = cityPrefix(p);
-  const text = `${clean(p.PermitName)} ${clean(p.Description)}`.toLowerCase();
+  const text = scrubScope(`${clean(p.PermitName)}. ${clean(p.Description)}`.toLowerCase());
   if (prefix === "BDEM" || /\b(raze|razing)\b/.test(text)) return "demolition";
   if (/\b(new construction|(construct|erect|build)(ion of)? (a )?new (\d+[- ]story )?(building|structure|dwelling|house|home))\b/.test(text)) {
     return "new_construction";
