@@ -1,0 +1,1591 @@
+{
+  "statewide": {
+    "fetchedAt": "2026-09-26T20:19:00.300Z",
+    "items": [
+      {
+        "id": "md_road_closures:{7E937BCF-2961-45A2-9608-D6FFB3E01BFE}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Accident Friendsville Rd: Closed (Other)",
+        "description": "ACCIDENT FRIENDSVILLE RD: Closed, all directions. All lanes closed. This entire section of road is closed indefinitely. It is being taken out of Garrett County's Inventory.",
+        "category": "road_closure",
+        "address": "Accident Friendsville Rd",
+        "lat": 39.651787468193284,
+        "lng": -79.38432398249861,
+        "startDate": "2017-07-13T16:28:29.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by Garrett",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{CDAB7DED-F066-4A95-B670-9776669566D3}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Booth Rd: Closed (Other)",
+        "description": "BOOTH RD: Closed, all directions. All lanes closed. BRIDGE CLOSED",
+        "category": "road_closure",
+        "address": "Booth Rd between Russell and Brewster Bridge",
+        "lat": 39.67337668932695,
+        "lng": -75.83230563708328,
+        "startDate": "2018-09-13T18:23:54.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by Cecil",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{D7DCC1DC-0239-4661-AB3A-CD91D5CDBDC3}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Booth Rd: Closed (Other)",
+        "description": "BOOTH RD: Closed, all directions. All lanes closed. BRIDGE CLOSED",
+        "category": "road_closure",
+        "address": "Booth Rd between Brewster Bridge and Russell",
+        "lat": 39.66739771130568,
+        "lng": -75.82788538060805,
+        "startDate": "2018-09-13T18:26:09.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by Cecil",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{43B7B0E2-0091-436C-8C1C-A30C7C01EDEE}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Rolling Mill Rd: Closed (Other)",
+        "description": "ROLLING MILL RD: Closed, all directions. All lanes closed. Bridge Closed",
+        "category": "road_closure",
+        "address": "Rolling Mill Rd between Mechanics Valley and Wilmont",
+        "lat": 39.605203486657835,
+        "lng": -75.93723491242187,
+        "startDate": "2018-09-13T18:02:05.000Z",
+        "endDate": "2028-09-20T18:02:05.000Z",
+        "status": "Active",
+        "reference": "Reported by North East",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{2EA54783-CAC3-4C11-8E10-21D66FF2E0A1}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Wells Camp Rd: Closed (Other)",
+        "description": "WELLS CAMP RD: Closed, all directions. All lanes closed.",
+        "category": "road_closure",
+        "address": "Wells Camp Rd at Razor Strap",
+        "lat": 39.60612260712671,
+        "lng": -75.9589205245532,
+        "startDate": "2019-06-04T17:47:15.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by Cecil",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{AC2AE548-97A8-46E2-8516-B600C42B8B12}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Nazarene Camp Rd: Closed (Other)",
+        "description": "NAZARENE CAMP RD: Closed, all directions. All lanes closed. This section Nazarene Camp Road has been removed for construction of a warehouse distribution center.",
+        "category": "road_closure",
+        "address": "Nazarene Camp Rd between North East Road and South Leslie Road",
+        "lat": 39.614952557278606,
+        "lng": -75.94815569090675,
+        "startDate": "2019-06-04T17:53:10.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by North East",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{04058DD8-4EEE-4FE7-B83F-374BA07C0DD1}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Wells Camp Rd: Closed (Other)",
+        "description": "WELLS CAMP RD: Closed, all directions. All lanes closed.",
+        "category": "road_closure",
+        "address": "Wells Camp Rd at Razor Strap",
+        "lat": 39.605750636953374,
+        "lng": -75.95890979597378,
+        "startDate": "2019-06-04T17:49:05.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by Cecil",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{7B7EF624-569D-459C-AFA9-054FF9595935}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Edgar Price Rd: Closed (Other)",
+        "description": "EDGAR PRICE RD: Closed, all directions. All lanes closed. Road Closed to through traffic",
+        "category": "road_closure",
+        "address": "Edgar Price Rd",
+        "lat": 39.38987845308104,
+        "lng": -75.77911577286629,
+        "startDate": "2022-07-15T15:43:51.000Z",
+        "endDate": null,
+        "dateNote": "No end date announced.",
+        "status": "Active",
+        "reference": "Reported by Cecil",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{BF2850A2-E422-40B7-A2C9-0E48E29793CB}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "695: Emergency Vehicle Only Access (Accident)",
+        "description": "695: Emergency Vehicle Only Access, all directions. All lanes closed. I-695 / KEY BRIDGE CLOSED - End Date TBD",
+        "category": "road_closure",
+        "address": "695",
+        "lat": 39.21956872396583,
+        "lng": -76.524917609619,
+        "startDate": "2024-03-28T20:09:38.000Z",
+        "endDate": "2027-01-01T05:00:38.000Z",
+        "status": "Active",
+        "reference": "Reported by Baltimore",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{A2596B68-48E8-4B90-A722-8A28E47C9198}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Presidential Pky: Closed (Construction)",
+        "description": "PRESIDENTIAL PKY: Closed, all directions. All lanes closed. The Maryland Department of Transportation State Highway Administration will perform a traffic switch and close Central Park Drive at Presidential Parkway in Upper Marlboro as part…",
+        "category": "road_closure",
+        "address": "Presidential Pky",
+        "lat": 38.82918845694341,
+        "lng": -76.85164784473608,
+        "startDate": "2025-02-18T04:59:11.000Z",
+        "endDate": "2028-10-02T03:59:11.000Z",
+        "status": "Active",
+        "reference": "Reported by Prince George'S",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{48BA799C-B32B-426D-A846-71BB480C392F}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Nb Suitland Pky Onrp Old Marlboro Pike: Closed (Construction)",
+        "description": "NB SUITLAND PKY ONRP OLD MARLBORO PIKE: Closed, all directions. All lanes closed. The closure is necessary to construct stormwater facilities and build new ramps as part of the MD 4 at Suitland Parkway Interchange Improvement project.",
+        "category": "road_closure",
+        "address": "Nb Suitland Pky Onrp Old Marlboro Pike",
+        "lat": 38.83078607907323,
+        "lng": -76.86095372902119,
+        "startDate": "2025-07-17T04:00:06.000Z",
+        "endDate": "2026-10-01T03:59:06.000Z",
+        "status": "Active",
+        "reference": "Reported by Prince George'S",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{ACC445B6-D656-4570-B2CE-0615F0BFC705}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Old Mill Rd: Closed (Construction)",
+        "description": "OLD MILL RD: Closed, all directions. All lanes closed. Closed for repairs. Major structural component damaged. CLOSED TO ALL TRAFFIC.",
+        "category": "road_closure",
+        "address": "Old Mill Rd between Rocky Ridge and Old Frederick",
+        "lat": 39.60193462837833,
+        "lng": -77.33841190926658,
+        "startDate": "2025-10-27T16:13:01.000Z",
+        "endDate": "2027-03-02T04:59:01.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{5FBD2BE7-52B2-4127-94C7-042F78F20087}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Bel Air Rd: Limited Public Access (Construction)",
+        "description": "BEL AIR RD: Limited Public Access, all directions. All lanes closed. The Maryland Department of Transportation State Highway Administration began a new project to improve intersection safety on US 1 (Belair Road) at Reckord Road. The work,…",
+        "category": "road_closure",
+        "address": "Bel Air Rd between Wilgis Rd and Baltimore County Line",
+        "lat": 39.48236888389947,
+        "lng": -76.40299815056213,
+        "startDate": "2025-11-17T14:00:19.000Z",
+        "endDate": "2026-12-31T20:00:19.000Z",
+        "status": "Active",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{C98D074A-4884-43AE-A247-265C30C202C5}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Jfk Sb Hwy: Limited Public Access (Construction)",
+        "description": "JFK SB HWY: Limited Public Access, Southbound. All lanes closed. As part of the Maryland Transportation Authority’s (MDTA) ongoing $1.1 billion program to relieve congestion and improve travel along I-95 between Baltimore and Harford count…",
+        "category": "road_closure",
+        "address": "Jfk Sb Hwy between Sb I-95 At Md 24 and Winters Run Rd Overpass",
+        "lat": 39.45286580495904,
+        "lng": -76.31812851602938,
+        "startDate": "2026-02-17T18:27:50.000Z",
+        "endDate": "2026-12-01T22:00:50.000Z",
+        "status": "Active",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{31F132E1-F895-4002-885B-82A4A7D2A2AC}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Yellow Springs Rd: Closed (Construction)",
+        "description": "YELLOW SPRINGS RD: Closed, all directions. All lanes closed. JMJ Management bridge replacement and roadway improvements road closed with detour",
+        "category": "road_closure",
+        "address": "Yellow Springs Rd between Walter Martz Road and Winpenny Drive",
+        "lat": 39.4675472158649,
+        "lng": -77.45144125848779,
+        "startDate": "2026-04-06T04:00:28.000Z",
+        "endDate": "2026-10-20T04:00:28.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{4396E349-2D74-4713-8DE6-3E405726B98A}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Patrick St: Limited Public Access (Construction)",
+        "description": "E PATRICK ST: Limited Public Access, all directions. 1 lane(s) open. James G. Davis Construction short term lane closures for equipment / trucking",
+        "category": "road_closure",
+        "address": "E Patrick St between South Carroll Street and East Street",
+        "lat": 39.41392640153038,
+        "lng": -77.40694078992924,
+        "startDate": "2026-04-23T11:00:12.000Z",
+        "endDate": "2026-10-10T19:00:00.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{8FE35F51-8C43-478A-B554-43B8F686CD73}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Boggs Rd: Closed (Construction)",
+        "description": "BOGGS RD: Closed, all directions. All lanes closed. Boggs Road, between High Point Road and Grafton Shop Road will be closed for bridge replacement. This road will be closed to all through traffic. School buses and emergency vehicles will…",
+        "category": "road_closure",
+        "address": "Boggs Rd between High Point Rd and Grafton Shop Rd",
+        "lat": 39.55630002139955,
+        "lng": -76.40826285484549,
+        "startDate": "2026-06-22T11:00:33.000Z",
+        "endDate": "2027-03-26T21:00:33.000Z",
+        "status": "Active",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{36F8FCD9-689C-4E50-9341-9DB54F3CC93B}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "W College Ter: Limited Public Access (Construction)",
+        "description": "W COLLEGE TER: Limited Public Access, all directions. 1 lane(s) open. Morgan Keller building construction sidewalk closures",
+        "category": "road_closure",
+        "address": "W College Ter between West Patrick Street and Stup'S Lane",
+        "lat": 39.41426950046293,
+        "lng": -77.42485514873368,
+        "startDate": "2026-06-16T11:00:40.000Z",
+        "endDate": "2026-12-31T21:00:40.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{2FDFF0F9-B9CC-4EF2-9528-D6BEBE50237A}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Patrick St: Limited Public Access (Construction)",
+        "description": "E PATRICK ST: Limited Public Access, all directions. 1 lane(s) open. Pleasants Construction sidewalk construction work lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "E Patrick St between East Patrick Street and Monocacy Blvd.",
+        "lat": 39.4076432969753,
+        "lng": -77.38849856040258,
+        "startDate": "2026-07-20T13:00:15.000Z",
+        "endDate": "2026-10-09T19:00:15.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{9ADDFA66-A7A7-47DC-982B-29016D53E2A1}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Hospital Dr: Curb Lane Closure (Construction)",
+        "description": "HOSPITAL DR: Curb Lane Closure, Eastbound. 1 lane(s) open. Lane shift for County culvert work.",
+        "category": "road_closure",
+        "address": "Hospital Dr between Hospital Dr. and Westport Bay Dr.",
+        "lat": 39.13753370173477,
+        "lng": -76.61542322843025,
+        "startDate": "2026-07-23T17:56:40.000Z",
+        "endDate": "2026-10-12T20:00:40.000Z",
+        "status": "Active",
+        "reference": "Reported by Anne Arundel",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{3C1AAF55-900C-43AF-8D25-CE95E35554B0}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Monocacy Blvd: Limited Public Access (Construction)",
+        "description": "MONOCACY BLVD: Limited Public Access, all directions. 2 lane(s) open.",
+        "category": "road_closure",
+        "address": "Monocacy Blvd between Mill Pond and Waterside",
+        "lat": 39.457676251231014,
+        "lng": -77.39283185187348,
+        "startDate": "2026-08-07T18:43:40.000Z",
+        "endDate": "2026-09-30T18:43:40.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{EFF26D2A-8E45-4285-8E99-7606116BD06A}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Monocacy Blvd: Limited Public Access (Construction)",
+        "description": "MONOCACY BLVD: Limited Public Access, all directions. All lanes closed.",
+        "category": "road_closure",
+        "address": "Monocacy Blvd",
+        "lat": 39.45387347499625,
+        "lng": -77.39204713304862,
+        "startDate": "2026-08-07T11:00:42.000Z",
+        "endDate": "2026-09-30T18:34:42.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{EE00BF1C-C80C-4393-909B-9E0FC9555E65}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Second St: Limited Public Access (Wire(s))",
+        "description": "E SECOND ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "E Second St between Market and East",
+        "lat": 39.41648869971874,
+        "lng": -77.40902202115252,
+        "startDate": "2026-08-27T13:00:22.000Z",
+        "endDate": "2026-10-27T19:00:22.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{77A88D53-FE74-4B6A-9675-94A936204254}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Second St: Limited Public Access (Wire(s))",
+        "description": "E SECOND ST: Limited Public Access, all directions. All lanes closed.",
+        "category": "road_closure",
+        "address": "E Second St",
+        "lat": 39.41645443304969,
+        "lng": -77.40840087116786,
+        "startDate": "2026-08-27T19:07:45.000Z",
+        "endDate": "2026-10-27T19:07:45.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{688553C3-5EEF-4D75-AD69-C45858059881}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Second St: Limited Public Access (Wire(s))",
+        "description": "E SECOND ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "E Second St",
+        "lat": 39.416537107883606,
+        "lng": -77.40991137214843,
+        "startDate": "2026-08-27T19:09:07.000Z",
+        "endDate": "2026-10-27T19:09:07.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{7FB9308B-85F3-41DC-AC48-1D01403CF026}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Second St: Limited Public Access (Wire(s))",
+        "description": "E SECOND ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "E Second St",
+        "lat": 39.41631300235829,
+        "lng": -77.40623899099498,
+        "startDate": "2026-08-27T19:08:24.000Z",
+        "endDate": "2026-10-27T19:08:24.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{BB02465B-C5CC-4E8E-BE2A-8DE99AB79A81}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "W College Ter: Limited Public Access (Construction)",
+        "description": "W COLLEGE TER: Limited Public Access, all directions. 1 lane(s) open. Potomac Edison overhead work lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "W College Ter between West Patrick Street and Carroll Parkway",
+        "lat": 39.41418581522685,
+        "lng": -77.42493040419829,
+        "startDate": "2026-08-28T13:00:53.000Z",
+        "endDate": "2026-10-28T19:00:53.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{857E707C-2901-4244-89F7-5AA547211144}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N Market St: Limited Public Access (Other)",
+        "description": "N MARKET ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "N Market St",
+        "lat": 39.42556035282768,
+        "lng": -77.40814513967109,
+        "startDate": "2026-09-01T11:00:26.000Z",
+        "endDate": "2026-10-31T21:00:26.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{84F8578D-F176-4E88-916F-8426F792E167}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N Market St: Limited Public Access (Construction)",
+        "description": "N MARKET ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "N Market St",
+        "lat": 39.415494420236556,
+        "lng": -77.41082004770271,
+        "startDate": "2026-09-01T11:00:04.000Z",
+        "endDate": "2026-10-31T19:00:04.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{F493C002-50D2-4AFE-A610-F11BA2077DC1}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N Market St: Limited Public Access (Construction)",
+        "description": "N MARKET ST: Limited Public Access, all directions. All lanes closed.",
+        "category": "road_closure",
+        "address": "N Market St",
+        "lat": 39.418399649183456,
+        "lng": -77.41042719736099,
+        "startDate": "2026-09-01T11:00:09.000Z",
+        "endDate": "2026-10-31T19:00:09.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{A643196C-B98D-4E07-AF44-5EF92041004F}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "W Seventh St: Limited Public Access (Construction)",
+        "description": "W SEVENTH ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "W Seventh St",
+        "lat": 39.43372863825915,
+        "lng": -77.42411744054428,
+        "startDate": "2026-09-01T11:00:31.000Z",
+        "endDate": "2026-10-31T21:01:31.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{F016A433-C72E-448E-91BF-27BF65A3B452}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Sixth St: Limited Public Access (Construction)",
+        "description": "E SIXTH ST: Limited Public Access, all directions. All lanes closed.",
+        "category": "road_closure",
+        "address": "E Sixth St",
+        "lat": 39.42128822308583,
+        "lng": -77.40550218291749,
+        "startDate": "2026-09-01T11:00:55.000Z",
+        "endDate": "2026-10-31T19:00:55.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{C616FCE5-34EE-4C97-8FC2-17490293640F}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Washington St: Limited Public Access (Construction)",
+        "description": "WASHINGTON ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "Washington St",
+        "lat": 39.40981438665249,
+        "lng": -77.41610282968284,
+        "startDate": "2026-09-01T11:00:10.000Z",
+        "endDate": "2026-10-31T19:00:10.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{39DEC228-FABD-4A15-BE8E-9E9E28A55F37}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Sixth St: Limited Public Access (Construction)",
+        "description": "E SIXTH ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "E Sixth St",
+        "lat": 39.421394092868084,
+        "lng": -77.40724362009634,
+        "startDate": "2026-09-01T11:00:20.000Z",
+        "endDate": "2026-10-31T19:00:20.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{AD796D58-568C-47DA-BDB2-E10070C9FDB6}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "W South St: Limited Public Access (Construction)",
+        "description": "W SOUTH ST: Limited Public Access, all directions. 1 lane(s) open. MT Laney asphalt patching for Washington Gas lane closures",
+        "category": "road_closure",
+        "address": "W South St between Steiners Way and Degrange Street",
+        "lat": 39.41115923289175,
+        "lng": -77.41880472310562,
+        "startDate": "2026-08-26T13:00:11.000Z",
+        "endDate": "2026-09-30T19:00:11.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{04CCE659-BA03-4450-9C50-D82555B252B1}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "6th Ave Ne: Closed (Other)",
+        "description": "6TH AVE NE: Closed, all directions. All lanes closed. 6th Ave. closed between Crain Hwy. (MD 3) and Ritchie Hwy. (MD 2) for Empire Towers assessment.",
+        "category": "road_closure",
+        "address": "6th Ave Ne between 6th Ave. Ne and Crain Hwy. (Md 3)",
+        "lat": 39.17203349632871,
+        "lng": -76.61998996060247,
+        "startDate": "2026-08-25T12:00:50.000Z",
+        "endDate": "2026-12-31T21:00:50.000Z",
+        "status": "Active",
+        "reference": "Reported by Anne Arundel",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{7D0B244D-4444-444B-A178-953D6D5179D9}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Monocacy Blvd: Limited Public Access (Construction)",
+        "description": "MONOCACY BLVD: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "Monocacy Blvd",
+        "lat": 39.40249824497006,
+        "lng": -77.4066508829258,
+        "startDate": "2026-09-01T13:00:15.000Z",
+        "endDate": "2026-10-31T19:00:15.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{4DC9D1C5-5A46-44F9-87B6-A64FD7DC30A2}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Seven Trails Dr: Limited Public Access (Construction)",
+        "description": "SEVEN TRAILS DR: Limited Public Access, Northbound. 1 lane(s) open. Southbound Seven Trails Drive to MD 7 (Philadelphia Road) will be closed from 9 a.m. to 3 p.m. starting August 31, 2026 for BGE gas work. Work is expected to continue thro…",
+        "category": "road_closure",
+        "address": "Seven Trails Dr between Md 7 (Philadelphia Rd) and Seven Trails Cir",
+        "lat": 39.48928337914766,
+        "lng": -76.22390204027698,
+        "startDate": "2026-08-31T13:00:01.000Z",
+        "endDate": "2026-11-30T20:00:01.000Z",
+        "status": "Active",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{A956DEE3-CC64-4C68-A779-9FFB2802F789}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Broadleaf Dr: Limited Public Access (Construction)",
+        "description": "BROADLEAF DR: Limited Public Access, all directions. 1 lane(s) open. Lamberts cable install underground lane closures",
+        "category": "road_closure",
+        "address": "Broadleaf Dr at Pasture Rose Drive",
+        "lat": 39.47998738879824,
+        "lng": -77.41440291083978,
+        "startDate": "2026-09-03T13:00:21.000Z",
+        "endDate": "2026-10-08T19:00:21.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{83FDE7B0-1BE8-4A86-A190-9ECDDF99726B}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Prices Distillery Rd: Closed (Construction; Other)",
+        "description": "PRICES DISTILLERY RD: Closed, all directions. All lanes closed. Prices Distillery Road is closed TO ALL TRAFFIC between addresses 4330 and 4280 due to an emergency pipe failure. The road is expected to remain closed for approximately four…",
+        "category": "road_closure",
+        "address": "Prices Distillery Rd",
+        "lat": 39.3538651162417,
+        "lng": -77.31193456034056,
+        "startDate": "2026-09-01T10:10:11.000Z",
+        "endDate": "2026-10-06T20:00:11.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{92760636-8031-49D0-BCE6-7328C733B05B}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Hickory Byp: Limited Public Access (Construction)",
+        "description": "HICKORY BYP: Limited Public Access, all directions. 1 lane(s) open. Maryland Department of Transportation State Highway Administration crews will replace all guardrail along the median and shoulders of US 1 Hickory Bypass. Contractor crews…",
+        "category": "road_closure",
+        "address": "Hickory Byp between Conowingo Rd and Conowingo Rd",
+        "lat": 39.57479601119537,
+        "lng": -76.34427897790496,
+        "startDate": "2026-04-01T13:00:44.000Z",
+        "endDate": "2027-09-01T21:00:00.000Z",
+        "status": "Active",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{D2DFB97E-A97A-4F6E-8C2D-5FDCA7EBDE07}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Honeysuckle Ln: Closed (Special Event)",
+        "description": "HONEYSUCKLE LN: Closed, all directions. All lanes closed. Police managed closure of Honeysuckle Ln. for Maryland Renaissance Festival. Access will be provided to local residents/businesses. Traffic control will only be in place during fest…",
+        "category": "road_closure",
+        "address": "Honeysuckle Ln between Honeysuckle Ln. and Crownsville Rd.",
+        "lat": 39.00960012416498,
+        "lng": -76.58250230798869,
+        "startDate": "2026-09-02T15:17:44.000Z",
+        "endDate": "2026-10-26T00:00:44.000Z",
+        "status": "Active",
+        "reference": "Reported by Anne Arundel",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{6C7D6A3F-8505-49EF-9A1B-02303AA5FD33}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Pulaski Hwy: Limited Public Access (Construction)",
+        "description": "PULASKI HWY: Limited Public Access, all directions. 1 lane(s) open. The Maryland Department of Transportation State Highway Administration will resurface sections of 1.5 miles of US 40 (Pulaski Highway) between Long Bar Harbor Road and MD…",
+        "category": "road_closure",
+        "address": "Pulaski Hwy between Long Bar Harbor Rd and Md 543 (Creswell Rd)",
+        "lat": 39.464641695659274,
+        "lng": -76.24671910027159,
+        "startDate": "2026-09-14T00:00:01.000Z",
+        "endDate": "2026-10-31T09:00:01.000Z",
+        "status": "Active",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{ADC0A503-665F-4300-AD33-A28C1AA086A2}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E South St: Limited Public Access (Construction)",
+        "description": "E SOUTH ST: Limited Public Access, all directions. 1 lane(s) open.",
+        "category": "road_closure",
+        "address": "E South St",
+        "lat": 39.40620556283402,
+        "lng": -77.39548987517104,
+        "startDate": "2026-09-14T13:00:50.000Z",
+        "endDate": "2026-10-09T19:00:50.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{25D07B73-682D-461D-8CD9-9FE0AAA2355E}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "College Pl: Closed (Block Party)",
+        "description": "COLLEGE PL: Closed, all directions. All lanes closed. Block Party College Place closed",
+        "category": "road_closure",
+        "address": "College Pl between Rockwell Terrace and North College Parkway",
+        "lat": 39.418770410713456,
+        "lng": -77.41940648834476,
+        "startDate": "2026-09-26T19:00:57.000Z",
+        "endDate": "2026-09-26T23:30:57.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{39C5D4CF-2167-4859-9ED8-DAB9DA4F2D17}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Geronimo Dr: Limited Public Access (Construction)",
+        "description": "GERONIMO DR: Limited Public Access, all directions. 1 lane(s) open. MT Laney asphalt patching lane closures",
+        "category": "road_closure",
+        "address": "Geronimo Dr between Aztec Drive and East 9th Street",
+        "lat": 39.425474696578476,
+        "lng": -77.39670079519087,
+        "startDate": "2026-09-15T13:00:16.000Z",
+        "endDate": "2026-09-30T19:00:16.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{E0625F8E-4F1A-444B-B6F6-FE1EB8A9EB8E}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "S Market St: Limited Public Access (Construction)",
+        "description": "S MARKET ST: Limited Public Access, all directions. 1 lane(s) open. MT Laney asphalt patching lane closures",
+        "category": "road_closure",
+        "address": "S Market St between West South Street and Getzendanners Alley",
+        "lat": 39.410089044670194,
+        "lng": -77.41149685999734,
+        "startDate": "2026-09-15T13:00:33.000Z",
+        "endDate": "2026-09-30T19:00:33.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{E75614B8-9FFC-4F51-B211-97FC4279AD18}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N East St: Limited Public Access (Construction)",
+        "description": "N EAST ST: Limited Public Access, all directions. All lanes closed. Triangle Contracting asphalt and sidewalk restoration work lane closures",
+        "category": "road_closure",
+        "address": "N East St between East 13th Street and Delaware Road",
+        "lat": 39.428468478265856,
+        "lng": -77.40332821501414,
+        "startDate": "2026-09-15T13:00:05.000Z",
+        "endDate": "2026-10-13T19:00:05.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{F9549E63-5B46-4996-8FD7-15744093796B}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Bloomfield Rd: Closed (Construction)",
+        "description": "BLOOMFIELD RD: Closed, all directions. All lanes closed. CLOSED TO ALL TRAFFIC. Road realignment. Detour in place.",
+        "category": "road_closure",
+        "address": "Bloomfield Rd between Old Willowbrook and Sundays",
+        "lat": 39.48138507336947,
+        "lng": -77.41740852286348,
+        "startDate": "2026-09-08T04:00:01.000Z",
+        "endDate": "2026-11-17T21:00:01.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{079CAF82-E1B1-4EEF-B56E-3F932DFFC88B}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Pearre Rd: Closed (Other)",
+        "description": "PEARRE RD: Closed, all directions. All lanes closed. Carroll County DPW closed bridge over Sams Creek for emergency maintenance until further notice.",
+        "category": "road_closure",
+        "address": "Pearre Rd between Mckinstrys Mill and Clemsonville",
+        "lat": 39.5330879622147,
+        "lng": -77.15883969637243,
+        "startDate": "2026-09-14T13:49:41.000Z",
+        "endDate": "2026-11-30T14:49:41.000Z",
+        "status": "Active",
+        "reference": "Reported by Carroll",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{B1D6D6B7-03E2-41F1-9E56-5C713B97CAA6}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N Market St: Limited Public Access (Construction)",
+        "description": "N MARKET ST: Limited Public Access, all directions. 1 lane(s) open. NPL for Washington Gas line installation lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "N Market St between West 10th Street and West 12th Street",
+        "lat": 39.427889313674015,
+        "lng": -77.40708608344329,
+        "startDate": "2026-09-17T12:00:47.000Z",
+        "endDate": "2026-10-23T18:30:47.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{10353A4D-BA59-40DF-BE3D-EDE2ECA43980}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "W Eleventh St: Limited Public Access (Construction)",
+        "description": "W ELEVENTH ST: Limited Public Access, all directions. 1 lane(s) open. City of Frederick DPW asphalt patch repairs lane closures",
+        "category": "road_closure",
+        "address": "W Eleventh St between Taney Avenue and Frederick Shopping Center",
+        "lat": 39.432559624092704,
+        "lng": -77.41865034852235,
+        "startDate": "2026-09-22T11:00:20.000Z",
+        "endDate": "2026-10-23T19:00:20.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{5D9777B0-8FEC-46B9-9782-49A097575FD6}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Thomas Johnson Dr: Limited Public Access (Construction)",
+        "description": "THOMAS JOHNSON DR: Limited Public Access, all directions. 1 lane(s) open. Jerry Justice Excavating utility installations lane closures",
+        "category": "road_closure",
+        "address": "Thomas Johnson Dr between Byte Drive and Hayward Road",
+        "lat": 39.45647285931827,
+        "lng": -77.40284846973667,
+        "startDate": "2026-09-22T13:00:43.000Z",
+        "endDate": "2026-11-20T20:00:43.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{8CADB358-BD6C-44A7-A583-8A4526D9508E}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Sixteenth St: Limited Public Access (Construction)",
+        "description": "E SIXTEENTH ST: Limited Public Access, all directions. 1 lane(s) open. MT Laney milling and paving lane closures",
+        "category": "road_closure",
+        "address": "E Sixteenth St between East Street and Evansberry Drive",
+        "lat": 39.43343183141836,
+        "lng": -77.40120622992136,
+        "startDate": "2026-09-19T13:00:17.000Z",
+        "endDate": "2026-10-11T19:00:17.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{B23371FB-FCB6-4312-8506-3CCACE73B471}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Braddock Ave: Limited Public Access (Construction)",
+        "description": "BRADDOCK AVE: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Braddock Ave between Wyngate Drive and Barbara Street",
+        "lat": 39.40912041342109,
+        "lng": -77.43077285546507,
+        "startDate": "2026-09-22T13:00:35.000Z",
+        "endDate": "2026-10-31T20:00:35.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{0F14E6B9-FC0F-4130-88A9-CC097798A751}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Christophers Xing: Limited Public Access (Construction)",
+        "description": "CHRISTOPHERS XING: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Christophers Xing between Wheeler Lane and Moran Drive",
+        "lat": 39.462450249194006,
+        "lng": -77.4209071482814,
+        "startDate": "2026-09-22T13:00:05.000Z",
+        "endDate": "2026-10-31T20:00:05.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{1BACDDEF-B5CE-4F1C-BB51-7F54EB6CDDC4}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Tuscarora Creek Blvd: Limited Public Access (Construction)",
+        "description": "TUSCARORA CREEK BLVD: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Tuscarora Creek Blvd between Chamberlain and Walter Martz",
+        "lat": 39.47228725032744,
+        "lng": -77.43543409220179,
+        "startDate": "2026-09-22T13:00:13.000Z",
+        "endDate": "2026-10-31T20:00:13.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{F7CD559F-B30E-4BA0-AEAC-8EC997CD9931}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Chamberlain Dr: Limited Public Access (Construction)",
+        "description": "CHAMBERLAIN DR: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Chamberlain Dr between Tuscarora Creek and Infantry",
+        "lat": 39.47203002579363,
+        "lng": -77.43761087183196,
+        "startDate": "2026-09-22T13:00:49.000Z",
+        "endDate": "2026-10-31T20:00:49.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{D93F6C1D-1562-4D7D-876B-234E36174009}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Monocacy Blvd: Limited Public Access (Construction)",
+        "description": "MONOCACY BLVD: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Monocacy Blvd between Gas House Pike and Broadband",
+        "lat": 39.43378972098674,
+        "lng": -77.37795586844777,
+        "startDate": "2026-09-22T13:00:41.000Z",
+        "endDate": "2026-10-31T20:00:41.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{37A0E9B0-EBF2-479B-9AAD-5B0BF8B65D1A}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Walter Martz Rd: Limited Public Access (Construction)",
+        "description": "WALTER MARTZ RD: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Walter Martz Rd between Wittenburg and Tuscarora Creek",
+        "lat": 39.47301196254344,
+        "lng": -77.43183461202861,
+        "startDate": "2026-09-22T13:00:55.000Z",
+        "endDate": "2026-10-31T20:00:55.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{2E3B3E85-B474-4589-B3D6-AE759C5F228C}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "E Patrick St: Limited Public Access (Construction)",
+        "description": "E PATRICK ST: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "E Patrick St between South Market Street and Maxwell Avenue",
+        "lat": 39.414136907818566,
+        "lng": -77.41033796860214,
+        "startDate": "2026-09-22T13:00:07.000Z",
+        "endDate": "2026-10-31T20:00:07.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{FBC9EC43-4959-4FED-AF26-02E30B69F5F7}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Monocacy Blvd: Limited Public Access (Construction)",
+        "description": "MONOCACY BLVD: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Monocacy Blvd between Route 15 Bridge and Waterside Drive",
+        "lat": 39.46022432628736,
+        "lng": -77.3971716507403,
+        "startDate": "2026-09-22T13:00:51.000Z",
+        "endDate": "2026-10-31T20:00:51.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{3AE4FFC8-66BE-49DF-A357-C41ADCEDBFD6}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Christophers Xing: Limited Public Access (Construction)",
+        "description": "CHRISTOPHERS XING: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving lane closures",
+        "category": "road_closure",
+        "address": "Christophers Xing between Thomas Johnson Drive and Route15 Bridge",
+        "lat": 39.460701584561846,
+        "lng": -77.4041490209606,
+        "startDate": "2026-09-22T13:00:34.000Z",
+        "endDate": "2026-10-31T20:00:34.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{7EED455E-A31D-4675-B129-D008A8F93A28}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "W South St: Limited Public Access (Construction)",
+        "description": "W SOUTH ST: Limited Public Access, all directions. 1 lane(s) open. Jerry Justice Excavating concrete curb replacement lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "W South St between Catoctin Avenue and Thomas Avenue",
+        "lat": 39.41226963451105,
+        "lng": -77.42396771653924,
+        "startDate": "2026-09-21T12:00:38.000Z",
+        "endDate": "2026-10-02T18:00:38.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{6372515E-DF94-4F97-BF6D-A6474F7AA22E}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "Hillcrest Dr: Limited Public Access (Construction)",
+        "description": "HILLCREST DR: Limited Public Access, all directions. 1 lane(s) open. Precision Utlities asphalt patching lane closures",
+        "category": "road_closure",
+        "address": "Hillcrest Dr between Rollinghouse and Huntsman",
+        "lat": 39.41318257215946,
+        "lng": -77.45931523180327,
+        "startDate": "2026-09-21T12:00:02.000Z",
+        "endDate": "2026-10-02T21:00:02.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{8E4FCC97-5EA7-46BC-AD3A-066132C4133C}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N Market St: Limited Public Access (Construction)",
+        "description": "N MARKET ST: Limited Public Access, all directions. 1 lane(s) open. HMF Paving conc. repairs lane and sidewalk closures in front of 113 North Market Street",
+        "category": "road_closure",
+        "address": "N Market St between East Church Street and East 2nd Street",
+        "lat": 39.41594193558407,
+        "lng": -77.4107518916238,
+        "startDate": "2026-09-25T11:00:19.000Z",
+        "endDate": "2026-09-28T20:00:19.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{F81BAA29-63A0-4DF8-AE3D-EED1EFDAD49C}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
+        "title": "N Market St: Limited Public Access (Construction)",
+        "description": "N MARKET ST: Limited Public Access, all directions. 1 lane(s) open. HMF Paving concrete repairs lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "N Market St between East 5th Street and East 6th Street",
+        "lat": 39.42076095153579,
+        "lng": -77.41011234593873,
+        "startDate": "2026-09-25T11:00:15.000Z",
+        "endDate": "2026-09-28T20:00:15.000Z",
+        "status": "Active",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{47E66294-B6F4-4CA9-99DB-3E6357B85D47}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "W College Ter: Closed (Block Party)",
+        "description": "W COLLEGE TER: Closed, all directions. All lanes closed. Block party, road closed",
+        "category": "road_closure",
+        "address": "W College Ter between Rosemont Avenue and Rockwell Terrace",
+        "lat": 39.419509322021895,
+        "lng": -77.42228612781956,
+        "startDate": "2026-10-10T17:00:06.000Z",
+        "endDate": "2026-10-10T22:00:06.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{3A54E2E2-6F89-45FB-A063-9276D3FD8FEC}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Baughmans Ln: Limited Public Access (Construction)",
+        "description": "BAUGHMANS LN: Limited Public Access, all directions. 1 lane(s) open. Washington Gas valve repairs lane closures",
+        "category": "road_closure",
+        "address": "Baughmans Ln between West Patrick Street and Key Parkway",
+        "lat": 39.41686805954538,
+        "lng": -77.43822505178835,
+        "startDate": "2026-09-28T12:00:37.000Z",
+        "endDate": "2026-10-02T19:00:37.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{31D3AB71-98E8-44D5-9710-FB534486E0EB}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Eden Mill Rd: Closed (Special Event)",
+        "description": "EDEN MILL RD: Closed, all directions. All lanes closed. Eden Mill Road, between Fawn Grove Road and the Eden Mill Road Bridge, will be closed November 7, 2026 from 10:30 a.m. to 3:30 p.m. for the Eden Mill Fall Fest.",
+        "category": "road_closure",
+        "address": "Eden Mill Rd between Fawn Grove Road and Eden Mill Road Bridge",
+        "lat": 39.675405774068686,
+        "lng": -76.45304168705607,
+        "startDate": "2026-11-07T15:30:59.000Z",
+        "endDate": "2026-11-07T20:30:59.000Z",
+        "status": "Planned",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{23A7B839-101B-4756-9B94-39592D132600}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "W Second St: Closed (Special Event)",
+        "description": "W SECOND ST: Closed, all directions. All lanes closed. Headless Horseman 5K West 2nd Street closed",
+        "category": "road_closure",
+        "address": "W Second St between College Avenue and North Bentz Street",
+        "lat": 39.416888435797006,
+        "lng": -77.41486988926046,
+        "startDate": "2026-10-25T11:30:00.000Z",
+        "endDate": "2026-10-25T14:30:00.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{119A2141-55E3-4FF4-941C-30FBCAE47E24}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Elm St: Closed (Block Party)",
+        "description": "ELM ST: Closed, all directions. All lanes closed. Block Party Elm Street closed",
+        "category": "road_closure",
+        "address": "Elm St between Park Avenue and West 5th Street",
+        "lat": 39.42118439126665,
+        "lng": -77.41625907366021,
+        "startDate": "2026-10-03T20:00:04.000Z",
+        "endDate": "2026-10-04T03:00:04.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{CD827B6F-958E-4538-8F83-F701B5938DCB}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Columbus Ave: Limited Public Access (Construction)",
+        "description": "COLUMBUS AVE: Limited Public Access, all directions. 1 lane(s) open. Potomac Edison overhead utility work lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "Columbus Ave between Catoctin Avenue and Thomas Avenue",
+        "lat": 39.41193542748919,
+        "lng": -77.42516357540502,
+        "startDate": "2026-09-28T13:00:38.000Z",
+        "endDate": "2026-11-24T20:00:38.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{1481B407-FEB4-471D-857C-4D7E118E1A0A}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Fairview Ave: Limited Public Access (Construction)",
+        "description": "FAIRVIEW AVE: Limited Public Access, all directions. 1 lane(s) open. MT Laney patch paving in front of 704 Fairview Avenue lane closures",
+        "category": "road_closure",
+        "address": "Fairview Ave between Atlantic Avenue and West 7th Street",
+        "lat": 39.42604295857309,
+        "lng": -77.41873911464884,
+        "startDate": "2026-09-29T13:00:19.000Z",
+        "endDate": "2026-10-30T20:00:19.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{6D71D715-F80C-4C15-9B2E-1B4F2EAF4B44}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "N Market St: Limited Public Access (Construction)",
+        "description": "N MARKET ST: Limited Public Access, all directions. 1 lane(s) open. Hasen Global asphalt patch repairs, lane closures",
+        "category": "road_closure",
+        "address": "N Market St between West 7th Street and Lord Nickens Street",
+        "lat": 39.42268695741257,
+        "lng": -77.40966312361797,
+        "startDate": "2026-09-29T11:00:56.000Z",
+        "endDate": "2026-10-02T20:00:56.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{3FD768E3-63EF-4D3C-8281-C0449E96735B}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "E All Saints St: Closed (Special Event)",
+        "description": "E ALL SAINTS ST: Closed, all directions. All lanes closed. AARCH grand opening East Saints Street closed",
+        "category": "road_closure",
+        "address": "E All Saints St between South Carroll Street and Parking Deck Entrance",
+        "lat": 39.411727488754515,
+        "lng": -77.4073504459533,
+        "startDate": "2026-10-17T12:00:20.000Z",
+        "endDate": "2026-10-18T00:00:20.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": true
+        }
+      },
+      {
+        "id": "md_road_closures:{877F3BF5-1473-446F-A969-D9FA7BCEFDD6}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Shuresville Rd: Limited Public Access (Special Event)",
+        "description": "SHURESVILLE RD: Limited Public Access, all directions. All lanes closed. Shuresville Road, between MD 161 (Main Street) and Old Quaker Road, will be closed from 8 a.m. to 5 p.m. for the Darlington Apple Festival. This same stretch of road…",
+        "category": "road_closure",
+        "address": "Shuresville Rd between Md 161 (Main St) and Old Quaker Rd",
+        "lat": 39.63776523909009,
+        "lng": -76.20071123171684,
+        "startDate": "2026-10-03T11:00:30.000Z",
+        "endDate": "2026-10-03T22:00:30.000Z",
+        "status": "Planned",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{D40AA31B-7BE9-4930-A317-0AEE481697FD}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "School Rd: Limited Public Access (Special Event)",
+        "description": "SCHOOL RD: Limited Public Access, Eastbound. 1 lane(s) open. School Road will be one-way from Old Quaker Road to MD 161 between 7 a.m. and 5 p.m. for the Darlington Apple Festival.",
+        "category": "road_closure",
+        "address": "School Rd between Md 161 (Main St) and Old Quaker Rd",
+        "lat": 39.636771344026506,
+        "lng": -76.20216306192957,
+        "startDate": "2026-10-03T11:00:01.000Z",
+        "endDate": "2026-10-03T21:00:01.000Z",
+        "status": "Planned",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{658AC2B5-8D0E-48F0-A29F-5A9C14E2B2EB}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Main St: Limited Public Access (Special Event)",
+        "description": "MAIN ST: Limited Public Access, Northbound. 1 lane(s) open. MD 161 (Main Street), between MD 623 and US 1, will be made one-way only from US 1 to the intersection (northbound traffic on MD 161 will be forced onto MD 623 so that they will i…",
+        "category": "road_closure",
+        "address": "Main St between Us 1 (Conowingo Rd) and Md 623 (Castleton Rd)",
+        "lat": 39.64680092545008,
+        "lng": -76.20532614952089,
+        "startDate": "2026-10-03T13:00:20.000Z",
+        "endDate": "2026-10-03T21:00:20.000Z",
+        "status": "Planned",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{78E9E1E2-21A9-4905-9D65-132387E47205}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "S Fountain Green Rd: Limited Public Access (Construction)",
+        "description": "S FOUNTAIN GREEN RD: Limited Public Access, all directions. 1 lane(s) open. The Maryland Department of Transportation State Highway Administration will begin a $4.8 million project to improve safety and traffic operations at the MD 543 (Cr…",
+        "category": "road_closure",
+        "address": "S Fountain Green Rd between Md 543 (S Fountain Green Rd) and Md 136 (Calvary Rd)",
+        "lat": 39.50754659769189,
+        "lng": -76.27007148520865,
+        "startDate": "2026-09-28T13:00:53.000Z",
+        "endDate": "2028-06-01T09:00:53.000Z",
+        "status": "Planned",
+        "reference": "Reported by Harford",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{8500E37D-57E7-440C-B4A1-0B633C6C323D}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "E Patrick St: Limited Public Access (Construction)",
+        "description": "E PATRICK ST: Limited Public Access, all directions. 1 lane(s) open. Verizon overhead utility install lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "E Patrick St between Water Street and North Wisner",
+        "lat": 39.413744792976914,
+        "lng": -77.40406368909346,
+        "startDate": "2026-10-01T13:00:07.000Z",
+        "endDate": "2026-10-19T18:00:07.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{23827CF8-29E2-4213-A131-3DF4A93DCE0C}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "Thomas Johnson Dr: Limited Public Access (Construction)",
+        "description": "THOMAS JOHNSON DR: Limited Public Access, all directions. 1 lane(s) open. Lamberts Cable work in existing conduits lane and sidewalk closures",
+        "category": "road_closure",
+        "address": "Thomas Johnson Dr between Thomas Johnson Court and Hayward Road",
+        "lat": 39.45235249597862,
+        "lng": -77.40160406142134,
+        "startDate": "2026-09-29T13:00:40.000Z",
+        "endDate": "2026-10-30T19:00:40.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      },
+      {
+        "id": "md_road_closures:{76343689-7580-4AD4-8FDF-CE3517DC2DB0}",
+        "source": "md_road_closures",
+        "sourceName": "Maryland reported road closures",
+        "sourceUrl": "https://data.imap.maryland.gov/datasets/6bc982d837cc4bacb2b655c0abceb11f",
+        "title": "James St: Limited Public Access (Construction)",
+        "description": "JAMES ST: Limited Public Access, all directions. 1 lane(s) open. City of Frederick DPW road repairs lane closures",
+        "category": "road_closure",
+        "address": "James St between Mary Street and West Patrick Street",
+        "lat": 39.41279734784287,
+        "lng": -77.42879754369862,
+        "startDate": "2026-09-28T11:00:23.000Z",
+        "endDate": "2026-10-30T19:00:23.000Z",
+        "status": "Planned",
+        "reference": "Reported by Frederick City",
+        "facts": {
+          "fullClosure": false
+        }
+      }
+    ]
+  }
+}
