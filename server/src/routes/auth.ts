@@ -2,6 +2,7 @@ import { Router } from "express";
 import { z } from "zod";
 import { requireAuth } from "../middleware/auth.js";
 import { getProfileForUser } from "../lib/profile.js";
+import { refreshOnLogin } from "../lib/refreshOnLogin.js";
 import {
   checkPassword,
   createUser,
@@ -47,6 +48,7 @@ router.post("/login", async (req, res) => {
   }
   await startSession(req, user.id);
   const profile = await getProfileForUser(user.id);
+  if (profile) refreshOnLogin(user.id); // background: obligations, Radar, Local Risk
   res.json({ user: toPublic(user), hasProfile: profile !== null });
 });
 

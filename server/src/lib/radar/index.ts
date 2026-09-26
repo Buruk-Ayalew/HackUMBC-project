@@ -4,8 +4,8 @@
 import { dataPath, readJson, writeJson } from "../jsonStore.js";
 import { fetchAgencyNews } from "./agencyNews.js";
 import type { RadarItemInternal, SourceResult } from "./common.js";
-import { fetchLegiScan } from "./legiscan.js";
 import { fetchMdRegister } from "./mdRegister.js";
+import { fetchMgaBills } from "./mgaBills.js";
 import { fetchMgaEffectiveDates } from "./mgaChapters.js";
 
 const ITEMS_FILE = dataPath("cache", "radar-items.json");
@@ -20,8 +20,9 @@ export interface RadarItemsSnapshot {
   unavailableSources: string[];
 }
 
-// Bills can come from both LegiScan and the MGA lists. Merge them by bill
-// number, preferring MGA (official effective date) and filling gaps from LegiScan.
+// Bills can come from both the live bill index and the effective-date lists.
+// Merge them by bill number, preferring the list entry (official effective
+// date, listed first) and filling gaps (hearing date) from the live index.
 function mergeBills(items: RadarItemInternal[]): RadarItemInternal[] {
   const out: RadarItemInternal[] = [];
   const byNumber = new Map<string, RadarItemInternal>();
@@ -67,10 +68,10 @@ async function fetchAll(force: boolean): Promise<RadarItemsSnapshot> {
   const settled = await Promise.allSettled([
     fetchMdRegister(force),
     fetchMgaEffectiveDates(force),
-    fetchLegiScan(force),
+    fetchMgaBills(force),
     fetchAgencyNews(force),
   ]);
-  const names = ["Maryland Register", "General Assembly effective-date lists", "LegiScan bills", "Agency news"];
+  const names = ["Maryland Register", "General Assembly effective-date lists", "General Assembly bills", "Agency news"];
 
   const results: SourceResult[] = [];
   const unavailableSources: string[] = [];
@@ -78,7 +79,7 @@ async function fetchAll(force: boolean): Promise<RadarItemsSnapshot> {
     if (s.status === "fulfilled") results.push(...(Array.isArray(s.value) ? s.value : [s.value]));
     else {
       const msg = s.reason instanceof Error ? s.reason.message : String(s.reason);
-      unavailableSources.push(`${names[i]}: ${msg.includes("LEGISCAN_API_KEY") ? "no API key configured" : "unavailable, and no saved copy yet"}`);
+      unavailableSources.push(`${names[i]}: unavailable, and no saved copy yet`);
     }
   });
 

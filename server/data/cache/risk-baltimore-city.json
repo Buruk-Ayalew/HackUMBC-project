@@ -1,6 +1,6 @@
 {
   "39.28125,-76.59428": {
-    "fetchedAt": "2026-09-26T20:18:52.405Z",
+    "fetchedAt": "2026-09-26T23:08:03.726Z",
     "items": [
       {
         "id": "baltimore_city_permits:BRCM-25-024396",
@@ -1887,7 +1887,7 @@
         "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
         "title": "Residential building permit at 1208 Battery Ave",
         "description": "Refresh exterior facade paint, same color, no change, no new construction, no additions, only paint the exterior wall with the same exact color in preparation for rental. We just acquired this property (Luis C Mejia and Angela M Tamayo). T…",
-        "category": "new_construction",
+        "category": "residential_work",
         "address": "1208 Battery Ave",
         "lat": 39.276033327863416,
         "lng": -76.60983372311522,
@@ -4603,7 +4603,7 @@
         "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
         "title": "Residential building permit at 1457 Hull St",
         "description": "Install approximately 32 linear feet of 6 ft high rear-yard residential fence on existing concrete rear pad. Fence to be located entirely on owner’s property. No electrical, plumbing, mechanical, grading, excavation, or structural building…",
-        "category": "site_work",
+        "category": "residential_work",
         "address": "1457 Hull St",
         "lat": 39.26930822632156,
         "lng": -76.5933075439748,
@@ -13189,7 +13189,7 @@
         "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
         "title": "Commercial building permit at 100 International Dr",
         "description": "******* 23rd Floor **** SCOPE OF WORK: ----- CAT I DEMO -------- DEMOLITION OF THE NONSTRUCTURAL INTERTIOR PARTITIONS, CEILING AND FINISHES OF THE PROJECT IN PREPARATION FOR NEW CONSTRUCTION TO BE PERMITTED SEPARATELY. AS PER PLAN AND AS P…",
-        "category": "new_construction",
+        "category": "commercial_work",
         "address": "100 International Dr",
         "lat": 39.28262908450648,
         "lng": -76.60206711174665,

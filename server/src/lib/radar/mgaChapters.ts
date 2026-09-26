@@ -8,13 +8,21 @@ import { PDFParse } from "pdf-parse";
 import { politeFetch } from "../http.js";
 import { cleanText, formatLongDate, looksBusinessRelated, parseLongDate, withCache, type RadarItemInternal, type SourceResult } from "./common.js";
 
-const SESSION = "2026rs";
-// Lists that are recent or upcoming as of fall 2026. Add new ones here as MGA publishes them.
-const LISTS = ["july", "october"];
+// DLS publishes one list per effective date (not every month exists every
+// year). We try this year's and last year's sessions, so the lists roll over
+// to 2027 and beyond on their own; missing lists are skipped.
+const LIST_MONTHS = ["january", "june", "july", "october"];
+const KEEP_AFTER_MS = 365 * 24 * 60 * 60 * 1000; // laws that took effect in the last year, or will
 const CACHE_FILE = "mga-effective-dates.json";
 const MAX_AGE_MS = 24 * 60 * 60 * 1000;
 
-export const listUrl = (month: string) => `https://mgaleg.maryland.gov/Pubs/LegisLegal/${SESSION}-effective-dates-${month}.pdf`;
+export const listUrl = (sessionYear: number, month: string) =>
+  `https://mgaleg.maryland.gov/Pubs/LegisLegal/${sessionYear}rs-effective-dates-${month}.pdf`;
+
+function listTargets(now = new Date()): [number, string][] {
+  const y = now.getFullYear();
+  return [y, y - 1].flatMap((year) => LIST_MONTHS.map((m): [number, string] => [year, m]));
+}
 export const billUrl = (number: string, sessionYear: number) =>
   `https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/${number.replace(/\s+/g, "").toLowerCase()}?ys=${sessionYear}RS`;
 
@@ -83,8 +91,8 @@ export function parseEffectiveDatesText(text: string): Chapter[] {
   return out;
 }
 
-async function fetchList(month: string): Promise<Chapter[]> {
-  const res = await politeFetch(listUrl(month), {}, 30000);
+async function fetchList([sessionYear, month]: [number, string]): Promise<Chapter[]> {
+  const res = await politeFetch(listUrl(sessionYear, month), {}, 30000);
   const parser = new PDFParse({ data: new Uint8Array(await res.arrayBuffer()) });
   try {
     const { text } = await parser.getText();
@@ -128,8 +136,9 @@ function toItems(chapters: Chapter[], fetchedAt: string): RadarItemInternal[] {
 
 export async function fetchMgaEffectiveDates(force = false): Promise<SourceResult> {
   const r = await withCache(CACHE_FILE, MAX_AGE_MS, force, async () => {
-    const settled = await Promise.allSettled(LISTS.map(fetchList));
-    const chapters = settled.flatMap((s) => (s.status === "fulfilled" ? s.value : []));
+    const settled = await Promise.allSettled(listTargets().map(fetchList));
+    const cutoff = new Date(Date.now() - KEEP_AFTER_MS).toISOString().slice(0, 10);
+    const chapters = settled.flatMap((s) => (s.status === "fulfilled" ? s.value : [])).filter((c) => c.effectiveDate >= cutoff);
     if (chapters.length === 0) {
       const failed = settled.find((x): x is PromiseRejectedResult => x.status === "rejected");
       throw failed ? failed.reason : new Error("no chapters found in the MGA lists");
