@@ -198,6 +198,7 @@ export interface ObligationsResponse {
 export type RiskSourceId =
   | "baltimore_city_permits"
   | "baltimore_county_permits"
+  | "baltimore_county_dev_plans"
   | "mdot_sha_projects"
   | "md_road_closures";
 
@@ -209,6 +210,7 @@ export type RiskCategory =
   | "site_work" // grading, storm water, sitework
   | "commercial_work" // alterations, fit-outs, change of use
   | "residential_work"
+  | "development_plan" // proposed or approved development, not yet construction
   | "other";
 
 export type RiskLevel = "high" | "medium" | "low";
@@ -259,6 +261,55 @@ export interface LocalRiskResponse {
 export interface LocalRiskNewCount {
   newCount: number;
   highCount: number;
+}
+
+// ---------- Local Risk: location context (GET /api/local-risk/context) ----------
+
+// Where a context section's data came from and how fresh it is.
+export interface ContextSource {
+  // not_covered: we have no source for this location or business type.
+  status: "live" | "cached" | "unavailable" | "not_covered";
+  sourceName: string;
+  sourceUrl: string; // official dataset or lookup page
+  fetchedAt: string | null; // ISO
+  message?: string; // e.g. "Showing saved results from 2026-09-26."
+}
+
+export interface ZoningInfo extends ContextSource {
+  district: string | null; // as published, e.g. "C-1-E", "BL"
+  overlay: string | null; // e.g. "W-1"
+  detailsUrl: string | null; // official PDF describing the district
+}
+
+export interface FloodInfo extends ContextSource {
+  zone: string | null; // FEMA zone at the address, e.g. "X", "AE", "VE"
+  zoneDescription: string | null; // plain-language meaning of the zone
+  highRisk: boolean | null; // in a FEMA Special Flood Hazard Area
+  nearbyHighRiskZones: string[]; // high-risk zones within NEARBY_FLOOD_M, e.g. ["AE", "VE"]
+  nearbyMeters: number;
+}
+
+export interface Competitor {
+  id: string; // e.g. "osm:node/123"
+  name: string | null;
+  kind: string; // e.g. "Restaurant", "Bar", "Hair salon"
+  lat: number;
+  lng: number;
+  distanceMeters: number;
+  sourceUrl: string; // the OpenStreetMap page for this place
+}
+
+export interface CompetitorInfo extends ContextSource {
+  label: string | null; // what we searched for, e.g. "restaurants, cafés, and bars"
+  radiusMeters: number;
+  items: Competitor[]; // sorted by distance
+}
+
+export interface LocalContextResponse {
+  zoning: ZoningInfo;
+  flood: FloodInfo;
+  competitors: CompetitorInfo;
+  generatedAt: string;
 }
 
 // ---------- Regulatory Radar ----------
