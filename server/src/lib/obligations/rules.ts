@@ -1,0 +1,75 @@
+import { promises as fs } from "node:fs";
+import { z } from "zod";
+import type { ObligationRule } from "../../../../shared/types.js";
+import { dataPath, readJson } from "../jsonStore.js";
+
+// Rules are data: every server/data/rules/*.json file (except the tax-rate
+// table) holds an array of ObligationRule records. Invalid rules are skipped
+// with a warning so one typo can't take down the whole page.
+
+const RULES_DIR = dataPath("rules");
+const TAX_RATES_FILE = "local-tax-rates.json";
+
+const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "must be YYYY-MM-DD");
+
+const condition = z.union([
+  z.object({ field: z.literal("jurisdiction"), op: z.literal("match") }),
+  z.object({
+    field: z.string(),
+    op: z.enum(["gte", "lte", "eq", "between"]),
+    value: z.union([z.number(), z.tuple([z.number(), z.number()])]),
+  }),
+  z.object({ field: z.string(), op: z.literal("is"), value: z.union([z.boolean(), z.string()]) }),
+  z.object({ field: z.string(), op: z.enum(["in", "not_in"]), value: z.array(z.string()) }),
+]);
+
+const ruleSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  category: z.enum(["employment", "tax", "registration", "licensing", "posting", "privacy"]),
+  jurisdiction: z.object({
+    level: z.enum(["federal", "state", "county", "municipality"]),
+    name: z.string().optional(),
+  }),
+  conditions: z.array(condition),
+  mightConditions: z.array(condition).optional(),
+  statusWhenMet: z.enum(["affects", "might", "not_applicable"]).optional(),
+  summary: z.string().min(1),
+  action: z.string().min(1),
+  deadlines: z.array(z.object({ label: z.string(), date: isoDate })).optional(),
+  sourceUrl: z.url(),
+  sourceName: z.string().min(1),
+  reviewedOn: isoDate,
+});
+
+export async function loadRules(): Promise<ObligationRule[]> {
+  const files = (await fs.readdir(RULES_DIR)).filter((f) => f.endsWith(".json") && f !== TAX_RATES_FILE);
+  const rules: ObligationRule[] = [];
+  const seen = new Set<string>();
+  for (const file of files.sort()) {
+    const raw = await readJson<unknown[]>(dataPath("rules", file), []);
+    for (const item of raw) {
+      const parsed = ruleSchema.safeParse(item);
+      if (!parsed.success) {
+        console.warn(`Skipping invalid rule in ${file}:`, parsed.error.issues[0]?.message, (item as { id?: string })?.id);
+        continue;
+      }
+      if (seen.has(parsed.data.id)) {
+        console.warn(`Skipping duplicate rule id ${parsed.data.id} in ${file}`);
+        continue;
+      }
+      seen.add(parsed.data.id);
+      rules.push(parsed.data as ObligationRule);
+    }
+  }
+  return rules;
+}
+
+export interface LocalTaxRates {
+  fiscalYear: string;
+  rates: Record<string, { admissions: number; hotel: number }>;
+}
+
+export function loadLocalTaxRates(): Promise<LocalTaxRates> {
+  return readJson<LocalTaxRates>(dataPath("rules", TAX_RATES_FILE), { fiscalYear: "", rates: {} });
+}

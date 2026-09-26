@@ -78,7 +78,7 @@ export type ObligationCategory =
 export type Condition =
   | { field: string; op: "gte" | "lte" | "eq" | "between"; value: number | [number, number] }
   | { field: string; op: "is"; value: boolean | string }
-  | { field: string; op: "in"; value: string[] }
+  | { field: string; op: "in" | "not_in"; value: string[] }
   | { field: "jurisdiction"; op: "match" };
 
 export interface ObligationRule {
@@ -88,6 +88,11 @@ export interface ObligationRule {
   jurisdiction: { level: "federal" | "state" | "county" | "municipality"; name?: string };
   conditions: Condition[]; // ALL must pass for "affects"
   mightConditions?: Condition[]; // if these pass but conditions don't, result is "might"
+  // Status when all conditions pass (default "affects"). Use "might" for items
+  // we can't decide from the profile, "not_applicable" for things like BOI.
+  statusWhenMet?: "affects" | "might" | "not_applicable";
+  // summary and action may use {{placeholders}} filled from local data,
+  // e.g. {{county}}, {{municipality}}, {{admissionsRate}}, {{hotelRate}}.
   summary: string;
   action: string;
   deadlines?: { label: string; date: string }[]; // ISO dates
@@ -102,4 +107,14 @@ export interface ObligationResult {
   reasons: string[];
   coverage: "reviewed" | "limited";
   coverageNote?: string;
+}
+
+// GET /api/obligations and POST /api/obligations/what-if
+export interface ObligationsResponse {
+  results: ObligationResult[];
+  // Profile-level notes about what we have NOT reviewed for this location.
+  coverageNotes: string[];
+  // Employee counts where some rule changes, from rules' numeric conditions.
+  thresholds: number[];
+  evaluatedAt: string;
 }

@@ -1,0 +1,121 @@
+[
+  {
+    "id": "montgomery-min-wage-large",
+    "title": "Pay at least the Montgomery County minimum wage ($18.00/hour, 51+ employees)",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Montgomery County" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "gte", "value": 51 },
+      { "field": "entityType", "op": "not_in", "value": ["nonprofit"] }
+    ],
+    "mightConditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "gte", "value": 51 }
+    ],
+    "summary": "Since July 1, 2026, large employers (51 or more employees) in Montgomery County must pay at least $18.00 per hour. Some 501(c)(3) nonprofits and home care providers pay the mid-size rate instead. Rates rise each July 1 with inflation.",
+    "action": "Pay every employee at least $18.00 per hour and display the Montgomery County minimum wage poster.",
+    "sourceUrl": "https://www.montgomerycountymd.gov/office-human-rights/minimum-wage-increase",
+    "sourceName": "Montgomery County Office of Human Rights: Minimum wage",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "montgomery-min-wage-mid",
+    "title": "Pay at least the Montgomery County minimum wage ($16.50/hour, 11 to 50 employees)",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Montgomery County" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "between", "value": [11, 50] }
+    ],
+    "mightConditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "gte", "value": 51 },
+      { "field": "entityType", "op": "in", "value": ["nonprofit"] }
+    ],
+    "summary": "Since July 1, 2026, mid-size employers (11 to 50 employees) in Montgomery County must pay at least $16.50 per hour. 501(c)(3) nonprofits and certain home care providers with 11 or more employees also use this rate. Rates rise each July 1 with inflation.",
+    "action": "Pay every employee at least $16.50 per hour and display the Montgomery County minimum wage poster.",
+    "sourceUrl": "https://www.montgomerycountymd.gov/office-human-rights/minimum-wage-increase",
+    "sourceName": "Montgomery County Office of Human Rights: Minimum wage",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "montgomery-min-wage-small",
+    "title": "Pay at least the Montgomery County minimum wage ($15.95/hour, 10 or fewer employees)",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Montgomery County" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "between", "value": [1, 10] }
+    ],
+    "summary": "Since July 1, 2026, small employers (10 or fewer employees) in Montgomery County must pay at least $15.95 per hour, above the $15.00 state rate. Rates rise each July 1 with inflation.",
+    "action": "Pay every employee at least $15.95 per hour and display the Montgomery County minimum wage poster.",
+    "sourceUrl": "https://www.montgomerycountymd.gov/office-human-rights/minimum-wage-increase",
+    "sourceName": "Montgomery County Office of Human Rights: Minimum wage",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "montgomery-tipped-wage",
+    "title": "Follow Montgomery County's tipped employee wage ($4.00/hour)",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Montgomery County" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "flags.tippedEmployees", "op": "is", "value": true }
+    ],
+    "summary": "In Montgomery County, tipped employees must be paid at least $4.00 per hour, and pay plus tips must reach the county minimum wage for your size. Restaurants using tips toward minimum wage must give a Tip Credit Wage Statement.",
+    "action": "Pay tipped staff at least $4.00 per hour and make up any gap to the county minimum wage each pay period.",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+    "sourceName": "Maryland Department of Labor: County minimum wage laws",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "howard-min-wage",
+    "title": "Pay at least the Howard County minimum wage ($16.00/hour)",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Howard County" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "gte", "value": 1 }
+    ],
+    "summary": "Since July 1, 2026, all employers in Howard County, of any size, must pay at least $16.00 per hour, above the $15.00 state rate.",
+    "action": "Pay every employee at least $16.00 per hour and display the Howard County minimum wage poster.",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+    "sourceName": "Maryland Department of Labor: County minimum wage laws",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "prince-georges-min-wage",
+    "title": "Pay at least the Prince George's County minimum wage ($15.30/hour)",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Prince George's County" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "gte", "value": 1 }
+    ],
+    "summary": "As of July 1, 2026, all employers in Prince George's County, of any size, must pay at least $15.30 per hour, above the $15.00 state rate.",
+    "action": "Pay every employee at least $15.30 per hour.",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+    "sourceName": "Maryland Department of Labor: County minimum wage laws",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "baltimore-city-ban-the-box",
+    "title": "Baltimore City: no criminal record questions before a conditional offer",
+    "category": "employment",
+    "jurisdiction": { "level": "county", "name": "Baltimore City" },
+    "conditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.fullTimeInMaryland", "op": "gte", "value": 10 }
+    ],
+    "mightConditions": [
+      { "field": "jurisdiction", "op": "match" },
+      { "field": "employees.inMaryland", "op": "gte", "value": 10 }
+    ],
+    "summary": "Baltimore City employers with the equivalent of 10 or more full-time employees can't ask about or check criminal records until after making a conditional job offer. Part-time staff count toward full-time equivalents. Employers serving minors or vulnerable adults are exempt.",
+    "action": "Remove criminal record questions from applications and wait until after a conditional offer to run background checks.",
+    "sourceUrl": "https://www.baltimorecity.gov/civil-rights/our-work/community-relations-commission/resources/ban-box",
+    "sourceName": "Baltimore City Community Relations Commission: Ban the Box (Ordinance 14-221)",
+    "reviewedOn": "2026-09-26"
+  }
+]

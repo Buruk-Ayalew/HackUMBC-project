@@ -1,0 +1,32 @@
+{
+  "source": "Department of Legislative Services, Other Local Tax Rates in Maryland (FY 2026 column)",
+  "sourceUrl": "https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf",
+  "fiscalYear": "FY 2026",
+  "reviewedOn": "2026-09-26",
+  "rates": {
+    "Allegany County": { "admissions": 7.5, "hotel": 8.0 },
+    "Anne Arundel County": { "admissions": 10.0, "hotel": 8.0 },
+    "Baltimore City": { "admissions": 10.0, "hotel": 9.5 },
+    "Baltimore County": { "admissions": 10.0, "hotel": 9.5 },
+    "Calvert County": { "admissions": 1.0, "hotel": 5.0 },
+    "Caroline County": { "admissions": 0.0, "hotel": 5.0 },
+    "Carroll County": { "admissions": 10.0, "hotel": 5.0 },
+    "Cecil County": { "admissions": 6.0, "hotel": 6.0 },
+    "Charles County": { "admissions": 10.0, "hotel": 5.0 },
+    "Dorchester County": { "admissions": 0.5, "hotel": 5.0 },
+    "Frederick County": { "admissions": 0.0, "hotel": 5.0 },
+    "Garrett County": { "admissions": 6.0, "hotel": 8.0 },
+    "Harford County": { "admissions": 5.0, "hotel": 6.0 },
+    "Howard County": { "admissions": 7.5, "hotel": 7.0 },
+    "Kent County": { "admissions": 4.5, "hotel": 5.0 },
+    "Montgomery County": { "admissions": 7.0, "hotel": 7.0 },
+    "Prince George's County": { "admissions": 10.0, "hotel": 7.0 },
+    "Queen Anne's County": { "admissions": 5.0, "hotel": 5.0 },
+    "St. Mary's County": { "admissions": 2.0, "hotel": 5.0 },
+    "Somerset County": { "admissions": 4.0, "hotel": 5.0 },
+    "Talbot County": { "admissions": 5.0, "hotel": 4.0 },
+    "Washington County": { "admissions": 5.0, "hotel": 6.0 },
+    "Wicomico County": { "admissions": 6.0, "hotel": 6.0 },
+    "Worcester County": { "admissions": 3.0, "hotel": 5.0 }
+  }
+}

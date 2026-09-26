@@ -1,0 +1,67 @@
+[
+  {
+    "id": "sdat-annual-report",
+    "title": "File your SDAT Annual Report",
+    "category": "registration",
+    "jurisdiction": { "level": "state" },
+    "conditions": [{ "field": "entityType", "op": "in", "value": ["llc", "corporation", "lp", "llp", "nonprofit"] }],
+    "mightConditions": [{ "field": "entityType", "op": "in", "value": ["sole_prop", "general_partnership", "other"] }],
+    "summary": "Maryland business entities must file an Annual Report with the State Department of Assessments and Taxation (SDAT) by April 15 each year. The fee is $300 for most entities; check SDAT for yours. Missing it makes the business \"Not in Good Standing\" with penalties, and continued failure can lead to forfeiture. Sole proprietors and general partnerships may need to file a business personal property return if they own business property or hold a trader's license.",
+    "action": "File online through Maryland Business Express by April 15, or request a 60-day extension before then.",
+    "deadlines": [{ "label": "SDAT 2027 Annual Report due", "date": "2027-04-15" }],
+    "sourceUrl": "https://dat.maryland.gov/businesses/Pages/default.aspx",
+    "sourceName": "Maryland SDAT: Charter and business services",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "sales-use-tax",
+    "title": "Register for Maryland sales and use tax",
+    "category": "tax",
+    "jurisdiction": { "level": "state" },
+    "conditions": [{ "field": "flags.sellsTaxableGoods", "op": "is", "value": true }],
+    "summary": "If you sell taxable goods or services in Maryland, you must register with the Comptroller of Maryland before you start selling, then collect sales tax and file returns.",
+    "action": "Register with the Comptroller (Combined Registration), then file sales and use tax returns on the schedule the Comptroller assigns you.",
+    "sourceUrl": "https://www.marylandcomptroller.gov/",
+    "sourceName": "Comptroller of Maryland",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "online-data-privacy",
+    "title": "Check whether the Maryland Online Data Privacy Act applies",
+    "category": "privacy",
+    "jurisdiction": { "level": "state" },
+    "conditions": [{ "field": "flags.handlesCustomerData", "op": "is", "value": true }],
+    "statusWhenMet": "might",
+    "summary": "The Maryland Online Data Privacy Act applies if, in the prior year, you handled personal data of at least 35,000 Maryland consumers (not counting data used only to complete a payment), or at least 10,000 consumers while getting more than 20% of revenue from selling personal data.",
+    "action": "Estimate how many Maryland customers' personal data you keep. If you are over a threshold, you'll need a privacy notice and ways for customers to access, fix, delete, or opt out.",
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0541?ys=2024RS",
+    "sourceName": "Maryland General Assembly: SB 541 (2024), Chapter 455",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "alcohol-license",
+    "title": "Keep your alcohol license current",
+    "category": "licensing",
+    "jurisdiction": { "level": "state" },
+    "conditions": [{ "field": "flags.servesAlcohol", "op": "is", "value": true }],
+    "statusWhenMet": "might",
+    "summary": "Retail alcohol licenses are issued, renewed, and enforced by local liquor boards, not the state. Your license comes from the liquor board for {{county}} (the City of Annapolis has its own board). Renewal dates and fees are set locally.",
+    "action": "Check your license's renewal date with your local liquor board. Find the board in the state's directory.",
+    "sourceUrl": "https://atcc.maryland.gov/org-directory/maryland-counties-liquor-board-directory/",
+    "sourceName": "Maryland ATCC: Liquor board directory",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "federal-boi",
+    "title": "Federal beneficial ownership (BOI) report",
+    "category": "registration",
+    "jurisdiction": { "level": "federal" },
+    "conditions": [],
+    "statusWhenMet": "not_applicable",
+    "summary": "Companies formed in the United States no longer have to file beneficial ownership (BOI) reports with FinCEN. FinCEN made this exemption permanent in a final rule in August 2026. Rules could change again.",
+    "action": "Nothing to file if your company was formed in the U.S.",
+    "sourceUrl": "https://www.fincen.gov/boi",
+    "sourceName": "FinCEN: Beneficial Ownership Information Reporting",
+    "reviewedOn": "2026-09-26"
+  }
+]
