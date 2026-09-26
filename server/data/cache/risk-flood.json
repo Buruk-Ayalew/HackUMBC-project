@@ -1,0 +1,52 @@
+{
+  "39.28125,-76.59428": {
+    "fetchedAt": "2026-09-26T21:34:28.328Z",
+    "items": {
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "highRisk": false,
+      "nearbyHighRiskZones": [
+        "AE"
+      ]
+    }
+  },
+  "39.08453,-77.14790": {
+    "fetchedAt": "2026-09-26T21:34:30.526Z",
+    "items": {
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "highRisk": false,
+      "nearbyHighRiskZones": []
+    }
+  },
+  "39.41588,-77.41086": {
+    "fetchedAt": "2026-09-26T21:34:48.125Z",
+    "items": {
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "highRisk": false,
+      "nearbyHighRiskZones": []
+    }
+  },
+  "38.34297,-75.07872": {
+    "fetchedAt": "2026-09-26T21:34:50.142Z",
+    "items": {
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "highRisk": false,
+      "nearbyHighRiskZones": [
+        "AE",
+        "VE"
+      ]
+    }
+  },
+  "39.38185,-76.53600": {
+    "fetchedAt": "2026-09-26T21:34:59.932Z",
+    "items": {
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "highRisk": false,
+      "nearbyHighRiskZones": []
+    }
+  }
+}

@@ -70,7 +70,7 @@ Obligations are **data, not code**. Every `server/data/rules/*.json` file (excep
 
 ## Regulatory Radar
 
-The Radar (`/radar`) pulls new and upcoming Maryland law and regulation changes from four sources. Claude then sorts each one for the logged-in business into **Affects you**, **Might affect you** or **Doesn't apply**.
+The Radar (`/radar`) pulls new and upcoming Maryland law and regulation changes from four sources. Gemini then sorts each one for the logged-in business into **Affects you**, **Might affect you** or **Doesn't apply**.
 
 | Source | Code | Cache file | Refreshed |
 |---|---|---|---|
@@ -79,7 +79,18 @@ The Radar (`/radar`) pulls new and upcoming Maryland law and regulation changes 
 | LegiScan bills (needs `LEGISCAN_API_KEY`) | `server/src/lib/radar/legiscan.ts` | `legiscan.json` | 12 h |
 | Agency news (Labor, FAMLI, Comptroller, SDAT) | `server/src/lib/radar/agencyNews.ts` | `agency-news.json` | 24 h |
 
-All cache files live in `server/data/cache/`. The combined list is saved to `radar-items.json`. Claude's sorting results are saved to `radar-classifications.json`, keyed by item and by the profile fields that matter, so each business pays for an item only once. If a live fetch fails, the saved copy is served and the page says "Showing saved results from [date]." Sorting needs `ANTHROPIC_API_KEY`. Without it, every item shows as "Might affect you" with a note.
+All cache files live in `server/data/cache/`. The combined list is saved to `radar-items.json`. Gemini's sorting results are saved to `radar-classifications.json`, keyed by item and by the profile fields that matter, so each business pays for an item only once. If a live fetch fails, the saved copy is served and the page says "Showing saved results from [date]." Sorting uses Gemini through **Google Cloud Vertex AI**, so it's billed to GCP project `project-79cc0670-01b4-43ca-94d` (see `server/src/lib/gemini.ts` and `server/.env.example`). Requests are limited to `GEMINI_RPM` per minute (default 30), with 25 items per request. Sorting runs in the background: unsorted items show as "Might affect you" and the page refreshes itself until sorting finishes. Without working Google Cloud credentials, every item stays "Might affect you" with a note.
+
+**One-time local setup for Vertex AI:**
+```bash
+brew install --cask google-cloud-sdk        # or https://cloud.google.com/sdk/docs/install
+gcloud auth login
+gcloud config set project project-79cc0670-01b4-43ca-94d
+gcloud auth application-default login       # creates the credentials the server uses
+gcloud auth application-default set-quota-project project-79cc0670-01b4-43ca-94d
+gcloud services enable aiplatform.googleapis.com
+```
+Your Google account needs the **Vertex AI User** role (`roles/aiplatform.user`) on the project. On a server, use a service account with that role and set `GOOGLE_APPLICATION_CREDENTIALS` to its JSON key file instead.
 
 ### Refreshing data
 

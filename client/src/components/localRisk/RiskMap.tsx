@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Circle, CircleMarker, MapContainer, Popup, TileLayer, Tooltip, useMap } from "react-leaflet";
-import type { RiskItem } from "../../../../shared/types";
+import type { Competitor, RiskItem } from "../../../../shared/types";
 import { LEVEL_COLOR, LEVEL_LABEL } from "./format";
 
 interface Props {
@@ -9,7 +9,10 @@ interface Props {
   items: RiskItem[];
   selectedId: string | null;
   onSelect: (id: string) => void;
+  competitors?: Competitor[]; // shown as small purple dots when provided
 }
+
+const COMPETITOR_COLOR = "#7c3aed";
 
 const ZOOM_FOR_RADIUS: Record<number, number> = { 402: 16, 805: 15, 1609: 14 };
 
@@ -25,7 +28,7 @@ function ViewController({ center, radiusMeters, selected }: { center: Props["cen
   return null;
 }
 
-export default function RiskMap({ center, radiusMeters, items, selectedId, onSelect }: Props) {
+export default function RiskMap({ center, radiusMeters, items, selectedId, onSelect, competitors = [] }: Props) {
   const selected = items.find((i) => i.id === selectedId) ?? null;
   // Draw low first so higher levels sit on top.
   const ordered = [...items].sort((a, b) => rank(b) - rank(a));
@@ -49,6 +52,18 @@ export default function RiskMap({ center, radiusMeters, items, selectedId, onSel
         pathOptions={{ color: "#1e40af", weight: 1.5, dashArray: "6 6", fillOpacity: 0.04 }}
         interactive={false}
       />
+      {competitors.map((c) => (
+        <CircleMarker
+          key={c.id}
+          center={[c.lat, c.lng]}
+          radius={5}
+          pathOptions={{ color: "#ffffff", weight: 1, fillColor: COMPETITOR_COLOR, fillOpacity: 0.85 }}
+        >
+          <Tooltip>
+            Competitor: {c.name ?? "Unnamed"} ({c.kind})
+          </Tooltip>
+        </CircleMarker>
+      ))}
       {ordered.map((item) => {
         const isSelected = item.id === selectedId;
         return (

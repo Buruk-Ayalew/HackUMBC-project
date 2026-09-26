@@ -7,15 +7,15 @@ import type { NormalizedRiskItem } from "./normalize.js";
 
 export const REFRESH_MS = 12 * 60 * 60 * 1000;
 
-interface CacheEntry {
+interface CacheEntry<T> {
   fetchedAt: string;
-  items: NormalizedRiskItem[];
+  items: T;
 }
 
-type CacheFile = Record<string, CacheEntry>;
+type CacheFile<T> = Record<string, CacheEntry<T>>;
 
-export interface CachedResult {
-  items: NormalizedRiskItem[];
+export interface CachedResult<T = NormalizedRiskItem[]> {
+  items: T;
   status: "live" | "cached" | "unavailable";
   fetchedAt: string | null;
   message?: string;
@@ -25,24 +25,25 @@ export function cacheFile(name: string): string {
   return dataPath("cache", `risk-${name}.json`);
 }
 
-export async function withCache(
+export async function withCache<T = NormalizedRiskItem[]>(
   file: string,
   key: string,
-  opts: { force?: boolean },
-  fetchLive: () => Promise<NormalizedRiskItem[]>,
-): Promise<CachedResult> {
-  const cache = await readJson<CacheFile>(file, {});
+  opts: { force?: boolean; maxAgeMs?: number; empty?: T },
+  fetchLive: () => Promise<T>,
+): Promise<CachedResult<T>> {
+  const empty = (opts.empty ?? []) as T;
+  const cache = await readJson<CacheFile<T>>(file, {});
   const entry = cache[key];
   const age = entry ? Date.now() - Date.parse(entry.fetchedAt) : Infinity;
 
-  if (entry && !opts.force && age < REFRESH_MS) {
+  if (entry && !opts.force && age < (opts.maxAgeMs ?? REFRESH_MS)) {
     return { items: entry.items, status: "live", fetchedAt: entry.fetchedAt };
   }
 
   try {
     const items = await fetchLive();
     const fetchedAt = new Date().toISOString();
-    const latest = await readJson<CacheFile>(file, {});
+    const latest = await readJson<CacheFile<T>>(file, {});
     latest[key] = { fetchedAt, items };
     await writeJson(file, latest);
     return { items, status: "live", fetchedAt };
@@ -57,6 +58,6 @@ export async function withCache(
         message: `Live data unavailable. Showing saved results from ${entry.fetchedAt.slice(0, 10)}.`,
       };
     }
-    return { items: [], status: "unavailable", fetchedAt: null, message: "This source is unavailable right now." };
+    return { items: empty, status: "unavailable", fetchedAt: null, message: "This source is unavailable right now." };
   }
 }

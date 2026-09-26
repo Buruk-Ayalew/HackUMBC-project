@@ -1,9 +1,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { LocalRiskResponse, RiskCategory, RiskLevel } from "../../../shared/types";
+import type { ImpactTag, LocalContextResponse, LocalRiskResponse, RiskLevel } from "../../../shared/types";
 import { apiGet, ApiError } from "../api";
+import LocationContext from "../components/localRisk/LocationContext";
 import RiskMap from "../components/localRisk/RiskMap";
 import RiskItemCard from "../components/localRisk/RiskItemCard";
-import { CATEGORY_LABEL, formatDate, LEVEL_BADGE, LEVEL_LABEL, RADIUS_OPTIONS } from "../components/localRisk/format";
+import {
+  formatDate,
+  IMPACT_CHIP,
+  IMPACT_LABEL,
+  IMPACT_ORDER,
+  LEVEL_BADGE,
+  LEVEL_LABEL,
+  RADIUS_OPTIONS,
+} from "../components/localRisk/format";
 
 const PAGE_SIZE = 50;
 const LEVELS: RiskLevel[] = ["high", "medium", "low"];
@@ -17,7 +26,7 @@ export default function LocalRiskPage() {
   const [error, setError] = useState<string | null>(null);
 
   const [levels, setLevels] = useState<Set<RiskLevel>>(new Set(["high", "medium"]));
-  const [category, setCategory] = useState<RiskCategory | "all">("all");
+  const [impactFilter, setImpactFilter] = useState<Set<ImpactTag>>(new Set()); // empty = all impacts
   const [newOnly, setNewOnly] = useState(false);
   const [shown, setShown] = useState(PAGE_SIZE);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -37,9 +46,29 @@ export default function LocalRiskPage() {
     }
   }, []);
 
+  // Zoning, flood zone, and competitors load separately so a slow source
+  // (OpenStreetMap can take several seconds) never holds up the risk list.
+  const [context, setContext] = useState<LocalContextResponse | null>(null);
+  const [contextLoading, setContextLoading] = useState(true);
+  const [contextError, setContextError] = useState<string | null>(null);
+  const [showCompetitors, setShowCompetitors] = useState(false);
+
+  const loadContext = useCallback(async (r: number, refresh: boolean) => {
+    setContextLoading(true);
+    setContextError(null);
+    try {
+      setContext(await apiGet<LocalContextResponse>(`/api/local-risk/context?radius=${r}${refresh ? "&refresh=1" : ""}`));
+    } catch (err) {
+      setContextError(err instanceof ApiError ? err.message : "Couldn't load zoning, flood, and competitor info.");
+    } finally {
+      setContextLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void load(radius, false);
-  }, [load, radius]);
+    void loadContext(radius, false);
+  }, [load, loadContext, radius]);
 
   const counts = useMemo(() => {
     const c = { high: 0, medium: 0, low: 0, new: 0 };
@@ -50,20 +79,34 @@ export default function LocalRiskPage() {
     return c;
   }, [data]);
 
-  const categoriesPresent = useMemo(
-    () => [...new Set((data?.items ?? []).map((i) => i.category))].sort(),
-    [data],
-  );
+  // Impact tags present in the results, with counts, in a fixed order.
+  const impactCounts = useMemo(() => {
+    const c = new Map<ImpactTag, number>();
+    for (const i of data?.items ?? []) for (const t of i.impacts) c.set(t, (c.get(t) ?? 0) + 1);
+    return IMPACT_ORDER.filter((t) => c.has(t)).map((t) => ({ tag: t, count: c.get(t)! }));
+  }, [data]);
 
   const filtered = useMemo(
     () =>
       (data?.items ?? []).filter(
-        (i) => levels.has(i.riskLevel) && (category === "all" || i.category === category) && (!newOnly || i.isNew),
+        (i) =>
+          levels.has(i.riskLevel) &&
+          (impactFilter.size === 0 || i.impacts.some((t) => impactFilter.has(t))) &&
+          (!newOnly || i.isNew),
       ),
-    [data, levels, category, newOnly],
+    [data, levels, impactFilter, newOnly],
   );
 
-  useEffect(() => setShown(PAGE_SIZE), [levels, category, newOnly, radius]);
+  useEffect(() => setShown(PAGE_SIZE), [levels, impactFilter, newOnly, radius]);
+
+  function toggleImpact(t: ImpactTag) {
+    setImpactFilter((prev) => {
+      const next = new Set(prev);
+      if (next.has(t)) next.delete(t);
+      else next.add(t);
+      return next;
+    });
+  }
 
   function toggleLevel(l: RiskLevel) {
     setLevels((prev) => {
@@ -93,8 +136,8 @@ export default function LocalRiskPage() {
         <div>
           <h1 className="text-2xl font-bold">Local Risk</h1>
           <p className="mt-1 text-slate-600">
-            Construction, road work, and permitted projects near{" "}
-            <span className="font-medium text-slate-800">{data?.center.address ?? "your business"}</span>.
+            What's around <span className="font-medium text-slate-800">{data?.center.address ?? "your business"}</span>: zoning,
+            flood risk, competitors, and nearby construction and road work.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -112,7 +155,10 @@ export default function LocalRiskPage() {
             ))}
           </div>
           <button
-            onClick={() => void load(radius, true)}
+            onClick={() => {
+              void load(radius, true);
+              void loadContext(radius, true);
+            }}
             disabled={refreshing || loading}
             className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
           >
@@ -143,7 +189,20 @@ export default function LocalRiskPage() {
             ))}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+          <section className="mt-6">
+            <h2 className="mb-3 text-lg font-bold tracking-tight text-slate-900">Your location</h2>
+            <LocationContext
+              context={context}
+              loading={contextLoading}
+              error={contextError}
+              radiusLabel={radiusLabel}
+              showCompetitorsOnMap={showCompetitors}
+              onToggleCompetitorsOnMap={setShowCompetitors}
+            />
+          </section>
+
+          <h2 className="mt-8 text-lg font-bold tracking-tight text-slate-900">Construction and projects nearby</h2>
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
             {LEVELS.map((l) => (
               <button
                 key={l}
@@ -160,20 +219,32 @@ export default function LocalRiskPage() {
               <input type="checkbox" checked={newOnly} onChange={(e) => setNewOnly(e.target.checked)} />
               New only ({counts.new})
             </label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value as RiskCategory | "all")}
-              aria-label="Filter by type"
-              className="rounded-lg border border-slate-300 bg-white px-2 py-1.5 text-slate-700"
-            >
-              <option value="all">All types</option>
-              {categoriesPresent.map((c) => (
-                <option key={c} value={c}>
-                  {CATEGORY_LABEL[c]}
-                </option>
-              ))}
-            </select>
           </div>
+          {impactCounts.length > 0 && (
+            <div className="mt-2 flex flex-wrap items-center gap-2 text-sm" role="group" aria-label="Filter by impact">
+              <span className="text-slate-500">Impact:</span>
+              {impactCounts.map(({ tag, count }) => {
+                const on = impactFilter.has(tag);
+                return (
+                  <button
+                    key={tag}
+                    onClick={() => toggleImpact(tag)}
+                    aria-pressed={on}
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 ring-inset ${
+                      on ? IMPACT_CHIP[tag] : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50"
+                    }`}
+                  >
+                    {IMPACT_LABEL[tag]} ({count})
+                  </button>
+                );
+              })}
+              {impactFilter.size > 0 && (
+                <button onClick={() => setImpactFilter(new Set())} className="text-xs font-medium text-brand-700 hover:underline">
+                  Clear
+                </button>
+              )}
+            </div>
+          )}
 
           <div className="mt-4 grid gap-4 lg:grid-cols-2">
             <div className="h-72 overflow-hidden rounded-lg border border-slate-200 sm:h-96 lg:sticky lg:top-4 lg:h-[640px]">
@@ -183,6 +254,7 @@ export default function LocalRiskPage() {
                 items={filtered}
                 selectedId={selectedId}
                 onSelect={selectFromMap}
+                competitors={showCompetitors ? context?.competitors.items : undefined}
               />
             </div>
 
@@ -237,6 +309,10 @@ export default function LocalRiskPage() {
               Levels are rule-based estimates from three things only: distance, type of project, and timing. They don't
               predict foot traffic or sales.
             </p>
+            <p className="mt-2">
+              Impact tags (like "Access & parking") say what kind of effect something could have, and the level says how
+              close and current it is. Tap ⓘ on any tag for a short explanation.
+            </p>
             <ul className="mt-2 list-disc space-y-1 pl-5">
               <li>
                 <span className="font-medium">High:</span> road closures, road work, demolition, new construction, or site
@@ -251,6 +327,11 @@ export default function LocalRiskPage() {
               <li>
                 <span className="font-medium">Low:</span> everything else, including small residential jobs and projects
                 that are on hold or still in design.
+              </li>
+              <li>
+                <span className="font-medium">Development plans</span> (Baltimore County) are future work with no published
+                schedule, so they're never High: Medium within about ¼ mile of your address (or if you're inside the plan
+                area), otherwise Low.
               </li>
             </ul>
             <p className="mt-2">Distances are straight-line. State road projects are mapped at one reference point, and the work may run along the road.</p>

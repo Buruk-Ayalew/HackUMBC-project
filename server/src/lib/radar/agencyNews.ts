@@ -135,5 +135,14 @@ export async function fetchAgencyNews(force = false): Promise<SourceResult[]> {
     }
   }
   await writeJson(SNAPSHOT, snap);
-  return results;
+
+  // Several agency pages link to the same press release (e.g. FAMLI and Labor).
+  // Keep one copy per URL, preferring the one with a date.
+  const byUrl = new Map<string, RadarItemInternal>();
+  for (const item of results.flatMap((r) => r.items)) {
+    const prev = byUrl.get(item.sourceUrl);
+    if (!prev || (!prev.publishedDate && item.publishedDate)) byUrl.set(item.sourceUrl, item);
+  }
+  const keep = new Set(byUrl.values());
+  return results.map((r) => ({ ...r, items: r.items.filter((i) => keep.has(i)) }));
 }

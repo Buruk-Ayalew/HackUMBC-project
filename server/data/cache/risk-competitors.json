@@ -1,0 +1,3137 @@
+{
+  "restaurant:39.28125,-76.59428": {
+    "fetchedAt": "2026-09-26T21:34:29.389Z",
+    "items": [
+      {
+        "id": "osm:node/1288423397",
+        "name": "Roys",
+        "kind": "Restaurant",
+        "lat": 39.2833277,
+        "lng": -76.6019028,
+        "sourceUrl": "https://www.openstreetmap.org/node/1288423397"
+      },
+      {
+        "id": "osm:node/1288423398",
+        "name": "Fleming's",
+        "kind": "Restaurant",
+        "lat": 39.2831492,
+        "lng": -76.6024017,
+        "sourceUrl": "https://www.openstreetmap.org/node/1288423398"
+      },
+      {
+        "id": "osm:node/1361080424",
+        "name": "Max's on Broadway",
+        "kind": "Bar",
+        "lat": 39.2826375,
+        "lng": -76.5930299,
+        "sourceUrl": "https://www.openstreetmap.org/node/1361080424"
+      },
+      {
+        "id": "osm:node/1396565611",
+        "name": "McCormick & Schmick's",
+        "kind": "Restaurant",
+        "lat": 39.2841866,
+        "lng": -76.6055625,
+        "sourceUrl": "https://www.openstreetmap.org/node/1396565611"
+      },
+      {
+        "id": "osm:node/1396565612",
+        "name": "Ruth's Chris Steak House",
+        "kind": "Restaurant",
+        "lat": 39.2847483,
+        "lng": -76.6057191,
+        "sourceUrl": "https://www.openstreetmap.org/node/1396565612"
+      },
+      {
+        "id": "osm:node/1647955892",
+        "name": "Ampersea",
+        "kind": "Restaurant",
+        "lat": 39.27933,
+        "lng": -76.595894,
+        "sourceUrl": "https://www.openstreetmap.org/node/1647955892"
+      },
+      {
+        "id": "osm:node/1734226002",
+        "name": "The Capital Grill",
+        "kind": "Restaurant",
+        "lat": 39.287079,
+        "lng": -76.6079229,
+        "sourceUrl": "https://www.openstreetmap.org/node/1734226002"
+      },
+      {
+        "id": "osm:node/1878713823",
+        "name": "Starbucks",
+        "kind": "Café",
+        "lat": 39.2807404,
+        "lng": -76.5802784,
+        "sourceUrl": "https://www.openstreetmap.org/node/1878713823"
+      },
+      {
+        "id": "osm:node/1911786252",
+        "name": "Miss Shirley's Cafe",
+        "kind": "Restaurant",
+        "lat": 39.2870835,
+        "lng": -76.6052454,
+        "sourceUrl": "https://www.openstreetmap.org/node/1911786252"
+      },
+      {
+        "id": "osm:node/2149755451",
+        "name": "Subway",
+        "kind": "Fast food",
+        "lat": 39.2883588,
+        "lng": -76.6065182,
+        "sourceUrl": "https://www.openstreetmap.org/node/2149755451"
+      },
+      {
+        "id": "osm:node/2160415939",
+        "name": "The Black Olive",
+        "kind": "Restaurant",
+        "lat": 39.2820182,
+        "lng": -76.5952327,
+        "sourceUrl": "https://www.openstreetmap.org/node/2160415939"
+      },
+      {
+        "id": "osm:node/2166323360",
+        "name": "Charleston",
+        "kind": "Restaurant",
+        "lat": 39.282646,
+        "lng": -76.599937,
+        "sourceUrl": "https://www.openstreetmap.org/node/2166323360"
+      },
+      {
+        "id": "osm:node/2169734241",
+        "name": "Hudson Street Stackhouse",
+        "kind": "Pub",
+        "lat": 39.2822062,
+        "lng": -76.5789181,
+        "sourceUrl": "https://www.openstreetmap.org/node/2169734241"
+      },
+      {
+        "id": "osm:node/2303798847",
+        "name": "Woody's Rum Bar and Island Grill",
+        "kind": "Bar",
+        "lat": 39.2819854,
+        "lng": -76.5926875,
+        "sourceUrl": "https://www.openstreetmap.org/node/2303798847"
+      },
+      {
+        "id": "osm:node/2303798848",
+        "name": "Slainte Irish Pub and Restaurant",
+        "kind": "Bar",
+        "lat": 39.2820121,
+        "lng": -76.592557,
+        "sourceUrl": "https://www.openstreetmap.org/node/2303798848"
+      },
+      {
+        "id": "osm:node/2303798849",
+        "name": "Kooper's Tavern",
+        "kind": "Bar",
+        "lat": 39.2820152,
+        "lng": -76.5924801,
+        "sourceUrl": "https://www.openstreetmap.org/node/2303798849"
+      },
+      {
+        "id": "osm:node/2324836132",
+        "name": "Riptide by the Bay",
+        "kind": "Restaurant",
+        "lat": 39.2820152,
+        "lng": -76.5919048,
+        "sourceUrl": "https://www.openstreetmap.org/node/2324836132"
+      },
+      {
+        "id": "osm:node/2348359065",
+        "name": "Chipotle",
+        "kind": "Fast food",
+        "lat": 39.281209,
+        "lng": -76.579886,
+        "sourceUrl": "https://www.openstreetmap.org/node/2348359065"
+      },
+      {
+        "id": "osm:node/2356694672",
+        "name": "Outback Steakhouse",
+        "kind": "Restaurant",
+        "lat": 39.2816823,
+        "lng": -76.5817451,
+        "sourceUrl": "https://www.openstreetmap.org/node/2356694672"
+      },
+      {
+        "id": "osm:node/2480595665",
+        "name": "Little Havana",
+        "kind": "Restaurant",
+        "lat": 39.2743084,
+        "lng": -76.6033489,
+        "sourceUrl": "https://www.openstreetmap.org/node/2480595665"
+      },
+      {
+        "id": "osm:node/2550101897",
+        "name": "Starbucks",
+        "kind": "Café",
+        "lat": 39.2840156,
+        "lng": -76.6018093,
+        "sourceUrl": "https://www.openstreetmap.org/node/2550101897"
+      },
+      {
+        "id": "osm:node/2716300263",
+        "name": "Silk's",
+        "kind": "Pub",
+        "lat": 39.2819905,
+        "lng": -76.578518,
+        "sourceUrl": "https://www.openstreetmap.org/node/2716300263"
+      },
+      {
+        "id": "osm:node/2716318213",
+        "name": "Lee's Famous Recipe Chicken",
+        "kind": "Fast food",
+        "lat": 39.2823346,
+        "lng": -76.5756931,
+        "sourceUrl": "https://www.openstreetmap.org/node/2716318213"
+      },
+      {
+        "id": "osm:node/2730788678",
+        "name": "Heavy Seas Alehouse",
+        "kind": "Pub",
+        "lat": 39.2865074,
+        "lng": -76.5990448,
+        "sourceUrl": "https://www.openstreetmap.org/node/2730788678"
+      },
+      {
+        "id": "osm:node/2753171141",
+        "name": "Gitan Bistro Cru",
+        "kind": "Pub",
+        "lat": 39.283061,
+        "lng": -76.577167,
+        "sourceUrl": "https://www.openstreetmap.org/node/2753171141"
+      },
+      {
+        "id": "osm:node/2754859790",
+        "name": "Papi's Taco Joint",
+        "kind": "Restaurant",
+        "lat": 39.2834521,
+        "lng": -76.5928682,
+        "sourceUrl": "https://www.openstreetmap.org/node/2754859790"
+      },
+      {
+        "id": "osm:node/2822033126",
+        "name": "Bayside Canttina",
+        "kind": "Restaurant",
+        "lat": 39.277006,
+        "lng": -76.576523,
+        "sourceUrl": "https://www.openstreetmap.org/node/2822033126"
+      },
+      {
+        "id": "osm:node/2906631818",
+        "name": "Bar",
+        "kind": "Bar",
+        "lat": 39.2826675,
+        "lng": -76.5923412,
+        "sourceUrl": "https://www.openstreetmap.org/node/2906631818"
+      },
+      {
+        "id": "osm:node/2927669601",
+        "name": "Lebanese Taverna",
+        "kind": "Restaurant",
+        "lat": 39.282577,
+        "lng": -76.601001,
+        "sourceUrl": "https://www.openstreetmap.org/node/2927669601"
+      },
+      {
+        "id": "osm:node/2930407934",
+        "name": "Chiu's Sushi",
+        "kind": "Restaurant",
+        "lat": 39.28379,
+        "lng": -76.600044,
+        "sourceUrl": "https://www.openstreetmap.org/node/2930407934"
+      },
+      {
+        "id": "osm:node/2959984333",
+        "name": "Charmed Kitchen",
+        "kind": "Café",
+        "lat": 39.2895813,
+        "lng": -76.5871455,
+        "sourceUrl": "https://www.openstreetmap.org/node/2959984333"
+      },
+      {
+        "id": "osm:node/2960014136",
+        "name": "Tortilleria Sinaloa",
+        "kind": "Restaurant",
+        "lat": 39.285744,
+        "lng": -76.592494,
+        "sourceUrl": "https://www.openstreetmap.org/node/2960014136"
+      },
+      {
+        "id": "osm:node/2966766333",
+        "name": null,
+        "kind": "Restaurant",
+        "lat": 39.285493,
+        "lng": -76.592513,
+        "sourceUrl": "https://www.openstreetmap.org/node/2966766333"
+      },
+      {
+        "id": "osm:node/2984576763",
+        "name": "Subway",
+        "kind": "Fast food",
+        "lat": 39.271199,
+        "lng": -76.6028483,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984576763"
+      },
+      {
+        "id": "osm:node/2984576764",
+        "name": "Starbucks",
+        "kind": "Café",
+        "lat": 39.271258,
+        "lng": -76.6012364,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984576764"
+      },
+      {
+        "id": "osm:node/2984576765",
+        "name": "Chipotle",
+        "kind": "Fast food",
+        "lat": 39.2714059,
+        "lng": -76.6011505,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984576765"
+      },
+      {
+        "id": "osm:node/2984576769",
+        "name": "Kumari",
+        "kind": "Restaurant",
+        "lat": 39.2711396,
+        "lng": -76.6028805,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984576769"
+      },
+      {
+        "id": "osm:node/2984576770",
+        "name": "PokéOno",
+        "kind": "Restaurant",
+        "lat": 39.2710599,
+        "lng": -76.6029236,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984576770"
+      },
+      {
+        "id": "osm:node/2984605954",
+        "name": "Quickway Japanese Hibachi",
+        "kind": "Restaurant",
+        "lat": 39.270133,
+        "lng": -76.6030339,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984605954"
+      },
+      {
+        "id": "osm:node/2984647410",
+        "name": "Ledo Pizza",
+        "kind": "Restaurant",
+        "lat": 39.2707581,
+        "lng": -76.6017275,
+        "sourceUrl": "https://www.openstreetmap.org/node/2984647410"
+      },
+      {
+        "id": "osm:node/2987122184",
+        "name": "Bambao",
+        "kind": "Restaurant",
+        "lat": 39.2834354,
+        "lng": -76.5992771,
+        "sourceUrl": "https://www.openstreetmap.org/node/2987122184"
+      },
+      {
+        "id": "osm:node/2987122187",
+        "name": "Harbor East Deli",
+        "kind": "Restaurant",
+        "lat": 39.2834334,
+        "lng": -76.5994488,
+        "sourceUrl": "https://www.openstreetmap.org/node/2987122187"
+      },
+      {
+        "id": "osm:node/3028967706",
+        "name": "The Horse You Came In On Saloon",
+        "kind": "Bar",
+        "lat": 39.281515,
+        "lng": -76.594131,
+        "sourceUrl": "https://www.openstreetmap.org/node/3028967706"
+      },
+      {
+        "id": "osm:node/3028967716",
+        "name": "Duda's Tavern",
+        "kind": "Bar",
+        "lat": 39.281112,
+        "lng": -76.594879,
+        "sourceUrl": "https://www.openstreetmap.org/node/3028967716"
+      },
+      {
+        "id": "osm:node/3031992629",
+        "name": "Baja Tap",
+        "kind": "Restaurant",
+        "lat": 39.2808778,
+        "lng": -76.5948018,
+        "sourceUrl": "https://www.openstreetmap.org/node/3031992629"
+      },
+      {
+        "id": "osm:node/3032042492",
+        "name": "Rye",
+        "kind": "Bar",
+        "lat": 39.2815559,
+        "lng": -76.5935646,
+        "sourceUrl": "https://www.openstreetmap.org/node/3032042492"
+      },
+      {
+        "id": "osm:node/3053883029",
+        "name": "Louisiana",
+        "kind": "Restaurant",
+        "lat": 39.2836701,
+        "lng": -76.5927419,
+        "sourceUrl": "https://www.openstreetmap.org/node/3053883029"
+      },
+      {
+        "id": "osm:node/3053883030",
+        "name": "The Wren",
+        "kind": "Pub",
+        "lat": 39.2836737,
+        "lng": -76.5925863,
+        "sourceUrl": "https://www.openstreetmap.org/node/3053883030"
+      },
+      {
+        "id": "osm:node/3053907683",
+        "name": "JD's Smokehouse",
+        "kind": "Pub",
+        "lat": 39.2842076,
+        "lng": -76.579768,
+        "sourceUrl": "https://www.openstreetmap.org/node/3053907683"
+      },
+      {
+        "id": "osm:node/3053915789",
+        "name": "Culture Cup Cafe",
+        "kind": "Café",
+        "lat": 39.285947,
+        "lng": -76.581293,
+        "sourceUrl": "https://www.openstreetmap.org/node/3053915789"
+      },
+      {
+        "id": "osm:node/3190678866",
+        "name": "&pizza",
+        "kind": "Fast food",
+        "lat": 39.280776,
+        "lng": -76.579915,
+        "sourceUrl": "https://www.openstreetmap.org/node/3190678866"
+      },
+      {
+        "id": "osm:node/3190731661",
+        "name": "Nalley Fresh",
+        "kind": "Restaurant",
+        "lat": 39.2811804,
+        "lng": -76.5807341,
+        "sourceUrl": "https://www.openstreetmap.org/node/3190731661"
+      },
+      {
+        "id": "osm:node/3190738862",
+        "name": "Tropical Smoothie Cafe",
+        "kind": "Fast food",
+        "lat": 39.2811964,
+        "lng": -76.5802576,
+        "sourceUrl": "https://www.openstreetmap.org/node/3190738862"
+      },
+      {
+        "id": "osm:node/3190743661",
+        "name": "RegionAle",
+        "kind": "Fast food",
+        "lat": 39.2811992,
+        "lng": -76.5801748,
+        "sourceUrl": "https://www.openstreetmap.org/node/3190743661"
+      },
+      {
+        "id": "osm:node/3294595913",
+        "name": "IHOP",
+        "kind": "Restaurant",
+        "lat": 39.286987,
+        "lng": -76.6071168,
+        "sourceUrl": "https://www.openstreetmap.org/node/3294595913"
+      },
+      {
+        "id": "osm:node/3426201976",
+        "name": "Frank Velleggia's Casa di Pasta",
+        "kind": "Restaurant",
+        "lat": 39.2869337,
+        "lng": -76.6029468,
+        "sourceUrl": "https://www.openstreetmap.org/node/3426201976"
+      },
+      {
+        "id": "osm:node/3426203608",
+        "name": "Rocco's",
+        "kind": "Restaurant",
+        "lat": 39.2863469,
+        "lng": -76.6019586,
+        "sourceUrl": "https://www.openstreetmap.org/node/3426203608"
+      },
+      {
+        "id": "osm:node/3426207235",
+        "name": "Denzel's SharkBarGrill",
+        "kind": "Restaurant",
+        "lat": 39.2824813,
+        "lng": -76.5928072,
+        "sourceUrl": "https://www.openstreetmap.org/node/3426207235"
+      },
+      {
+        "id": "osm:node/3426210839",
+        "name": "Bunny's Buckets & Bubbles",
+        "kind": "Restaurant",
+        "lat": 39.2825805,
+        "lng": -76.5910662,
+        "sourceUrl": "https://www.openstreetmap.org/node/3426210839"
+      },
+      {
+        "id": "osm:node/3432392069",
+        "name": "Fells Point Tavern",
+        "kind": "Bar",
+        "lat": 39.2811911,
+        "lng": -76.5947713,
+        "sourceUrl": "https://www.openstreetmap.org/node/3432392069"
+      },
+      {
+        "id": "osm:node/3432412839",
+        "name": "Thai Arroy",
+        "kind": "Restaurant",
+        "lat": 39.2778206,
+        "lng": -76.6122795,
+        "sourceUrl": "https://www.openstreetmap.org/node/3432412839"
+      },
+      {
+        "id": "osm:node/3432419505",
+        "name": "Aveley Farms Coffee Roasters",
+        "kind": "Café",
+        "lat": 39.2834981,
+        "lng": -76.5979075,
+        "sourceUrl": "https://www.openstreetmap.org/node/3432419505"
+      },
+      {
+        "id": "osm:node/3445777705",
+        "name": "Bon Fresco",
+        "kind": "Fast food",
+        "lat": 39.2874712,
+        "lng": -76.6064661,
+        "sourceUrl": "https://www.openstreetmap.org/node/3445777705"
+      },
+      {
+        "id": "osm:node/3445876676",
+        "name": "Duck Duck Goose",
+        "kind": "Restaurant",
+        "lat": 39.2820193,
+        "lng": -76.5935764,
+        "sourceUrl": "https://www.openstreetmap.org/node/3445876676"
+      },
+      {
+        "id": "osm:node/3445877662",
+        "name": "Pierpoint Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2838077,
+        "lng": -76.5903825,
+        "sourceUrl": "https://www.openstreetmap.org/node/3445877662"
+      },
+      {
+        "id": "osm:node/3452293789",
+        "name": "Grunwald Club",
+        "kind": "Pub",
+        "lat": 39.2799065,
+        "lng": -76.5758759,
+        "sourceUrl": "https://www.openstreetmap.org/node/3452293789"
+      },
+      {
+        "id": "osm:node/3452293792",
+        "name": "Portside",
+        "kind": "Bar",
+        "lat": 39.2798971,
+        "lng": -76.5760074,
+        "sourceUrl": "https://www.openstreetmap.org/node/3452293792"
+      },
+      {
+        "id": "osm:node/3635658104",
+        "name": "Houlihan's",
+        "kind": "Restaurant",
+        "lat": 39.2851681,
+        "lng": -76.6071502,
+        "sourceUrl": "https://www.openstreetmap.org/node/3635658104"
+      },
+      {
+        "id": "osm:node/3635658106",
+        "name": "iFusion Express",
+        "kind": "Restaurant",
+        "lat": 39.2852902,
+        "lng": -76.6072829,
+        "sourceUrl": "https://www.openstreetmap.org/node/3635658106"
+      },
+      {
+        "id": "osm:node/3635658107",
+        "name": "Jamba",
+        "kind": "Fast food",
+        "lat": 39.2854833,
+        "lng": -76.6073027,
+        "sourceUrl": "https://www.openstreetmap.org/node/3635658107"
+      },
+      {
+        "id": "osm:node/3635666295",
+        "name": "Auntie Anne's",
+        "kind": "Fast food",
+        "lat": 39.285447,
+        "lng": -76.6072995,
+        "sourceUrl": "https://www.openstreetmap.org/node/3635666295"
+      },
+      {
+        "id": "osm:node/3635696053",
+        "name": "Phillips Seafood",
+        "kind": "Restaurant",
+        "lat": 39.2863637,
+        "lng": -76.6073439,
+        "sourceUrl": "https://www.openstreetmap.org/node/3635696053"
+      },
+      {
+        "id": "osm:node/3667738638",
+        "name": "Clarkburger",
+        "kind": "Restaurant",
+        "lat": 39.2854301,
+        "lng": -76.5990086,
+        "sourceUrl": "https://www.openstreetmap.org/node/3667738638"
+      },
+      {
+        "id": "osm:node/3667758678",
+        "name": "Nando's",
+        "kind": "Restaurant",
+        "lat": 39.28449,
+        "lng": -76.5989037,
+        "sourceUrl": "https://www.openstreetmap.org/node/3667758678"
+      },
+      {
+        "id": "osm:node/3667770542",
+        "name": "My Thai",
+        "kind": "Restaurant",
+        "lat": 39.2867346,
+        "lng": -76.5990894,
+        "sourceUrl": "https://www.openstreetmap.org/node/3667770542"
+      },
+      {
+        "id": "osm:node/3667782037",
+        "name": "Da Mimmo",
+        "kind": "Restaurant",
+        "lat": 39.287153,
+        "lng": -76.6022478,
+        "sourceUrl": "https://www.openstreetmap.org/node/3667782037"
+      },
+      {
+        "id": "osm:node/3667799260",
+        "name": "Oliver Speck's",
+        "kind": "Restaurant",
+        "lat": 39.2847305,
+        "lng": -76.6002286,
+        "sourceUrl": "https://www.openstreetmap.org/node/3667799260"
+      },
+      {
+        "id": "osm:node/3740368437",
+        "name": "Bo Brooks Restaurant & Catering",
+        "kind": "Restaurant",
+        "lat": 39.2772322,
+        "lng": -76.5789485,
+        "sourceUrl": "https://www.openstreetmap.org/node/3740368437"
+      },
+      {
+        "id": "osm:node/3741915194",
+        "name": "Darbar",
+        "kind": "Restaurant",
+        "lat": 39.283557,
+        "lng": -76.5894881,
+        "sourceUrl": "https://www.openstreetmap.org/node/3741915194"
+      },
+      {
+        "id": "osm:node/3833131314",
+        "name": "Jimmy John's",
+        "kind": "Fast food",
+        "lat": 39.2844716,
+        "lng": -76.5985424,
+        "sourceUrl": "https://www.openstreetmap.org/node/3833131314"
+      },
+      {
+        "id": "osm:node/3833131315",
+        "name": "Kislings Tavern",
+        "kind": "Bar",
+        "lat": 39.2849464,
+        "lng": -76.5868352,
+        "sourceUrl": "https://www.openstreetmap.org/node/3833131315"
+      },
+      {
+        "id": "osm:node/3833131317",
+        "name": "Subway",
+        "kind": "Fast food",
+        "lat": 39.2836466,
+        "lng": -76.5936312,
+        "sourceUrl": "https://www.openstreetmap.org/node/3833131317"
+      },
+      {
+        "id": "osm:node/3927091503",
+        "name": "Fogo de Chão",
+        "kind": "Restaurant",
+        "lat": 39.2869731,
+        "lng": -76.607365,
+        "sourceUrl": "https://www.openstreetmap.org/node/3927091503"
+      },
+      {
+        "id": "osm:node/3934945757",
+        "name": "Sweetgreen",
+        "kind": "Fast food",
+        "lat": 39.284474,
+        "lng": -76.598552,
+        "sourceUrl": "https://www.openstreetmap.org/node/3934945757"
+      },
+      {
+        "id": "osm:node/3934945957",
+        "name": "Brusco",
+        "kind": "Restaurant",
+        "lat": 39.284486,
+        "lng": -76.598663,
+        "sourceUrl": "https://www.openstreetmap.org/node/3934945957"
+      },
+      {
+        "id": "osm:node/3934945958",
+        "name": "Bagby Pizza Co.",
+        "kind": "Restaurant",
+        "lat": 39.284423,
+        "lng": -76.599857,
+        "sourceUrl": "https://www.openstreetmap.org/node/3934945958"
+      },
+      {
+        "id": "osm:node/3980742984",
+        "name": "Alma Cocina Latina",
+        "kind": "Restaurant",
+        "lat": 39.2814013,
+        "lng": -76.5807494,
+        "sourceUrl": "https://www.openstreetmap.org/node/3980742984"
+      },
+      {
+        "id": "osm:node/4058686080",
+        "name": "Blue Moon Cafe",
+        "kind": "Restaurant",
+        "lat": 39.2833747,
+        "lng": -76.5942564,
+        "sourceUrl": "https://www.openstreetmap.org/node/4058686080"
+      },
+      {
+        "id": "osm:node/4062853220",
+        "name": "Five Guys",
+        "kind": "Fast food",
+        "lat": 39.286223,
+        "lng": -76.611203,
+        "sourceUrl": "https://www.openstreetmap.org/node/4062853220"
+      },
+      {
+        "id": "osm:node/4219279209",
+        "name": "Southside Saloon",
+        "kind": "Bar",
+        "lat": 39.2729763,
+        "lng": -76.6074137,
+        "sourceUrl": "https://www.openstreetmap.org/node/4219279209"
+      },
+      {
+        "id": "osm:node/4326747778",
+        "name": "Butts and Betty's Tavern",
+        "kind": "Bar",
+        "lat": 39.2881521,
+        "lng": -76.5858468,
+        "sourceUrl": "https://www.openstreetmap.org/node/4326747778"
+      },
+      {
+        "id": "osm:node/4349214608",
+        "name": "Bar Vasquez",
+        "kind": "Restaurant",
+        "lat": 39.2832352,
+        "lng": -76.5971773,
+        "sourceUrl": "https://www.openstreetmap.org/node/4349214608"
+      },
+      {
+        "id": "osm:node/4367206690",
+        "name": "Joe Benny's",
+        "kind": "Restaurant",
+        "lat": 39.285865,
+        "lng": -76.6014437,
+        "sourceUrl": "https://www.openstreetmap.org/node/4367206690"
+      },
+      {
+        "id": "osm:node/4591016504",
+        "name": "Rosina Gourmet",
+        "kind": "Restaurant",
+        "lat": 39.2799077,
+        "lng": -76.5761969,
+        "sourceUrl": "https://www.openstreetmap.org/node/4591016504"
+      },
+      {
+        "id": "osm:node/4680457835",
+        "name": "Ekiben",
+        "kind": "Restaurant",
+        "lat": 39.2856454,
+        "lng": -76.5945463,
+        "sourceUrl": "https://www.openstreetmap.org/node/4680457835"
+      },
+      {
+        "id": "osm:node/4680470029",
+        "name": "Asahi Sushi",
+        "kind": "Restaurant",
+        "lat": 39.2850303,
+        "lng": -76.5937585,
+        "sourceUrl": "https://www.openstreetmap.org/node/4680470029"
+      },
+      {
+        "id": "osm:node/4710414576",
+        "name": "Shake Shack",
+        "kind": "Fast food",
+        "lat": 39.2868915,
+        "lng": -76.6098097,
+        "sourceUrl": "https://www.openstreetmap.org/node/4710414576"
+      },
+      {
+        "id": "osm:node/4924900295",
+        "name": "Chris' Seafood",
+        "kind": "Restaurant",
+        "lat": 39.2828406,
+        "lng": -76.5825216,
+        "sourceUrl": "https://www.openstreetmap.org/node/4924900295"
+      },
+      {
+        "id": "osm:node/4939434538",
+        "name": "Order&Chaos",
+        "kind": "Café",
+        "lat": 39.2735561,
+        "lng": -76.6028515,
+        "sourceUrl": "https://www.openstreetmap.org/node/4939434538"
+      },
+      {
+        "id": "osm:node/5000345536",
+        "name": "Verde Pizza Napoletana",
+        "kind": "Restaurant",
+        "lat": 39.2841053,
+        "lng": -76.5826015,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000345536"
+      },
+      {
+        "id": "osm:node/5000345537",
+        "name": "Katana Sushi",
+        "kind": "Restaurant",
+        "lat": 39.2820674,
+        "lng": -76.5824637,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000345537"
+      },
+      {
+        "id": "osm:node/5000345540",
+        "name": "Chaser's",
+        "kind": "Pub",
+        "lat": 39.2849262,
+        "lng": -76.5812315,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000345540"
+      },
+      {
+        "id": "osm:node/5000345541",
+        "name": "Pol's Cafe",
+        "kind": "Pub",
+        "lat": 39.283985,
+        "lng": -76.5792968,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000345541"
+      },
+      {
+        "id": "osm:node/5000428785",
+        "name": "Johnny Rad's Pizzeria Tavern",
+        "kind": "Restaurant",
+        "lat": 39.2859963,
+        "lng": -76.5865396,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428785"
+      },
+      {
+        "id": "osm:node/5000428786",
+        "name": "Mizu Shushi",
+        "kind": "Restaurant",
+        "lat": 39.2850243,
+        "lng": -76.5850339,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428786"
+      },
+      {
+        "id": "osm:node/5000428787",
+        "name": "Sip & Bite",
+        "kind": "Restaurant",
+        "lat": 39.2839247,
+        "lng": -76.5855298,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428787"
+      },
+      {
+        "id": "osm:node/5000428788",
+        "name": "Castaways Bar & Grill",
+        "kind": "Bar",
+        "lat": 39.2837893,
+        "lng": -76.5853098,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428788"
+      },
+      {
+        "id": "osm:node/5000428790",
+        "name": "Smaltimore",
+        "kind": "Bar",
+        "lat": 39.2831763,
+        "lng": -76.5804498,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428790"
+      },
+      {
+        "id": "osm:node/5000428791",
+        "name": "HomeSlyce",
+        "kind": "Restaurant",
+        "lat": 39.28203,
+        "lng": -76.577115,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428791"
+      },
+      {
+        "id": "osm:node/5000428792",
+        "name": "Mahaffey's Pub",
+        "kind": "Pub",
+        "lat": 39.28122,
+        "lng": -76.578011,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000428792"
+      },
+      {
+        "id": "osm:node/5000430388",
+        "name": "Marta Fine Food and Spirits",
+        "kind": "Restaurant",
+        "lat": 39.2893845,
+        "lng": -76.5862313,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000430388"
+      },
+      {
+        "id": "osm:node/5000471032",
+        "name": "Mayuree Thai Tavern",
+        "kind": "Restaurant",
+        "lat": 39.2850824,
+        "lng": -76.5836205,
+        "sourceUrl": "https://www.openstreetmap.org/node/5000471032"
+      },
+      {
+        "id": "osm:node/5081740621",
+        "name": "Subway",
+        "kind": "Fast food",
+        "lat": 39.2896595,
+        "lng": -76.6092815,
+        "sourceUrl": "https://www.openstreetmap.org/node/5081740621"
+      },
+      {
+        "id": "osm:node/5081740721",
+        "name": "Oasis",
+        "kind": "Bar",
+        "lat": 39.2896498,
+        "lng": -76.609484,
+        "sourceUrl": "https://www.openstreetmap.org/node/5081740721"
+      },
+      {
+        "id": "osm:node/5282894642",
+        "name": "Let's Tea",
+        "kind": "Café",
+        "lat": 39.2896683,
+        "lng": -76.6087761,
+        "sourceUrl": "https://www.openstreetmap.org/node/5282894642"
+      },
+      {
+        "id": "osm:node/5282894647",
+        "name": "Midway Bar",
+        "kind": "Bar",
+        "lat": 39.2896532,
+        "lng": -76.6093566,
+        "sourceUrl": "https://www.openstreetmap.org/node/5282894647"
+      },
+      {
+        "id": "osm:node/5351666904",
+        "name": "Elements Cafe",
+        "kind": "Restaurant",
+        "lat": 39.2815066,
+        "lng": -76.6118162,
+        "sourceUrl": "https://www.openstreetmap.org/node/5351666904"
+      },
+      {
+        "id": "osm:node/5384576521",
+        "name": "Ceremony",
+        "kind": "Café",
+        "lat": 39.2809255,
+        "lng": -76.5984532,
+        "sourceUrl": "https://www.openstreetmap.org/node/5384576521"
+      },
+      {
+        "id": "osm:node/5384576522",
+        "name": "Honeygrow",
+        "kind": "Restaurant",
+        "lat": 39.2813657,
+        "lng": -76.5984273,
+        "sourceUrl": "https://www.openstreetmap.org/node/5384576522"
+      },
+      {
+        "id": "osm:node/5384576525",
+        "name": null,
+        "kind": "Café",
+        "lat": 39.280965,
+        "lng": -76.5987269,
+        "sourceUrl": "https://www.openstreetmap.org/node/5384576525"
+      },
+      {
+        "id": "osm:node/5405358134",
+        "name": "CAVA",
+        "kind": "Restaurant",
+        "lat": 39.284487,
+        "lng": -76.5987814,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405358134"
+      },
+      {
+        "id": "osm:node/5405368388",
+        "name": "RA Sushi",
+        "kind": "Restaurant",
+        "lat": 39.2824954,
+        "lng": -76.5974727,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405368388"
+      },
+      {
+        "id": "osm:node/5405373805",
+        "name": "Jabali Brewing Co.",
+        "kind": "Café",
+        "lat": 39.2825664,
+        "lng": -76.5949932,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405373805"
+      },
+      {
+        "id": "osm:node/5405385150",
+        "name": "Fells Point Creamery",
+        "kind": "Restaurant",
+        "lat": 39.2819953,
+        "lng": -76.5927683,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405385150"
+      },
+      {
+        "id": "osm:node/5405385152",
+        "name": "Twist",
+        "kind": "Restaurant",
+        "lat": 39.2829426,
+        "lng": -76.5930436,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405385152"
+      },
+      {
+        "id": "osm:node/5405407844",
+        "name": "Moby’s",
+        "kind": "Bar",
+        "lat": 39.2830085,
+        "lng": -76.5930495,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405407844"
+      },
+      {
+        "id": "osm:node/5405407845",
+        "name": "Broadway Hotpot & Bar",
+        "kind": "Restaurant",
+        "lat": 39.2832093,
+        "lng": -76.5930714,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405407845"
+      },
+      {
+        "id": "osm:node/5405407848",
+        "name": "Rodos Bar",
+        "kind": "Bar",
+        "lat": 39.2830591,
+        "lng": -76.5930503,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405407848"
+      },
+      {
+        "id": "osm:node/5405418924",
+        "name": "Good Burger & Pizza",
+        "kind": "Restaurant",
+        "lat": 39.2838442,
+        "lng": -76.5936252,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405418924"
+      },
+      {
+        "id": "osm:node/5405420157",
+        "name": "Broadway Cafe & Grill",
+        "kind": "Restaurant",
+        "lat": 39.2844535,
+        "lng": -76.5933399,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405420157"
+      },
+      {
+        "id": "osm:node/5405420158",
+        "name": "Sammy’s Enoteca",
+        "kind": "Restaurant",
+        "lat": 39.2839457,
+        "lng": -76.5931216,
+        "sourceUrl": "https://www.openstreetmap.org/node/5405420158"
+      },
+      {
+        "id": "osm:node/5486634413",
+        "name": "OneDo Coffee",
+        "kind": "Café",
+        "lat": 39.2817581,
+        "lng": -76.5781927,
+        "sourceUrl": "https://www.openstreetmap.org/node/5486634413"
+      },
+      {
+        "id": "osm:node/5579482895",
+        "name": "The Daily Grind",
+        "kind": "Café",
+        "lat": 39.2820095,
+        "lng": -76.5918227,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579482895"
+      },
+      {
+        "id": "osm:node/5579482898",
+        "name": "Smoothie King",
+        "kind": "Fast food",
+        "lat": 39.2820181,
+        "lng": -76.5919765,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579482898"
+      },
+      {
+        "id": "osm:node/5579482901",
+        "name": "Waterfront Hotel",
+        "kind": "Pub",
+        "lat": 39.282016,
+        "lng": -76.5922163,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579482901"
+      },
+      {
+        "id": "osm:node/5579487240",
+        "name": "Vino Wine Bar & Shop",
+        "kind": "Bar",
+        "lat": 39.2814357,
+        "lng": -76.5909618,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579487240"
+      },
+      {
+        "id": "osm:node/5579487242",
+        "name": "The Point In Fells",
+        "kind": "Pub",
+        "lat": 39.2820289,
+        "lng": -76.5913223,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579487242"
+      },
+      {
+        "id": "osm:node/5579487243",
+        "name": "Cat’s Eye Pub",
+        "kind": "Bar",
+        "lat": 39.282014,
+        "lng": -76.591549,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579487243"
+      },
+      {
+        "id": "osm:node/5579487246",
+        "name": "Penny Black",
+        "kind": "Bar",
+        "lat": 39.2820562,
+        "lng": -76.5910082,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579487246"
+      },
+      {
+        "id": "osm:node/5579488138",
+        "name": "Urban Pirates",
+        "kind": "Bar",
+        "lat": 39.281253,
+        "lng": -76.5909538,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579488138"
+      },
+      {
+        "id": "osm:node/5579488139",
+        "name": "Nanami Cafe",
+        "kind": "Restaurant",
+        "lat": 39.281329,
+        "lng": -76.59096,
+        "sourceUrl": "https://www.openstreetmap.org/node/5579488139"
+      },
+      {
+        "id": "osm:node/5897682946",
+        "name": "Chick-fil-A",
+        "kind": "Fast food",
+        "lat": 39.2869051,
+        "lng": -76.6095489,
+        "sourceUrl": "https://www.openstreetmap.org/node/5897682946"
+      },
+      {
+        "id": "osm:node/5897682947",
+        "name": "The Halal Guys",
+        "kind": "Fast food",
+        "lat": 39.2869089,
+        "lng": -76.6094493,
+        "sourceUrl": "https://www.openstreetmap.org/node/5897682947"
+      },
+      {
+        "id": "osm:node/5897682948",
+        "name": "Corner Bakery",
+        "kind": "Café",
+        "lat": 39.2870588,
+        "lng": -76.6084975,
+        "sourceUrl": "https://www.openstreetmap.org/node/5897682948"
+      },
+      {
+        "id": "osm:node/5982151936",
+        "name": "Taco Town",
+        "kind": "Restaurant",
+        "lat": 39.288413,
+        "lng": -76.6065216,
+        "sourceUrl": "https://www.openstreetmap.org/node/5982151936"
+      },
+      {
+        "id": "osm:node/5982151937",
+        "name": "The Kabul Fresh Grill",
+        "kind": "Restaurant",
+        "lat": 39.2882176,
+        "lng": -76.6065139,
+        "sourceUrl": "https://www.openstreetmap.org/node/5982151937"
+      },
+      {
+        "id": "osm:node/5982154101",
+        "name": "Poyoteca",
+        "kind": "Restaurant",
+        "lat": 39.2880949,
+        "lng": -76.6064907,
+        "sourceUrl": "https://www.openstreetmap.org/node/5982154101"
+      },
+      {
+        "id": "osm:node/5982156145",
+        "name": "Mount Everest Restaurant & Deli",
+        "kind": "Restaurant",
+        "lat": 39.2873338,
+        "lng": -76.6070335,
+        "sourceUrl": "https://www.openstreetmap.org/node/5982156145"
+      },
+      {
+        "id": "osm:node/6186449320",
+        "name": "Sam's bagels",
+        "kind": "Café",
+        "lat": 39.2783173,
+        "lng": -76.6124081,
+        "sourceUrl": "https://www.openstreetmap.org/node/6186449320"
+      },
+      {
+        "id": "osm:node/6191165326",
+        "name": "Port City Tavern",
+        "kind": "Bar",
+        "lat": 39.2859282,
+        "lng": -76.5878048,
+        "sourceUrl": "https://www.openstreetmap.org/node/6191165326"
+      },
+      {
+        "id": "osm:node/6396073706",
+        "name": "The Original Pancake House",
+        "kind": "Restaurant",
+        "lat": 39.281784,
+        "lng": -76.581488,
+        "sourceUrl": "https://www.openstreetmap.org/node/6396073706"
+      },
+      {
+        "id": "osm:node/6545680566",
+        "name": "La Barrita Restobar",
+        "kind": "Restaurant",
+        "lat": 39.2927824,
+        "lng": -76.5876226,
+        "sourceUrl": "https://www.openstreetmap.org/node/6545680566"
+      },
+      {
+        "id": "osm:node/6577194409",
+        "name": null,
+        "kind": "Bar",
+        "lat": 39.2774752,
+        "lng": -76.6041788,
+        "sourceUrl": "https://www.openstreetmap.org/node/6577194409"
+      },
+      {
+        "id": "osm:node/6597669740",
+        "name": "Dunkin'",
+        "kind": "Fast food",
+        "lat": 39.2689643,
+        "lng": -76.5994958,
+        "sourceUrl": "https://www.openstreetmap.org/node/6597669740"
+      },
+      {
+        "id": "osm:node/6597669742",
+        "name": "CHX Premium Kitchen",
+        "kind": "Pub",
+        "lat": 39.268416,
+        "lng": -76.600295,
+        "sourceUrl": "https://www.openstreetmap.org/node/6597669742"
+      },
+      {
+        "id": "osm:node/6610357182",
+        "name": "Samos",
+        "kind": "Restaurant",
+        "lat": 39.2688546,
+        "lng": -76.5995659,
+        "sourceUrl": "https://www.openstreetmap.org/node/6610357182"
+      },
+      {
+        "id": "osm:node/6610476750",
+        "name": "Yes Chef!",
+        "kind": "Fast food",
+        "lat": 39.2688194,
+        "lng": -76.6000299,
+        "sourceUrl": "https://www.openstreetmap.org/node/6610476750"
+      },
+      {
+        "id": "osm:node/6610541405",
+        "name": "Pure Raw Juice",
+        "kind": "Restaurant",
+        "lat": 39.274188,
+        "lng": -76.608463,
+        "sourceUrl": "https://www.openstreetmap.org/node/6610541405"
+      },
+      {
+        "id": "osm:node/6610559818",
+        "name": "Corner Juice Bar",
+        "kind": "Restaurant",
+        "lat": 39.2851666,
+        "lng": -76.5826971,
+        "sourceUrl": "https://www.openstreetmap.org/node/6610559818"
+      },
+      {
+        "id": "osm:node/7398675966",
+        "name": "The HappyJack Tavern",
+        "kind": "Restaurant",
+        "lat": 39.282305,
+        "lng": -76.5763588,
+        "sourceUrl": "https://www.openstreetmap.org/node/7398675966"
+      },
+      {
+        "id": "osm:node/7468686125",
+        "name": "China House",
+        "kind": "Restaurant",
+        "lat": 39.2857931,
+        "lng": -76.5847929,
+        "sourceUrl": "https://www.openstreetmap.org/node/7468686125"
+      },
+      {
+        "id": "osm:node/7741312850",
+        "name": "Get it Inn 2",
+        "kind": "Restaurant",
+        "lat": 39.2849717,
+        "lng": -76.5864834,
+        "sourceUrl": "https://www.openstreetmap.org/node/7741312850"
+      },
+      {
+        "id": "osm:node/7873548675",
+        "name": "Mary's Tavern",
+        "kind": "Bar",
+        "lat": 39.287794,
+        "lng": -76.587311,
+        "sourceUrl": "https://www.openstreetmap.org/node/7873548675"
+      },
+      {
+        "id": "osm:node/9103680302",
+        "name": "Barley's Backyard Fell's Point",
+        "kind": "Restaurant",
+        "lat": 39.2829621,
+        "lng": -76.5935634,
+        "sourceUrl": "https://www.openstreetmap.org/node/9103680302"
+      },
+      {
+        "id": "osm:node/9103690310",
+        "name": "Todd Conner's",
+        "kind": "Restaurant",
+        "lat": 39.2833998,
+        "lng": -76.5935916,
+        "sourceUrl": "https://www.openstreetmap.org/node/9103690310"
+      },
+      {
+        "id": "osm:node/9103696286",
+        "name": "The Rockwell",
+        "kind": "Pub",
+        "lat": 39.283345,
+        "lng": -76.593581,
+        "sourceUrl": "https://www.openstreetmap.org/node/9103696286"
+      },
+      {
+        "id": "osm:node/9103706929",
+        "name": "Blarney Stone Pub",
+        "kind": "Pub",
+        "lat": 39.2832908,
+        "lng": -76.5935813,
+        "sourceUrl": "https://www.openstreetmap.org/node/9103706929"
+      },
+      {
+        "id": "osm:node/9103708163",
+        "name": "Lil' Phil's Tavern",
+        "kind": "Pub",
+        "lat": 39.2832445,
+        "lng": -76.5935843,
+        "sourceUrl": "https://www.openstreetmap.org/node/9103708163"
+      },
+      {
+        "id": "osm:node/9123100265",
+        "name": "Bertha's Mussels",
+        "kind": "Restaurant",
+        "lat": 39.2826266,
+        "lng": -76.5935315,
+        "sourceUrl": "https://www.openstreetmap.org/node/9123100265"
+      },
+      {
+        "id": "osm:node/9123100267",
+        "name": "Pie in the Sky",
+        "kind": "Restaurant",
+        "lat": 39.2830185,
+        "lng": -76.5935692,
+        "sourceUrl": "https://www.openstreetmap.org/node/9123100267"
+      },
+      {
+        "id": "osm:node/9123100269",
+        "name": "Alexander's Tavern",
+        "kind": "Restaurant",
+        "lat": 39.2831708,
+        "lng": -76.5935802,
+        "sourceUrl": "https://www.openstreetmap.org/node/9123100269"
+      },
+      {
+        "id": "osm:node/9125052265",
+        "name": "Liquid Earth",
+        "kind": "Restaurant",
+        "lat": 39.283613,
+        "lng": -76.594125,
+        "sourceUrl": "https://www.openstreetmap.org/node/9125052265"
+      },
+      {
+        "id": "osm:node/9183903582",
+        "name": "Abbey Burger Bistro",
+        "kind": "Restaurant",
+        "lat": 39.2822762,
+        "lng": -76.592789,
+        "sourceUrl": "https://www.openstreetmap.org/node/9183903582"
+      },
+      {
+        "id": "osm:node/9183903583",
+        "name": "Ruben's",
+        "kind": "Restaurant",
+        "lat": 39.2823276,
+        "lng": -76.5927937,
+        "sourceUrl": "https://www.openstreetmap.org/node/9183903583"
+      },
+      {
+        "id": "osm:node/9217063638",
+        "name": "Olio Italian Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.283674,
+        "lng": -76.592646,
+        "sourceUrl": "https://www.openstreetmap.org/node/9217063638"
+      },
+      {
+        "id": "osm:node/9218695853",
+        "name": "Sajhoma Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.284676,
+        "lng": -76.592797,
+        "sourceUrl": "https://www.openstreetmap.org/node/9218695853"
+      },
+      {
+        "id": "osm:node/9222496176",
+        "name": "Kippo Ramen",
+        "kind": "Restaurant",
+        "lat": 39.2842587,
+        "lng": -76.5936454,
+        "sourceUrl": "https://www.openstreetmap.org/node/9222496176"
+      },
+      {
+        "id": "osm:node/9222496182",
+        "name": "Saffron Grill",
+        "kind": "Restaurant",
+        "lat": 39.2840357,
+        "lng": -76.5936422,
+        "sourceUrl": "https://www.openstreetmap.org/node/9222496182"
+      },
+      {
+        "id": "osm:node/9243893769",
+        "name": "Luna Garden",
+        "kind": "Café",
+        "lat": 39.2813499,
+        "lng": -76.5944511,
+        "sourceUrl": "https://www.openstreetmap.org/node/9243893769"
+      },
+      {
+        "id": "osm:node/9400887433",
+        "name": "El Pueblito",
+        "kind": "Restaurant",
+        "lat": 39.2938171,
+        "lng": -76.5903344,
+        "sourceUrl": "https://www.openstreetmap.org/node/9400887433"
+      },
+      {
+        "id": "osm:node/9400887434",
+        "name": "Hopkins Spot",
+        "kind": "Restaurant",
+        "lat": 39.293815,
+        "lng": -76.590472,
+        "sourceUrl": "https://www.openstreetmap.org/node/9400887434"
+      },
+      {
+        "id": "osm:node/9453645800",
+        "name": "Vida Taco Bar",
+        "kind": "Restaurant",
+        "lat": 39.2802343,
+        "lng": -76.5976337,
+        "sourceUrl": "https://www.openstreetmap.org/node/9453645800"
+      },
+      {
+        "id": "osm:node/9495587094",
+        "name": "Döner Brös",
+        "kind": "Fast food",
+        "lat": 39.28023,
+        "lng": -76.597021,
+        "sourceUrl": "https://www.openstreetmap.org/node/9495587094"
+      },
+      {
+        "id": "osm:node/10571851697",
+        "name": "Chipotle",
+        "kind": "Fast food",
+        "lat": 39.2869553,
+        "lng": -76.607716,
+        "sourceUrl": "https://www.openstreetmap.org/node/10571851697"
+      },
+      {
+        "id": "osm:node/10717618890",
+        "name": "Mo's",
+        "kind": "Restaurant",
+        "lat": 39.2863633,
+        "lng": -76.6033218,
+        "sourceUrl": "https://www.openstreetmap.org/node/10717618890"
+      },
+      {
+        "id": "osm:node/10796180624",
+        "name": "Byblos Lebanese Cuisine",
+        "kind": "Restaurant",
+        "lat": 39.277548,
+        "lng": -76.6123156,
+        "sourceUrl": "https://www.openstreetmap.org/node/10796180624"
+      },
+      {
+        "id": "osm:node/10797724427",
+        "name": "Jimmy John's",
+        "kind": "Fast food",
+        "lat": 39.2683634,
+        "lng": -76.5998657,
+        "sourceUrl": "https://www.openstreetmap.org/node/10797724427"
+      },
+      {
+        "id": "osm:node/10797724429",
+        "name": "Smoothie King",
+        "kind": "Fast food",
+        "lat": 39.2710117,
+        "lng": -76.6029498,
+        "sourceUrl": "https://www.openstreetmap.org/node/10797724429"
+      },
+      {
+        "id": "osm:node/10797724433",
+        "name": "Southside Diner",
+        "kind": "Restaurant",
+        "lat": 39.2701623,
+        "lng": -76.602183,
+        "sourceUrl": "https://www.openstreetmap.org/node/10797724433"
+      },
+      {
+        "id": "osm:node/10799617062",
+        "name": "Hull Street Blues Cafe",
+        "kind": "Café",
+        "lat": 39.2722544,
+        "lng": -76.5920153,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617062"
+      },
+      {
+        "id": "osm:node/10799617064",
+        "name": "City Limits Sports Bar",
+        "kind": "Bar",
+        "lat": 39.2681314,
+        "lng": -76.5908752,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617064"
+      },
+      {
+        "id": "osm:node/10799617065",
+        "name": "Earthshake",
+        "kind": "Bar",
+        "lat": 39.2682195,
+        "lng": -76.5911209,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617065"
+      },
+      {
+        "id": "osm:node/10799617068",
+        "name": "Himalayan House Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2688978,
+        "lng": -76.5930725,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617068"
+      },
+      {
+        "id": "osm:node/10799617072",
+        "name": "Barracudas",
+        "kind": "Bar",
+        "lat": 39.2701881,
+        "lng": -76.596768,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617072"
+      },
+      {
+        "id": "osm:node/10799617073",
+        "name": "Locust Point Steamers",
+        "kind": "Restaurant",
+        "lat": 39.2708543,
+        "lng": -76.5986694,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617073"
+      },
+      {
+        "id": "osm:node/10799617074",
+        "name": "Ironworks",
+        "kind": "Bar",
+        "lat": 39.2709534,
+        "lng": -76.5989301,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617074"
+      },
+      {
+        "id": "osm:node/10799617087",
+        "name": "Barfly's",
+        "kind": "Pub",
+        "lat": 39.272965,
+        "lng": -76.6046787,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617087"
+      },
+      {
+        "id": "osm:node/10799617088",
+        "name": "Hilltop Carryout",
+        "kind": "Restaurant",
+        "lat": 39.273084,
+        "lng": -76.605131,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617088"
+      },
+      {
+        "id": "osm:node/10799617089",
+        "name": "Koba Café",
+        "kind": "Café",
+        "lat": 39.272773,
+        "lng": -76.604121,
+        "sourceUrl": "https://www.openstreetmap.org/node/10799617089"
+      },
+      {
+        "id": "osm:node/11508465773",
+        "name": "Drift Bar",
+        "kind": "Bar",
+        "lat": 39.2771031,
+        "lng": -76.5790864,
+        "sourceUrl": "https://www.openstreetmap.org/node/11508465773"
+      },
+      {
+        "id": "osm:node/11917031902",
+        "name": "Dunkin'",
+        "kind": "Fast food",
+        "lat": 39.2844807,
+        "lng": -76.5985056,
+        "sourceUrl": "https://www.openstreetmap.org/node/11917031902"
+      },
+      {
+        "id": "osm:node/11917031903",
+        "name": "Popeyes",
+        "kind": "Fast food",
+        "lat": 39.2872548,
+        "lng": -76.6070303,
+        "sourceUrl": "https://www.openstreetmap.org/node/11917031903"
+      },
+      {
+        "id": "osm:node/11935887400",
+        "name": "El Taquito Mexicano",
+        "kind": "Restaurant",
+        "lat": 39.2857861,
+        "lng": -76.5917149,
+        "sourceUrl": "https://www.openstreetmap.org/node/11935887400"
+      },
+      {
+        "id": "osm:node/12098009151",
+        "name": "Blackwall Hitch",
+        "kind": "Restaurant",
+        "lat": 39.2870425,
+        "lng": -76.606434,
+        "sourceUrl": "https://www.openstreetmap.org/node/12098009151"
+      },
+      {
+        "id": "osm:node/12591788901",
+        "name": "Ekiben South Baltimore",
+        "kind": "Fast food",
+        "lat": 39.2719645,
+        "lng": -76.6026367,
+        "sourceUrl": "https://www.openstreetmap.org/node/12591788901"
+      },
+      {
+        "id": "osm:node/12593148401",
+        "name": "Shotti's Point Charm City",
+        "kind": "Bar",
+        "lat": 39.2724345,
+        "lng": -76.6040205,
+        "sourceUrl": "https://www.openstreetmap.org/node/12593148401"
+      },
+      {
+        "id": "osm:node/12599155001",
+        "name": "Wiley Gunters",
+        "kind": "Bar",
+        "lat": 39.2717957,
+        "lng": -76.6022067,
+        "sourceUrl": "https://www.openstreetmap.org/node/12599155001"
+      },
+      {
+        "id": "osm:node/12599233301",
+        "name": "THB Bagelry and Deli",
+        "kind": "Restaurant",
+        "lat": 39.2694153,
+        "lng": -76.5996755,
+        "sourceUrl": "https://www.openstreetmap.org/node/12599233301"
+      },
+      {
+        "id": "osm:node/12599299202",
+        "name": "Limoncello Italian Restaurant & Wine Bar",
+        "kind": "Restaurant",
+        "lat": 39.2721195,
+        "lng": -76.6008968,
+        "sourceUrl": "https://www.openstreetmap.org/node/12599299202"
+      },
+      {
+        "id": "osm:node/12851962836",
+        "name": "Bambu",
+        "kind": "Café",
+        "lat": 39.2843472,
+        "lng": -76.6018247,
+        "sourceUrl": "https://www.openstreetmap.org/node/12851962836"
+      },
+      {
+        "id": "osm:node/13082817461",
+        "name": "Cinnabon",
+        "kind": "Fast food",
+        "lat": 39.2854666,
+        "lng": -76.6073018,
+        "sourceUrl": "https://www.openstreetmap.org/node/13082817461"
+      },
+      {
+        "id": "osm:node/13200737801",
+        "name": "Adee's Coffee Roasters",
+        "kind": "Café",
+        "lat": 39.2843943,
+        "lng": -76.5940361,
+        "sourceUrl": "https://www.openstreetmap.org/node/13200737801"
+      },
+      {
+        "id": "osm:node/13200742701",
+        "name": "Kneads",
+        "kind": "Restaurant",
+        "lat": 39.2845409,
+        "lng": -76.5993983,
+        "sourceUrl": "https://www.openstreetmap.org/node/13200742701"
+      },
+      {
+        "id": "osm:node/13276838728",
+        "name": "Ostrowski's of Bank Street",
+        "kind": "Fast food",
+        "lat": 39.2865884,
+        "lng": -76.5913214,
+        "sourceUrl": "https://www.openstreetmap.org/node/13276838728"
+      },
+      {
+        "id": "osm:node/13276838734",
+        "name": null,
+        "kind": "Fast food",
+        "lat": 39.2857907,
+        "lng": -76.584946,
+        "sourceUrl": "https://www.openstreetmap.org/node/13276838734"
+      },
+      {
+        "id": "osm:node/13377083383",
+        "name": "Southern Butter By Chef T",
+        "kind": "Fast food",
+        "lat": 39.2880017,
+        "lng": -76.5998971,
+        "sourceUrl": "https://www.openstreetmap.org/node/13377083383"
+      },
+      {
+        "id": "osm:node/13399144422",
+        "name": "Water for Chocolate Catering",
+        "kind": "Restaurant",
+        "lat": 39.2903984,
+        "lng": -76.5905186,
+        "sourceUrl": "https://www.openstreetmap.org/node/13399144422"
+      },
+      {
+        "id": "osm:node/13438650156",
+        "name": "Cool Beans Coffee",
+        "kind": "Café",
+        "lat": 39.2707841,
+        "lng": -76.5896329,
+        "sourceUrl": "https://www.openstreetmap.org/node/13438650156"
+      },
+      {
+        "id": "osm:node/13440042476",
+        "name": "Dimples Bar & Grill",
+        "kind": "Restaurant",
+        "lat": 39.2706539,
+        "lng": -76.5941739,
+        "sourceUrl": "https://www.openstreetmap.org/node/13440042476"
+      },
+      {
+        "id": "osm:node/13440042487",
+        "name": "Good to Great",
+        "kind": "Bar",
+        "lat": 39.2730488,
+        "lng": -76.5920798,
+        "sourceUrl": "https://www.openstreetmap.org/node/13440042487"
+      },
+      {
+        "id": "osm:node/13440083609",
+        "name": "The Last Penny",
+        "kind": "Bar",
+        "lat": 39.2704445,
+        "lng": -76.5943166,
+        "sourceUrl": "https://www.openstreetmap.org/node/13440083609"
+      },
+      {
+        "id": "osm:node/13694295602",
+        "name": "Southpaw",
+        "kind": "Bar",
+        "lat": 39.284627,
+        "lng": -76.595083,
+        "sourceUrl": "https://www.openstreetmap.org/node/13694295602"
+      },
+      {
+        "id": "osm:node/13694327901",
+        "name": "Spirits Tavern",
+        "kind": "Bar",
+        "lat": 39.286557,
+        "lng": -76.590003,
+        "sourceUrl": "https://www.openstreetmap.org/node/13694327901"
+      },
+      {
+        "id": "osm:node/13740587095",
+        "name": "Loch Bar",
+        "kind": "Restaurant",
+        "lat": 39.282325,
+        "lng": -76.6022993,
+        "sourceUrl": "https://www.openstreetmap.org/node/13740587095"
+      },
+      {
+        "id": "osm:node/13764180201",
+        "name": "Harbor Tandoor",
+        "kind": "Restaurant",
+        "lat": 39.2817485,
+        "lng": -76.5962687,
+        "sourceUrl": "https://www.openstreetmap.org/node/13764180201"
+      },
+      {
+        "id": "osm:node/13796094952",
+        "name": "Desi Wok",
+        "kind": "Restaurant",
+        "lat": 39.2879794,
+        "lng": -76.5999867,
+        "sourceUrl": "https://www.openstreetmap.org/node/13796094952"
+      },
+      {
+        "id": "osm:node/13892798128",
+        "name": "Easy Like Sunday",
+        "kind": "Restaurant",
+        "lat": 39.2694893,
+        "lng": -76.5997467,
+        "sourceUrl": "https://www.openstreetmap.org/node/13892798128"
+      },
+      {
+        "id": "osm:node/14001303123",
+        "name": "Starbucks",
+        "kind": "Café",
+        "lat": 39.2806382,
+        "lng": -76.5791426,
+        "sourceUrl": "https://www.openstreetmap.org/node/14001303123"
+      },
+      {
+        "id": "osm:node/14001427611",
+        "name": "Chilango's Mexican Grill",
+        "kind": "Restaurant",
+        "lat": 39.2818685,
+        "lng": -76.5896183,
+        "sourceUrl": "https://www.openstreetmap.org/node/14001427611"
+      },
+      {
+        "id": "osm:node/14008409188",
+        "name": "The Cannon Room",
+        "kind": "Bar",
+        "lat": 39.2814596,
+        "lng": -76.5920855,
+        "sourceUrl": "https://www.openstreetmap.org/node/14008409188"
+      },
+      {
+        "id": "osm:node/14162883802",
+        "name": "Little Donna's",
+        "kind": "Restaurant",
+        "lat": 39.286916,
+        "lng": -76.5908653,
+        "sourceUrl": "https://www.openstreetmap.org/node/14162883802"
+      },
+      {
+        "id": "osm:node/14203426772",
+        "name": "The Pool",
+        "kind": "Bar",
+        "lat": 39.2814487,
+        "lng": -76.5920397,
+        "sourceUrl": "https://www.openstreetmap.org/node/14203426772"
+      },
+      {
+        "id": "osm:way/115222631",
+        "name": "The Choptank",
+        "kind": "Restaurant",
+        "lat": 39.2832712,
+        "lng": -76.5933388,
+        "sourceUrl": "https://www.openstreetmap.org/way/115222631"
+      },
+      {
+        "id": "osm:way/178328406",
+        "name": "Rusty Scupper",
+        "kind": "Restaurant",
+        "lat": 39.2821407,
+        "lng": -76.6073565,
+        "sourceUrl": "https://www.openstreetmap.org/way/178328406"
+      },
+      {
+        "id": "osm:way/178328495",
+        "name": "Dalesio's",
+        "kind": "Restaurant",
+        "lat": 39.2850394,
+        "lng": -76.6018481,
+        "sourceUrl": "https://www.openstreetmap.org/way/178328495"
+      },
+      {
+        "id": "osm:way/178328543",
+        "name": "Fleet Street Kitchen",
+        "kind": "Restaurant",
+        "lat": 39.2844643,
+        "lng": -76.5996832,
+        "sourceUrl": "https://www.openstreetmap.org/way/178328543"
+      },
+      {
+        "id": "osm:way/180909368",
+        "name": "Captain James Landing Crab House",
+        "kind": "Restaurant",
+        "lat": 39.2832612,
+        "lng": -76.5861752,
+        "sourceUrl": "https://www.openstreetmap.org/way/180909368"
+      },
+      {
+        "id": "osm:way/180909370",
+        "name": "Captain James Landing Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2840271,
+        "lng": -76.5861523,
+        "sourceUrl": "https://www.openstreetmap.org/way/180909370"
+      },
+      {
+        "id": "osm:way/202589476",
+        "name": "Circus Bar",
+        "kind": "Bar",
+        "lat": 39.2895915,
+        "lng": -76.6091528,
+        "sourceUrl": "https://www.openstreetmap.org/way/202589476"
+      },
+      {
+        "id": "osm:way/202589492",
+        "name": "ChezJoey",
+        "kind": "Bar",
+        "lat": 39.2895368,
+        "lng": -76.609535,
+        "sourceUrl": "https://www.openstreetmap.org/way/202589492"
+      },
+      {
+        "id": "osm:way/202589507",
+        "name": "Club Harem",
+        "kind": "Bar",
+        "lat": 39.2895888,
+        "lng": -76.6092175,
+        "sourceUrl": "https://www.openstreetmap.org/way/202589507"
+      },
+      {
+        "id": "osm:way/226961413",
+        "name": "McDonald's",
+        "kind": "Fast food",
+        "lat": 39.271616,
+        "lng": -76.6021415,
+        "sourceUrl": "https://www.openstreetmap.org/way/226961413"
+      },
+      {
+        "id": "osm:way/293440591",
+        "name": "The Sushi Place",
+        "kind": "Restaurant",
+        "lat": 39.2736894,
+        "lng": -76.6031945,
+        "sourceUrl": "https://www.openstreetmap.org/way/293440591"
+      },
+      {
+        "id": "osm:way/295177002",
+        "name": "Yemen & Gulf Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2865044,
+        "lng": -76.5931551,
+        "sourceUrl": "https://www.openstreetmap.org/way/295177002"
+      },
+      {
+        "id": "osm:way/295177050",
+        "name": "Golden Wok",
+        "kind": "Restaurant",
+        "lat": 39.2857314,
+        "lng": -76.5930627,
+        "sourceUrl": "https://www.openstreetmap.org/way/295177050"
+      },
+      {
+        "id": "osm:way/295312645",
+        "name": "The Admiral's Cup",
+        "kind": "Restaurant",
+        "lat": 39.2816193,
+        "lng": -76.5933156,
+        "sourceUrl": "https://www.openstreetmap.org/way/295312645"
+      },
+      {
+        "id": "osm:way/326480137",
+        "name": "DR BBQ and \"Girl in the Kitchen\"",
+        "kind": "Restaurant",
+        "lat": 39.2867945,
+        "lng": -76.6031536,
+        "sourceUrl": "https://www.openstreetmap.org/way/326480137"
+      },
+      {
+        "id": "osm:way/336251195",
+        "name": null,
+        "kind": "Bar",
+        "lat": 39.2773816,
+        "lng": -76.5775933,
+        "sourceUrl": "https://www.openstreetmap.org/way/336251195"
+      },
+      {
+        "id": "osm:way/336252001",
+        "name": "Raw & Refined",
+        "kind": "Restaurant",
+        "lat": 39.2774438,
+        "lng": -76.5777837,
+        "sourceUrl": "https://www.openstreetmap.org/way/336252001"
+      },
+      {
+        "id": "osm:way/336281838",
+        "name": "Ale Mary's",
+        "kind": "Restaurant",
+        "lat": 39.2845322,
+        "lng": -76.5888628,
+        "sourceUrl": "https://www.openstreetmap.org/way/336281838"
+      },
+      {
+        "id": "osm:way/336284250",
+        "name": "Ministry of Brewing",
+        "kind": "Pub",
+        "lat": 39.290864,
+        "lng": -76.5901622,
+        "sourceUrl": "https://www.openstreetmap.org/way/336284250"
+      },
+      {
+        "id": "osm:way/336286643",
+        "name": "Affogato Cat Cafe",
+        "kind": "Café",
+        "lat": 39.2845792,
+        "lng": -76.5902159,
+        "sourceUrl": "https://www.openstreetmap.org/way/336286643"
+      },
+      {
+        "id": "osm:way/336290618",
+        "name": "Benders",
+        "kind": "Pub",
+        "lat": 39.2876148,
+        "lng": -76.5912575,
+        "sourceUrl": "https://www.openstreetmap.org/way/336290618"
+      },
+      {
+        "id": "osm:way/336291563",
+        "name": "Meander Art Bar",
+        "kind": "Bar",
+        "lat": 39.2903066,
+        "lng": -76.5915475,
+        "sourceUrl": "https://www.openstreetmap.org/way/336291563"
+      },
+      {
+        "id": "osm:way/336291575",
+        "name": "Ze Mean Dan Cafe",
+        "kind": "Restaurant",
+        "lat": 39.2844776,
+        "lng": -76.591702,
+        "sourceUrl": "https://www.openstreetmap.org/way/336291575"
+      },
+      {
+        "id": "osm:way/336295289",
+        "name": "Peruvian Espresso Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2838291,
+        "lng": -76.593014,
+        "sourceUrl": "https://www.openstreetmap.org/way/336295289"
+      },
+      {
+        "id": "osm:way/336295813",
+        "name": "Cinco de Mayo II",
+        "kind": "Restaurant",
+        "lat": 39.2858186,
+        "lng": -76.5924621,
+        "sourceUrl": "https://www.openstreetmap.org/way/336295813"
+      },
+      {
+        "id": "osm:way/336297575",
+        "name": "Arizona Tex-Mex",
+        "kind": "Restaurant",
+        "lat": 39.2905078,
+        "lng": -76.5933721,
+        "sourceUrl": "https://www.openstreetmap.org/way/336297575"
+      },
+      {
+        "id": "osm:way/336297696",
+        "name": "Taki’s Pizza",
+        "kind": "Restaurant",
+        "lat": 39.2848926,
+        "lng": -76.5930632,
+        "sourceUrl": "https://www.openstreetmap.org/way/336297696"
+      },
+      {
+        "id": "osm:way/336300017",
+        "name": "The Admiral’s Cup",
+        "kind": "Bar",
+        "lat": 39.2816059,
+        "lng": -76.5933871,
+        "sourceUrl": "https://www.openstreetmap.org/way/336300017"
+      },
+      {
+        "id": "osm:way/336300069",
+        "name": "Mr Bingsoo",
+        "kind": "Café",
+        "lat": 39.2848221,
+        "lng": -76.5937871,
+        "sourceUrl": "https://www.openstreetmap.org/way/336300069"
+      },
+      {
+        "id": "osm:way/336301141",
+        "name": "Brick Oven Pizza",
+        "kind": "Restaurant",
+        "lat": 39.2824541,
+        "lng": -76.5937411,
+        "sourceUrl": "https://www.openstreetmap.org/way/336301141"
+      },
+      {
+        "id": "osm:way/336303768",
+        "name": "Saints & Sinners",
+        "kind": "Bar",
+        "lat": 39.2813764,
+        "lng": -76.5946448,
+        "sourceUrl": "https://www.openstreetmap.org/way/336303768"
+      },
+      {
+        "id": "osm:way/336305569",
+        "name": "Oleum",
+        "kind": "Restaurant",
+        "lat": 39.2833447,
+        "lng": -76.5949656,
+        "sourceUrl": "https://www.openstreetmap.org/way/336305569"
+      },
+      {
+        "id": "osm:way/336306537",
+        "name": "One Eyed Mike’s",
+        "kind": "Bar",
+        "lat": 39.2831565,
+        "lng": -76.5954695,
+        "sourceUrl": "https://www.openstreetmap.org/way/336306537"
+      },
+      {
+        "id": "osm:way/336320663",
+        "name": "Venice Tavern",
+        "kind": "Bar",
+        "lat": 39.2854978,
+        "lng": -76.5997333,
+        "sourceUrl": "https://www.openstreetmap.org/way/336320663"
+      },
+      {
+        "id": "osm:way/336320664",
+        "name": "Affogato Cafe & Gelato",
+        "kind": "Café",
+        "lat": 39.2855199,
+        "lng": -76.6001553,
+        "sourceUrl": "https://www.openstreetmap.org/way/336320664"
+      },
+      {
+        "id": "osm:way/336320665",
+        "name": "La Scala",
+        "kind": "Restaurant",
+        "lat": 39.2855307,
+        "lng": -76.5999026,
+        "sourceUrl": "https://www.openstreetmap.org/way/336320665"
+      },
+      {
+        "id": "osm:way/336320669",
+        "name": "Milan",
+        "kind": "Restaurant",
+        "lat": 39.2854861,
+        "lng": -76.60024,
+        "sourceUrl": "https://www.openstreetmap.org/way/336320669"
+      },
+      {
+        "id": "osm:way/336321959",
+        "name": "Osteria Da Amadeo",
+        "kind": "Bar",
+        "lat": 39.2866832,
+        "lng": -76.6005275,
+        "sourceUrl": "https://www.openstreetmap.org/way/336321959"
+      },
+      {
+        "id": "osm:way/336323387",
+        "name": "Mugs' Bistro",
+        "kind": "Restaurant",
+        "lat": 39.2865587,
+        "lng": -76.600894,
+        "sourceUrl": "https://www.openstreetmap.org/way/336323387"
+      },
+      {
+        "id": "osm:way/336324358",
+        "name": "Angeli's Pizzeria",
+        "kind": "Restaurant",
+        "lat": 39.2853878,
+        "lng": -76.6010257,
+        "sourceUrl": "https://www.openstreetmap.org/way/336324358"
+      },
+      {
+        "id": "osm:way/336324360",
+        "name": "Picante Taco Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2854307,
+        "lng": -76.6010681,
+        "sourceUrl": "https://www.openstreetmap.org/way/336324360"
+      },
+      {
+        "id": "osm:way/336324362",
+        "name": "Yemen Arabian Restaurant",
+        "kind": "Restaurant",
+        "lat": 39.2854712,
+        "lng": -76.6010966,
+        "sourceUrl": "https://www.openstreetmap.org/way/336324362"
+      },
+      {
+        "id": "osm:way/336324751",
+        "name": "Sabatino's",
+        "kind": "Restaurant",
+        "lat": 39.286209,
+        "lng": -76.6016377,
+        "sourceUrl": "https://www.openstreetmap.org/way/336324751"
+      },
+      {
+        "id": "osm:way/336325396",
+        "name": "Chiapparelli’s",
+        "kind": "Restaurant",
+        "lat": 39.286516,
+        "lng": -76.6018288,
+        "sourceUrl": "https://www.openstreetmap.org/way/336325396"
+      },
+      {
+        "id": "osm:way/336325919",
+        "name": "Caesar's Den",
+        "kind": "Restaurant",
+        "lat": 39.2868947,
+        "lng": -76.6019426,
+        "sourceUrl": "https://www.openstreetmap.org/way/336325919"
+      },
+      {
+        "id": "osm:way/336325921",
+        "name": "Amicci's",
+        "kind": "Restaurant",
+        "lat": 39.2867176,
+        "lng": -76.6018282,
+        "sourceUrl": "https://www.openstreetmap.org/way/336325921"
+      },
+      {
+        "id": "osm:way/336325967",
+        "name": "Germano's Piattini",
+        "kind": "Restaurant",
+        "lat": 39.2861176,
+        "lng": -76.602002,
+        "sourceUrl": "https://www.openstreetmap.org/way/336325967"
+      },
+      {
+        "id": "osm:way/336325969",
+        "name": "Amici",
+        "kind": "Restaurant",
+        "lat": 39.2859924,
+        "lng": -76.6019239,
+        "sourceUrl": "https://www.openstreetmap.org/way/336325969"
+      },
+      {
+        "id": "osm:way/336326031",
+        "name": "Pane e Vino",
+        "kind": "Bar",
+        "lat": 39.2853846,
+        "lng": -76.6014501,
+        "sourceUrl": "https://www.openstreetmap.org/way/336326031"
+      },
+      {
+        "id": "osm:way/336326032",
+        "name": "Gia of Little Italy",
+        "kind": "Restaurant",
+        "lat": 39.2853492,
+        "lng": -76.601421,
+        "sourceUrl": "https://www.openstreetmap.org/way/336326032"
+      },
+      {
+        "id": "osm:way/336327041",
+        "name": "Asian Harbor",
+        "kind": "Restaurant",
+        "lat": 39.2891688,
+        "lng": -76.6020364,
+        "sourceUrl": "https://www.openstreetmap.org/way/336327041"
+      },
+      {
+        "id": "osm:way/336327094",
+        "name": "Ciao Bella",
+        "kind": "Restaurant",
+        "lat": 39.2866122,
+        "lng": -76.602204,
+        "sourceUrl": "https://www.openstreetmap.org/way/336327094"
+      },
+      {
+        "id": "osm:way/336327815",
+        "name": "Isabella's Brick Oven",
+        "kind": "Restaurant",
+        "lat": 39.2870358,
+        "lng": -76.6021204,
+        "sourceUrl": "https://www.openstreetmap.org/way/336327815"
+      },
+      {
+        "id": "osm:way/336328730",
+        "name": "La Tavola",
+        "kind": "Restaurant",
+        "lat": 39.2861254,
+        "lng": -76.6025912,
+        "sourceUrl": "https://www.openstreetmap.org/way/336328730"
+      },
+      {
+        "id": "osm:way/336328948",
+        "name": "Boston’s Restaurant & Sports Bar",
+        "kind": "Restaurant",
+        "lat": 39.2873326,
+        "lng": -76.60276,
+        "sourceUrl": "https://www.openstreetmap.org/way/336328948"
+      },
+      {
+        "id": "osm:way/336329177",
+        "name": "Vaccaro's Italian Pastry Shop",
+        "kind": "Restaurant",
+        "lat": 39.2867887,
+        "lng": -76.6029042,
+        "sourceUrl": "https://www.openstreetmap.org/way/336329177"
+      },
+      {
+        "id": "osm:way/336332131",
+        "name": "Keffa Coffee Lab",
+        "kind": "Café",
+        "lat": 39.2899446,
+        "lng": -76.6038721,
+        "sourceUrl": "https://www.openstreetmap.org/way/336332131"
+      },
+      {
+        "id": "osm:way/336336725",
+        "name": "Silver Moon II",
+        "kind": "Restaurant",
+        "lat": 39.289927,
+        "lng": -76.6051185,
+        "sourceUrl": "https://www.openstreetmap.org/way/336336725"
+      },
+      {
+        "id": "osm:way/336336728",
+        "name": "Top Round Carry Out",
+        "kind": "Restaurant",
+        "lat": 39.2899251,
+        "lng": -76.604826,
+        "sourceUrl": "https://www.openstreetmap.org/way/336336728"
+      },
+      {
+        "id": "osm:way/336351481",
+        "name": "Mikie's Pizza & Subs",
+        "kind": "Fast food",
+        "lat": 39.2729617,
+        "lng": -76.609694,
+        "sourceUrl": "https://www.openstreetmap.org/way/336351481"
+      },
+      {
+        "id": "osm:way/336360117",
+        "name": "Light Street Cafe",
+        "kind": "Café",
+        "lat": 39.2765211,
+        "lng": -76.6120294,
+        "sourceUrl": "https://www.openstreetmap.org/way/336360117"
+      },
+      {
+        "id": "osm:way/337090657",
+        "name": "Burger King",
+        "kind": "Fast food",
+        "lat": 39.2946585,
+        "lng": -76.6003251,
+        "sourceUrl": "https://www.openstreetmap.org/way/337090657"
+      },
+      {
+        "id": "osm:way/337120966",
+        "name": "Kislings Tavern",
+        "kind": "Pub",
+        "lat": 39.2850303,
+        "lng": -76.5868397,
+        "sourceUrl": "https://www.openstreetmap.org/way/337120966"
+      },
+      {
+        "id": "osm:way/337503770",
+        "name": "Stuggys",
+        "kind": "Restaurant",
+        "lat": 39.2849279,
+        "lng": -76.5888945,
+        "sourceUrl": "https://www.openstreetmap.org/way/337503770"
+      },
+      {
+        "id": "osm:way/337503772",
+        "name": "Greyhound Tavern",
+        "kind": "Bar",
+        "lat": 39.2849185,
+        "lng": -76.5903481,
+        "sourceUrl": "https://www.openstreetmap.org/way/337503772"
+      },
+      {
+        "id": "osm:way/337506451",
+        "name": "bar ALICE ANNE",
+        "kind": "Bar",
+        "lat": 39.2838559,
+        "lng": -76.5898145,
+        "sourceUrl": "https://www.openstreetmap.org/way/337506451"
+      },
+      {
+        "id": "osm:way/337507928",
+        "name": "Points South Latin Kitchen",
+        "kind": "Restaurant",
+        "lat": 39.281778,
+        "lng": -76.5938006,
+        "sourceUrl": "https://www.openstreetmap.org/way/337507928"
+      },
+      {
+        "id": "osm:way/338039641",
+        "name": "Popeyes",
+        "kind": "Fast food",
+        "lat": 39.2948187,
+        "lng": -76.5943628,
+        "sourceUrl": "https://www.openstreetmap.org/way/338039641"
+      },
+      {
+        "id": "osm:way/700377456",
+        "name": null,
+        "kind": "Bar",
+        "lat": 39.2775705,
+        "lng": -76.6041931,
+        "sourceUrl": "https://www.openstreetmap.org/way/700377456"
+      },
+      {
+        "id": "osm:way/997941668",
+        "name": "Hard Rock Cafe",
+        "kind": "Restaurant",
+        "lat": 39.2858012,
+        "lng": -76.6072394,
+        "sourceUrl": "https://www.openstreetmap.org/way/997941668"
+      }
+    ]
+  },
+  "salon:39.08453,-77.14790": {
+    "fetchedAt": "2026-09-26T21:34:46.948Z",
+    "items": [
+      {
+        "id": "osm:node/1351962240",
+        "name": "The Colourist Salon",
+        "kind": "Beauty salon",
+        "lat": 39.0751279,
+        "lng": -77.1386234,
+        "sourceUrl": "https://www.openstreetmap.org/node/1351962240"
+      },
+      {
+        "id": "osm:node/1351962244",
+        "name": "Oasis Hair & Tanning Salon",
+        "kind": "Hair salon",
+        "lat": 39.0753202,
+        "lng": -77.1384461,
+        "sourceUrl": "https://www.openstreetmap.org/node/1351962244"
+      },
+      {
+        "id": "osm:node/1351962291",
+        "name": "Hand & Stone Massage and Facial Spa",
+        "kind": "Beauty salon",
+        "lat": 39.0751973,
+        "lng": -77.1385192,
+        "sourceUrl": "https://www.openstreetmap.org/node/1351962291"
+      },
+      {
+        "id": "osm:node/1351962321",
+        "name": "Timothy's Salon & Spa",
+        "kind": "Beauty salon",
+        "lat": 39.0745686,
+        "lng": -77.1383594,
+        "sourceUrl": "https://www.openstreetmap.org/node/1351962321"
+      },
+      {
+        "id": "osm:node/4198048594",
+        "name": "Salon Tech",
+        "kind": "Beauty salon",
+        "lat": 39.0879766,
+        "lng": -77.1510951,
+        "sourceUrl": "https://www.openstreetmap.org/node/4198048594"
+      },
+      {
+        "id": "osm:node/12167422037",
+        "name": "Hair Design Zone",
+        "kind": "Hair salon",
+        "lat": 39.086454,
+        "lng": -77.1518019,
+        "sourceUrl": "https://www.openstreetmap.org/node/12167422037"
+      },
+      {
+        "id": "osm:node/12363567957",
+        "name": "Blue Moon Foot Spa",
+        "kind": "Beauty salon",
+        "lat": 39.07698,
+        "lng": -77.1413989,
+        "sourceUrl": "https://www.openstreetmap.org/node/12363567957"
+      },
+      {
+        "id": "osm:node/12972086920",
+        "name": "Sassy Arch Brows & Beauty Studio",
+        "kind": "Beauty salon",
+        "lat": 39.0753882,
+        "lng": -77.1383028,
+        "sourceUrl": "https://www.openstreetmap.org/node/12972086920"
+      },
+      {
+        "id": "osm:node/13239562879",
+        "name": null,
+        "kind": "Hair salon",
+        "lat": 39.0839312,
+        "lng": -77.1502062,
+        "sourceUrl": "https://www.openstreetmap.org/node/13239562879"
+      },
+      {
+        "id": "osm:node/13962897517",
+        "name": "MLUX Nail Spa",
+        "kind": "Beauty salon",
+        "lat": 39.0856889,
+        "lng": -77.1492375,
+        "sourceUrl": "https://www.openstreetmap.org/node/13962897517"
+      },
+      {
+        "id": "osm:way/1332524326",
+        "name": "La Vie Nails",
+        "kind": "Beauty salon",
+        "lat": 39.0857431,
+        "lng": -77.1521661,
+        "sourceUrl": "https://www.openstreetmap.org/way/1332524326"
+      }
+    ]
+  },
+  "hotel:38.34297,-75.07872": {
+    "fetchedAt": "2026-09-26T21:36:56.321Z",
+    "items": [
+      {
+        "id": "osm:node/4413776297",
+        "name": "Coastal Inn",
+        "kind": "Motel",
+        "lat": 38.3555744,
+        "lng": -75.0760394,
+        "sourceUrl": "https://www.openstreetmap.org/node/4413776297"
+      },
+      {
+        "id": "osm:way/76585596",
+        "name": "Plim Plaza Hotel",
+        "kind": "Hotel",
+        "lat": 38.3329447,
+        "lng": -75.0847118,
+        "sourceUrl": "https://www.openstreetmap.org/way/76585596"
+      },
+      {
+        "id": "osm:way/76585607",
+        "name": "Boardwalk One",
+        "kind": "Hotel",
+        "lat": 38.3326287,
+        "lng": -75.0845065,
+        "sourceUrl": "https://www.openstreetmap.org/way/76585607"
+      },
+      {
+        "id": "osm:way/76585663",
+        "name": "Rideau Motor Inn",
+        "kind": "Motel",
+        "lat": 38.3319876,
+        "lng": -75.0848813,
+        "sourceUrl": "https://www.openstreetmap.org/way/76585663"
+      },
+      {
+        "id": "osm:way/76585689",
+        "name": "Inn Town Motel",
+        "kind": "Motel",
+        "lat": 38.3327886,
+        "lng": -75.0852723,
+        "sourceUrl": "https://www.openstreetmap.org/way/76585689"
+      },
+      {
+        "id": "osm:way/76585729",
+        "name": "Sleep Inn & Suites",
+        "kind": "Hotel",
+        "lat": 38.332541,
+        "lng": -75.0860021,
+        "sourceUrl": "https://www.openstreetmap.org/way/76585729"
+      },
+      {
+        "id": "osm:way/76695430",
+        "name": "Comfort Inn Boardwalk",
+        "kind": "Hotel",
+        "lat": 38.3363214,
+        "lng": -75.0831091,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695430"
+      },
+      {
+        "id": "osm:way/76695440",
+        "name": "Nock Apartments",
+        "kind": "Hotel",
+        "lat": 38.3373216,
+        "lng": -75.0826303,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695440"
+      },
+      {
+        "id": "osm:way/76695449",
+        "name": "Park Place Hotel",
+        "kind": "Hotel",
+        "lat": 38.3338667,
+        "lng": -75.0838223,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695449"
+      },
+      {
+        "id": "osm:way/76695497",
+        "name": "Majestic Hotel",
+        "kind": "Hotel",
+        "lat": 38.3376765,
+        "lng": -75.0818648,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695497"
+      },
+      {
+        "id": "osm:way/76695521",
+        "name": "Shoreham Hotel",
+        "kind": "Hotel",
+        "lat": 38.3350151,
+        "lng": -75.0833478,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695521"
+      },
+      {
+        "id": "osm:way/76695549",
+        "name": "Beach Bum Inn",
+        "kind": "Motel",
+        "lat": 38.3345115,
+        "lng": -75.084844,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695549"
+      },
+      {
+        "id": "osm:way/76695553",
+        "name": "The Breakers Hotel",
+        "kind": "Hotel",
+        "lat": 38.334177,
+        "lng": -75.0838696,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695553"
+      },
+      {
+        "id": "osm:way/76695560",
+        "name": "Tidelands Caribbean Hotel",
+        "kind": "Hotel",
+        "lat": 38.3359701,
+        "lng": -75.0830638,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695560"
+      },
+      {
+        "id": "osm:way/76695564",
+        "name": "White Marlin Inn",
+        "kind": "Motel",
+        "lat": 38.3341018,
+        "lng": -75.0852171,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695564"
+      },
+      {
+        "id": "osm:way/76695575",
+        "name": "The Mallard Apartments",
+        "kind": "Hotel",
+        "lat": 38.3375619,
+        "lng": -75.0832308,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695575"
+      },
+      {
+        "id": "osm:way/76695611",
+        "name": "The Ambassador Inn",
+        "kind": "Hotel",
+        "lat": 38.3368135,
+        "lng": -75.084319,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695611"
+      },
+      {
+        "id": "osm:way/76695630",
+        "name": "Knights Inn Ocean City",
+        "kind": "Motel",
+        "lat": 38.3338075,
+        "lng": -75.0853941,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695630"
+      },
+      {
+        "id": "osm:way/76695653",
+        "name": "Americana Motor Inn",
+        "kind": "Hotel",
+        "lat": 38.3368105,
+        "lng": -75.0823704,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695653"
+      },
+      {
+        "id": "osm:way/76695681",
+        "name": "Tidelands Caribbean Hotel and Suites",
+        "kind": "Hotel",
+        "lat": 38.335784,
+        "lng": -75.0835697,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695681"
+      },
+      {
+        "id": "osm:way/76695723",
+        "name": "Hotel Monte Carlo",
+        "kind": "Hotel",
+        "lat": 38.3342531,
+        "lng": -75.0843536,
+        "sourceUrl": "https://www.openstreetmap.org/way/76695723"
+      },
+      {
+        "id": "osm:way/76732466",
+        "name": "Beach Bum Motel",
+        "kind": "Motel",
+        "lat": 38.3402009,
+        "lng": -75.0834236,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732466"
+      },
+      {
+        "id": "osm:way/76732482",
+        "name": "Jocelyn Manor Hotel",
+        "kind": "Hotel",
+        "lat": 38.3394036,
+        "lng": -75.0841488,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732482"
+      },
+      {
+        "id": "osm:way/76732541",
+        "name": "South Wind Apartments",
+        "kind": "Hotel",
+        "lat": 38.3398308,
+        "lng": -75.083343,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732541"
+      },
+      {
+        "id": "osm:way/76732569",
+        "name": "Surf Villa Hotel",
+        "kind": "Hotel",
+        "lat": 38.3385698,
+        "lng": -75.0827203,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732569"
+      },
+      {
+        "id": "osm:way/76732610",
+        "name": "Americana Hotel Oceanfront",
+        "kind": "Hotel",
+        "lat": 38.3402815,
+        "lng": -75.0804785,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732610"
+      },
+      {
+        "id": "osm:way/76732655",
+        "name": "Paradise Plaza Inn",
+        "kind": "Hotel",
+        "lat": 38.339384,
+        "lng": -75.0809357,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732655"
+      },
+      {
+        "id": "osm:way/76732670",
+        "name": "Wellington Hotel",
+        "kind": "Hotel",
+        "lat": 38.3399044,
+        "lng": -75.0811908,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732670"
+      },
+      {
+        "id": "osm:way/76732671",
+        "name": "Ocean Lodge Hotel",
+        "kind": "Hotel",
+        "lat": 38.3396388,
+        "lng": -75.0834448,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732671"
+      },
+      {
+        "id": "osm:way/76732687",
+        "name": "Lankford Hotel & Lodge",
+        "kind": "Hotel",
+        "lat": 38.3386321,
+        "lng": -75.0816251,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732687"
+      },
+      {
+        "id": "osm:way/76732724",
+        "name": "Beach Walk Hotel",
+        "kind": "Hotel",
+        "lat": 38.3406881,
+        "lng": -75.0801907,
+        "sourceUrl": "https://www.openstreetmap.org/way/76732724"
+      },
+      {
+        "id": "osm:way/76790682",
+        "name": "Burgundy Inn Hotel",
+        "kind": "Hotel",
+        "lat": 38.3435915,
+        "lng": -75.0813063,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790682"
+      },
+      {
+        "id": "osm:way/76790693",
+        "name": "Monte Carlo Suites Ocean City",
+        "kind": "Hotel",
+        "lat": 38.341869,
+        "lng": -75.081009,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790693"
+      },
+      {
+        "id": "osm:way/76790694",
+        "name": "Boardwalk Terrace",
+        "kind": "Hotel",
+        "lat": 38.3413406,
+        "lng": -75.0798658,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790694"
+      },
+      {
+        "id": "osm:way/76790708",
+        "name": "Monte Carlo Boardwalk",
+        "kind": "Hotel",
+        "lat": 38.3412271,
+        "lng": -75.0799797,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790708"
+      },
+      {
+        "id": "osm:way/76790751",
+        "name": "King Charles Hotel",
+        "kind": "Hotel",
+        "lat": 38.3428329,
+        "lng": -75.0804304,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790751"
+      },
+      {
+        "id": "osm:way/76790761",
+        "name": "Ocean Terrace Family Apartments",
+        "kind": "Hotel",
+        "lat": 38.3430097,
+        "lng": -75.0803138,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790761"
+      },
+      {
+        "id": "osm:way/76790800",
+        "name": "Beach Plaza Hotel",
+        "kind": "Hotel",
+        "lat": 38.3434356,
+        "lng": -75.0787823,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790800"
+      },
+      {
+        "id": "osm:way/76790902",
+        "name": "Howard Johnson Oceanfront Plaza Hotel Ocean City Oceanfront",
+        "kind": "Hotel",
+        "lat": 38.3416596,
+        "lng": -75.0797301,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790902"
+      },
+      {
+        "id": "osm:way/76790907",
+        "name": "Pop Pop's Cottage",
+        "kind": "Motel",
+        "lat": 38.3424646,
+        "lng": -75.0792333,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790907"
+      },
+      {
+        "id": "osm:way/76790931",
+        "name": "Safari Motel Boardwalk",
+        "kind": "Motel",
+        "lat": 38.3428631,
+        "lng": -75.0791007,
+        "sourceUrl": "https://www.openstreetmap.org/way/76790931"
+      },
+      {
+        "id": "osm:way/76792930",
+        "name": "Harrison Hall",
+        "kind": "Hotel",
+        "lat": 38.3446146,
+        "lng": -75.0781682,
+        "sourceUrl": "https://www.openstreetmap.org/way/76792930"
+      },
+      {
+        "id": "osm:way/76792948",
+        "name": "The Commander Hotel",
+        "kind": "Hotel",
+        "lat": 38.3443864,
+        "lng": -75.0788957,
+        "sourceUrl": "https://www.openstreetmap.org/way/76792948"
+      },
+      {
+        "id": "osm:way/76792955",
+        "name": "Courtyard Ocean City",
+        "kind": "Hotel",
+        "lat": 38.3450472,
+        "lng": -75.0782095,
+        "sourceUrl": "https://www.openstreetmap.org/way/76792955"
+      },
+      {
+        "id": "osm:way/76793012",
+        "name": "Commander Hotel & Suites",
+        "kind": "Hotel",
+        "lat": 38.3441059,
+        "lng": -75.0784819,
+        "sourceUrl": "https://www.openstreetmap.org/way/76793012"
+      },
+      {
+        "id": "osm:way/76793123",
+        "name": "Hyatt Place Ocean City / Oceanfront",
+        "kind": "Hotel",
+        "lat": 38.3454582,
+        "lng": -75.0779989,
+        "sourceUrl": "https://www.openstreetmap.org/way/76793123"
+      },
+      {
+        "id": "osm:way/76793164",
+        "name": "Buckingham Hotel",
+        "kind": "Hotel",
+        "lat": 38.3446803,
+        "lng": -75.0793546,
+        "sourceUrl": "https://www.openstreetmap.org/way/76793164"
+      },
+      {
+        "id": "osm:way/76793334",
+        "name": "The Spinnaker",
+        "kind": "Motel",
+        "lat": 38.3477228,
+        "lng": -75.0773299,
+        "sourceUrl": "https://www.openstreetmap.org/way/76793334"
+      },
+      {
+        "id": "osm:way/76793386",
+        "name": "Crystal Sands Motel",
+        "kind": "Motel",
+        "lat": 38.3472037,
+        "lng": -75.0783141,
+        "sourceUrl": "https://www.openstreetmap.org/way/76793386"
+      },
+      {
+        "id": "osm:way/76840820",
+        "name": "Empress Motel",
+        "kind": "Motel",
+        "lat": 38.3492387,
+        "lng": -75.0767359,
+        "sourceUrl": "https://www.openstreetmap.org/way/76840820"
+      },
+      {
+        "id": "osm:way/76840833",
+        "name": "Cabana Motel",
+        "kind": "Motel",
+        "lat": 38.3494284,
+        "lng": -75.077781,
+        "sourceUrl": "https://www.openstreetmap.org/way/76840833"
+      },
+      {
+        "id": "osm:way/76840853",
+        "name": "The Islander Motel",
+        "kind": "Motel",
+        "lat": 38.3499984,
+        "lng": -75.0784953,
+        "sourceUrl": "https://www.openstreetmap.org/way/76840853"
+      },
+      {
+        "id": "osm:way/76840860",
+        "name": "Sahara Motel",
+        "kind": "Motel",
+        "lat": 38.3487076,
+        "lng": -75.0769287,
+        "sourceUrl": "https://www.openstreetmap.org/way/76840860"
+      },
+      {
+        "id": "osm:way/76840861",
+        "name": "Grand Hotel & Spa",
+        "kind": "Hotel",
+        "lat": 38.3507028,
+        "lng": -75.0756966,
+        "sourceUrl": "https://www.openstreetmap.org/way/76840861"
+      },
+      {
+        "id": "osm:way/76840966",
+        "name": "Eden Roc Motel",
+        "kind": "Motel",
+        "lat": 38.3496459,
+        "lng": -75.0765599,
+        "sourceUrl": "https://www.openstreetmap.org/way/76840966"
+      },
+      {
+        "id": "osm:way/242422440",
+        "name": "Coastal Inn",
+        "kind": "Motel",
+        "lat": 38.3557117,
+        "lng": -75.0760286,
+        "sourceUrl": "https://www.openstreetmap.org/way/242422440"
+      },
+      {
+        "id": "osm:way/242780352",
+        "name": "Days Inn Ocean City Oceanfront",
+        "kind": "Hotel",
+        "lat": 38.3515167,
+        "lng": -75.0758456,
+        "sourceUrl": "https://www.openstreetmap.org/way/242780352"
+      },
+      {
+        "id": "osm:way/242780353",
+        "name": "Days Inn By Wyndham Oceanfront",
+        "kind": "Hotel",
+        "lat": 38.3520444,
+        "lng": -75.0756296,
+        "sourceUrl": "https://www.openstreetmap.org/way/242780353"
+      },
+      {
+        "id": "osm:way/242781104",
+        "name": "Howard Johnson Oceanfront Inn",
+        "kind": "Hotel",
+        "lat": 38.353234,
+        "lng": -75.0745255,
+        "sourceUrl": "https://www.openstreetmap.org/way/242781104"
+      },
+      {
+        "id": "osm:way/242781109",
+        "name": "The Riviera Motel",
+        "kind": "Motel",
+        "lat": 38.3546343,
+        "lng": -75.0745242,
+        "sourceUrl": "https://www.openstreetmap.org/way/242781109"
+      },
+      {
+        "id": "osm:way/242781111",
+        "name": "Crystal Beach Hotel",
+        "kind": "Hotel",
+        "lat": 38.3540846,
+        "lng": -75.0741906,
+        "sourceUrl": "https://www.openstreetmap.org/way/242781111"
+      },
+      {
+        "id": "osm:way/242781114",
+        "name": "Casablanca Oceanside Inn",
+        "kind": "Hotel",
+        "lat": 38.3536868,
+        "lng": -75.0748718,
+        "sourceUrl": "https://www.openstreetmap.org/way/242781114"
+      },
+      {
+        "id": "osm:way/242781127",
+        "name": "Dunes Motel",
+        "kind": "Motel",
+        "lat": 38.3561016,
+        "lng": -75.0738372,
+        "sourceUrl": "https://www.openstreetmap.org/way/242781127"
+      },
+      {
+        "id": "osm:way/242873117",
+        "name": "Seabonay Motel",
+        "kind": "Motel",
+        "lat": 38.3564392,
+        "lng": -75.0732296,
+        "sourceUrl": "https://www.openstreetmap.org/way/242873117"
+      },
+      {
+        "id": "osm:way/243114186",
+        "name": "Sea Cove Motel",
+        "kind": "Motel",
+        "lat": 38.3561337,
+        "lng": -75.0746528,
+        "sourceUrl": "https://www.openstreetmap.org/way/243114186"
+      },
+      {
+        "id": "osm:way/243114495",
+        "name": "Sea Cove Motel",
+        "kind": "Motel",
+        "lat": 38.355875,
+        "lng": -75.0746984,
+        "sourceUrl": "https://www.openstreetmap.org/way/243114495"
+      },
+      {
+        "id": "osm:way/243114499",
+        "name": "Kings Arms Motel",
+        "kind": "Motel",
+        "lat": 38.3535887,
+        "lng": -75.0758732,
+        "sourceUrl": "https://www.openstreetmap.org/way/243114499"
+      },
+      {
+        "id": "osm:way/945032829",
+        "name": "Fairfield Inn & Suites Ocean City",
+        "kind": "Hotel",
+        "lat": 38.3547301,
+        "lng": -75.0768608,
+        "sourceUrl": "https://www.openstreetmap.org/way/945032829"
+      },
+      {
+        "id": "osm:way/971256640",
+        "name": "Quality Inn Boardwalk",
+        "kind": "Hotel",
+        "lat": 38.3461609,
+        "lng": -75.0777102,
+        "sourceUrl": "https://www.openstreetmap.org/way/971256640"
+      },
+      {
+        "id": "osm:way/1083376452",
+        "name": "Cambria Hotel Ocean City - Bayfront",
+        "kind": "Hotel",
+        "lat": 38.3331015,
+        "lng": -75.0892104,
+        "sourceUrl": "https://www.openstreetmap.org/way/1083376452"
+      },
+      {
+        "id": "osm:way/1159963896",
+        "name": "Dunes Suites",
+        "kind": "Hotel",
+        "lat": 38.3560068,
+        "lng": -75.0732895,
+        "sourceUrl": "https://www.openstreetmap.org/way/1159963896"
+      },
+      {
+        "id": "osm:way/1160117185",
+        "name": "Spindrift Motel",
+        "kind": "Motel",
+        "lat": 38.3550476,
+        "lng": -75.0782247,
+        "sourceUrl": "https://www.openstreetmap.org/way/1160117185"
+      },
+      {
+        "id": "osm:way/1197414994",
+        "name": "Hilton Garden Inn Ocean City Oceanfront",
+        "kind": "Hotel",
+        "lat": 38.3570499,
+        "lng": -75.0729358,
+        "sourceUrl": "https://www.openstreetmap.org/way/1197414994"
+      },
+      {
+        "id": "osm:relation/3281474",
+        "name": "Flagship Hotel Oceanfront",
+        "kind": "Motel",
+        "lat": 38.3551146,
+        "lng": -75.0739708,
+        "sourceUrl": "https://www.openstreetmap.org/relation/3281474"
+      },
+      {
+        "id": "osm:relation/6095452",
+        "name": "Ocean Mecca Motel",
+        "kind": "Motel",
+        "lat": 38.3523887,
+        "lng": -75.0752031,
+        "sourceUrl": "https://www.openstreetmap.org/relation/6095452"
+      },
+      {
+        "id": "osm:relation/6095453",
+        "name": "Talbot Inn",
+        "kind": "Motel",
+        "lat": 38.3312382,
+        "lng": -75.0895558,
+        "sourceUrl": "https://www.openstreetmap.org/relation/6095453"
+      },
+      {
+        "id": "osm:relation/12855735",
+        "name": "Beach Plaza Hotel",
+        "kind": "Hotel",
+        "lat": 38.3433092,
+        "lng": -75.0788587,
+        "sourceUrl": "https://www.openstreetmap.org/relation/12855735"
+      }
+    ]
+  }
+}
