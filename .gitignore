@@ -6,3 +6,4 @@ server/.env
 .DS_Store
 server/data/users.json
 server/data/profiles.json
+server/data/risk-seen.json
