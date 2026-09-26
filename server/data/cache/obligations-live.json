@@ -123,240 +123,240 @@
       "name": "MD Labor minimum wage page",
       "url": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
       "status": "live",
-      "fetchedAt": "2026-09-26T21:55:26.599Z"
+      "fetchedAt": "2026-09-26T23:10:10.574Z"
     },
     "famli": {
       "id": "famli",
       "name": "FAMLI contributions page",
       "url": "https://paidleave.maryland.gov/employers/make-contributions/",
       "status": "live",
-      "fetchedAt": "2026-09-26T21:55:26.614Z"
+      "fetchedAt": "2026-09-26T23:10:10.606Z"
     },
     "taxRates": {
       "id": "taxRates",
       "name": "DLS County Local Tax Rates",
       "url": "https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf",
       "status": "live",
-      "fetchedAt": "2026-09-26T21:55:28.338Z"
+      "fetchedAt": "2026-09-26T23:10:14.201Z"
     }
   },
   "verification": {
     "famli-withholding": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "famli-employer-share": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "montgomery-tipped-wage": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "howard-min-wage": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "prince-georges-min-wage": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "state-minimum-wage": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "state-tipped-wage": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "mhic-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "famli-register": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
+    },
+    "mhic-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "federal-i9": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "sam-registration": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "federal-posters": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "montgomery-min-wage-large": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "montgomery-min-wage-mid": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "montgomery-min-wage-small": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "baltimore-city-ban-the-box": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "irs-941": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "irs-940": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "ssa-w2": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
-    "eeo-1-report": {
+    "sam-registration": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "online-data-privacy": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "traders-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "restaurant-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "construction-firm-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "emma-registration": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "sdat-annual-report": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "marylandsaves": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "food-service-license": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "workers-comp": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "federal-boi": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
-    "childcare-license": {
+    "sdat-annual-report": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
-    "md-new-hire-reporting": {
+    "emma-registration": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "salon-permit": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "famli-contributions": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "admissions-amusement-tax": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "hotel-rental-tax": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "irs-1099-nec": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "worker-freedom-act": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "md-business-income-tax": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "alcohol-license": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "childcare-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "baltimore-city-ban-the-box": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "famli-contributions": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.201Z"
+    },
+    "salon-permit": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "marylandsaves": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "federal-posters": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.201Z"
+    },
+    "montgomery-min-wage-large": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "montgomery-min-wage-mid": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "montgomery-min-wage-small": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "md-new-hire-reporting": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "eeo-1-report": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.201Z"
+    },
+    "irs-1099-nec": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.201Z"
+    },
+    "workers-comp": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "traders-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.201Z"
+    },
+    "restaurant-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "construction-firm-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "famli-employee-notice": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
     "sick-leave-paid": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "sick-leave-unpaid": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "federal-ein": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "sales-use-tax": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "sales-use-tax-returns": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
-    },
-    "parental-leave": {
-      "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "famli-private-plan": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
-    "md-withholding-returns": {
+    "parental-leave": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
-    "md-withholding-annual": {
+    "federal-ein": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.201Z"
     },
-    "state-ban-the-box": {
+    "worker-freedom-act": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "sales-use-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "sales-use-tax-returns": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "mosh-poster": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "mosh-injury-log": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "online-data-privacy": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "state-ban-the-box": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     },
     "md-unemployment-insurance": {
       "status": "verified",
-      "checkedAt": "2026-09-26T21:55:28.338Z"
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "md-business-income-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "md-withholding-returns": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "md-withholding-annual": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "admissions-amusement-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
+    },
+    "hotel-rental-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-26T23:10:14.202Z"
     }
   },
-  "refreshedAt": "2026-09-26T21:55:34.421Z"
+  "refreshedAt": "2026-09-26T23:10:26.535Z"
 }
