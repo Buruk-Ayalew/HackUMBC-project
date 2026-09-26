@@ -1,7 +1,7 @@
 [
   {
     "id": "admissions-amusement-tax",
-    "title": "Collect the local admissions and amusement tax",
+    "title": "Collect the admissions and amusement tax",
     "category": "tax",
     "jurisdiction": {
       "level": "county"
@@ -26,7 +26,7 @@
   },
   {
     "id": "hotel-rental-tax",
-    "title": "Collect the local hotel rental tax",
+    "title": "Collect the hotel rental tax",
     "category": "tax",
     "jurisdiction": {
       "level": "county"

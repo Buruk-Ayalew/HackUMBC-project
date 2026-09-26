@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import type { BusinessProfile, Milestone, ObligationResult, ObligationsResponse } from "../../../shared/types";
 import { apiPost } from "../api";
-import { IconArrowRight, IconCheck, IconExternal, IconMinus, IconPlus } from "./icons";
+import { IconCheck, IconExternal, IconMinus, IconPlus } from "./icons";
 import { employeeErrors } from "./profileOptions";
-import { Badge, buttonStyles } from "./ui";
+import { Badge } from "./ui";
 
 const MAX = 100;
+const THUMB = 26; // px, must match .headcount-range thumb size in index.css
+const LABEL_GAP = 5; // min headcount gap between labels so they don't overlap
 type Counts = Omit<BusinessProfile["employees"], "coveredByFMLA">;
 
 const RANK = { not_applicable: 0, might: 1, affects: 2 } as const;
@@ -51,12 +52,10 @@ export default function GrowthPlanner({
   profile,
   baseline,
   milestones,
-  compact = false,
 }: {
   profile: BusinessProfile;
   baseline: ObligationsResponse;
   milestones: Milestone[];
-  compact?: boolean;
 }) {
   const current = profile.employees.inMaryland;
   const ahead = milestones.filter((m) => m.employees > current);
@@ -92,8 +91,19 @@ export default function GrowthPlanner({
     counts.fullTimeInMaryland === profile.employees.fullTimeInMaryland &&
     counts.totalAllStates === profile.employees.totalAllStates;
   const visibleMilestones = milestones.filter((m) => m.employees <= MAX);
-  const listed = compact ? visibleMilestones.filter((m) => m.employees > current).slice(0, 4) : visibleMilestones;
-  const pct = (v: number) => `${(Math.min(v, MAX) / MAX) * 100}%`;
+  const listed = visibleMilestones;
+  // The range thumb's centre travels from THUMB/2 to (width - THUMB/2), so
+  // marks must use the same geometry to line up with the handle.
+  const pos = (v: number) => `calc(${THUMB / 2}px + (100% - ${THUMB}px) * ${Math.min(Math.max(v, 0), MAX) / MAX})`;
+  // Only label marks that won't overlap their neighbour; all marks keep a tick.
+  const labelled = new Set<number>();
+  let lastLabel = -Infinity;
+  for (const m of visibleMilestones) {
+    if (m.employees - lastLabel >= LABEL_GAP) {
+      labelled.add(m.employees);
+      lastLabel = m.employees;
+    }
+  }
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
@@ -186,7 +196,13 @@ export default function GrowthPlanner({
             </button>
           </div>
 
-          <div className="relative mt-6 mb-7">
+          <div className="relative mt-8 mb-8">
+            <span
+              className="absolute -top-6 -translate-x-1/2 rounded-full bg-emerald-100 px-1.5 text-[11px] font-semibold text-emerald-800"
+              style={{ left: pos(current) }}
+            >
+              today
+            </span>
             <input
               type="range"
               min={0}
@@ -196,8 +212,8 @@ export default function GrowthPlanner({
                 setMode("simple");
                 setN(Number(e.target.value));
               }}
-              className="headcount-range"
-              style={{ ["--fill" as string]: pct(n) }}
+              className="headcount-range relative z-10"
+              style={{ ["--fill" as string]: pos(n) }}
               aria-label="Employees in Maryland"
             />
             {visibleMilestones.map((m) => (
@@ -207,23 +223,22 @@ export default function GrowthPlanner({
                   setMode("simple");
                   setN(m.employees);
                 }}
-                className="absolute top-4 -translate-x-1/2 text-[11px] font-semibold text-slate-500 hover:text-brand-700"
-                style={{ left: pct(m.employees) }}
-                title={m.changes.map((c) => c.title).join("\n")}
+                className="group absolute top-3 flex -translate-x-1/2 flex-col items-center"
+                style={{ left: pos(m.employees) }}
+                title={`${m.employees} employees: ${m.changes.map((c) => c.title).join("; ")}`}
+                aria-label={`Jump to ${m.employees} employees`}
               >
-                <span className="mx-auto mb-0.5 block h-1.5 w-1.5 rounded-full bg-amber-500" />
-                {m.employees}
+                <span className={`h-2.5 w-0.5 rounded-full ${m.employees === n ? "bg-brand-600" : "bg-amber-500"}`} />
+                {labelled.has(m.employees) && (
+                  <span className={`mt-0.5 text-[11px] font-semibold ${m.employees === n ? "text-brand-700" : "text-slate-500 group-hover:text-brand-700"}`}>
+                    {m.employees}
+                  </span>
+                )}
               </button>
             ))}
-            <span
-              className="absolute -top-5 -translate-x-1/2 text-[11px] font-semibold text-emerald-700"
-              style={{ left: pct(current) }}
-            >
-              today
-            </span>
           </div>
+          <p className="text-xs text-slate-500">Orange marks are milestones. Hover a mark to see what changes there.</p>
 
-          {!compact && (
             <details
               className="mt-2 text-sm"
               open={mode === "custom"}
@@ -259,7 +274,6 @@ export default function GrowthPlanner({
                 ))}
               </div>
             </details>
-          )}
         </div>
       </div>
 
@@ -297,11 +311,6 @@ export default function GrowthPlanner({
         <p className="mt-6 border-t border-slate-100 pt-4 text-xs text-slate-500">
           Each law counts employees differently. These are estimates; check each rule's source.
         </p>
-        {compact && (
-          <Link to="/growth" className={`${buttonStyles.secondary} mt-4 w-full`}>
-            Open the full growth planner <IconArrowRight />
-          </Link>
-        )}
       </div>
     </div>
   );

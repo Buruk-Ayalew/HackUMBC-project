@@ -1,7 +1,7 @@
 [
   {
     "id": "sick-leave-paid",
-    "title": "Provide paid sick and safe leave",
+    "title": "Give paid sick leave",
     "category": "employment",
     "jurisdiction": {
       "level": "state"
@@ -23,7 +23,7 @@
   },
   {
     "id": "sick-leave-unpaid",
-    "title": "Provide unpaid sick and safe leave",
+    "title": "Give sick leave (it can be unpaid)",
     "category": "employment",
     "jurisdiction": {
       "level": "state"
@@ -48,7 +48,7 @@
   },
   {
     "id": "parental-leave",
-    "title": "Offer unpaid parental leave (Parental Leave Act)",
+    "title": "Allow up to 6 weeks of unpaid parental leave",
     "category": "employment",
     "jurisdiction": {
       "level": "state"
@@ -101,7 +101,7 @@
   },
   {
     "id": "worker-freedom-act",
-    "title": "No required meetings on religious or political matters (Worker Freedom Act)",
+    "title": "Don't require employees to attend political or religious meetings",
     "category": "posting",
     "jurisdiction": {
       "level": "state"
@@ -117,24 +117,20 @@
     "action": "Make any such meetings optional. Once the state's poster is out, post it where employees can see it and give the notice to each new hire.",
     "deadlines": [
       {
-        "label": "Worker Freedom Act takes effect",
-        "date": "2026-10-01"
-      },
-      {
-        "label": "State Worker Freedom Act poster due out (then post it)",
+        "label": "Post the state's Worker Freedom Act poster (state publishes it by this date)",
         "date": "2026-11-01"
       }
     ],
     "agency": "Maryland Department of Labor",
-    "frequency": "once",
-    "frequencyNote": "Poster, plus notice to each new hire",
+    "frequency": "ongoing",
+    "frequencyNote": "Plus a notice to each new hire",
     "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0417?ys=2026RS",
     "sourceName": "Maryland General Assembly: SB 417 (2026), Chapter 221",
     "reviewedOn": "2026-09-26"
   },
   {
     "id": "state-minimum-wage",
-    "title": "Pay at least the Maryland minimum wage ($15.00/hour)",
+    "title": "Pay at least $15.00 an hour",
     "category": "employment",
     "jurisdiction": {
       "level": "state"
@@ -165,7 +161,7 @@
   },
   {
     "id": "state-tipped-wage",
-    "title": "Follow the tipped employee wage rules",
+    "title": "Tipped staff: pay at least $3.63 an hour, plus tips up to minimum wage",
     "category": "employment",
     "jurisdiction": {
       "level": "state"

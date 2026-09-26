@@ -193,8 +193,7 @@ export default function DashboardPage() {
           {nextMilestone ? (
             <p className="mt-1 text-slate-600">
               At <strong className="text-slate-900">{nextMilestone.employees} employees</strong>, {nextMilestone.changes.length} rule
-              {nextMilestone.changes.length === 1 ? "" : "s"} change for you, including{" "}
-              <strong className="text-slate-900">{nextMilestone.changes[0]?.title.toLowerCase()}</strong>.
+              {nextMilestone.changes.length === 1 ? "" : "s"} change for you, including: <strong className="text-slate-900">{nextMilestone.changes[0]?.title}</strong>
             </p>
           ) : (
             <p className="mt-1 text-slate-600">See which Maryland rules start as your team grows.</p>

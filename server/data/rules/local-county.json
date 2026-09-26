@@ -1,7 +1,7 @@
 [
   {
     "id": "montgomery-min-wage-large",
-    "title": "Pay at least the Montgomery County minimum wage ($18.00/hour, 51+ employees)",
+    "title": "Pay at least $18.00 an hour (Montgomery County, 51+ employees)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",
@@ -47,7 +47,7 @@
   },
   {
     "id": "montgomery-min-wage-mid",
-    "title": "Pay at least the Montgomery County minimum wage ($16.50/hour, 11 to 50 employees)",
+    "title": "Pay at least $16.50 an hour (Montgomery County, 11 to 50 employees)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",
@@ -96,7 +96,7 @@
   },
   {
     "id": "montgomery-min-wage-small",
-    "title": "Pay at least the Montgomery County minimum wage ($15.95/hour, 10 or fewer employees)",
+    "title": "Pay at least $15.95 an hour (Montgomery County, 10 or fewer employees)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",
@@ -127,7 +127,7 @@
   },
   {
     "id": "montgomery-tipped-wage",
-    "title": "Follow Montgomery County's tipped employee wage ($4.00/hour)",
+    "title": "Tipped staff: pay at least $4.00 an hour, plus tips up to minimum wage (Montgomery County)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",
@@ -154,7 +154,7 @@
   },
   {
     "id": "howard-min-wage",
-    "title": "Pay at least the Howard County minimum wage ($16.00/hour)",
+    "title": "Pay at least $16.00 an hour (Howard County)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",
@@ -181,7 +181,7 @@
   },
   {
     "id": "prince-georges-min-wage",
-    "title": "Pay at least the Prince George's County minimum wage ($15.30/hour)",
+    "title": "Pay at least $15.30 an hour (Prince George's County)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",
@@ -208,7 +208,7 @@
   },
   {
     "id": "baltimore-city-ban-the-box",
-    "title": "Baltimore City: no criminal record questions before a conditional offer",
+    "title": "Don't ask about criminal records until after a job offer (Baltimore City)",
     "category": "employment",
     "jurisdiction": {
       "level": "county",

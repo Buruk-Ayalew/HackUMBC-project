@@ -1,16 +1,45 @@
 [
   {
     "id": "sdat-annual-report",
-    "title": "Annual report and business personal property return",
+    "title": "File your SDAT annual report",
     "category": "registration",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "entityType", "op": "in", "value": ["llc", "corporation", "lp", "llp", "nonprofit"] }],
-    "mightConditions": [{ "field": "entityType", "op": "in", "value": ["sole_prop", "general_partnership", "other"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "entityType",
+        "op": "in",
+        "value": [
+          "llc",
+          "corporation",
+          "lp",
+          "llp",
+          "nonprofit"
+        ]
+      }
+    ],
+    "mightConditions": [
+      {
+        "field": "entityType",
+        "op": "in",
+        "value": [
+          "sole_prop",
+          "general_partnership",
+          "other"
+        ]
+      }
+    ],
     "summary": "Maryland business entities must file an Annual Report with the State Department of Assessments and Taxation (SDAT) by April 15 each year. The fee is $300 for most entities (waived if you're enrolled in MarylandSaves); check SDAT for yours. Missing it makes the business \"Not in Good Standing\" with penalties, and continued failure can lead to forfeiture. Sole proprietors and general partnerships may need to file a business personal property return if they own business property or hold a trader's license.",
     "action": "File online through Maryland Business Express by April 15, or request a 60-day extension before then.",
     "agency": "State Department of Assessments and Taxation (SDAT)",
     "frequency": "yearly",
-    "recurring": { "every": "year", "month": 4, "day": 15, "label": "SDAT {period} annual report and personal property return" },
+    "recurring": {
+      "every": "year",
+      "month": 4,
+      "day": 15,
+      "label": "SDAT annual report for {period}"
+    },
     "filingUrl": "https://businessexpress.maryland.gov/",
     "filingSiteName": "Maryland Business Express",
     "sourceUrl": "https://dat.maryland.gov/businesses/Pages/default.aspx",
@@ -19,17 +48,45 @@
   },
   {
     "id": "md-business-income-tax",
-    "title": "Maryland business income tax return (Form 500 or 510)",
+    "title": "File your Maryland business tax return",
     "category": "tax",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "entityType", "op": "in", "value": ["corporation", "lp", "llp", "general_partnership"] }],
-    "mightConditions": [{ "field": "entityType", "op": "in", "value": ["llc", "nonprofit", "other"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "entityType",
+        "op": "in",
+        "value": [
+          "corporation",
+          "lp",
+          "llp",
+          "general_partnership"
+        ]
+      }
+    ],
+    "mightConditions": [
+      {
+        "field": "entityType",
+        "op": "in",
+        "value": [
+          "llc",
+          "nonprofit",
+          "other"
+        ]
+      }
+    ],
     "summary": "Corporations file Form 500. S corporations, partnerships, and multi-member LLCs file Form 510 (pass-through entity return). Both are due the 15th day of the 4th month after the tax year ends: April 15 for calendar-year businesses. A single-member LLC that is disregarded for tax reports on its owner's return instead.",
     "action": "File with the Comptroller by the due date, or request an extension by then. Ask your accountant which form fits your tax election.",
     "agency": "Comptroller of Maryland",
     "frequency": "yearly",
     "frequencyNote": "April 15 for calendar-year filers",
-    "recurring": { "every": "year", "month": 4, "day": 15, "label": "Maryland business income tax return for tax year {period}" },
+    "recurring": {
+      "every": "year",
+      "month": 4,
+      "day": 15,
+      "label": "Maryland business tax return for tax year {period}"
+    },
     "filingUrl": "https://interactive.marylandtaxes.gov/mdtaxconnect/",
     "filingSiteName": "Maryland Tax Connect",
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/instructions/2025/corporate-booklet.pdf",
@@ -38,10 +95,18 @@
   },
   {
     "id": "sales-use-tax",
-    "title": "Register for Maryland sales and use tax",
+    "title": "Register to collect Maryland sales tax",
     "category": "registration",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "flags.sellsTaxableGoods", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.sellsTaxableGoods",
+        "op": "is",
+        "value": true
+      }
+    ],
     "summary": "If you sell taxable goods or services in Maryland, you must register with the Comptroller before you start selling.",
     "action": "Register for a sales and use tax account in Maryland Tax Connect.",
     "agency": "Comptroller of Maryland",
@@ -54,16 +119,28 @@
   },
   {
     "id": "sales-use-tax-returns",
-    "title": "Sales and use tax return",
+    "title": "File your sales tax return",
     "category": "tax",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "flags.sellsTaxableGoods", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.sellsTaxableGoods",
+        "op": "is",
+        "value": true
+      }
+    ],
     "summary": "Sales and use tax returns are due the 20th of the month after each filing period, with payment. New accounts start filing quarterly. The Comptroller may move you to monthly, twice-yearly, or yearly filing based on how much you pay, and will tell you first. File even when no tax is due.",
     "action": "File and pay in Maryland Tax Connect by the 20th. Dates shown assume quarterly filing; follow any schedule the Comptroller sends you.",
     "agency": "Comptroller of Maryland",
     "frequency": "quarterly",
     "frequencyNote": "Starts quarterly; the Comptroller may change it",
-    "recurring": { "every": "quarter", "day": 20, "label": "Sales and use tax return, {period}" },
+    "recurring": {
+      "every": "quarter",
+      "day": 20,
+      "label": "Sales tax return for {period}"
+    },
     "filingUrl": "https://interactive.marylandtaxes.gov/mdtaxconnect/",
     "filingSiteName": "Maryland Tax Connect",
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip22.pdf",
@@ -72,10 +149,18 @@
   },
   {
     "id": "online-data-privacy",
-    "title": "Check whether the Maryland Online Data Privacy Act applies",
+    "title": "Check if Maryland's data privacy law applies",
     "category": "privacy",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "flags.handlesCustomerData", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.handlesCustomerData",
+        "op": "is",
+        "value": true
+      }
+    ],
     "statusWhenMet": "might",
     "summary": "The Maryland Online Data Privacy Act applies if, in the prior year, you handled personal data of at least 35,000 Maryland consumers (not counting data used only to complete a payment), or at least 10,000 consumers while getting more than 20% of revenue from selling personal data.",
     "action": "Estimate how many Maryland customers' personal data you keep. If you are over a threshold, you'll need a privacy notice and ways for customers to access, fix, delete, or opt out.",

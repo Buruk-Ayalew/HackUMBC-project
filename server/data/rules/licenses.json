@@ -1,16 +1,37 @@
 [
   {
     "id": "traders-license",
-    "title": "Trader's license renewal",
+    "title": "Renew your trader's license",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "industry", "op": "in", "value": ["retail"] }],
-    "mightConditions": [{ "field": "flags.sellsTaxableGoods", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "retail"
+        ]
+      }
+    ],
+    "mightConditions": [
+      {
+        "field": "flags.sellsTaxableGoods",
+        "op": "is",
+        "value": true
+      }
+    ],
     "summary": "Businesses that sell goods or merchandise in Maryland, retail or wholesale, need a trader's license from the Clerk of the Circuit Court in their county. The license year runs May 1 to April 30, and licenses must be renewed by May 1 each year. The fee depends on your inventory value. Late licenses add a 10% penalty plus 2% a month.",
     "action": "Renew with your county's Clerk of the Circuit Court by May 1.",
     "agency": "Clerk of the Circuit Court",
     "frequency": "yearly",
-    "recurring": { "every": "year", "month": 5, "day": 1, "label": "Trader's license renewal for {period}" },
+    "recurring": {
+      "every": "year",
+      "month": 5,
+      "day": 1,
+      "label": "Trader's license renewal ({period})"
+    },
     "filingUrl": "https://www.marylandcomptroller.gov/businesses/new-business/business-licenses.html",
     "filingSiteName": "Your county's Clerk of the Circuit Court",
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip64.pdf",
@@ -19,15 +40,30 @@
   },
   {
     "id": "restaurant-license",
-    "title": "Restaurant license renewal (Clerk of the Circuit Court)",
+    "title": "Renew your restaurant license",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "industry", "op": "in", "value": ["restaurant"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "restaurant"
+        ]
+      }
+    ],
     "summary": "Restaurants need a business license from the Clerk of the Circuit Court. Like other Clerk licenses, the license year runs May 1 to April 30 and must be renewed by May 1 each year.",
     "action": "Renew with your county's Clerk of the Circuit Court by May 1.",
     "agency": "Clerk of the Circuit Court",
     "frequency": "yearly",
-    "recurring": { "every": "year", "month": 5, "day": 1, "label": "Restaurant license renewal for {period}" },
+    "recurring": {
+      "every": "year",
+      "month": 5,
+      "day": 1,
+      "label": "Restaurant license renewal ({period})"
+    },
     "filingUrl": "https://www.marylandcomptroller.gov/businesses/new-business/business-licenses.html",
     "filingSiteName": "Your county's Clerk of the Circuit Court",
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip64.pdf",
@@ -36,15 +72,30 @@
   },
   {
     "id": "construction-firm-license",
-    "title": "Construction firm license renewal (Clerk of the Circuit Court)",
+    "title": "Renew your construction firm license",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "industry", "op": "in", "value": ["contractor"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "contractor"
+        ]
+      }
+    ],
     "summary": "Construction businesses need a license from the Clerk of the Circuit Court. The license year runs May 1 to April 30 and must be renewed by May 1 each year.",
     "action": "Renew with your county's Clerk of the Circuit Court by May 1.",
     "agency": "Clerk of the Circuit Court",
     "frequency": "yearly",
-    "recurring": { "every": "year", "month": 5, "day": 1, "label": "Construction firm license renewal for {period}" },
+    "recurring": {
+      "every": "year",
+      "month": 5,
+      "day": 1,
+      "label": "Construction firm license renewal ({period})"
+    },
     "filingUrl": "https://www.marylandcomptroller.gov/businesses/new-business/business-licenses.html",
     "filingSiteName": "Your county's Clerk of the Circuit Court",
     "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/tax/legal-publications/tips/business/bustip64.pdf",
@@ -53,10 +104,20 @@
   },
   {
     "id": "mhic-license",
-    "title": "Maryland Home Improvement Commission (MHIC) license",
+    "title": "Keep your home improvement (MHIC) license current",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "industry", "op": "in", "value": ["contractor"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "contractor"
+        ]
+      }
+    ],
     "statusWhenMet": "might",
     "summary": "Contractors who do home improvement work on residential property need an MHIC license. Licenses renew every two years, with a $175 Guaranty Fund assessment at each renewal.",
     "action": "If you do residential home improvement work, keep your MHIC license current and renew before the expiration date on your license.",
@@ -71,10 +132,20 @@
   },
   {
     "id": "salon-permit",
-    "title": "Salon permit and cosmetology licenses",
+    "title": "Keep your salon permit and staff licenses current",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "industry", "op": "in", "value": ["salon"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "salon"
+        ]
+      }
+    ],
     "summary": "Salons need a permit from the Maryland State Board of Cosmetologists, and anyone performing services must hold their own license and work through a licensed salon or barbershop.",
     "action": "Renew your salon permit and check staff licenses before they expire.",
     "agency": "Maryland Department of Labor",
@@ -88,10 +159,21 @@
   },
   {
     "id": "food-service-license",
-    "title": "Food service facility license (local health department)",
+    "title": "Renew your food service license",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "industry", "op": "in", "value": ["restaurant", "food_truck"] }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "restaurant",
+          "food_truck"
+        ]
+      }
+    ],
     "summary": "Restaurants and other retail food businesses need an annual food service facility license from the local health department in {{county}}. Mobile units have extra requirements, such as a base of operations.",
     "action": "Renew your license with the {{county}} health department each year and keep up with inspections.",
     "agency": "Local health department",
@@ -105,10 +187,18 @@
   },
   {
     "id": "alcohol-license",
-    "title": "Alcohol license renewal",
+    "title": "Renew your alcohol license",
     "category": "licensing",
-    "jurisdiction": { "level": "state" },
-    "conditions": [{ "field": "flags.servesAlcohol", "op": "is", "value": true }],
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      }
+    ],
     "summary": "Retail alcohol licenses are issued, renewed, and enforced by local liquor boards, not the state. Your license comes from the liquor board for {{county}} (the City of Annapolis has its own board). Renewal dates and fees are set locally.",
     "action": "Check your license's renewal date with your local liquor board. Find the board in the state's directory.",
     "agency": "Local liquor board",

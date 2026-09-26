@@ -25,10 +25,10 @@ const CARDS = [
 ];
 
 const PREVIEW = [
-  { title: "Sales and use tax return, Q3 2026", when: "Oct 20", tone: "bg-rose-100 text-rose-700" },
-  { title: "Unemployment insurance wage report, Q3", when: "Nov 2", tone: "bg-amber-100 text-amber-800" },
-  { title: "FAMLI private plan decision window closes", when: "Nov 15", tone: "bg-amber-100 text-amber-800" },
-  { title: "SDAT annual report", when: "Apr 15", tone: "bg-slate-100 text-slate-700" },
+  { title: "Sales tax return for Q3 2026", when: "Oct 20", tone: "bg-rose-100 text-rose-700" },
+  { title: "Unemployment insurance report for Q3 2026", when: "Nov 2", tone: "bg-amber-100 text-amber-800" },
+  { title: "Last day to choose a private FAMLI plan", when: "Nov 15", tone: "bg-amber-100 text-amber-800" },
+  { title: "SDAT annual report for 2027", when: "Apr 15", tone: "bg-slate-100 text-slate-700" },
 ];
 
 export default function WelcomePage() {
