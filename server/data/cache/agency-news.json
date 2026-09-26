@@ -1,7 +1,7 @@
 {
   "sources": {
     "md-labor": {
-      "fetchedAt": "2026-09-26T20:39:13.201Z",
+      "fetchedAt": "2026-09-26T22:14:07.244Z",
       "items": [
         {
           "id": "news-md-labor-6e9cbfa9ff",
@@ -16,7 +16,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mlraug2026.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: New estimates suggest Maryland added 2,000 jobs across July and August amid monthly fluctuations",
           "isNew": false
         },
@@ -33,7 +33,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/gov-moore-announces-employer-registration-for-paid-family-and-medical-leave-insurance-is-live.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Governor Moore Announces Employer Registration for Paid Family and Medical Leave Insurance Is Live",
           "isNew": false
         },
@@ -50,7 +50,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mlrjuly2026.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland employment rose by 11,700 jobs in July",
           "isNew": false
         },
@@ -67,7 +67,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/md-socialfinance-fund-to-strengthen-nursing-workforce.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: State of Maryland and Social Finance Announce Maryland Pay It Forward Fund to Strengthen Maryland’s Nursing Workforce",
           "isNew": false
         },
@@ -84,7 +84,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/md-multistate-settlement-newrez.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland Joins $15.5 Million Multistate Settlement with Mortgage Servicer NewRez",
           "isNew": false
         },
@@ -101,7 +101,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/gov-moore-5mil-in-awards-expands-reg-apprenticeship-opps.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Governor Moore Announces $5 Million in Awards to Expand Registered Apprenticeship Opportunities Across Maryland",
           "isNew": false
         },
@@ -118,7 +118,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mlrjune2026.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland employment rose by 900 jobs in June",
           "isNew": false
         },
@@ -135,7 +135,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/govmooreannouncesawardeestohelpmarylandworkersthrive.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Governor Moore Announces Awardees for $1.23 Million Investment to Help Maryland Workers Thrive in a Changing Economy",
           "isNew": false
         },
@@ -152,7 +152,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mlrmay2026.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland employment rose by 5,100 jobs in May",
           "isNew": false
         },
@@ -169,7 +169,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/govmooreannouncesnicoleearleaschairofthemarylandracingcommission.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Governor Moore Announces Nicole Earle as Chair of the Maryland Racing Commission—First Woman in this Leadership Role",
           "isNew": false
         },
@@ -186,7 +186,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/labor-welcomes-angela-cabellon-andrew-stettner.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland Department of Labor Welcomes Angela Lagdameo Cabellon as Deputy Secretary for Modernization, Andrew Stettner as Assistant Secretary for Unemployment Insurance",
           "isNew": false
         },
@@ -203,7 +203,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mlrapril2026.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland employment rose by 2,800 jobs in April",
           "isNew": false
         },
@@ -220,7 +220,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/govmooreannouncesmcivawards.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Governor Moore Announces Maryland Community Investment Venture Fund Awards and Maryland Opportunity Accounts to Expand Financial Opportunity in Maryland Communities",
           "isNew": false
         },
@@ -237,7 +237,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mdracingcommissionconfirmsfatalityofhitzero.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland Racing Commission Confirms Fatality of Hit Zero",
           "isNew": false
         },
@@ -254,14 +254,14 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/mlrmarch2026.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.385Z",
+          "fetchedAt": "2026-09-26T22:14:07.556Z",
           "context": "Headline only: Maryland employment rose by 3,200 jobs in March",
           "isNew": false
         }
       ]
     },
     "md-famli": {
-      "fetchedAt": "2026-09-26T20:39:13.201Z",
+      "fetchedAt": "2026-09-26T22:14:07.244Z",
       "items": [
         {
           "id": "news-md-famli-9aeeb32dcc",
@@ -276,7 +276,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/gov-moore-announces-employer-registration-for-paid-family-and-medical-leave-insurance-is-live.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.483Z",
+          "fetchedAt": "2026-09-26T22:14:07.536Z",
           "context": "Headline only: Governor Moore Announces Employer Registration for Paid Family and Medical Leave Insurance Is Live",
           "isNew": true
         },
@@ -293,7 +293,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/laborproposesextendingimplementationtimelineforfamli.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.483Z",
+          "fetchedAt": "2026-09-26T22:14:07.536Z",
           "context": "Headline only: Maryland Department of Labor Proposes Extending Implementation Timeline for Family and Medical Leave Insurance Following Federal Actions Impacting Workers, Employers",
           "isNew": true
         },
@@ -310,7 +310,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/laborfirstmajorstepfamli.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.483Z",
+          "fetchedAt": "2026-09-26T22:14:07.536Z",
           "context": "Headline only: Maryland Department of Labor Takes Major First Step in Making Paid Family and Medical Leave Insurance a Reality for 2.5 Million Workers",
           "isNew": true
         },
@@ -327,7 +327,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://labor.maryland.gov/whatsnews/laborannouncescontributionrateforfamli.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.483Z",
+          "fetchedAt": "2026-09-26T22:14:07.536Z",
           "context": "Headline only: Maryland Department of Labor announces contribution rate for the forthcoming Family and Medical Leave Insurance system",
           "isNew": true
         },
@@ -344,14 +344,14 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.dllr.state.md.us/whatsnews/familymedicalleaveinsuranceassistantsecretary.shtml",
-          "fetchedAt": "2026-09-26T20:39:13.483Z",
+          "fetchedAt": "2026-09-26T22:14:07.536Z",
           "context": "Headline only: Elliot Schreur Joins the Maryland Department of Labor as Assistant Secretary for Family and Medical Leave Insurance",
           "isNew": true
         }
       ]
     },
     "md-comptroller": {
-      "fetchedAt": "2026-09-26T20:39:13.201Z",
+      "fetchedAt": "2026-09-26T22:14:07.244Z",
       "items": [
         {
           "id": "news-md-comptroller-7d69d37dca",
@@ -366,7 +366,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-25-2026-comptroller-calls-on-energy-companies-to-return-250-million-in-refunds-to-ratepayers.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: ICYMI: Comptroller Lierman Calls on Energy Companies to Return $250 Million in Refunds to Ratepayers",
           "isNew": true
         },
@@ -383,7 +383,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-24-2026-mdbre-approves-revised-fy-2027-forecast-initial-forecast-for-fy-2028.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Board of Revenue Estimates Approves Revised FY 2027 Forecast, Initial Forecast for FY 2028",
           "isNew": true
         },
@@ -400,7 +400,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-16-2026-bpw-approves-523-million-in-state-spending.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Board of Public Works Approves $523 Million in State Spending",
           "isNew": false
         },
@@ -417,7 +417,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-09-2026-comptroller-reminds-taxpayers-of-upcoming-quarterly-payment-deadline.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Comptroller Reminds Taxpayers of Upcoming Quarterly Payment Deadline",
           "isNew": false
         },
@@ -434,7 +434,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-04-2026-maryland-office-of-the-comptroller-releases-fy-2026-closeout-report.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Office of the Comptroller Releases FY 2026 Closeout Report",
           "isNew": false
         },
@@ -451,7 +451,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-03-2026-comptroller-releases-second-quarterly-snapshot-tracking-economic-and-fiscal-health.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Comptroller Lierman Releases Second Quarterly Snapshot Tracking Maryland’s Economic and Fiscal Health",
           "isNew": false
         },
@@ -468,7 +468,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-02-2026-maryland-bpw-approves-421-million-in-state-spending.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Board of Public Works Approves $421.1 Million in State Spending; Secures $600 Million in General Obligation Bonds",
           "isNew": false
         },
@@ -485,7 +485,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/09-01-2026-comptroller-announces-restoration-of-online-tax-services-with-launch-of-new-portal.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Comptroller of Maryland Announces Restoration of Online Tax Services with Launch of New Statewide Portal",
           "isNew": false
         },
@@ -502,7 +502,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/08-25-2026-maryland-collects-28-million-in-cannabis-tax-revenue-from-april-to-june.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Collects $28.7 Million in Cannabis Tax Revenue from April to June",
           "isNew": false
         },
@@ -519,7 +519,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/08-19-2026-maryland-bpw-approves-11-billion-in-state-spending.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Board of Public Works Approves $11.4 Billion in State Spending",
           "isNew": false
         },
@@ -536,7 +536,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/08-18-2026-comptroller-announces-winners-of-maryland-tax-free-week-video-contest.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Comptroller Lierman Announces Winners of Maryland Tax-Free Week Video Contest",
           "isNew": false
         },
@@ -553,7 +553,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/08-07-2026-comptroller-lierman-reminds-marylanders.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Comptroller Lierman Reminds Marylanders to Take Advantage of Shop Maryland Tax-Free Week Beginning Sunday",
           "isNew": false
         },
@@ -570,7 +570,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/08-05-2026-maryland-bpw-approves-341-million-in-state-spending.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Maryland Board of Public Works Approves $341.3 Million in State Spending",
           "isNew": false
         },
@@ -587,7 +587,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/07-29-2026-comptroller-celebrates-opening-of-new-rockville-branch-office.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Comptroller Lierman Celebrates Opening of New Rockville Branch Office",
           "isNew": false
         },
@@ -604,14 +604,14 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://www.marylandcomptroller.gov/content/dam/mdcomp/md/media/2026/07-28-2026-comptroller-warns-sec-proposal-would-weaken-investor-protections-and-put-investments-at-greater-risk.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.508Z",
+          "fetchedAt": "2026-09-26T22:14:07.633Z",
           "context": "Headline only: Comptroller Lierman Warns SEC Proposal Would Weaken Investor Protections and Put Investments at Greater Risk",
           "isNew": false
         }
       ]
     },
     "md-sdat": {
-      "fetchedAt": "2026-09-26T20:39:13.201Z",
+      "fetchedAt": "2026-09-26T22:14:07.244Z",
       "items": [
         {
           "id": "news-md-sdat-b0cfed68d1",
@@ -626,7 +626,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/newsroom/SiteAssets/Pages/default/SDAT%20Modernizes%20Baltimore%20City%20Vacant%20Property%20Assessments%20to%20Ensure%20Fair%20Market%20Value_0726-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: SDAT Modernizes Baltimore City Vacant Property Assessments to Ensure Fair Market Value",
           "isNew": true
         },
@@ -643,7 +643,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/newsroom/SiteAssets/Pages/default/SDAT%20Publishes%20Spanish%20Applications%20for%20Major%20Maryland%20Property%20Tax%20Credit%20Programs_0626-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: SDAT Publishes Spanish Applications for Major Maryland Property Tax Credit Programs",
           "isNew": true
         },
@@ -660,7 +660,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/newsroom/SiteAssets/Pages/default/ADVISORY_%20SDAT%20Real%20Property%20Search%20Tool%20Back%20Online%2c%20Cleared%20for%20Public%20Use_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: ADVISORY: SDAT Real Property Search Tool Back Online, Cleared for Public Use",
           "isNew": true
         },
@@ -677,7 +677,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%20ADVISORY%20SDAT%20Real%20Property%20Search%20Tool%20Temporarily%20Unavailable%20-%20Only%20Use%20Trusted%20Maryland.gov%20Website_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: ADVISORY: SDAT Real Property Search Tool Temporarily Unavailable - Only Use Trusted Maryland.gov Website",
           "isNew": true
         },
@@ -694,7 +694,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%202026%20Annual%20Business%20Filings%20Now%20Available_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: Maryland State Department of Assessments and Taxation Annual Business Filings Now Available",
           "isNew": true
         },
@@ -711,7 +711,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%20SDAT%e2%80%99s%202026%20Reassessment%20Shows%20Property%20Value%20Growth%20at%20Slower%20Pace%2c%20Helping%20Housing%20Affordability_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: SDAT’s 2026 Reassessment Shows Property Value Growth at Slower Pace, Helping Housing Affordability",
           "isNew": true
         },
@@ -728,7 +728,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%20SDAT%20Launches%20New%20Initiative%20to%20Improve%20Vacant%20Property%20Assessments%20in%20Baltimore%20City_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: SDAT Launches New Initiative to Improve Vacant Property Assessments in Baltimore City",
           "isNew": true
         },
@@ -745,7 +745,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%20Governor%20Moore%20Announces%20Appointment%20of%20Bob%20Yeager%20as%20Director%20of%20SDAT_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: Governor Moore Announces Appointment of Bob Yeager as Director of the Maryland Department of Assessments and Taxation",
           "isNew": true
         },
@@ -762,7 +762,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%20SDAT%20Annual%20Business%20Filings%20Now%20Available_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: Maryland State Department of Assessments and Taxation Annual Business Filings Now Available",
           "isNew": true
         },
@@ -779,7 +779,7 @@
           "commentDeadline": null,
           "hearingDate": null,
           "sourceUrl": "https://dat.maryland.gov/Documents/Press%20Releases%20-%20Accessible/Press%20Release%20-%20Maryland%20Property%20Values%20Rise%2020.1_%20for%20the%20Maryland%20Department%20of%20Assessments%20and%20Taxation_s%202025%20Reassessment_0426-A.pdf",
-          "fetchedAt": "2026-09-26T20:39:13.576Z",
+          "fetchedAt": "2026-09-26T22:14:07.737Z",
           "context": "Headline only: 2025 Maryland Property Tax Assessment Notices News Release",
           "isNew": true
         }

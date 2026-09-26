@@ -1,0 +1,14 @@
+# Never ship secrets, local accounts, or build output in the image.
+.git
+.gitignore
+.claude
+node_modules
+**/node_modules
+client/dist
+dist
+server/.env
+.env
+*.log
+.DS_Store
+server/data/users.json
+server/data/profiles.json

@@ -1,3 +1,5 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import express from "express";
 import session from "express-session";
 import authRouter from "./routes/auth.js";
@@ -43,6 +45,14 @@ app.use("/api/local-risk", localRiskRouter);
 app.use("/api", (_req, res) => {
   res.status(404).json({ error: "Not found." });
 });
+
+// Production (Cloud Run): this server also serves the built frontend. In
+// development Vite serves it on :5173 and proxies /api here instead.
+if (process.env.NODE_ENV === "production") {
+  const clientDist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../client/dist");
+  app.use(express.static(clientDist));
+  app.get("/{*splat}", (_req, res) => res.sendFile(path.join(clientDist, "index.html")));
+}
 
 // Last-resort error handler: never leak stack traces, always return JSON.
 app.use((err: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {

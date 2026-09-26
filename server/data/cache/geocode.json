@@ -110,5 +110,37 @@
       "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
     ],
     "cachedAt": "2026-09-26T21:29:08.614Z"
+  },
+  "1101 main administration bldg 7901 regents drive college park md 20742-5025": {
+    "lat": 38.985658554689,
+    "lng": -76.940074788079,
+    "matchedAddress": "7901 REGENTS DR, COLLEGE PARK, MD, 20740",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Prince George's County",
+      "isBaltimoreCity": false,
+      "municipality": "College Park"
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T20:53:16.643Z"
+  },
+  "1621 thames st baltimore 1329": {
+    "lat": 39.281253125062,
+    "lng": -76.594276698374,
+    "matchedAddress": "1621 THAMES ST, BALTIMORE, MD, 21231",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Baltimore City",
+      "isBaltimoreCity": true,
+      "municipality": null
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T21:32:47.735Z"
   }
 }

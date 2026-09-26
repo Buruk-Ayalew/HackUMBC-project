@@ -110,3 +110,19 @@ Your Google account needs the **Vertex AI User** role (`roles/aiplatform.user`) 
 4. Click **Check now**. Dates are picked up automatically when they appear next to the link (e.g. `September 18, 2026` or `09/18/2026`) or in the link URL. If nothing matches, the server logs a warning and the source is listed as unavailable. If a site returns HTTP 403, it's skipped and reported. We never try to get around a block.
 
 When MGA publishes a new effective-date list (e.g. `2027rs-effective-dates-january.pdf`), update `SESSION` and `LISTS` in `mgaChapters.ts`.
+
+## Deploying (Google Cloud Run)
+
+One container serves the API and the built frontend. It runs as the `civicpulse-api` service account, which has Vertex AI access, so Radar sorting works with no keys or `gcloud` login. The live URL is printed by the deploy command and shown in the Cloud Run console.
+
+Redeploy after pulling the latest `main` (project owner only):
+```bash
+gcloud run deploy civicpulse --source . --region us-east4 --allow-unauthenticated \
+  --service-account civicpulse-api@project-79cc0670-01b4-43ca-94d.iam.gserviceaccount.com \
+  --min-instances 1 --max-instances 1 --no-cpu-throttling --memory 1Gi \
+  --set-secrets SESSION_SECRET=session-secret:latest --set-env-vars NODE_ENV=production
+```
+- Exactly one instance: logins live in server memory and data is saved in JSON files inside the container.
+- Saved data (new accounts, edited profiles) resets on every redeploy or restart. The demo login is recreated on start. Commit `server/data/cache/` before deploying so the live app starts with saved results.
+- `.gcloudignore` keeps `server/.env`, local accounts and `node_modules` out of the upload.
+- Logs: `gcloud run services logs read civicpulse --region us-east4`. Stop it after the demo: `gcloud run services delete civicpulse --region us-east4`.
