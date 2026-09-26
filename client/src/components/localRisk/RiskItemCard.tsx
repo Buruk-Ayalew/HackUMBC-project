@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import type { RiskItem } from "../../../../shared/types";
 import { CATEGORY_LABEL, formatDate, formatDistance, LEVEL_BADGE, LEVEL_LABEL } from "./format";
+import ImpactChip from "./ImpactChip";
 
 interface Props {
   item: RiskItem;
@@ -27,6 +28,14 @@ const RiskItemCard = forwardRef<HTMLLIElement, Props>(function RiskItemCard({ it
         <span className="text-slate-500">{CATEGORY_LABEL[item.category]}</span>
         <span className="ml-auto font-medium text-slate-700">{formatDistance(item.distanceMeters)}</span>
       </div>
+
+      {item.impacts.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {item.impacts.map((t) => (
+            <ImpactChip key={t} tag={t} />
+          ))}
+        </div>
+      )}
 
       <h3 className="mt-2 font-semibold text-slate-900">{item.title}</h3>
       {item.address && item.address !== item.title && <p className="text-sm text-slate-500">{item.address}</p>}

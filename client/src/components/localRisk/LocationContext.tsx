@@ -3,6 +3,7 @@ import type { CompetitorInfo, ContextSource, FloodInfo, LocalContextResponse, Zo
 import { Badge, Card, Skeleton } from "../ui";
 import { IconBuilding, IconExternal, IconMapPin, IconUsers } from "../icons";
 import { formatDate, formatDistance } from "./format";
+import ImpactChip from "./ImpactChip";
 
 interface Props {
   context: LocalContextResponse | null;
@@ -20,19 +21,23 @@ export default function LocationContext({ context, loading, error, radiusLabel, 
   }
   if (loading && !context) {
     return (
-      <div className="grid gap-4 md:grid-cols-3">
-        <Skeleton className="h-44" />
+      <div className="grid gap-4 md:grid-cols-2">
         <Skeleton className="h-44" />
         <Skeleton className="h-44" />
       </div>
     );
   }
   if (!context) return null;
+  // Flood gets a full card only when it matters (in or near a high-risk zone).
+  const floodCard = context.flood.impacts.includes("flood_risk");
   return (
-    <div className="grid gap-4 md:grid-cols-3">
-      <ZoningCard z={context.zoning} />
-      <FloodCard f={context.flood} />
-      <CompetitorCard c={context.competitors} radiusLabel={radiusLabel} showOnMap={showCompetitorsOnMap} onToggle={onToggleCompetitorsOnMap} />
+    <div>
+      <div className={`grid gap-4 ${floodCard ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+        <ZoningCard z={context.zoning} />
+        <CompetitorCard c={context.competitors} radiusLabel={radiusLabel} showOnMap={showCompetitorsOnMap} onToggle={onToggleCompetitorsOnMap} />
+        {floodCard && <FloodCard f={context.flood} />}
+      </div>
+      {!floodCard && <FloodLine f={context.flood} />}
     </div>
   );
 }
@@ -40,9 +45,12 @@ export default function LocationContext({ context, loading, error, radiusLabel, 
 function Section({ icon, title, children, source }: { icon: ReactNode; title: string; children: ReactNode; source: ContextSource }) {
   return (
     <Card className="flex flex-col p-5">
-      <div className="flex items-center gap-2.5">
+      <div className="flex flex-wrap items-center gap-2.5">
         <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-50 text-lg text-brand-600">{icon}</span>
         <h3 className="font-semibold text-slate-900">{title}</h3>
+        {source.impacts.map((t) => (
+          <ImpactChip key={t} tag={t} />
+        ))}
       </div>
       <div className="mt-3 flex-1 text-sm text-slate-700">{children}</div>
       <SourceFooter s={source} />
@@ -124,6 +132,29 @@ function FloodCard({ f }: { f: FloodInfo }) {
         </>
       )}
     </Section>
+  );
+}
+
+// Low flood risk: one line, so the owner knows it was checked without a whole card.
+function FloodLine({ f }: { f: FloodInfo }) {
+  return (
+    <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-600">
+      <span className="inline-flex text-base text-brand-600">
+        <IconMapPin />
+      </span>
+      {f.status === "unavailable" || !f.zone ? (
+        <span>Flood zone: {f.message ?? "couldn't check right now."}</span>
+      ) : (
+        <span>
+          <span className="font-medium text-slate-800">Flood zone {f.zone}:</span> {f.zoneDescription} No high-risk zones within
+          about {formatDistance(f.nearbyMeters)}.
+          {f.status === "cached" && <span className="text-amber-700"> (Saved results from {formatDate(f.fetchedAt)}.)</span>}
+        </span>
+      )}
+      <a href={f.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-medium text-brand-700 hover:underline">
+        FEMA flood map <IconExternal />
+      </a>
+    </p>
   );
 }
 

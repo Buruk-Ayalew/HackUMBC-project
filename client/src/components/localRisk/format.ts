@@ -1,4 +1,4 @@
-import type { RiskCategory, RiskLevel } from "../../../../shared/types";
+import type { ImpactTag, RiskCategory, RiskLevel } from "../../../../shared/types";
 
 export const RADIUS_OPTIONS = [
   { meters: 402, label: "¼ mile" },
@@ -45,3 +45,51 @@ export function formatDate(s: string | null): string | null {
   if (Number.isNaN(d.getTime())) return null;
   return d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" });
 }
+
+// ---------- Impact tags ----------
+// Tags are assigned on the server (server/src/lib/risk/impacts.ts). The blurbs are
+// general for each tag, not about any one item.
+
+export const IMPACT_ORDER: ImpactTag[] = [
+  "access_parking",
+  "noise_dust",
+  "future_development",
+  "competition",
+  "property_rules",
+  "flood_risk",
+  "minor_activity",
+];
+
+export const IMPACT_LABEL: Record<ImpactTag, string> = {
+  access_parking: "Access & parking",
+  noise_dust: "Noise & dust",
+  future_development: "Future development",
+  competition: "Competition",
+  property_rules: "Property rules",
+  flood_risk: "Flood risk",
+  minor_activity: "Minor activity",
+};
+
+export const IMPACT_BLURB: Record<ImpactTag, string> = {
+  access_parking: "Closures and work zones can make it harder for customers, deliveries, and staff to reach you or park nearby.",
+  noise_dust: "Heavy work nearby can bring noise, dust, and vibration during working hours.",
+  future_development:
+    "Planned and new projects can change an area over time: construction first, then possibly new neighbors, residents, or customers.",
+  competition:
+    "Similar businesses nearby compete for the same customers. A cluster of them can also draw more people to the area.",
+  property_rules:
+    "Your zoning district sets what the property can be used for. Expanding, changing how you use the space, or adding signs may need approval.",
+  flood_risk:
+    "Property in or near a high-risk flood zone may need separate flood insurance, and flooding can close roads and damage stock.",
+  minor_activity: "Small jobs like repairs, renovations, or home projects. These usually have little effect on nearby businesses.",
+};
+
+export const IMPACT_CHIP: Record<ImpactTag, string> = {
+  access_parking: "bg-amber-50 text-amber-800 ring-amber-600/20",
+  noise_dust: "bg-orange-50 text-orange-800 ring-orange-600/20",
+  future_development: "bg-sky-50 text-sky-800 ring-sky-600/20",
+  competition: "bg-violet-50 text-violet-800 ring-violet-600/20",
+  property_rules: "bg-indigo-50 text-indigo-800 ring-indigo-600/20",
+  flood_risk: "bg-cyan-50 text-cyan-800 ring-cyan-600/20",
+  minor_activity: "bg-slate-100 text-slate-600 ring-slate-500/15",
+};
