@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { LocalRiskResponse, RiskCategory, RiskLevel } from "../../../shared/types";
+import type { LocalContextResponse, LocalRiskResponse, RiskCategory, RiskLevel } from "../../../shared/types";
 import { apiGet, ApiError } from "../api";
+import LocationContext from "../components/localRisk/LocationContext";
 import RiskMap from "../components/localRisk/RiskMap";
 import RiskItemCard from "../components/localRisk/RiskItemCard";
 import { CATEGORY_LABEL, formatDate, LEVEL_BADGE, LEVEL_LABEL, RADIUS_OPTIONS } from "../components/localRisk/format";
@@ -37,9 +38,29 @@ export default function LocalRiskPage() {
     }
   }, []);
 
+  // Zoning, flood zone, and competitors load separately so a slow source
+  // (OpenStreetMap can take several seconds) never holds up the risk list.
+  const [context, setContext] = useState<LocalContextResponse | null>(null);
+  const [contextLoading, setContextLoading] = useState(true);
+  const [contextError, setContextError] = useState<string | null>(null);
+  const [showCompetitors, setShowCompetitors] = useState(false);
+
+  const loadContext = useCallback(async (r: number, refresh: boolean) => {
+    setContextLoading(true);
+    setContextError(null);
+    try {
+      setContext(await apiGet<LocalContextResponse>(`/api/local-risk/context?radius=${r}${refresh ? "&refresh=1" : ""}`));
+    } catch (err) {
+      setContextError(err instanceof ApiError ? err.message : "Couldn't load zoning, flood, and competitor info.");
+    } finally {
+      setContextLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     void load(radius, false);
-  }, [load, radius]);
+    void loadContext(radius, false);
+  }, [load, loadContext, radius]);
 
   const counts = useMemo(() => {
     const c = { high: 0, medium: 0, low: 0, new: 0 };
@@ -93,8 +114,8 @@ export default function LocalRiskPage() {
         <div>
           <h1 className="text-2xl font-bold">Local Risk</h1>
           <p className="mt-1 text-slate-600">
-            Construction, road work, and permitted projects near{" "}
-            <span className="font-medium text-slate-800">{data?.center.address ?? "your business"}</span>.
+            What's around <span className="font-medium text-slate-800">{data?.center.address ?? "your business"}</span>: zoning,
+            flood risk, competitors, and nearby construction and road work.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -112,7 +133,10 @@ export default function LocalRiskPage() {
             ))}
           </div>
           <button
-            onClick={() => void load(radius, true)}
+            onClick={() => {
+              void load(radius, true);
+              void loadContext(radius, true);
+            }}
             disabled={refreshing || loading}
             className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
           >
@@ -143,7 +167,20 @@ export default function LocalRiskPage() {
             ))}
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
+          <section className="mt-6">
+            <h2 className="mb-3 text-lg font-bold tracking-tight text-slate-900">Your location</h2>
+            <LocationContext
+              context={context}
+              loading={contextLoading}
+              error={contextError}
+              radiusLabel={radiusLabel}
+              showCompetitorsOnMap={showCompetitors}
+              onToggleCompetitorsOnMap={setShowCompetitors}
+            />
+          </section>
+
+          <h2 className="mt-8 text-lg font-bold tracking-tight text-slate-900">Construction and projects nearby</h2>
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
             {LEVELS.map((l) => (
               <button
                 key={l}
@@ -183,6 +220,7 @@ export default function LocalRiskPage() {
                 items={filtered}
                 selectedId={selectedId}
                 onSelect={selectFromMap}
+                competitors={showCompetitors ? context?.competitors.items : undefined}
               />
             </div>
 
@@ -251,6 +289,11 @@ export default function LocalRiskPage() {
               <li>
                 <span className="font-medium">Low:</span> everything else, including small residential jobs and projects
                 that are on hold or still in design.
+              </li>
+              <li>
+                <span className="font-medium">Development plans</span> (Baltimore County) are future work with no published
+                schedule, so they're never High: Medium within about ¼ mile of your address (or if you're inside the plan
+                area), otherwise Low.
               </li>
             </ul>
             <p className="mt-2">Distances are straight-line. State road projects are mapped at one reference point, and the work may run along the road.</p>

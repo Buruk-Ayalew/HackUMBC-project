@@ -24,6 +24,7 @@ export const CATEGORY_LABEL: Record<RiskCategory, string> = {
   site_work: "Grading / site work",
   commercial_work: "Commercial building work",
   residential_work: "Residential work",
+  development_plan: "Development plan",
   other: "Other permitted work",
 };
 
