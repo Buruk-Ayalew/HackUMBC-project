@@ -103,3 +103,71 @@ export interface ObligationResult {
   coverage: "reviewed" | "limited";
   coverageNote?: string;
 }
+
+// ---------- Local Risk ----------
+
+export type RiskSourceId =
+  | "baltimore_city_permits"
+  | "baltimore_county_permits"
+  | "mdot_sha_projects"
+  | "md_road_closures";
+
+export type RiskCategory =
+  | "road_closure"
+  | "road_work"
+  | "demolition"
+  | "new_construction"
+  | "site_work" // grading, storm water, sitework
+  | "commercial_work" // alterations, fit-outs, change of use
+  | "residential_work"
+  | "other";
+
+export type RiskLevel = "high" | "medium" | "low";
+
+export interface RiskItem {
+  id: string; // `${source}:${native id}`, stable across refreshes
+  source: RiskSourceId;
+  sourceName: string;
+  sourceUrl: string; // official page for this item or its dataset
+  title: string;
+  description: string; // short excerpt from the source record
+  category: RiskCategory;
+  address: string | null;
+  lat: number;
+  lng: number;
+  distanceMeters: number; // straight-line distance from the business
+  startDate: string | null; // YYYY-MM-DD (or ISO datetime for road closures)
+  endDate: string | null;
+  dateNote?: string; // what the dates mean, e.g. "State estimate: starts Spring 2026."
+  status: string | null; // as reported by the source, e.g. "Issued", "In Progress"
+  reference?: string; // permit / case number or reporting agency
+  riskLevel: RiskLevel; // rule-based estimate (distance, type, timing)
+  riskReasons: string[];
+  isNew: boolean; // first seen for this location within the last 7 days
+}
+
+export interface RiskSourceStatus {
+  source: RiskSourceId;
+  name: string;
+  // live: fetched just now or within the refresh window. cached: live fetch failed,
+  // showing saved results. unavailable: no live data and no cache.
+  status: "live" | "cached" | "unavailable";
+  fetchedAt: string | null; // ISO
+  itemCount: number;
+  message?: string;
+}
+
+export interface LocalRiskResponse {
+  center: { lat: number; lng: number; address: string };
+  radiusMeters: number;
+  items: RiskItem[]; // sorted: level, then distance
+  sources: RiskSourceStatus[];
+  coverage: "full" | "limited";
+  coverageNote: string;
+  generatedAt: string;
+}
+
+export interface LocalRiskNewCount {
+  newCount: number;
+  highCount: number;
+}
