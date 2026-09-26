@@ -1,0 +1,212 @@
+[
+  {
+    "id": "sick-leave-paid",
+    "title": "Provide paid sick and safe leave",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 15
+      }
+    ],
+    "summary": "Businesses with 15 or more employees must give paid sick and safe leave: at least 1 hour for every 30 hours worked, up to 40 hours a year. Size is the average monthly number of employees in the prior calendar year, counting part-time, temporary, and seasonal workers.",
+    "action": "Track leave for each employee, put your leave policy in writing, and display the state's sick and safe leave poster. A paid time off policy that gives at least as much leave also counts.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "sourceUrl": "https://labor.maryland.gov/paidleave/paidleavefaqs.shtml",
+    "sourceName": "Maryland Department of Labor: Sick and Safe Leave FAQs",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "sick-leave-unpaid",
+    "title": "Provide unpaid sick and safe leave",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "between",
+        "value": [
+          1,
+          14
+        ]
+      }
+    ],
+    "summary": "Businesses with fewer than 15 employees must still let employees earn sick and safe leave (at least 1 hour for every 30 hours worked, up to 40 hours a year), but it can be unpaid. Size is the average monthly number of employees in the prior calendar year, counting part-time workers.",
+    "action": "Track leave for each employee and follow the same tracking and notice rules as larger employers. You may choose to make the leave paid.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "sourceUrl": "https://labor.maryland.gov/paidleave/paidleavefaqs.shtml",
+    "sourceName": "Maryland Department of Labor: Sick and Safe Leave FAQs",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "parental-leave",
+    "title": "Offer unpaid parental leave (Parental Leave Act)",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "between",
+        "value": [
+          15,
+          49
+        ]
+      },
+      {
+        "field": "employees.coveredByFMLA",
+        "op": "is",
+        "value": "no"
+      }
+    ],
+    "summary": "Employers with 15 to 49 employees in Maryland must give eligible employees up to 6 weeks of unpaid leave for the birth, adoption, or foster placement of a child. Since October 1, 2025, employers covered by the federal FMLA are exempt.",
+    "action": "Add parental leave to your written policies. If you're not sure whether the federal FMLA covers you, check with the U.S. Department of Labor.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/essguide.shtml#parental",
+    "sourceName": "Maryland Department of Labor: Leave laws (Parental Leave); SB 785 (2025), Chapter 296",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "state-ban-the-box",
+    "title": "Don't ask about criminal records before the first interview",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.fullTimeInMaryland",
+        "op": "gte",
+        "value": 15
+      }
+    ],
+    "summary": "Employers with 15 or more full-time employees in Maryland can't ask applicants about criminal records (on the application or otherwise) before the first in-person interview. Phone and video interviews count as in-person.",
+    "action": "Remove criminal record questions from your job applications and early screening.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "frequencyNote": "Every time you hire",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/esscrimscreenfaqs.pdf",
+    "sourceName": "Maryland Department of Labor: Criminal Record Screening (Ban the Box) FAQs",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "worker-freedom-act",
+    "title": "No required meetings on religious or political matters (Worker Freedom Act)",
+    "category": "posting",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "summary": "Starting October 1, 2026, employers can't punish employees for refusing to attend or take part in employer meetings about religious or political matters. The state must publish a poster and model notice by November 1, 2026.",
+    "action": "Make any such meetings optional. Once the state's poster is out, post it where employees can see it and give the notice to each new hire.",
+    "deadlines": [
+      {
+        "label": "Worker Freedom Act takes effect",
+        "date": "2026-10-01"
+      },
+      {
+        "label": "State Worker Freedom Act poster due out (then post it)",
+        "date": "2026-11-01"
+      }
+    ],
+    "agency": "Maryland Department of Labor",
+    "frequency": "once",
+    "frequencyNote": "Poster, plus notice to each new hire",
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0417?ys=2026RS",
+    "sourceName": "Maryland General Assembly: SB 417 (2026), Chapter 221",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "state-minimum-wage",
+    "title": "Pay at least the Maryland minimum wage ($15.00/hour)",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 1
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "not_in",
+        "value": [
+          "Montgomery County",
+          "Howard County",
+          "Prince George's County"
+        ]
+      }
+    ],
+    "summary": "Most employees in Maryland must be paid at least $15.00 per hour. Employees under 18 must get at least 85% of that. Some jobs are exempt. Overtime is 1.5 times the regular rate after 40 hours a week.",
+    "action": "Check that every employee earns at least $15.00 per hour and display the state minimum wage poster.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+    "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "state-tipped-wage",
+    "title": "Follow the tipped employee wage rules",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.tippedEmployees",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "not_in",
+        "value": [
+          "Montgomery County",
+          "Howard County",
+          "Prince George's County"
+        ]
+      }
+    ],
+    "mightConditions": [
+      {
+        "field": "flags.tippedEmployees",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Howard County",
+          "Prince George's County"
+        ]
+      }
+    ],
+    "summary": "For tipped employees (more than $30 a month in tips), you must pay at least $3.63 per hour, and that plus tips must reach the full minimum wage. You cover any gap. Restaurants using tips toward minimum wage must give a Tip Credit Wage Statement each pay period.",
+    "action": "Check each pay period that cash wage plus tips reaches the minimum wage, and give tipped staff their wage statement. In counties with their own minimum wage, check the county's tipped-wage rules.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "every_payroll",
+    "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+    "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
+    "reviewedOn": "2026-09-26"
+  }
+]

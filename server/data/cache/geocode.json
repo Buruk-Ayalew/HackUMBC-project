@@ -13,7 +13,7 @@
     "notes": [
       "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
     ],
-    "cachedAt": "2026-09-26T19:44:12.063Z"
+    "cachedAt": "2026-09-26T20:01:20.491Z"
   },
   "1301 atlantic ave ocean city md 21842": {
     "lat": 38.342969256103,
@@ -29,6 +29,54 @@
     "notes": [
       "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
     ],
-    "cachedAt": "2026-09-26T19:44:13.058Z"
+    "cachedAt": "2026-09-26T20:01:19.678Z"
+  },
+  "1621 thames st baltimore md 21231": {
+    "lat": 39.281253125062,
+    "lng": -76.594276698374,
+    "matchedAddress": "1621 THAMES ST, BALTIMORE, MD, 21231",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Baltimore City",
+      "isBaltimoreCity": true,
+      "municipality": null
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T20:05:45.153Z"
+  },
+  "255 rockville pike rockville md 20850": {
+    "lat": 39.084528457337,
+    "lng": -77.147902312067,
+    "matchedAddress": "255 ROCKVILLE PIKE, ROCKVILLE, MD, 20850",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Montgomery County",
+      "isBaltimoreCity": false,
+      "municipality": "Rockville"
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T20:01:17.568Z"
+  },
+  "101 n market st frederick md 21701": {
+    "lat": 39.415875047095,
+    "lng": -77.410858612371,
+    "matchedAddress": "101 N MARKET ST, FREDERICK, MD, 21701",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Frederick County",
+      "isBaltimoreCity": false,
+      "municipality": "Frederick"
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T20:01:18.492Z"
   }
 }

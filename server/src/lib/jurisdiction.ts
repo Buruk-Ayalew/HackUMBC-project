@@ -146,10 +146,12 @@ export async function lookupJurisdiction(address: string): Promise<JurisdictionL
   const notes: string[] = [];
   let confidence: JurisdictionLookupResult["confidence"] = "high";
   let municipality = census.censusMunicipality;
+  let imapUnavailable = false;
 
   if (!census.isBaltimoreCity) {
     const imap = await lookupImapMunicipality(census.lat, census.lng);
     if (imap === undefined) {
+      imapUnavailable = true;
       confidence = "check";
       notes.push("We couldn't reach the state's town boundary map, so please double-check the town.");
     } else if ((imap ?? "").toLowerCase() !== (municipality ?? "").toLowerCase()) {
@@ -175,9 +177,12 @@ export async function lookupJurisdiction(address: string): Promise<JurisdictionL
     notes,
   };
 
-  // Re-read so concurrent lookups don't clobber each other's entries.
+  // Re-read so concurrent lookups don't clobber each other's entries. Never
+  // replace a complete saved result with one made while iMAP was down.
   const latest = await readJson<Record<string, CacheEntry>>(CACHE_FILE, {});
-  latest[key] = { ...result, cachedAt: new Date().toISOString() };
-  await writeJson(CACHE_FILE, latest);
+  if (!(imapUnavailable && latest[key])) {
+    latest[key] = { ...result, cachedAt: new Date().toISOString() };
+    await writeJson(CACHE_FILE, latest);
+  }
   return result;
 }

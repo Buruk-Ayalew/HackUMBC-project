@@ -78,7 +78,7 @@ export type ObligationCategory =
 export type Condition =
   | { field: string; op: "gte" | "lte" | "eq" | "between"; value: number | [number, number] }
   | { field: string; op: "is"; value: boolean | string }
-  | { field: string; op: "in"; value: string[] }
+  | { field: string; op: "in" | "not_in"; value: string[] }
   | { field: "jurisdiction"; op: "match" };
 
 export interface ObligationRule {
@@ -88,12 +88,47 @@ export interface ObligationRule {
   jurisdiction: { level: "federal" | "state" | "county" | "municipality"; name?: string };
   conditions: Condition[]; // ALL must pass for "affects"
   mightConditions?: Condition[]; // if these pass but conditions don't, result is "might"
+  // Status when all conditions pass (default "affects"). Use "might" for items
+  // we can't decide from the profile, "not_applicable" for things like BOI.
+  statusWhenMet?: "affects" | "might" | "not_applicable";
+  // summary and action may use {{placeholders}} filled from local data,
+  // e.g. {{county}}, {{municipality}}, {{admissionsRate}}, {{hotelRate}}.
   summary: string;
   action: string;
-  deadlines?: { label: string; date: string }[]; // ISO dates
+  deadlines?: { label: string; date: string }[]; // one-time ISO dates
+  // Filing schedule details (used by the filing schedule table and calendar).
+  agency?: string; // who you file with, e.g. "Comptroller of Maryland"
+  frequency?: ObligationFrequency;
+  frequencyNote?: string; // e.g. "Monthly if you withhold more than $700 a quarter"
+  recurring?: RecurringSchedule;
+  filingUrl?: string; // where the filing or payment is actually done
+  filingSiteName?: string;
   sourceUrl: string;
   sourceName: string;
   reviewedOn: string; // ISO date
+}
+
+export type ObligationFrequency =
+  | "once"
+  | "ongoing"
+  | "every_payroll"
+  | "monthly"
+  | "quarterly"
+  | "yearly"
+  | "every_2_years"
+  | "varies";
+
+// A repeating due date. Dates that land on a weekend or federal holiday move
+// to the next business day.
+//  - month:   due on `day` of the month after each month
+//  - quarter: due on `day` of the month after each calendar quarter
+//  - year:    due every year on `month`/`day`
+export interface RecurringSchedule {
+  every: "month" | "quarter" | "year";
+  day: number | "last";
+  month?: number; // 1-12, for "year"
+  label: string; // e.g. "Sales and use tax return ({period})"
+  startsOn?: string; // no due dates before this ISO date
 }
 
 export interface ObligationResult {
@@ -102,6 +137,30 @@ export interface ObligationResult {
   reasons: string[];
   coverage: "reviewed" | "limited";
   coverageNote?: string;
+  // Due dates in the next 12 months (one-time deadlines + recurring), sorted.
+  upcoming: DueDate[];
+}
+
+export interface DueDate {
+  date: string; // YYYY-MM-DD, already moved off weekends/holidays
+  label: string;
+}
+
+// What changes at one employee-count milestone on the growth planner.
+export interface Milestone {
+  employees: number; // Maryland headcount on the single-slider scale
+  counts: { totalAllStates: number; inMaryland: number; fullTimeInMaryland: number };
+  changes: { ruleId: string; title: string; from: ObligationResult["status"]; to: ObligationResult["status"]; reason: string }[];
+}
+
+// GET /api/obligations and POST /api/obligations/what-if
+export interface ObligationsResponse {
+  results: ObligationResult[];
+  // Profile-level notes about what we have NOT reviewed for this location.
+  coverageNotes: string[];
+  // Employee counts where some rule changes, from rules' numeric conditions.
+  thresholds: number[];
+  evaluatedAt: string;
 }
 
 // ---------- Local Risk ----------
