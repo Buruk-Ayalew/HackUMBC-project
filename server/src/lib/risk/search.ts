@@ -23,6 +23,7 @@ import {
   normalizeShaProjects,
   type NormalizedRiskItem,
 } from "./normalize.js";
+import { impactsFor } from "./impacts.js";
 import { scoreItem } from "./score.js";
 import { markSeen } from "./seen.js";
 import { distanceMeters, distanceToPolygonMeters, locationKey } from "./util.js";
@@ -166,6 +167,7 @@ export async function searchLocalRisk(profile: BusinessProfile, opts: SearchOpti
       distanceMeters: Math.round(distance),
       riskLevel: level,
       riskReasons: reasons,
+      impacts: impactsFor(item),
       isNew: newIds.has(item.id),
     });
   }

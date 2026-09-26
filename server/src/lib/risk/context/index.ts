@@ -15,7 +15,7 @@ export async function getLocalContext(
     getFlood(profile, opts.force),
     getCompetitors(profile, opts.radiusMeters, opts.force),
   ]);
-  const down = { status: "unavailable" as const, fetchedAt: null, message: "This source is unavailable right now." };
+  const down = { status: "unavailable" as const, fetchedAt: null, message: "This source is unavailable right now.", impacts: [] };
   for (const r of [zoning, flood, competitors]) if (r.status === "rejected") console.warn("[risk/context]", r.reason);
 
   return {

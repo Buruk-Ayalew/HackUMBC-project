@@ -17,7 +17,7 @@ export const NEAR_M = 150;
 export const CLOSE_M = 400;
 export const MID_M = 800;
 const SOON_DAYS = 30;
-const SIZABLE_COST_USD = 100_000;
+export const SIZABLE_COST_USD = 100_000;
 const LARGE_COST_USD = 1_000_000;
 
 const MAJOR: RiskCategory[] = ["road_closure", "road_work", "demolition", "new_construction", "site_work"];

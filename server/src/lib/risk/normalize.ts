@@ -6,8 +6,8 @@ import { BALTIMORE_COUNTY, BALTIMORE_COUNTY_DEV_PLANS, type CountyDevPlan, type 
 import { MD_ROAD_CLOSURES, MDOT_SHA_PROJECTS, type RoadClosure, type ShaProject } from "./mdotSha.js";
 import { epochToDate, epochToIso, excerpt, polygonMarker, titleCase } from "./util.js";
 
-// A RiskItem before it's placed relative to a business (no distance, level, or "new" flag).
-export type NormalizedRiskItem = Omit<RiskItem, "distanceMeters" | "riskLevel" | "riskReasons" | "isNew"> & {
+// A RiskItem before it's placed relative to a business (no distance, level, impact tags, or "new" flag).
+export type NormalizedRiskItem = Omit<RiskItem, "distanceMeters" | "riskLevel" | "riskReasons" | "impacts" | "isNew"> & {
   // Facts from the source that scoring uses. Never shown as numbers we invented.
   facts: {
     costUsd?: number; // as reported on the permit

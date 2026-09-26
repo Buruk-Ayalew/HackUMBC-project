@@ -63,6 +63,7 @@ export async function getZoning(profile: BusinessProfile, force = false): Promis
       sourceName: "",
       sourceUrl: "",
       fetchedAt: null,
+      impacts: [],
       message: `Zoning isn't available for ${j.municipality ? `${j.municipality}, ${j.county}` : j.county} yet. Your local planning or zoning office can tell you your district.`,
     };
   }
@@ -80,6 +81,7 @@ export async function getZoning(profile: BusinessProfile, force = false): Promis
     sourceName: src.name,
     sourceUrl: src.datasetUrl,
     fetchedAt: r.fetchedAt,
+    impacts: r.items.district ? ["property_rules"] : [],
     message: r.message ?? (r.status === "live" && !r.items.district ? "No zoning district found at this exact point." : undefined),
   };
 }

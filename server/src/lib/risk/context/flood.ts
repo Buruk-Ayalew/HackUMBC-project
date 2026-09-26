@@ -85,6 +85,8 @@ export async function getFlood(profile: BusinessProfile, force = false): Promise
     // FEMA's official lookup for this address.
     sourceUrl: `https://msc.fema.gov/portal/search?AddressQuery=${encodeURIComponent(profile.address)}`,
     fetchedAt: r.fetchedAt,
+    // Only flag flood when it matters: in, or within NEARBY_FLOOD_M of, a high-risk zone.
+    impacts: f.highRisk || f.nearbyHighRiskZones.length > 0 ? ["flood_risk"] : [],
     message: r.message ?? (r.status === "live" && !f.zone ? "FEMA has no flood map data at this exact point." : undefined),
   };
 }
