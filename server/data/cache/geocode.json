@@ -1,0 +1,34 @@
+{
+  "8600 harford rd baltimore md 21234": {
+    "lat": 39.381848613846,
+    "lng": -76.536002601963,
+    "matchedAddress": "8600 HARFORD RD, BALTIMORE, MD, 21234",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Baltimore County",
+      "isBaltimoreCity": false,
+      "municipality": null
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T19:44:12.063Z"
+  },
+  "1301 atlantic ave ocean city md 21842": {
+    "lat": 38.342969256103,
+    "lng": -75.07871935131,
+    "matchedAddress": "1301 ATLANTIC AVE, OCEAN CITY, MD, 21842",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Worcester County",
+      "isBaltimoreCity": false,
+      "municipality": "Ocean City"
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-26T19:44:13.058Z"
+  }
+}

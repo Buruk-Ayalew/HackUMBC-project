@@ -1,0 +1,117 @@
+[
+  {
+    "id": "sample-restaurant-baltimore-city",
+    "userId": "sample",
+    "businessName": "Thames Street Kitchen",
+    "address": "1621 Thames St, Baltimore, MD 21231",
+    "lat": 39.281253125062,
+    "lng": -76.594276698374,
+    "jurisdiction": { "state": "MD", "county": "Baltimore City", "isBaltimoreCity": true, "municipality": null },
+    "entityType": "llc",
+    "industry": "restaurant",
+    "naicsCode": "722511",
+    "employees": { "totalAllStates": 14, "inMaryland": 14, "fullTimeInMaryland": 10, "coveredByFMLA": "unsure" },
+    "flags": {
+      "tippedEmployees": true,
+      "sellsTaxableGoods": true,
+      "chargesAdmission": false,
+      "rentsLodging": false,
+      "servesAlcohol": true,
+      "sellsToGovernment": false,
+      "handlesCustomerData": false
+    },
+    "updatedAt": "2026-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "sample-salon-rockville",
+    "userId": "sample",
+    "businessName": "Pike Hair Studio",
+    "address": "255 Rockville Pike, Rockville, MD 20850",
+    "lat": 39.084528457337,
+    "lng": -77.147902312067,
+    "jurisdiction": { "state": "MD", "county": "Montgomery County", "isBaltimoreCity": false, "municipality": "Rockville" },
+    "entityType": "llc",
+    "industry": "salon",
+    "naicsCode": "812112",
+    "employees": { "totalAllStates": 6, "inMaryland": 6, "fullTimeInMaryland": 4, "coveredByFMLA": "no" },
+    "flags": {
+      "tippedEmployees": true,
+      "sellsTaxableGoods": true,
+      "chargesAdmission": false,
+      "rentsLodging": false,
+      "servesAlcohol": false,
+      "sellsToGovernment": false,
+      "handlesCustomerData": false
+    },
+    "updatedAt": "2026-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "sample-consultant-frederick",
+    "userId": "sample",
+    "businessName": "Market Street Consulting LLC",
+    "address": "101 N Market St, Frederick, MD 21701",
+    "lat": 39.415875047095,
+    "lng": -77.410858612371,
+    "jurisdiction": { "state": "MD", "county": "Frederick County", "isBaltimoreCity": false, "municipality": "Frederick" },
+    "entityType": "llc",
+    "industry": "professional_services",
+    "naicsCode": "541611",
+    "employees": { "totalAllStates": 0, "inMaryland": 0, "fullTimeInMaryland": 0, "coveredByFMLA": "no" },
+    "flags": {
+      "tippedEmployees": false,
+      "sellsTaxableGoods": false,
+      "chargesAdmission": false,
+      "rentsLodging": false,
+      "servesAlcohol": false,
+      "sellsToGovernment": false,
+      "handlesCustomerData": false
+    },
+    "updatedAt": "2026-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "sample-hotel-ocean-city",
+    "userId": "sample",
+    "businessName": "Boardwalk Inn",
+    "address": "1301 Atlantic Ave, Ocean City, MD 21842",
+    "lat": 38.342969256103,
+    "lng": -75.07871935131,
+    "jurisdiction": { "state": "MD", "county": "Worcester County", "isBaltimoreCity": false, "municipality": "Ocean City" },
+    "entityType": "corporation",
+    "industry": "hotel",
+    "naicsCode": "721110",
+    "employees": { "totalAllStates": 40, "inMaryland": 40, "fullTimeInMaryland": 25, "coveredByFMLA": "no" },
+    "flags": {
+      "tippedEmployees": false,
+      "sellsTaxableGoods": true,
+      "chargesAdmission": false,
+      "rentsLodging": true,
+      "servesAlcohol": false,
+      "sellsToGovernment": false,
+      "handlesCustomerData": true
+    },
+    "updatedAt": "2026-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "sample-contractor-baltimore-county",
+    "userId": "sample",
+    "businessName": "Harford Road Builders Inc.",
+    "address": "8600 Harford Rd, Baltimore, MD 21234",
+    "lat": 39.381848613846,
+    "lng": -76.536002601963,
+    "jurisdiction": { "state": "MD", "county": "Baltimore County", "isBaltimoreCity": false, "municipality": null },
+    "entityType": "corporation",
+    "industry": "contractor",
+    "naicsCode": "236220",
+    "employees": { "totalAllStates": 65, "inMaryland": 60, "fullTimeInMaryland": 55, "coveredByFMLA": "yes" },
+    "flags": {
+      "tippedEmployees": false,
+      "sellsTaxableGoods": false,
+      "chargesAdmission": false,
+      "rentsLodging": false,
+      "servesAlcohol": false,
+      "sellsToGovernment": true,
+      "handlesCustomerData": false
+    },
+    "updatedAt": "2026-09-26T00:00:00.000Z"
+  }
+]
