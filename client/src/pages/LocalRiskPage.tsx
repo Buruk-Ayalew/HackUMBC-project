@@ -51,7 +51,7 @@ export default function LocalRiskPage() {
   const [context, setContext] = useState<LocalContextResponse | null>(null);
   const [contextLoading, setContextLoading] = useState(true);
   const [contextError, setContextError] = useState<string | null>(null);
-  const [showCompetitors, setShowCompetitors] = useState(false);
+  const [showCompetitors, setShowCompetitors] = useState(true);
 
   const loadContext = useCallback(async (r: number, refresh: boolean) => {
     setContextLoading(true);
