@@ -7,11 +7,17 @@ import type {
   RiskSourceStatus,
 } from "../../../../shared/types.js";
 import { BALTIMORE_CITY, fetchBaltimoreCityPermits } from "./baltimoreCity.js";
-import { BALTIMORE_COUNTY, fetchBaltimoreCountyPermits } from "./baltimoreCounty.js";
+import {
+  BALTIMORE_COUNTY,
+  BALTIMORE_COUNTY_DEV_PLANS,
+  fetchBaltimoreCountyDevPlans,
+  fetchBaltimoreCountyPermits,
+} from "./baltimoreCounty.js";
 import { cacheFile, withCache, type CachedResult } from "./cache.js";
 import { fetchRoadClosures, fetchShaProjects, MD_ROAD_CLOSURES, MDOT_SHA_PROJECTS } from "./mdotSha.js";
 import {
   normalizeCityPermits,
+  normalizeCountyDevPlans,
   normalizeCountyPermits,
   normalizeRoadClosures,
   normalizeShaProjects,
@@ -19,7 +25,7 @@ import {
 } from "./normalize.js";
 import { scoreItem } from "./score.js";
 import { markSeen } from "./seen.js";
-import { distanceMeters, locationKey } from "./util.js";
+import { distanceMeters, distanceToPolygonMeters, locationKey } from "./util.js";
 
 // Radius choices shown in the UI: 1/4, 1/2, and 1 mile.
 export const RADIUS_OPTIONS_M = [402, 805, 1609] as const;
@@ -63,6 +69,14 @@ function planSources(profile: BusinessProfile, opts: SearchOptions): SourcePlan[
           normalizeCountyPermits(await fetchBaltimoreCountyPermits(profile.lat, profile.lng, FETCH_RADIUS_M)),
         ),
     });
+    plans.push({
+      id: BALTIMORE_COUNTY_DEV_PLANS.id,
+      name: BALTIMORE_COUNTY_DEV_PLANS.name,
+      run: () =>
+        withCache(cacheFile("baltimore-county-dev-plans"), key, cacheOpts, async () =>
+          normalizeCountyDevPlans(await fetchBaltimoreCountyDevPlans(profile.lat, profile.lng, FETCH_RADIUS_M)),
+        ),
+    });
   }
 
   // Statewide sources: one cached copy serves every address.
@@ -99,7 +113,7 @@ function coverageFor(profile: BusinessProfile): { coverage: "full" | "limited"; 
   if (j.county === "Baltimore County") {
     return {
       coverage: "full",
-      note: "Baltimore County permits, state road projects, and road closures reported to the state.",
+      note: "Baltimore County permits and development plans, state road projects, and road closures reported to the state.",
     };
   }
   return {
@@ -128,7 +142,7 @@ export async function searchLocalRisk(profile: BusinessProfile, opts: SearchOpti
     if (result.status === "rejected") console.warn(`[risk] ${plan.id} failed:`, result.reason);
 
     for (const item of r.items) {
-      const distance = distanceMeters(center, item);
+      const distance = item.facts.area ? distanceToPolygonMeters(center, item.facts.area) : distanceMeters(center, item);
       if (distance > FETCH_RADIUS_M) continue;
       // Drop closures/projects that have already ended.
       if (item.endDate && Date.parse(item.endDate) < now && item.source === "md_road_closures") continue;

@@ -1,9 +1,10 @@
 import type { RiskCategory, RiskItem } from "../../../../shared/types.js";
 import type { ArcgisFeature } from "./arcgis.js";
 import { BALTIMORE_CITY, type CityPermit } from "./baltimoreCity.js";
-import { BALTIMORE_COUNTY, type CountyPermit } from "./baltimoreCounty.js";
+import type { ArcgisPolygon } from "./arcgis.js";
+import { BALTIMORE_COUNTY, BALTIMORE_COUNTY_DEV_PLANS, type CountyDevPlan, type CountyPermit } from "./baltimoreCounty.js";
 import { MD_ROAD_CLOSURES, MDOT_SHA_PROJECTS, type RoadClosure, type ShaProject } from "./mdotSha.js";
-import { epochToDate, epochToIso, excerpt, titleCase } from "./util.js";
+import { epochToDate, epochToIso, excerpt, polygonMarker, titleCase } from "./util.js";
 
 // A RiskItem before it's placed relative to a business (no distance, level, or "new" flag).
 export type NormalizedRiskItem = Omit<RiskItem, "distanceMeters" | "riskLevel" | "riskReasons" | "isNew"> & {
@@ -14,6 +15,8 @@ export type NormalizedRiskItem = Omit<RiskItem, "distanceMeters" | "riskLevel" |
     onHold?: boolean;
     fullClosure?: boolean; // road closed in all directions
     notYetIssued?: boolean; // permit applied for, not issued
+    planApproved?: boolean; // development plan approved (vs. under review)
+    area?: [number, number][][]; // polygon rings [lng, lat]; distance is measured to this area
   };
 };
 
@@ -122,6 +125,57 @@ export function normalizeCountyPermits(features: ArcgisFeature<CountyPermit>[]):
       facts: { costUsd: cost > 0 ? cost : undefined, notYetIssued: !issued },
     };
   });
+}
+
+// ---------- Baltimore County development plans ----------
+
+// DEV_TRACK values seen 2026-09-26: MAJOR, MINOR (and typo MNOR), LIMITED, PUD, OTHER, UNKNOWN.
+// Labels stay close to the county's own track names.
+const DEV_TRACK_LABEL: Record<string, string> = {
+  MAJOR: "Major-track",
+  MINOR: "Minor-track",
+  MNOR: "Minor-track",
+  LIMITED: "Limited-track",
+  PUD: "Planned unit development",
+};
+
+export function normalizeCountyDevPlans(features: ArcgisFeature<CountyDevPlan, ArcgisPolygon>[]): NormalizedRiskItem[] {
+  const out: NormalizedRiskItem[] = [];
+  for (const f of features) {
+    const rings = f.geometry?.rings;
+    const marker = rings ? polygonMarker(rings) : null;
+    if (!rings || !marker) continue;
+    const p = f.attributes;
+    const approved = clean(p.PLAN_APPROVED).toUpperCase() === "YES";
+    const track = clean(p.DEV_TRACK).toUpperCase();
+    const trackLabel = DEV_TRACK_LABEL[track] ?? null;
+    const name = clean(p.PROJECT_NAME) ? titleCase(clean(p.PROJECT_NAME)) : null;
+    const pdf = clean(p.WEB_PLANS_URL);
+    out.push({
+      id: `${BALTIMORE_COUNTY_DEV_PLANS.id}:${p.PAI_NO ?? p.OBJECTID}`,
+      source: BALTIMORE_COUNTY_DEV_PLANS.id,
+      sourceName: BALTIMORE_COUNTY_DEV_PLANS.name,
+      sourceUrl: pdf.startsWith("http") ? pdf : BALTIMORE_COUNTY_DEV_PLANS.datasetUrl,
+      title: name ? `Development plan: ${name}` : `Development plan ${p.PAI_NO ?? ""}`.trim(),
+      description: [
+        trackLabel ? `${trackLabel} development plan` : "Development plan",
+        clean(p.RESIDENTIAL).toUpperCase() === "YES" ? "includes housing" : null,
+      ]
+        .filter(Boolean)
+        .join(", ") + (pdf.startsWith("http") ? ". See the plan PDF for details." : "."),
+      category: "development_plan",
+      address: null,
+      lat: marker.lat,
+      lng: marker.lng,
+      startDate: null,
+      endDate: null,
+      dateNote: "The county doesn't publish a construction schedule for plans. Distance is to the edge of the plan's area.",
+      status: approved ? "Plan approved" : "Plan under review",
+      reference: p.PAI_NO ? `Project ${p.PAI_NO}` : undefined,
+      facts: { planApproved: approved, area: rings },
+    });
+  }
+  return out;
 }
 
 // ---------- MDOT SHA projects ----------

@@ -10,6 +10,8 @@ import type { NormalizedRiskItem } from "./normalize.js";
 // Medium: other major work within 800 m; commercial work within 150 m with a
 //         reported cost of $100,000+; commercial work of $1M+ within 400 m.
 // Low:    everything else, plus anything on hold or still in planning/design.
+// Development plans (future work, no schedule) are never High: Medium within
+// 400 m (or if the business is inside the plan area), otherwise Low.
 
 export const NEAR_M = 150;
 export const CLOSE_M = 400;
@@ -28,6 +30,7 @@ const CATEGORY_REASON: Record<RiskCategory, string> = {
   site_work: "Grading or site work",
   commercial_work: "Commercial building work",
   residential_work: "Residential work (usually small)",
+  development_plan: "Development plan filed with the county",
   other: "Permitted work",
 };
 
@@ -88,6 +91,17 @@ function timingReason(t: Timing, item: NormalizedRiskItem): string | null {
 }
 
 export function scoreItem(item: NormalizedRiskItem, distanceMeters: number, now = Date.now()): { level: RiskLevel; reasons: string[] } {
+  if (item.category === "development_plan") {
+    return {
+      level: distanceMeters <= CLOSE_M ? "medium" : "low",
+      reasons: [
+        distanceMeters < 1 ? "Your address is inside this plan's area" : `${formatDistance(distanceMeters)} (to the plan's area)`,
+        CATEGORY_REASON.development_plan,
+        item.facts.planApproved ? "Plan approved, so construction may follow" : "Plan is still under county review",
+      ],
+    };
+  }
+
   const t = timing(item, now);
   const major = MAJOR.includes(item.category);
   const cost = item.facts.costUsd ?? 0;

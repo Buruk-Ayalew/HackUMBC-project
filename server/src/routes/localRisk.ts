@@ -4,6 +4,7 @@ import type { LocalRiskNewCount } from "../../../shared/types.js";
 import { requireAuth } from "../middleware/auth.js";
 import { getProfileForUser } from "../lib/profile.js";
 import { DEFAULT_RADIUS_M, RADIUS_OPTIONS_M, searchLocalRisk } from "../lib/risk/search.js";
+import { getLocalContext } from "../lib/risk/context/index.js";
 
 const router = Router();
 router.use(requireAuth);
@@ -36,6 +37,21 @@ router.get("/", async (req, res) => {
       userId,
     }),
   );
+});
+
+// GET /api/local-risk/context?radius=805&refresh=1: zoning, flood zone, and nearby competitors.
+router.get("/context", async (req, res) => {
+  const parsed = query.safeParse(req.query);
+  if (!parsed.success) {
+    res.status(400).json({ error: parsed.error.issues[0]?.message ?? "Invalid request." });
+    return;
+  }
+  const profile = await getProfileForUser(req.session.userId!);
+  if (!profile) {
+    res.status(404).json({ error: "No business profile yet." });
+    return;
+  }
+  res.json(await getLocalContext(profile, { radiusMeters: parsed.data.radius, force: parsed.data.refresh === "1" }));
 });
 
 // GET /api/local-risk/new-count: summary for the dashboard card (default radius).
