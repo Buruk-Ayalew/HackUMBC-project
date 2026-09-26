@@ -16,7 +16,7 @@ export default function WhatIfPage() {
       <PageHeader
         eyebrow={
           <span className="inline-flex items-center gap-1.5">
-            <IconTrending /> Growth planner
+            <IconTrending /> Growth Planner
           </span>
         }
         title="What changes when you hire?"

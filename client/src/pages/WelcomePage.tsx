@@ -109,7 +109,7 @@ export default function WelcomePage() {
         <ul className="space-y-3">
           {[
             [<IconCalendar key="c" />, "Filing schedule with next due dates and where to file"],
-            [<IconTrending key="t" />, "Growth planner shows what changes before you hire"],
+            [<IconTrending key="t" />, "Growth Planner shows what changes before you hire"],
             [<IconCheck key="k" />, "Any Maryland address; deepest local data in Baltimore City and County"],
           ].map(([icon, text]) => (
             <li key={String(text)} className="flex items-start gap-3">

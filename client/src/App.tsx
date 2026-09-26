@@ -17,7 +17,7 @@ import LocalRiskPage from "./pages/LocalRiskPage";
 const NAV = [
   { to: "/dashboard", label: "Dashboard", icon: null },
   { to: "/obligations", label: "Obligations", icon: <IconClipboard /> },
-  { to: "/growth", label: "Growth planner", icon: <IconTrending /> },
+  { to: "/growth", label: "Growth Planner", icon: <IconTrending /> },
   { to: "/calendar", label: "Calendar", icon: <IconCalendar /> },
   { to: "/radar", label: "Radar", icon: <IconRadar /> },
   { to: "/local-risk", label: "Local Risk", icon: <IconMapPin /> },

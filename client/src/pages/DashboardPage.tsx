@@ -199,7 +199,7 @@ export default function DashboardPage() {
             <p className="mt-1 text-slate-600">See which Maryland rules start as your team grows.</p>
           )}
           <p className="mt-auto pt-4 text-sm font-semibold text-brand-700">
-            Open the growth planner <IconArrowRight className="inline transition group-hover:translate-x-0.5" />
+            Open the Growth Planner <IconArrowRight className="inline transition group-hover:translate-x-0.5" />
           </p>
         </Link>
       </div>
