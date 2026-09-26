@@ -1,7 +1,9 @@
 import { forwardRef } from "react";
-import type { RiskItem } from "../../../../shared/types";
+import type { RiskItem, RiskSourceId } from "../../../../shared/types";
 import { CATEGORY_LABEL, formatDate, formatDistance, LEVEL_BADGE, LEVEL_LABEL } from "./format";
 import ImpactChip from "./ImpactChip";
+
+const PERMIT_SOURCES = new Set<RiskSourceId>(["baltimore_city_permits", "baltimore_county_permits"]);
 
 interface Props {
   item: RiskItem;
@@ -49,7 +51,11 @@ const RiskItemCard = forwardRef<HTMLLIElement, Props>(function RiskItemCard({ it
         ))}
       </ul>
 
-      {item.description && <p className="mt-2 line-clamp-3 text-sm text-slate-600">{item.description}</p>}
+      {/* Permit descriptions are contractor scope-of-work text, not useful to owners; the title,
+          type, cost, and tags already cover them. Closures, road projects, and plans keep theirs. */}
+      {item.description && !PERMIT_SOURCES.has(item.source) && (
+        <p className="mt-2 line-clamp-3 text-sm text-slate-600">{item.description}</p>
+      )}
 
       <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-xs text-slate-500">
         {item.status && (
