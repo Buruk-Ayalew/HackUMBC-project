@@ -2,10 +2,13 @@
 
 **A compliance and risk assistant that watches everything affecting a Maryland small business, from state labor laws and tax deadlines to roadwork outside the front door.**
 
+🎬 **Demo video:** https://www.youtube.com/watch?v=-JYpbnG1hPA
 🔗 **Live app:** https://civicpulse-102365937725.us-east4.run.app
 🔑 **Demo login:** `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (a 14-employee restaurant in Baltimore City), or create your own account with **Sign up**.
 
 > Information, not legal advice. Every item links to its official source.
+
+[![Watch the RegWise demo on YouTube](https://img.youtube.com/vi/-JYpbnG1hPA/maxresdefault.jpg)](https://www.youtube.com/watch?v=-JYpbnG1hPA)
 
 ---
 
