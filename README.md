@@ -134,16 +134,15 @@ We tested every module against five sample businesses: a Baltimore City restaura
 
 Built in 18 hours at HackUMBC by a team of three, each owning one module end to end:
 
-- **Yasin**: onboarding, Obligations engine and rules, Growth Planner, dashboard, and the shared app skeleton
+- **Yasin Ibrahim**: onboarding, Obligations engine and rules, Growth Planner, dashboard, and the shared app skeleton
 - **Buruk Ayalew**: Regulatory Radar (sources, Gemini relevance sorting) and Google Cloud deployment
-- **Firaol**: Local Risk (permits, road projects, risk scoring, map, location context)
+- **Firaol Desta**: Local Risk (permits, road projects, risk scoring, map, location context)
 
 ## What's next
 
-- Coverage beyond Baltimore: county and town permit feeds and local codes for the rest of Maryland.
+- Coverage beyond Maryland: county and town permit feeds and local codes for areas outside of Maryland
 - Email or text alerts when something new affects your business.
 - A real database, so accounts and profiles persist across deploys.
-- More states, using the same rules-as-data engine.
 
 ---
 
