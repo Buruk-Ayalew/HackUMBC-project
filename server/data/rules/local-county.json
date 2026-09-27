@@ -356,6 +356,13 @@
     "verify": [
       "Licenses to operate a food service facility expires on October 31st"
     ],
+    "form": {
+      "name": "Food service license application (PDF)",
+      "url": "https://www.calverthealth.org/community/environmentalhealthservices/PDF/FoodAppPermanent.pdf",
+      "verify": [
+        "Licenses to operate a food service facility expires on October 31st"
+      ]
+    },
     "sourceUrl": "https://www.calverthealth.org/community/environmentalhealthservices/PDF/FoodAppPermanent.pdf",
     "sourceName": "Calvert County Health Department: Food service facility license application",
     "reviewedOn": "2026-09-26"
