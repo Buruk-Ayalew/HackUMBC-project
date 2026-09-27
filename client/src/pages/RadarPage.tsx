@@ -160,7 +160,7 @@ export default function RadarPage() {
       )}
 
       {data && (
-        <div className="grid gap-6 lg:grid-cols-[1fr_20rem]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_20rem]">
           <div className="space-y-6">
             <div className="flex flex-wrap items-end gap-4 rounded-lg border border-slate-200 bg-white p-3 text-sm">
               <label className="flex flex-col gap-1">

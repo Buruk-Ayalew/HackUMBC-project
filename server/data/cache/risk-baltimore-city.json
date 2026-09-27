@@ -1,6 +1,6 @@
 {
   "39.28125,-76.59428": {
-    "fetchedAt": "2026-09-26T23:14:30.471Z",
+    "fetchedAt": "2026-09-27T14:18:19.723Z",
     "items": [
       {
         "id": "baltimore_city_permits:BRCM-25-024396",
@@ -15401,26 +15401,6 @@
         }
       },
       {
-        "id": "baltimore_city_permits:BRCM-26-000723",
-        "source": "baltimore_city_permits",
-        "sourceName": "Baltimore City building permits",
-        "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
-        "title": "Residential building permit at 2118 E Pratt St",
-        "description": "Provide one interior non-load bearing wall on the 2nd floor for a new laundry room. Work to include doors, painting, and cabinets. There is no demolition. MEP trades to pull their trades separately.",
-        "category": "residential_work",
-        "address": "2118 E Pratt St",
-        "lat": 39.28974082058061,
-        "lng": -76.58645035725363,
-        "startDate": "2026-03-30",
-        "endDate": "2026-09-26",
-        "dateNote": "Dates are when the permit was issued and when it expires, not exact work dates.",
-        "status": "Issued",
-        "reference": "BRCM-26-000723",
-        "facts": {
-          "costUsd": 8000
-        }
-      },
-      {
         "id": "baltimore_city_permits:BRCM-26-006461",
         "source": "baltimore_city_permits",
         "sourceName": "Baltimore City building permits",
@@ -15441,46 +15421,6 @@
         }
       },
       {
-        "id": "baltimore_city_permits:BRCM-26-006476",
-        "source": "baltimore_city_permits",
-        "sourceName": "Baltimore City building permits",
-        "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
-        "title": "Residential building permit at 2337 Boston St",
-        "description": "REPLACE 2 TON AC, COIL, 60,000 BTU FURNACE",
-        "category": "residential_work",
-        "address": "2337 Boston St",
-        "lat": 39.28288771488209,
-        "lng": -76.58483019827064,
-        "startDate": "2026-03-30",
-        "endDate": "2026-09-26",
-        "dateNote": "Dates are when the permit was issued and when it expires, not exact work dates.",
-        "status": "Issued",
-        "reference": "BRCM-26-006476",
-        "facts": {
-          "costUsd": 12000
-        }
-      },
-      {
-        "id": "baltimore_city_permits:BRCM-26-006537",
-        "source": "baltimore_city_permits",
-        "sourceName": "Baltimore City building permits",
-        "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
-        "title": "Residential building permit at 410 E Fort Ave",
-        "description": "Install two hundred amp service and install twenty five circuits",
-        "category": "residential_work",
-        "address": "410 E Fort Ave",
-        "lat": 39.27306931251671,
-        "lng": -76.60801445498576,
-        "startDate": "2026-03-30",
-        "endDate": "2026-09-26",
-        "dateNote": "Dates are when the permit was issued and when it expires, not exact work dates.",
-        "status": "Issued",
-        "reference": "BRCM-26-006537",
-        "facts": {
-          "costUsd": 3000
-        }
-      },
-      {
         "id": "baltimore_city_permits:BCCM-26-000340",
         "source": "baltimore_city_permits",
         "sourceName": "Baltimore City building permits",
@@ -15498,26 +15438,6 @@
         "reference": "BCCM-26-000340",
         "facts": {
           "costUsd": 500000
-        }
-      },
-      {
-        "id": "baltimore_city_permits:BRCM-26-006263",
-        "source": "baltimore_city_permits",
-        "sourceName": "Baltimore City building permits",
-        "sourceUrl": "https://data.baltimorecity.gov/datasets/189e6d1c65df4e13b38c0027cee574f6",
-        "title": "Residential building permit at 1007 Riverside Ave",
-        "description": "Replace existing 100 amp service with 100amp service.",
-        "category": "residential_work",
-        "address": "1007 Riverside Ave",
-        "lat": 39.27830687547937,
-        "lng": -76.60895147916942,
-        "startDate": "2026-03-30",
-        "endDate": "2026-09-26",
-        "dateNote": "Dates are when the permit was issued and when it expires, not exact work dates.",
-        "status": "Issued",
-        "reference": "BRCM-26-006263",
-        "facts": {
-          "costUsd": 1600
         }
       },
       {

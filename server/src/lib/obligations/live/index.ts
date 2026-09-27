@@ -112,6 +112,7 @@ async function verifyRules(rules: ObligationRule[], pageCache: Map<string, Promi
       const checks = [
         ...(rule.verify?.length ? [{ url: rule.sourceUrl, phrases: rule.verify }] : []),
         ...(rule.records?.verify?.length ? [{ url: rule.records.sourceUrl, phrases: rule.records.verify }] : []),
+        ...(rule.form?.verify?.length ? [{ url: rule.form.url, phrases: rule.form.verify }] : []),
       ];
       if (!checks.length) return;
       const checkedAt = new Date().toISOString();

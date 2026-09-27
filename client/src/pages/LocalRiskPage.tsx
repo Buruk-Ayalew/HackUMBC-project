@@ -246,7 +246,7 @@ export default function LocalRiskPage() {
             </div>
           )}
 
-          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
             <div className="h-72 overflow-hidden rounded-lg border border-slate-200 sm:h-96 lg:sticky lg:top-4 lg:h-[640px]">
               <RiskMap
                 center={data.center}

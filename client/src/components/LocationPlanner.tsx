@@ -7,6 +7,7 @@ import type {
   ObligationsResponse,
 } from "../../../shared/types";
 import { apiPost } from "../api";
+import { daysLabel, formatDate } from "./dates";
 import { diff, type Change } from "./GrowthPlanner";
 import { IconExternal, IconMapPin } from "./icons";
 import { MD_COUNTIES, jurisdictionLabel } from "./profileOptions";
@@ -116,7 +117,7 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
     <div className="space-y-6">
       {/* Controls: one bar across the top */}
       <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5">
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
           <div className="min-w-0">
             <label htmlFor="new-location-address" className="text-sm font-semibold text-slate-700">
               Where is the new location?
@@ -344,6 +345,11 @@ function Group({
                 )}
               </p>
               <p className="mt-0.5 text-sm text-slate-600">{describe(r)}</p>
+              {r.status !== "not_applicable" && r.upcoming[0] && (
+                <p className="mt-1 text-xs font-semibold text-slate-700">
+                  First due {formatDate(r.upcoming[0].date)} ({daysLabel(r.upcoming[0].date)})
+                </p>
+              )}
             </div>
             <a
               href={r.rule.sourceUrl}

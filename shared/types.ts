@@ -113,6 +113,8 @@ export interface ObligationRule {
   verify?: string[];
   // What to keep on file and for how long, with its own official source.
   records?: RecordsNote;
+  // The official form itself (a direct link), when one exists.
+  form?: FormLink;
   sourceUrl: string;
   sourceName: string;
   reviewedOn: string; // ISO date
@@ -133,6 +135,12 @@ export type ObligationFrequency =
 //  - month:   due on `day` of the month after each month
 //  - quarter: due on `day` of the month after each calendar quarter
 //  - year:    due every year on `month`/`day`
+export interface FormLink {
+  name: string; // e.g. "Form 941 (PDF)"
+  url: string; // official agency URL, always the current version
+  verify?: string[]; // phrases re-checked on the form, like the rule's own
+}
+
 export interface RecordsNote {
   text: string; // our own words, e.g. "Keep payroll records for at least 3 years."
   sourceUrl: string;

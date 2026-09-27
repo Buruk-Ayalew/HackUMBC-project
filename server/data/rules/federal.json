@@ -27,6 +27,13 @@
     "verify": [
       "last day of the month that follows the end of the quarter"
     ],
+    "form": {
+      "name": "Form 941 (PDF)",
+      "url": "https://www.irs.gov/pub/irs-pdf/f941.pdf",
+      "verify": [
+        "Employer's QUARTERLY Federal Tax Return"
+      ]
+    },
     "records": {
       "text": "Keep employment tax records (payroll, deposits, returns) for at least 4 years after the tax is due or paid, whichever is later.",
       "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
@@ -69,6 +76,13 @@
       "Form 940",
       "10 additional calendar days"
     ],
+    "form": {
+      "name": "Form 940 (PDF)",
+      "url": "https://www.irs.gov/pub/irs-pdf/f940.pdf",
+      "verify": [
+        "Employer's Annual Federal Unemployment (FUTA) Tax Return"
+      ]
+    },
     "records": {
       "text": "Keep employment tax records (payroll, deposits, returns) for at least 4 years after the tax is due or paid, whichever is later.",
       "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
@@ -110,6 +124,13 @@
     "verify": [
       "Forms W-2 are required to be provided to employees by Jan. 31"
     ],
+    "form": {
+      "name": "Form W-2 (PDF)",
+      "url": "https://www.irs.gov/pub/irs-pdf/fw2.pdf",
+      "verify": [
+        "Wage and Tax Statement"
+      ]
+    },
     "records": {
       "text": "Keep employment tax records (payroll, deposits, returns) for at least 4 years after the tax is due or paid, whichever is later.",
       "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
@@ -146,6 +167,13 @@
     "verify": [
       "file Form 1099-NEC on or before January 31"
     ],
+    "form": {
+      "name": "Form 1099-NEC (PDF)",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1099nec.pdf",
+      "verify": [
+        "Nonemployee Compensation"
+      ]
+    },
     "sourceUrl": "https://www.irs.gov/instructions/i1099mec",
     "sourceName": "IRS: Instructions for Forms 1099-MISC and 1099-NEC",
     "reviewedOn": "2026-09-26"
@@ -208,6 +236,13 @@
       "Operate a partnership or corporation",
       "You never have to pay a fee for an EIN"
     ],
+    "form": {
+      "name": "Form SS-4 (PDF)",
+      "url": "https://www.irs.gov/pub/irs-pdf/fss4.pdf",
+      "verify": [
+        "Application for Employer Identification Number"
+      ]
+    },
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
     "sourceName": "IRS: Get an employer identification number",
     "reviewedOn": "2026-09-26"
@@ -235,6 +270,13 @@
       "for every individual they hire",
       "for three years after the date of hire"
     ],
+    "form": {
+      "name": "Form I-9 (PDF)",
+      "url": "https://www.uscis.gov/sites/default/files/document/forms/i-9.pdf",
+      "verify": [
+        "Employment Eligibility Verification"
+      ]
+    },
     "records": {
       "text": "Keep each Form I-9 for 3 years after the hire date, or 1 year after the job ends, whichever is later, and have them ready for inspection.",
       "sourceUrl": "https://www.uscis.gov/i-9",

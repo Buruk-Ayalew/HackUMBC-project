@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { ObligationResult } from "../../../shared/types";
 import { daysLabel, daysUntil, formatDate } from "./dates";
-import { IconCheck, IconChevron, IconExternal } from "./icons";
+import { IconCheck, IconChevron, IconClipboard, IconExternal } from "./icons";
 import { VerificationBadge, VerificationNote, needsBadge } from "./LiveStatus";
 import { FREQUENCY_LABELS } from "./schedule";
 
@@ -16,6 +16,23 @@ export function WhereLink({ r, className = "" }: { r: ObligationResult; classNam
     >
       {r.rule.filingSiteName ?? "Official website"}
       <IconExternal className="shrink-0 text-xs" />
+    </a>
+  );
+}
+
+// A direct link to the official form itself (only for rules that have one).
+export function FormLink({ r, className = "" }: { r: ObligationResult; className?: string }) {
+  if (!r.rule.form) return null;
+  return (
+    <a
+      href={r.rule.form.url}
+      target="_blank"
+      rel="noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className={`inline-flex items-center gap-1 font-medium text-brand-700 hover:underline ${className}`}
+    >
+      <IconClipboard className="shrink-0 text-xs" />
+      {r.rule.form.name}
     </a>
   );
 }
@@ -45,6 +62,32 @@ export function Details({ r, onDone }: { r: ObligationResult; onDone?: OnDone })
       <div className="rounded-xl bg-white p-4 ring-1 ring-slate-200">
         <p className="font-semibold text-slate-900">What to do</p>
         <p className="mt-1 text-slate-700">{r.rule.action}</p>
+        {(r.rule.form || r.rule.filingUrl) && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {r.rule.form && (
+              <a
+                href={r.rule.form.url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-1.5 rounded-lg bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-700"
+              >
+                <IconClipboard /> Open {r.rule.form.name}
+              </a>
+            )}
+            {r.rule.filingUrl && (
+              <a
+                href={r.rule.filingUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50"
+              >
+                File at {r.rule.filingSiteName ?? "the official site"} <IconExternal />
+              </a>
+            )}
+          </div>
+        )}
       </div>
       {r.rule.records && (
         <div className="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
@@ -116,7 +159,7 @@ export default function FilingSchedule({ results, onDone }: { results: Obligatio
               <button
                 onClick={() => toggle(r.rule.id)}
                 aria-expanded={isOpen}
-                className="grid w-full gap-x-4 gap-y-1 px-5 py-4 text-left transition hover:bg-slate-50 md:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.3fr)] md:items-center"
+                className="grid grid-cols-1 w-full gap-x-4 gap-y-1 px-5 py-4 text-left transition hover:bg-slate-50 md:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.3fr)] md:items-center"
               >
                 <span className="flex items-start gap-2">
                   <IconChevron className={`mt-1 shrink-0 text-slate-400 transition ${isOpen ? "rotate-90" : ""}`} />
@@ -138,8 +181,9 @@ export default function FilingSchedule({ results, onDone }: { results: Obligatio
                   <span className="text-slate-500 md:hidden">Next due: </span>
                   <When r={r} />
                 </span>
-                <span className="pl-6 text-sm md:pl-0">
+                <span className="flex flex-col items-start gap-1 pl-6 text-sm md:pl-0">
                   <WhereLink r={r} />
+                  <FormLink r={r} className="text-xs" />
                 </span>
               </button>
               {isOpen && (

@@ -280,6 +280,13 @@
     "verify": [
       "Trade Names are valid for five years from the date of acceptance by SDAT"
     ],
+    "form": {
+      "name": "Trade name application (PDF)",
+      "url": "https://dat.maryland.gov/SDAT%20Forms/nameappl.pdf",
+      "verify": [
+        "TRADE NAME APPLICATION"
+      ]
+    },
     "sourceUrl": "https://egov.maryland.gov/BusinessExpress/Home/faq",
     "sourceName": "Maryland Business Express: FAQ (Trade Names)",
     "reviewedOn": "2026-09-26"
