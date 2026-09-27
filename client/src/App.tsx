@@ -37,7 +37,7 @@ function Header() {
         <NavLink to={user ? "/dashboard" : "/"} className="flex shrink-0 items-center gap-2">
           <IconLogo className="text-3xl text-brand-600" />
           <span className="text-lg font-bold tracking-tight text-slate-900">
-            CivicPulse <span className="text-brand-600">MD</span>
+            Reg<span className="text-brand-600">Wise</span>
           </span>
         </NavLink>
 
@@ -97,7 +97,7 @@ function Footer() {
         <p>
           <strong className="font-semibold text-slate-700">Information, not legal advice.</strong> Always confirm with the official source.
         </p>
-        <p>CivicPulse MD · Built for Maryland small businesses</p>
+        <p>RegWise · Built for Maryland small businesses</p>
       </div>
     </footer>
   );

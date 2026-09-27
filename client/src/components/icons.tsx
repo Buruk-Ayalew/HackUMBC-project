@@ -124,7 +124,9 @@ export const IconSettings = (p: P) => (
 );
 export const IconLogo = (p: P) => (
   <svg viewBox="0 0 32 32" aria-hidden="true" width="1em" height="1em" {...p}>
+    {/* RegWise: a shield with a checkmark (protected and compliant) */}
     <rect width="32" height="32" rx="9" fill="currentColor" />
-    <path d="M6 17h4.5l2.5-6 4 11 3-8 1.5 3H26" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 5.5l8.5 3.2v6.6c0 5.3-3.5 9.4-8.5 11.2-5-1.8-8.5-5.9-8.5-11.2V8.7z" fill="none" stroke="white" strokeWidth="2.2" strokeLinejoin="round" />
+    <path d="M12 16.2l2.9 2.9 5.4-5.8" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );

@@ -79,7 +79,7 @@ async function geocodeCensus(address: string) {
   }
   const county = match.geographies["Counties"]?.[0];
   if (!county || !county.GEOID.startsWith(MARYLAND_FIPS)) {
-    throw new JurisdictionError("NOT_MARYLAND", "CivicPulse currently covers Maryland addresses only.");
+    throw new JurisdictionError("NOT_MARYLAND", "RegWise currently covers Maryland addresses only.");
   }
   const isBaltimoreCity = county.GEOID === BALTIMORE_CITY_GEOID;
   const place = match.geographies["Incorporated Places"]?.[0];

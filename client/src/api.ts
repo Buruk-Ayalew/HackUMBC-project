@@ -23,7 +23,7 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
   } catch {
-    throw new ApiError(0, "Can't reach the CivicPulse server. Check your connection.");
+    throw new ApiError(0, "Can't reach the RegWise server. Check your connection.");
   }
 
   if (res.status === 401 && !NO_REDIRECT.includes(path) && window.location.pathname !== "/login") {

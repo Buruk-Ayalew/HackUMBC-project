@@ -73,7 +73,7 @@ router.post("/register", async (req, res) => {
 
 router.post("/logout", (req, res) => {
   req.session.destroy(() => {
-    res.clearCookie("civicpulse.sid");
+    res.clearCookie("regwise.sid");
     res.json({ ok: true });
   });
 });

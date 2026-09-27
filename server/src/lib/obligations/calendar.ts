@@ -35,14 +35,14 @@ export function buildIcs(events: CalendarEvent[]): string {
     // All-day event: DTEND is the following day (exclusive).
     const next = new Date(Date.UTC(y, m - 1, d + 1));
     return {
-      uid: `${e.ruleId}-${e.date}@civicpulse-md`,
+      uid: `${e.ruleId}-${e.date}@regwise`,
       title: e.status === "might" ? `${e.title} (might apply)` : e.title,
       start: [y, m, d],
       end: [next.getUTCFullYear(), next.getUTCMonth() + 1, next.getUTCDate()],
-      description: `What to do: ${e.action}\n\nOfficial source: ${e.sourceUrl}\n\nFrom CivicPulse MD. Information, not legal advice.`,
+      description: `What to do: ${e.action}\n\nOfficial source: ${e.sourceUrl}\n\nFrom RegWise. Information, not legal advice.`,
       url: e.sourceUrl,
       categories: ["Compliance"],
-      productId: "civicpulse-md/obligations",
+      productId: "regwise/obligations",
     };
   });
   const { error, value } = createEvents(attrs);

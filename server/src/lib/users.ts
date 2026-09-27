@@ -10,7 +10,7 @@ export interface StoredUser extends PublicUser {
 
 const USERS = dataPath("users.json");
 
-export const DEMO_EMAIL = "demo@civicpulse.test";
+export const DEMO_EMAIL = "demo@regwise.test";
 const DEMO_PASSWORD = "demo1234";
 
 export function toPublic(u: StoredUser): PublicUser {

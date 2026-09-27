@@ -2,7 +2,7 @@
 // most ~1 request per second per host.
 
 export const USER_AGENT =
-  "CivicPulseMD/0.1 (HackUMBC hackathon project; compliance helper for Maryland small businesses)";
+  "RegWise/0.1 (HackUMBC hackathon project; compliance helper for Maryland small businesses)";
 
 const lastRequestAt = new Map<string, number>();
 const hostQueues = new Map<string, Promise<unknown>>();

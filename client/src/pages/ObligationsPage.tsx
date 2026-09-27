@@ -96,7 +96,7 @@ export default function ObligationsPage() {
             </>
           }
           actions={
-            <a href="/api/obligations/calendar.ics" download="civicpulse-deadlines.ics" className={buttonStyles.secondary}>
+            <a href="/api/obligations/calendar.ics" download="regwise-deadlines.ics" className={buttonStyles.secondary}>
               <IconDownload /> Add deadlines to my calendar
             </a>
           }

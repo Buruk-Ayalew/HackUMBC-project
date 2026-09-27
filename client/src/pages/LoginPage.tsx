@@ -96,12 +96,12 @@ export default function LoginPage() {
         {mode === "login" && (
           <div className="mt-6 rounded-xl border border-dashed border-amber-300 bg-amber-50/70 p-4 text-center">
             <p className="text-sm text-amber-900">
-              Just looking? Use the test account <strong>demo@civicpulse.test</strong>
+              Just looking? Use the test account <strong>demo@regwise.test</strong>
             </p>
             <button
               type="button"
               onClick={() => {
-                setEmail("demo@civicpulse.test");
+                setEmail("demo@regwise.test");
                 setPassword("demo1234");
               }}
               className="mt-2 text-sm font-semibold text-amber-900 underline underline-offset-2 hover:text-amber-700"

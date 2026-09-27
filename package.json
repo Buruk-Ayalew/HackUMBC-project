@@ -1,5 +1,5 @@
 {
-  "name": "civicpulse-md",
+  "name": "regwise",
   "private": true,
   "workspaces": [
     "server",

@@ -1,4 +1,4 @@
-# CivicPulse MD: one container serving the API and the built frontend (Cloud Run).
+# RegWise: one container serving the API and the built frontend (Cloud Run).
 FROM node:24-slim
 WORKDIR /app
 

@@ -1,9 +1,9 @@
-# CivicPulse MD
+# RegWise
 
 **A compliance and risk assistant that watches everything affecting a Maryland small business, from state labor laws and tax deadlines to roadwork outside the front door.**
 
 🔗 **Live app:** https://civicpulse-102365937725.us-east4.run.app
-🔑 **Demo login:** `demo@civicpulse.test` / `demo1234` (a 14-employee restaurant in Baltimore City)
+🔑 **Demo login:** `demo@regwise.test` / `demo1234` (a 14-employee restaurant in Baltimore City)
 
 > Information, not legal advice. Every item links to its official source.
 
@@ -19,7 +19,7 @@ Small businesses face the same rules, but they find out late, through a fine, a 
 
 ## Our solution
 
-CivicPulse turns that enterprise-style monitoring into an affordable assistant. An owner enters their business once: what they do, where they are, and how many people they employ. CivicPulse then answers three questions for that business:
+RegWise turns that enterprise-style monitoring into an affordable assistant. An owner enters their business once: what they do, where they are, and how many people they employ. RegWise then answers three questions for that business:
 
 | | Question | What you get |
 |---|---|---|
@@ -121,7 +121,7 @@ Compliance advice that's wrong is worse than none, so we set strict rules for ou
 
 ## Try it
 
-1. Open the **[live app](https://civicpulse-102365937725.us-east4.run.app)** and log in with `demo@civicpulse.test` / `demo1234`.
+1. Open the **[live app](https://civicpulse-102365937725.us-east4.run.app)** and log in with `demo@regwise.test` / `demo1234`.
 2. **Obligations:** see what a 14-person Baltimore City restaurant owes, and why.
 3. **Growth Planner:** slide to 15 employees and watch FAMLI's employer share switch on. Or open a second location in Rockville and see Montgomery County's higher minimum wage.
 4. **Regulatory Radar:** new laws and rules sorted for a restaurant, with open comment deadlines.
@@ -156,7 +156,7 @@ cp server/.env.example server/.env   # then set SESSION_SECRET
 npm run dev                          # API on :3001, web app on http://localhost:5173
 ```
 
-Test login: **demo@civicpulse.test / demo1234**. It is seeded on server start with the Baltimore City restaurant profile.
+Test login: **demo@regwise.test / demo1234**. It is seeded on server start with the Baltimore City restaurant profile.
 
 Other scripts: `npm run typecheck`, `npm run build`, `npm run check:obligations -w server` (runs the rules engine against all 5 sample profiles and checks the expected results).
 

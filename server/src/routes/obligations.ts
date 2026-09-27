@@ -190,7 +190,7 @@ router.get("/calendar.ics", async (req, res) => {
   const { results } = await evaluateFor(profile);
   const ics = buildIcs(collectEvents(results));
   res.setHeader("Content-Type", "text/calendar; charset=utf-8");
-  res.setHeader("Content-Disposition", 'attachment; filename="civicpulse-deadlines.ics"');
+  res.setHeader("Content-Disposition", 'attachment; filename="regwise-deadlines.ics"');
   res.send(ics);
 });
 

@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json({ limit: "100kb" }));
 app.use(
   session({
-    name: "civicpulse.sid",
+    name: "regwise.sid",
     secret: process.env.SESSION_SECRET ?? "dev-only-insecure-secret",
     resave: false,
     saveUninitialized: false,
@@ -66,5 +66,5 @@ startRiskJob();
 startRadarJob();
 startObligationsJob();
 app.listen(PORT, () => {
-  console.log(`CivicPulse MD API on http://localhost:${PORT}`);
+  console.log(`RegWise API on http://localhost:${PORT}`);
 });

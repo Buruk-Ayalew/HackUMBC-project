@@ -1,10 +1,10 @@
-# CLAUDE.md: CivicPulse MD
+# CLAUDE.md: RegWise
 
 This file gives Claude the context it needs to work in this repository. Read it before making changes.
 
 ## What this project is
 
-CivicPulse MD is a web app that helps Maryland small businesses stay compliant. An owner logs in, enters their business details and address, and the app shows:
+RegWise is a web app that helps Maryland small businesses stay compliant. An owner logs in, enters their business details and address, and the app shows:
 
 1. **Obligations**: what the business must do now (registrations, filings, payments, postings, deadlines), based on its details and location.
 2. **Regulatory Radar**: new and upcoming law and regulation changes, sorted by whether they affect this business.
@@ -39,7 +39,7 @@ npm run build        # production build of both
 
 Secrets go in `server/.env` (never commit): `ANTHROPIC_API_KEY`, `LEGISCAN_API_KEY`, `SESSION_SECRET`.
 
-Test login: **demo@civicpulse.test / demo1234** (seeded on server start with the Baltimore City restaurant profile).
+Test login: **demo@regwise.test / demo1234** (seeded on server start with the Baltimore City restaurant profile).
 
 ## Repository structure
 
