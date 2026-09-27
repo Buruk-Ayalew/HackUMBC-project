@@ -3,7 +3,7 @@
 **A compliance and risk assistant that watches everything affecting a Maryland small business, from state labor laws and tax deadlines to roadwork outside the front door.**
 
 🎬 **Demo video:** https://www.youtube.com/watch?v=-JYpbnG1hPA
-🔗 **Live app:** https://civicpulse-102365937725.us-east4.run.app
+🔗 **Live app:** https://regwise.biz
 🔑 **Demo login:** `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (a 14-employee restaurant in Baltimore City), or create your own account with **Sign up**.
 
 > Information, not legal advice. Every item links to its official source.
@@ -108,7 +108,7 @@ Compliance advice that's wrong is worse than none, so we set strict rules for ou
 | AI | Google Gemini (`gemini-3.8-flash`) through **Google Cloud Vertex AI**, via the Google Gen AI SDK |
 | Parsing | `cheerio` (HTML), `pdf-parse` (PDFs), `ics` (calendar export) |
 | Data | JSON files (no database), with a cache for every outside source |
-| Hosting | Google Cloud Run (one container serving the API and the built frontend) |
+| Hosting | [regwise.biz](https://regwise.biz) on DigitalOcean App Platform with Cloudflare; backup on Google Cloud Run (one container serving the API and the built frontend) |
 
 ## Data sources
 
@@ -124,7 +124,7 @@ Compliance advice that's wrong is worse than none, so we set strict rules for ou
 
 ## Try it
 
-1. Open the **[live app](https://civicpulse-102365937725.us-east4.run.app)** and log in with `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (the login page can fill it in for you), or sign up and enter your own business.
+1. Open the **[live app](https://regwise.biz)** and log in with `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (the login page can fill it in for you), or sign up and enter your own business.
 2. **Obligations:** see what a 14-person Baltimore City restaurant owes, and why.
 3. **Growth Planner:** slide to 15 employees and watch FAMLI's employer share switch on. Or open a second location in Rockville and see Montgomery County's higher minimum wage.
 4. **Regulatory Radar:** new laws and rules sorted for a restaurant, with open comment deadlines.
@@ -250,7 +250,7 @@ Dates are picked up when they appear next to the link or in its URL. If nothing 
 
 ### Deploying (Google Cloud Run, project owner only)
 
-**Visitors don't need any of this.** They just open the live link. One container serves the API and the built frontend. It runs as the `civicpulse-api` service account, which has Vertex AI access, so Radar sorting works with no keys.
+**Visitors don't need any of this.** They just open https://regwise.biz (hosted on DigitalOcean App Platform behind Cloudflare, rebuilt from `main`). The Google Cloud Run service below is a backup copy at https://civicpulse-102365937725.us-east4.run.app. One container serves the API and the built frontend. It runs as the `civicpulse-api` service account, which has Vertex AI access, so Radar sorting works with no keys.
 
 To publish the latest `main`, run from the repo root:
 ```bash
