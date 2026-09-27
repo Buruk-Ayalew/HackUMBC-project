@@ -11,7 +11,8 @@ export interface StoredUser extends PublicUser {
 const USERS = dataPath("users.json");
 
 export const DEMO_EMAIL = "demo@regwise.test";
-const DEMO_PASSWORD = "demo1234";
+// Public on purpose: judges and visitors use it to try the app.
+export const DEMO_PASSWORD = "RegWise-tZnc-oecR-7jbE";
 
 export function toPublic(u: StoredUser): PublicUser {
   return { id: u.id, email: u.email, name: u.name };
@@ -59,6 +60,8 @@ export function checkPassword(user: StoredUser, password: string): Promise<boole
 export async function seedDemoUser(): Promise<void> {
   let user = await findUserByEmail(DEMO_EMAIL);
   if (!user) user = await createUser("Demo Owner", DEMO_EMAIL, DEMO_PASSWORD);
+  // Keep the stored password in sync with DEMO_PASSWORD (e.g. after it's changed).
+  else if (!(await checkPassword(user, DEMO_PASSWORD))) await updatePassword(user.id, DEMO_PASSWORD);
   if (!(await getProfileForUser(user.id))) {
     const [restaurant] = await getSampleProfiles();
     if (restaurant) {

@@ -102,7 +102,7 @@ export default function LoginPage() {
               type="button"
               onClick={() => {
                 setEmail("demo@regwise.test");
-                setPassword("demo1234");
+                setPassword("RegWise-tZnc-oecR-7jbE");
               }}
               className="mt-2 text-sm font-semibold text-amber-900 underline underline-offset-2 hover:text-amber-700"
             >

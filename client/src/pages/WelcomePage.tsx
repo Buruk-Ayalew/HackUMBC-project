@@ -61,9 +61,6 @@ export default function WelcomePage() {
                 Log in
               </Link>
             </div>
-            <p className="mt-5 inline-flex flex-wrap items-center gap-2 rounded-xl bg-amber-50 px-4 py-2.5 text-sm text-amber-900 ring-1 ring-amber-200">
-              Try it with the test account: <code className="font-semibold">demo@regwise.test</code> / <code className="font-semibold">demo1234</code>
-            </p>
           </div>
 
           <div className="relative">

@@ -39,7 +39,7 @@ npm run build        # production build of both
 
 Secrets go in `server/.env` (never commit): `ANTHROPIC_API_KEY`, `LEGISCAN_API_KEY`, `SESSION_SECRET`.
 
-Test login: **demo@regwise.test / demo1234** (seeded on server start with the Baltimore City restaurant profile).
+Test login: **demo@regwise.test / RegWise-tZnc-oecR-7jbE** (seeded on server start with the Baltimore City restaurant profile).
 
 ## Repository structure
 
