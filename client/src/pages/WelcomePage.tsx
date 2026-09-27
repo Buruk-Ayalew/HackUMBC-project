@@ -43,10 +43,7 @@ export default function WelcomePage() {
         <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-[radial-gradient(ellipse_60%_95%_at_50%_0%,var(--color-brand-100)_0%,color-mix(in_srgb,var(--color-brand-100)_60%,transparent)_30%,color-mix(in_srgb,var(--color-brand-100)_25%,transparent)_55%,transparent_75%)]" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm font-semibold text-brand-700 shadow-sm ring-1 ring-brand-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> For small businesses
-            </p>
-            <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
               Stay ahead of the laws and local projects that affect your business.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-slate-600">
