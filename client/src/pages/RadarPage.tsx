@@ -10,7 +10,6 @@ type SourceFilter = "all" | "md_register" | "bill" | "agency_news";
 
 const SECTIONS: { relevance: Relevance; title: string; heading: string }[] = [
   { relevance: "affects", title: "Affects you", heading: "text-red-700" },
-  { relevance: "might", title: "Might affect you", heading: "text-amber-700" },
   { relevance: "not_applicable", title: "Doesn't apply", heading: "text-slate-500" },
 ];
 const PAGE = 15;
@@ -106,7 +105,8 @@ export default function RadarPage() {
 
   const bySection = (r: Relevance) => filtered.filter((x) => x.relevance === r);
   const unsortedCount = data?.results.filter((r) => !r.autoSorted).length ?? 0;
-  const nothingRelevant = data && data.results.every((r) => r.relevance === "not_applicable");
+  // Only clear matches and non-matches are listed; uncertain ("might") items are left out.
+  const nothingRelevant = data && !data.results.some((r) => r.relevance === "affects");
 
   return (
     <div className="space-y-6">
@@ -149,14 +149,13 @@ export default function RadarPage() {
       )}
       {data && sorting && (
         <p className="rounded border border-blue-200 bg-blue-50 p-3 text-sm text-blue-900">
-          Sorting {unsortedCount} item{unsortedCount === 1 ? "" : "s"} for your business… They're listed under "Might affect you" for now. This page updates by
-          itself.
+          Sorting {unsortedCount} item{unsortedCount === 1 ? "" : "s"} for your business… They'll appear here if they affect you. This page updates by itself.
         </p>
       )}
       {data && !sorting && unsortedCount > 0 && (
         <p className="rounded border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700">
-          Automatic sorting isn't available for {unsortedCount} item{unsortedCount === 1 ? "" : "s"} right now, so they're listed under "Might affect you." Please
-          review them yourself, or click "Check now" later.
+          Automatic sorting isn't available for {unsortedCount} item{unsortedCount === 1 ? "" : "s"} right now, so they aren't shown. Click "Check now" later to try
+          again.
         </p>
       )}
 
