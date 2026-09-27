@@ -118,382 +118,382 @@
     }
   },
   "sources": {
-    "wages": {
-      "id": "wages",
-      "name": "MD Labor minimum wage page",
-      "url": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
-      "status": "live",
-      "fetchedAt": "2026-09-27T01:27:30.686Z"
-    },
     "famli": {
       "id": "famli",
       "name": "FAMLI contributions page",
       "url": "https://paidleave.maryland.gov/employers/make-contributions/",
       "status": "live",
-      "fetchedAt": "2026-09-27T01:27:30.691Z"
+      "fetchedAt": "2026-09-27T01:48:20.870Z"
+    },
+    "wages": {
+      "id": "wages",
+      "name": "MD Labor minimum wage page",
+      "url": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
+      "status": "live",
+      "fetchedAt": "2026-09-27T01:48:20.892Z"
     },
     "taxRates": {
       "id": "taxRates",
       "name": "DLS County Local Tax Rates",
       "url": "https://dls.maryland.gov/pubs/prod/NoPblTabPDF/2026CountyLocalTaxRates.pdf",
       "status": "live",
-      "fetchedAt": "2026-09-27T01:27:32.537Z"
+      "fetchedAt": "2026-09-27T01:48:21.568Z"
     }
   },
   "verification": {
     "famli-withholding": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "famli-employer-share": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "famli-register": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "mhic-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "sdat-annual-report": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "traders-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "restaurant-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "construction-firm-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "sam-registration": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "food-service-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "food-service-license-other": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "federal-boi": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "federal-posters": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "alcohol-license": {
+    "sdat-annual-report": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "baltimore-city-ban-the-box": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "emma-registration": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "childcare-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "greenbelt-commercial-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "famli-contributions": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "salon-permit": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "laurel-alcohol-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "laurel-amusement-license": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "laurel-mobile-food-vendor": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "trade-name-renewal": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "college-park-occupancy-permit": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "federal-i9": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "md-workplace-fraud-act": {
+    "sam-registration": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "marylandsaves": {
+    "baltimore-city-ban-the-box": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "rockville-hotel-license": {
+    "traders-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "ocean-city-business-license": {
+    "restaurant-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "ocean-city-rental-license": {
+    "construction-firm-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "famli-employee-notice": {
+    "food-service-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "sick-leave-paid": {
+    "food-service-license-other": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "sick-leave-unpaid": {
+    "famli-register": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "mhic-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "food-license-renewal-cecil": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "md-new-hire-reporting": {
+    "alcohol-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "hagerstown-contractor-license": {
+    "rockville-hotel-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "food-license-renewal-frederick": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "montgomery-tipped-wage": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "howard-min-wage": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "prince-georges-min-wage": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "state-minimum-wage": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "state-tipped-wage": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "montgomery-min-wage-large": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "montgomery-min-wage-mid": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "montgomery-min-wage-small": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "gaithersburg-mobile-food-vendor": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "gaithersburg-electrician-registration": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "annapolis-certificate-of-use": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "eeo-1-report": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "workers-comp": {
+    "md-workplace-fraud-act": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "famli-private-plan": {
+    "childcare-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "irs-1099-nec": {
+    "emma-registration": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "federal-ein": {
+    "food-license-renewal-frederick": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "parental-leave": {
+    "greenbelt-commercial-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "irs-941": {
+    "marylandsaves": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "irs-940": {
+    "laurel-alcohol-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "ssa-w2": {
+    "laurel-amusement-license": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
-    "mosh-poster": {
+    "laurel-mobile-food-vendor": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "mosh-injury-log": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "state-ban-the-box": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "food-license-renewal-calvert": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "md-unemployment-insurance": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "sales-use-tax": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "sales-use-tax-returns": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "md-withholding-returns": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
-    },
-    "md-withholding-annual": {
-      "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "admissions-amusement-tax": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "hotel-rental-tax": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "trade-name-renewal": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "gaithersburg-mobile-food-vendor": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "gaithersburg-electrician-registration": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "hagerstown-contractor-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "college-park-occupancy-permit": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "workers-comp": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "annapolis-certificate-of-use": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "montgomery-tipped-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "howard-min-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "prince-georges-min-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "state-minimum-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "state-tipped-wage": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "montgomery-min-wage-large": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "montgomery-min-wage-mid": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "montgomery-min-wage-small": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "irs-1099-nec": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "md-new-hire-reporting": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "food-license-renewal-calvert": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "famli-contributions": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "salon-permit": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "md-business-income-tax": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "ocean-city-business-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "ocean-city-rental-license": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "federal-ein": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "sales-use-tax": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "sales-use-tax-returns": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "famli-employee-notice": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "sick-leave-paid": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "sick-leave-unpaid": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "irs-941": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "irs-940": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "ssa-w2": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "famli-private-plan": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "parental-leave": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "md-withholding-returns": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "md-withholding-annual": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "state-ban-the-box": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "mosh-poster": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "mosh-injury-log": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
+    },
+    "md-unemployment-insurance": {
+      "status": "verified",
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-default": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-carroll": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-feb-mar": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-baltimore-city": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-charles": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-harford": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-frederick": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-st-marys": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-garrett": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-washington": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-calvert": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-prince-georges": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "liquor-renewal-somerset": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "online-data-privacy": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "local-personal-property-tax": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "worker-freedom-act": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "md-wage-range-postings": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     },
     "md-noncompete-limit": {
       "status": "verified",
-      "checkedAt": "2026-09-27T01:27:32.537Z"
+      "checkedAt": "2026-09-27T01:48:21.568Z"
     }
   },
-  "refreshedAt": "2026-09-27T01:28:07.180Z",
+  "refreshedAt": "2026-09-27T01:48:50.922Z",
   "changes": []
 }
