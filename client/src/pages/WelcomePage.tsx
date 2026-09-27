@@ -37,15 +37,17 @@ export default function WelcomePage() {
 
   return (
     <div className="-mt-8 space-y-20">
-      <section className="relative -mx-4 overflow-hidden px-4 pt-14 pb-10 sm:pt-20">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_30rem_at_50%_-10%,var(--color-brand-100),transparent)]" />
+      <section className="relative -mx-4 px-4 pt-14 pb-10 sm:pt-20">
+        {/* Soft glow behind the hero. It spans the full window width (not just this
+            section) and is sized to that box, so it fades out before any edge. */}
+        <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-[radial-gradient(ellipse_60%_95%_at_50%_0%,var(--color-brand-100)_0%,color-mix(in_srgb,var(--color-brand-100)_60%,transparent)_30%,color-mix(in_srgb,var(--color-brand-100)_25%,transparent)_55%,transparent_75%)]" />
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm font-semibold text-brand-700 shadow-sm ring-1 ring-brand-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> For Maryland small businesses
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> For small businesses
             </p>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-              Know what your Maryland business owes, what's changing, and what's happening outside your door.
+              Know what your business owes, what's changing, and what's happening outside your door.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-slate-600">
               Enter your address and a few details. We check state, county, and federal rules against official sources and show you exactly what
@@ -65,8 +67,8 @@ export default function WelcomePage() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-200/60 to-sky-100/60 blur-2xl" />
-            <div className="rounded-3xl border border-slate-200/80 bg-white p-5 shadow-lift">
+            {/* Card glow: fades out from the center (radial), so there's no solid purple block. */}
+            <div className="pointer-events-none absolute -inset-12 -z-10 bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--color-brand-200)_55%,transparent),color-mix(in_srgb,#e0f2fe_40%,transparent)_60%,transparent)] blur-2xl" />            <div className="rounded-3xl border border-slate-200/80 bg-white p-5 shadow-lift">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-slate-900">Thames Street Kitchen · Baltimore City</p>
                 <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">Example</span>
