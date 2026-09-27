@@ -7,7 +7,7 @@ import type {
   ObligationsResponse,
 } from "../../../shared/types";
 import { apiPost } from "../api";
-import { ChangeGroup, diff, type Change } from "./GrowthPlanner";
+import { diff, type Change } from "./GrowthPlanner";
 import { IconExternal, IconMapPin } from "./icons";
 import { MD_COUNTIES, jurisdictionLabel } from "./profileOptions";
 import { firstSentence as sentence } from "./text";
@@ -171,6 +171,16 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
           </label>
         </div>
 
+        {place && (
+          <p className="mt-3 flex min-w-0 items-start gap-1.5 rounded-xl bg-white px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
+            <IconMapPin className="mt-0.5 shrink-0 text-brand-600" />
+            <span className="min-w-0">
+              <span className="font-semibold">{jurisdictionLabel(place)}</span>
+              <span className="ml-2 break-words text-xs text-slate-500">{placeNote ?? "County only. Enter an address to include town rules."}</span>
+            </span>
+          </p>
+        )}
+
         <div className="mt-4 flex flex-wrap items-end gap-3">
           {(
             [
@@ -199,17 +209,6 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
           >
             {looking ? "Finding the address…" : loading ? "Working it out…" : "See what changes"}
           </button>
-          {place && (
-            <p className="inline-flex min-w-0 items-start gap-1.5 rounded-xl bg-white px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
-              <IconMapPin className="mt-0.5 shrink-0 text-brand-600" />
-              <span className="min-w-0">
-                <span className="font-semibold">{jurisdictionLabel(place)}</span>
-                <span className="block break-words text-xs text-slate-500">
-                  {placeNote ?? "County only. Enter an address to include town rules."}
-                </span>
-              </span>
-            </p>
-          )}
         </div>
         {staffError && <p className="mt-3 rounded-xl bg-rose-50 p-3 text-sm text-rose-800">{staffError}</p>}
       </div>
@@ -221,55 +220,70 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
           <p className="text-slate-600">Enter the new address (or pick a county) and how many people would work there, then select "See what changes".</p>
         ) : (
           <div className={`space-y-6 transition-opacity ${loading ? "opacity-60" : ""}`}>
-            <div>
+            <div className="space-y-2">
               <h3 className="text-xl font-bold tracking-tight text-slate-900">A new location in {jurisdictionLabel(data.location)}</h3>
-              <p className="text-sm text-slate-500">
-                With {staff} more {staff === 1 ? "person" : "people"}, you'd have {profile.employees.inMaryland + staff} employees in Maryland.
+              <p className="text-sm text-slate-600">
+                <strong className="text-slate-900">{site.total} obligations</strong> would apply there. With {staff} more{" "}
+                {staff === 1 ? "person" : "people"}, you would have {profile.employees.inMaryland + staff} employees in Maryland.
               </p>
+              <div className="flex flex-wrap gap-1.5">
+                {(
+                  [
+                    [site.starts.length, "new or different", "red"],
+                    [site.maybe.length, "might apply", "amber"],
+                    [site.licenses.length, "licenses to check", "slate"],
+                    [site.registrations.length, "registrations to update", "slate"],
+                    [site.same.length, "same as today", "slate"],
+                  ] as const
+                )
+                  .filter(([n]) => n > 0)
+                  .map(([n, label, tone]) => (
+                    <Badge key={label} tone={tone}>
+                      {n} {label}
+                    </Badge>
+                  ))}
+              </div>
             </div>
 
-            {/* At-a-glance counts */}
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
-              {(
-                [
-                  [site.total, "apply at the new site", "bg-slate-900 text-white"],
-                  [site.starts.length, "new or different", "bg-rose-50 text-rose-800"],
-                  [site.maybe.length, "might apply", "bg-amber-50 text-amber-800"],
-                  [site.licenses.length, "licenses to check", "bg-slate-50 text-slate-800"],
-                  [site.registrations.length, "registrations", "bg-slate-50 text-slate-800"],
-                  [site.same.length, "same as today", "bg-slate-50 text-slate-800"],
-                ] as const
-              ).map(([n, label, tone]) => (
-                <div key={label} className={`rounded-xl px-3 py-2 ${tone}`}>
-                  <p className="text-xl font-bold">{n}</p>
-                  <p className="text-xs opacity-80">{label}</p>
+            <Group title="New or different at this location" tone="red" items={site.starts.map((c) => c.result)} describe={firstSentence} />
+            <Group title="Might apply at this location" tone="amber" items={site.maybe.map((c) => c.result)} describe={firstSentence} />
+            <Group title="Licenses to check for the new site" tone="slate" items={site.licenses.map((c) => c.result)} describe={site.describeLicense} />
+            <Group
+              title="Registrations and accounts to update"
+              hint="You have these today. Check each source to see whether you need to add the new location or register it separately."
+              tone="slate"
+              items={site.registrations.map((c) => c.result)}
+              describe={firstSentence}
+            />
+
+            {site.same.length > 0 && (
+              <details className="group rounded-xl border border-slate-200 bg-slate-50/60">
+                <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3">
+                  <span className="text-slate-400 transition group-open:rotate-90">&#9656;</span>
+                  <span className="text-sm font-bold text-slate-900">Also applies at the new location (same as today)</span>
+                  <Badge tone="slate">{site.same.length}</Badge>
+                  <span className="ml-auto hidden text-xs text-slate-500 sm:inline">Show list</span>
+                </summary>
+                <div className="px-4 pb-4">
+                  <Group
+                    hint="These apply to your whole business, so include the new location when you handle them."
+                    tone="slate"
+                    items={site.same}
+                    describe={firstSentence}
+                  />
                 </div>
-              ))}
-            </div>
-
-            {/* Groups side by side on wide screens */}
-            <div className="grid items-start gap-6 lg:grid-cols-2">
-              <ChangeGroup title="New or different at this location" tone="red" items={site.starts} describe={firstSentence} />
-              <ChangeGroup title="Might apply at this location" tone="amber" items={site.maybe} describe={firstSentence} />
-              <ChangeGroup title="Licenses to check for the new site" tone="slate" items={site.licenses} describe={site.describeLicense} />
-              <ChangeGroup
-                title="Registrations and accounts to update"
-                tone="slate"
-                items={site.registrations}
-                describe={() => "You have this today. Check the official source to see whether you need to add the new location or register it separately."}
-              />
-            </div>
-
-            <SameList items={site.same} />
+              </details>
+            )}
 
             {whole.starts.length + whole.maybe.length + whole.stops.length > 0 && (
-              <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-4">
-                <p className="mb-3 text-sm font-semibold text-slate-700">Changes for your whole business (because of the extra staff)</p>
-                <div className="grid items-start gap-6 lg:grid-cols-3">
-                  <ChangeGroup title="New obligations" tone="red" items={whole.starts} />
-                  <ChangeGroup title="Might start applying" tone="amber" items={whole.maybe} />
-                  <ChangeGroup title="No longer applies" tone="slate" items={whole.stops} />
+              <div className="space-y-5 border-t border-slate-100 pt-5">
+                <div>
+                  <h4 className="text-base font-bold text-slate-900">Changes for your whole business</h4>
+                  <p className="text-sm text-slate-600">Because of the extra staff, these change for every location, not just the new one.</p>
                 </div>
+                <Group title="New obligations" tone="red" items={whole.starts.map((c) => c.result)} describe={employeeReason} />
+                <Group title="Might start applying" tone="amber" items={whole.maybe.map((c) => c.result)} describe={employeeReason} />
+                <Group title="No longer applies" tone="slate" items={whole.stops.map((c) => c.result)} describe={employeeReason} />
               </div>
             )}
 
@@ -287,38 +301,62 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
   );
 }
 
-// Obligations that apply the same way at the new site as they do today.
-function SameList({ items }: { items: ObligationResult[] }) {
+const employeeReason = (r: ObligationResult) => r.reasons.find((x) => /employee/.test(x)) ?? r.reasons[0] ?? "";
+
+const DOT = { red: "bg-rose-500", amber: "bg-amber-400", slate: "bg-slate-400" } as const;
+
+// One group of obligations: a small heading, then a compact list with each
+// item's title, a one-line explanation, and its official source.
+function Group({
+  title,
+  hint,
+  tone,
+  items,
+  describe,
+}: {
+  title?: string;
+  hint?: string;
+  tone: keyof typeof DOT;
+  items: ObligationResult[];
+  describe: (r: ObligationResult) => string;
+}) {
   if (!items.length) return null;
   return (
-    <details className="group animate-fade-up rounded-xl border border-slate-200 bg-white">
-      <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3">
-        <span className="text-slate-400 transition group-open:rotate-90">▸</span>
-        <h4 className="text-sm font-bold text-slate-900">Also applies at the new location (same as today)</h4>
-        <Badge tone="slate">{items.length}</Badge>
-        <span className="ml-auto hidden text-xs text-slate-500 sm:inline">Show list</span>
-      </summary>
-      <p className="px-4 pb-2 text-xs text-slate-500">These apply to your whole business, so include the new location when you handle them.</p>
-      <ul className="grid border-t border-slate-100 md:grid-cols-2 md:divide-x md:divide-slate-100 [&>li]:border-b [&>li]:border-slate-100">
+    <section className="animate-fade-up">
+      {title && (
+        <div className="mb-2 flex items-center gap-2">
+          <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${DOT[tone]}`} />
+          <h4 className="text-sm font-bold text-slate-900">{title}</h4>
+          <Badge tone={tone}>{items.length}</Badge>
+        </div>
+      )}
+      {hint && <p className="mb-2 text-xs text-slate-500">{hint}</p>}
+      <ul className="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200 bg-white">
         {items.map((r) => (
-          <li key={r.rule.id} className="flex items-start justify-between gap-3 px-4 py-2.5">
-            <span className="min-w-0">
-              <span className="block text-sm font-semibold text-slate-900">
+          <li key={r.rule.id} className="flex items-start justify-between gap-4 px-4 py-3">
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-slate-900">
                 {r.rule.title}
-                {r.status === "might" && (
+                {r.status === "might" && tone !== "amber" && (
                   <span className="ml-2 align-middle">
                     <Badge tone="amber">Might apply</Badge>
                   </span>
                 )}
-              </span>
-              <span className="block text-xs text-slate-500">{firstSentence(r)}</span>
-            </span>
-            <a href={r.rule.sourceUrl} target="_blank" rel="noreferrer" className="mt-0.5 shrink-0 text-brand-700 hover:text-brand-800" aria-label={`Official source for ${r.rule.title}`}>
-              <IconExternal />
+              </p>
+              <p className="mt-0.5 text-sm text-slate-600">{describe(r)}</p>
+            </div>
+            <a
+              href={r.rule.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-0.5 inline-flex shrink-0 items-center gap-1 text-xs font-medium text-brand-700 hover:underline"
+              aria-label={`Official source for ${r.rule.title}`}
+            >
+              Source <IconExternal />
             </a>
           </li>
         ))}
       </ul>
-    </details>
+    </section>
   );
 }
