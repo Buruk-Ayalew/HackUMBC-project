@@ -47,7 +47,7 @@ export default function WelcomePage() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> For small businesses
             </p>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-              Know what your business owes, what's changing, and what's happening outside your door.
+              Stay ahead of the laws, rule changes, and local projects that affect your business.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-slate-600">
               Enter your address and a few details. We check state, county, and federal rules against official sources and show you exactly what
