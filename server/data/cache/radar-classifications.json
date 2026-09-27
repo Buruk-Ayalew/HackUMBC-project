@@ -17911,5 +17911,117 @@
     "actionNeeded": null,
     "summary": "SDAT published a news release detailing the distribution of annual property tax assessment notices across the state. These notices inform property owners of revised assessed values.",
     "classifiedAt": "2026-09-27T01:07:41.130Z"
+  },
+  "bill-2026RS-SB784|35a00b2f5d60d447|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because you operate a restaurant and do not acquire or service consumer loans.",
+    "actionNeeded": null,
+    "summary": "Removes an exemption from licensing rules for certain entities acquiring consumer mortgage and installment loans. It regulates consumer credit lenders and loan assignees.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB136|45394811f9eff19a|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because this bill governs collective bargaining rights for State law enforcement officers.",
+    "actionNeeded": null,
+    "summary": "Extends State collective bargaining laws to qualifying non-supervisory police officers of the Alcohol, Tobacco, and Cannabis Commission. It does not affect private alcohol licensees.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB905|39eecda8a352c136|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because your business is a restaurant, not an advanced manufacturing or regenerative medicine enterprise.",
+    "actionNeeded": null,
+    "summary": "Creates the Maryland Advanced Manufacturing Grant Program within TEDCO to assist companies specializing in advanced manufacturing and regenerative medicine. Grants support capital expenses like facility construction and equipment.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB194|7b72056f461d0d67|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because you operate a standard restaurant business not focused on Space Force veteran hiring tax credits.",
+    "actionNeeded": null,
+    "summary": "Expands eligibility for certain job creation and property tax incentives to members and veterans of the Space Force. It matches tax relief provisions currently offered for other military branches.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB193|ed06a71a51e13141|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because your restaurant is located in Baltimore City, not Washington County.",
+    "actionNeeded": null,
+    "summary": "Provides a sales and use tax exemption for building materials and warehouse equipment used in Washington County's Mount Aetna Technology Park. Qualifying purchasers must maintain tax exemption records for at least three years.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB972|f26521acfc506136|135f122d62b499c6": {
+    "relevance": "might",
+    "reason": "May apply because you operate an alcohol-serving business in Baltimore City and this modifies specific district licensing and hours rules.",
+    "actionNeeded": null,
+    "summary": "Authorizes new Class B liquor licenses on specific blocks of West Baltimore Street and North Charles Street within Baltimore City's 40th district. It also restricts alcohol sales hours between 10 a.m. and 10 p.m. for certain area licensees.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB414|73486713bf030fc7|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because your business operates in Baltimore City and is not an Anne Arundel County nonprofit swim club.",
+    "actionNeeded": null,
+    "summary": "Creates a consumption-only nonprofit swim club license in Anne Arundel County for a $100 annual fee. The permit allows members and guests to bring their own alcohol for on-premises consumption.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB927|3f39d7e986b3d817|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because this relates specifically to event promoter permits for the Kappa Alpha Psi 2027 Conclave.",
+    "actionNeeded": null,
+    "summary": "Establishes a temporary event promoter permit in Baltimore City for the Kappa Alpha Psi 2027 Conclave. It requires participating caterers to obtain a Class C per diem license from the local liquor board.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB442|033471bf8deafb21|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because your restaurant is located in Baltimore City, not Anne Arundel County.",
+    "actionNeeded": null,
+    "summary": "Exempts certain off-sale alcoholic beverages licenses from county population ratio quotas in Anne Arundel County. The exemption applies only to specific applications approved before July 1, 2025.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB13|ce2d762ea52740bd|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because it addresses license fee refunds specifically for members of NOAA and the Public Health Service.",
+    "actionNeeded": null,
+    "summary": "Allows partial refunds of alcoholic beverages license fees for members of the National Oceanic and Atmospheric Administration and the Public Health Service. It expands existing refund provisions tied to uniformed service.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB582|e09f5c917b2da76f|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because your restaurant does not issue or mail unsolicited negotiable instruments or consumer loans.",
+    "actionNeeded": null,
+    "summary": "Prohibits sending unsolicited checks or negotiable instruments that obligate the recipient to a loan. Violations constitute a misdemeanor carrying criminal fines of up to $500.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB161|9b8797897323ab82|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because it governs entrance fees for individuals visiting Maryland State parks.",
+    "actionNeeded": null,
+    "summary": "Expands State park entry fee exemptions for individuals holding military veteran or former National Guard identification. It changes fee rules at park gates without affecting private commercial businesses.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB249|10f1c2df9b2114bb|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because your business operates as a restaurant and does not sell electronic smoking devices or tobacco products.",
+    "actionNeeded": null,
+    "summary": "Requires separate licensing for tobacco licensees who wish to distribute or sell electronic smoking devices. It also removes the extra license fee for certain existing tobacco licensees applying for a vape shop license.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB757|d09e8d38b6ad63ef|135f122d62b499c6": {
+    "relevance": "might",
+    "reason": "May apply because you operate a Maryland business that purchases supplies and inventory and may use or be listed in the state sourcing portal.",
+    "actionNeeded": null,
+    "summary": "Directs the Department of Commerce to create the Maryland Local Sourcing Portal, an online directory connecting local businesses with in-state suppliers. The department must report annually on the portal's usage and impact.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB68|d10fd0e1c72a967a|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because it governs the Motor Vehicle Administration's driver licensing examinations.",
+    "actionNeeded": null,
+    "summary": "Mandates that the Motor Vehicle Administration include motorcycle safety questions on the driver skills examination. The testing focuses on motorcycle awareness, proper lane position, and crash avoidance.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
+  },
+  "bill-2026RS-SB521|2fe9aef084d67dc1|135f122d62b499c6": {
+    "relevance": "not_applicable",
+    "reason": "Does not apply because it establishes regulatory mandates for health insurance carriers and hospital systems.",
+    "actionNeeded": null,
+    "summary": "Imposes notification obligations on health carriers and hospital systems regarding significant provider network changes and contract terminations. It also establishes special enrollment periods for impacted enrollees.",
+    "classifiedAt": "2026-09-27T03:55:31.235Z"
   }
 }
