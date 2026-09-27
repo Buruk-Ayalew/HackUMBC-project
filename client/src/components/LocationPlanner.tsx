@@ -51,6 +51,9 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
   const [address, setAddress] = useState("");
   const [place, setPlace] = useState<Place | null>(null);
   const [placeNote, setPlaceNote] = useState<string | null>(null);
+  // The address text that `place` was looked up from ("" when a county was picked).
+  const [lookedUp, setLookedUp] = useState("");
+  const [lookupError, setLookupError] = useState<string | null>(null);
   const [looking, setLooking] = useState(false);
   const [staff, setStaff] = useState(5);
   const [fullTime, setFullTime] = useState(5);
@@ -58,29 +61,39 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  async function lookUp() {
+  const typed = address.trim();
+  // A typed address that hasn't been looked up yet takes priority over an earlier county pick.
+  const needsLookup = typed.length >= 5 && typed !== lookedUp;
+
+  async function lookUp(): Promise<Place | null> {
     setLooking(true);
-    setError(null);
+    setLookupError(null);
     try {
-      const r = await apiPost<JurisdictionLookupResult>("/api/jurisdiction/lookup", { address });
+      const r = await apiPost<JurisdictionLookupResult>("/api/jurisdiction/lookup", { address: typed });
       setPlace(r.jurisdiction);
+      setLookedUp(typed);
       setPlaceNote(r.confidence === "check" ? `Matched "${r.matchedAddress}". Please check the county is right.` : `Matched "${r.matchedAddress}".`);
       setData(null);
+      return r.jurisdiction;
     } catch (e) {
-      setError((e as Error).message);
+      setPlace(null);
+      setLookedUp("");
+      setLookupError((e as Error).message);
+      return null;
     } finally {
       setLooking(false);
     }
   }
 
   async function run() {
-    if (!place) return;
+    const target = needsLookup ? await lookUp() : place;
+    if (!target) return;
     setLoading(true);
     setError(null);
     try {
       setData(
         await apiPost<NewLocationResponse>("/api/obligations/new-location", {
-          jurisdiction: { county: place.county, municipality: place.municipality },
+          jurisdiction: { county: target.county, municipality: target.municipality },
           employees: staff,
           fullTime,
         }),
@@ -96,38 +109,58 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
   const whole = useMemo(() => (data ? diff(baseline.results, data.atHome.results) : null), [data, baseline]);
   const staffError = fullTime > staff ? "Full-time staff can't be more than staff at the new location." : null;
 
+  const busy = looking || loading;
+
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-      {/* Controls */}
-      <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50/70 p-4">
-        <div>
-          <p className="text-sm font-semibold text-slate-700">Where is the new location?</p>
-          <p className="text-sm text-slate-500">
-            Today you're in {jurisdictionLabel(profile.jurisdiction)}. Maryland addresses only.
-          </p>
-          <div className="mt-3 flex gap-2">
-            <input
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && address.trim().length >= 5 && void lookUp()}
-              placeholder="Street address, city, MD"
-              className="min-w-0 flex-1 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none"
-            />
-            <button onClick={lookUp} disabled={looking || address.trim().length < 5} className={buttonStyles.secondary}>
-              {looking ? "Looking up…" : "Look up"}
-            </button>
+    <div className="space-y-6">
+      {/* Controls: one bar across the top */}
+      <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 sm:p-5">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+          <div className="min-w-0">
+            <label htmlFor="new-location-address" className="text-sm font-semibold text-slate-700">
+              Where is the new location?
+            </label>
+            <p className="text-xs text-slate-500">Today you're in {jurisdictionLabel(profile.jurisdiction)}. Maryland addresses only.</p>
+            <div className="mt-2 flex gap-2">
+              <input
+                id="new-location-address"
+                value={address}
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                  setLookupError(null);
+                  // Editing the address invalidates the old lookup.
+                  if (lookedUp && e.target.value.trim() !== lookedUp) {
+                    setPlace(null);
+                    setPlaceNote(null);
+                    setLookedUp("");
+                    setData(null);
+                  }
+                }}
+                onKeyDown={(e) => e.key === "Enter" && typed.length >= 5 && !busy && void lookUp()}
+                placeholder="Street address, city, MD"
+                className="min-w-0 flex-1 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-brand-500 focus:outline-none"
+              />
+              <button onClick={() => void lookUp()} disabled={busy || typed.length < 5} className={buttonStyles.secondary}>
+                {looking ? "Looking up…" : "Look up"}
+              </button>
+            </div>
+            {lookupError && <p className="mt-2 rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-800">{lookupError}</p>}
           </div>
-          <label className="mt-3 block text-xs font-medium text-slate-600">
+          <label className="block min-w-0 text-sm font-semibold text-slate-700">
             Or pick a county
+            <span className="block text-xs font-normal text-slate-500">County rules only, no town rules.</span>
             <select
               value={place && !placeNote ? place.county : ""}
               onChange={(e) => {
                 const county = e.target.value;
                 setPlace(county ? { state: "MD", county, isBaltimoreCity: county === "Baltimore City", municipality: null } : null);
                 setPlaceNote(null);
+                setAddress("");
+                setLookedUp("");
+                setLookupError(null);
                 setData(null);
               }}
-              className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm"
+              className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-normal text-slate-900 shadow-sm"
             >
               <option value="">Choose a county…</option>
               {MD_COUNTIES.map((c) => (
@@ -135,26 +168,16 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
               ))}
             </select>
           </label>
-          {place && (
-            <p className="mt-3 inline-flex items-start gap-1.5 rounded-xl bg-white px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
-              <IconMapPin className="mt-0.5 shrink-0 text-brand-600" />
-              <span>
-                <span className="font-semibold">{jurisdictionLabel(place)}</span>
-                {placeNote && <span className="block text-xs text-slate-500">{placeNote}</span>}
-                {!placeNote && <span className="block text-xs text-slate-500">County only. Enter an address to include town rules.</span>}
-              </span>
-            </p>
-          )}
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="mt-4 flex flex-wrap items-end gap-3">
           {(
             [
               ["Staff at the new location", staff, setStaff],
               ["Of those, full-time", fullTime, setFullTime],
             ] as const
           ).map(([label, value, set]) => (
-            <label key={label} className="text-xs font-medium text-slate-600">
+            <label key={label} className="w-40 text-xs font-medium text-slate-600">
               {label}
               <input
                 type="number"
@@ -168,19 +191,33 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
               />
             </label>
           ))}
+          <button
+            onClick={() => void run()}
+            disabled={(!place && !needsLookup) || busy || !!staffError}
+            className={`${buttonStyles.primary} w-full sm:w-auto sm:min-w-44`}
+          >
+            {looking ? "Finding the address…" : loading ? "Working it out…" : "See what changes"}
+          </button>
+          {place && (
+            <p className="inline-flex min-w-0 items-start gap-1.5 rounded-xl bg-white px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
+              <IconMapPin className="mt-0.5 shrink-0 text-brand-600" />
+              <span className="min-w-0">
+                <span className="font-semibold">{jurisdictionLabel(place)}</span>
+                <span className="block break-words text-xs text-slate-500">
+                  {placeNote ?? "County only. Enter an address to include town rules."}
+                </span>
+              </span>
+            </p>
+          )}
         </div>
-        {staffError && <p className="rounded-xl bg-rose-50 p-3 text-sm text-rose-800">{staffError}</p>}
-
-        <button onClick={run} disabled={!place || loading || !!staffError} className={`${buttonStyles.primary} w-full`}>
-          {loading ? "Working it out…" : "See what changes"}
-        </button>
+        {staffError && <p className="mt-3 rounded-xl bg-rose-50 p-3 text-sm text-rose-800">{staffError}</p>}
       </div>
 
-      {/* Results */}
+      {/* Results: full width below the controls */}
       <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-card sm:p-6">
         {error && <p className="mb-4 rounded-xl bg-rose-50 p-3 text-sm text-rose-800">{error}</p>}
         {!data || !site || !whole ? (
-          <p className="text-slate-600">Choose where the new location would be and how many people would work there, then select "See what changes".</p>
+          <p className="text-slate-600">Enter the new address (or pick a county) and how many people would work there, then select "See what changes".</p>
         ) : (
           <div className={`space-y-6 transition-opacity ${loading ? "opacity-60" : ""}`}>
             <div>
@@ -189,57 +226,66 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
                 With {staff} more {staff === 1 ? "person" : "people"}, you'd have {profile.employees.inMaryland + staff} employees in Maryland.
               </p>
             </div>
-            {data.atNewLocation.coverageNotes.map((n) => (
-              <p key={n} className="rounded-xl bg-amber-50 p-3 text-xs text-amber-900">
-                {n}
-              </p>
-            ))}
-            <p className="rounded-xl bg-slate-50 p-3 text-sm text-slate-700 ring-1 ring-slate-200">
-              <strong className="text-slate-900">{site.total} obligations</strong> would apply at the new location:{" "}
-              {[
-                [site.starts.length, "new or different"],
-                [site.maybe.length, "might apply"],
-                [site.licenses.length, "licenses"],
-                [site.registrations.length, "registrations"],
-                [site.same.length, "same as today"],
-              ]
-                .filter(([n]) => n)
-                .map(([n, l]) => `${n} ${l}`)
-                .join(" · ")}
-              .
-            </p>
 
-            <div className="space-y-5">
+            {/* At-a-glance counts */}
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+              {(
+                [
+                  [site.total, "apply at the new site", "bg-slate-900 text-white"],
+                  [site.starts.length, "new or different", "bg-rose-50 text-rose-800"],
+                  [site.maybe.length, "might apply", "bg-amber-50 text-amber-800"],
+                  [site.licenses.length, "licenses to check", "bg-slate-50 text-slate-800"],
+                  [site.registrations.length, "registrations", "bg-slate-50 text-slate-800"],
+                  [site.same.length, "same as today", "bg-slate-50 text-slate-800"],
+                ] as const
+              ).map(([n, label, tone]) => (
+                <div key={label} className={`rounded-xl px-3 py-2 ${tone}`}>
+                  <p className="text-xl font-bold">{n}</p>
+                  <p className="text-xs opacity-80">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            {data.atNewLocation.coverageNotes.length > 0 && (
+              <div className="space-y-2">
+                {data.atNewLocation.coverageNotes.map((n) => (
+                  <p key={n} className="rounded-xl bg-amber-50 p-3 text-xs text-amber-900">
+                    {n}
+                  </p>
+                ))}
+              </div>
+            )}
+
+            {/* Groups side by side on wide screens */}
+            <div className="grid items-start gap-6 lg:grid-cols-2">
               <ChangeGroup title="New or different at this location" tone="red" items={site.starts} describe={firstSentence} />
               <ChangeGroup title="Might apply at this location" tone="amber" items={site.maybe} describe={firstSentence} />
-              <ChangeGroup
-                title="Licenses to check for the new site"
-                tone="slate"
-                items={site.licenses}
-                describe={site.describeLicense}
-              />
+              <ChangeGroup title="Licenses to check for the new site" tone="slate" items={site.licenses} describe={site.describeLicense} />
               <ChangeGroup
                 title="Registrations and accounts to update"
                 tone="slate"
                 items={site.registrations}
                 describe={() => "You have this today. Check the official source to see whether you need to add the new location or register it separately."}
               />
-              <SameList items={site.same} />
             </div>
+
+            <SameList items={site.same} />
+
+            {whole.starts.length + whole.maybe.length + whole.stops.length > 0 && (
+              <div className="rounded-xl border border-slate-200 bg-slate-50/60 p-4">
+                <p className="mb-3 text-sm font-semibold text-slate-700">Changes for your whole business (because of the extra staff)</p>
+                <div className="grid items-start gap-6 lg:grid-cols-3">
+                  <ChangeGroup title="New obligations" tone="red" items={whole.starts} />
+                  <ChangeGroup title="Might start applying" tone="amber" items={whole.maybe} />
+                  <ChangeGroup title="No longer applies" tone="slate" items={whole.stops} />
+                </div>
+              </div>
+            )}
 
             <p className="text-xs text-slate-500">
               Not included: building, zoning, occupancy, and sign permits for the new space. We don't have rules for these yet, so check with the
               county or town where the new location is.
             </p>
-
-            {whole.starts.length + whole.maybe.length + whole.stops.length > 0 && (
-              <div className="space-y-5 border-t border-slate-100 pt-5">
-                <p className="text-sm font-semibold text-slate-700">Changes for your whole business (because of the extra staff)</p>
-                <ChangeGroup title="New obligations" tone="red" items={whole.starts} />
-                <ChangeGroup title="Might start applying" tone="amber" items={whole.maybe} />
-                <ChangeGroup title="No longer applies" tone="slate" items={whole.stops} />
-              </div>
-            )}
           </div>
         )}
         <p className="mt-6 border-t border-slate-100 pt-4 text-xs text-slate-500">
@@ -254,13 +300,15 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
 function SameList({ items }: { items: ObligationResult[] }) {
   if (!items.length) return null;
   return (
-    <section className="animate-fade-up">
-      <div className="mb-2 flex items-center gap-2">
+    <details className="group animate-fade-up rounded-xl border border-slate-200 bg-white">
+      <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3">
+        <span className="text-slate-400 transition group-open:rotate-90">▸</span>
         <h4 className="text-sm font-bold text-slate-900">Also applies at the new location (same as today)</h4>
         <Badge tone="slate">{items.length}</Badge>
-      </div>
-      <p className="mb-2 text-xs text-slate-500">These apply to your whole business, so include the new location when you handle them.</p>
-      <ul className="divide-y divide-slate-100 rounded-xl border border-slate-200 bg-white">
+        <span className="ml-auto hidden text-xs text-slate-500 sm:inline">Show list</span>
+      </summary>
+      <p className="px-4 pb-2 text-xs text-slate-500">These apply to your whole business, so include the new location when you handle them.</p>
+      <ul className="grid border-t border-slate-100 md:grid-cols-2 md:divide-x md:divide-slate-100 [&>li]:border-b [&>li]:border-slate-100">
         {items.map((r) => (
           <li key={r.rule.id} className="flex items-start justify-between gap-3 px-4 py-2.5">
             <span className="min-w-0">
@@ -280,6 +328,6 @@ function SameList({ items }: { items: ObligationResult[] }) {
           </li>
         ))}
       </ul>
-    </section>
+    </details>
   );
 }
