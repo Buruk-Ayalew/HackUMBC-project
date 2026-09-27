@@ -4,7 +4,7 @@ import type { RadarResponse } from "../../../shared/types";
 import { apiGet } from "../api";
 import { useAuth } from "../auth";
 import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates";
-import { IconArrowRight, IconCalendar, IconClipboard, IconMapPin, IconRadar, IconTrending } from "../components/icons";
+import { IconArrowRight, IconCalendar, IconClipboard, IconDownload, IconMapPin, IconRadar, IconTrending } from "../components/icons";
 import { industryLabel, jurisdictionLabel } from "../components/profileOptions";
 import { allUpcoming } from "../components/schedule";
 import { Badge, buttonStyles, Card, LoadingPage, Notice } from "../components/ui";
@@ -83,12 +83,6 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-wrap items-center justify-end gap-3">
-        <p className="text-sm text-slate-500">A one-page summary to share with your CPA, lawyer, or partner.</p>
-        <Link to="/briefing?print=1" className={buttonStyles.secondary}>
-          Download Monthly Executive Briefing
-        </Link>
-      </div>
       <section className="relative overflow-hidden rounded-3xl bg-slate-900 px-6 py-8 text-white sm:px-10 sm:py-10">
         <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-600/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl" />
@@ -120,6 +114,21 @@ export default function DashboardPage() {
           )}
         </div>
       </section>
+
+      <div className="-mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200/80 bg-white px-5 py-3 shadow-card">
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-50 text-lg text-brand-600">
+            <IconDownload />
+          </span>
+          <div className="min-w-0">
+            <p className="font-semibold text-slate-900">Monthly Executive Briefing</p>
+            <p className="text-sm text-slate-500">Your deadlines, law changes, and nearby projects on one page, ready for your CPA, lawyer, or partner.</p>
+          </div>
+        </div>
+        <Link to="/briefing?print=1" className={`${buttonStyles.primary} shrink-0`}>
+          Download briefing
+        </Link>
+      </div>
 
       <div className="grid gap-4 md:grid-cols-3">
         <ModuleCard to="/obligations" icon={<IconClipboard />} title="Obligations" accent="bg-rose-50 text-rose-600">
