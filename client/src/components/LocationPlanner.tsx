@@ -247,16 +247,6 @@ export default function LocationPlanner({ profile, baseline }: { profile: Busine
               ))}
             </div>
 
-            {data.atNewLocation.coverageNotes.length > 0 && (
-              <div className="space-y-2">
-                {data.atNewLocation.coverageNotes.map((n) => (
-                  <p key={n} className="rounded-xl bg-amber-50 p-3 text-xs text-amber-900">
-                    {n}
-                  </p>
-                ))}
-              </div>
-            )}
-
             {/* Groups side by side on wide screens */}
             <div className="grid items-start gap-6 lg:grid-cols-2">
               <ChangeGroup title="New or different at this location" tone="red" items={site.starts} describe={firstSentence} />
