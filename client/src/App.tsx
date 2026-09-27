@@ -1,7 +1,7 @@
 import { Navigate, NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import type { ReactNode } from "react";
 import { useAuth } from "./auth";
-import { IconCalendar, IconClipboard, IconLogo, IconMapPin, IconRadar, IconSettings, IconTrending } from "./components/icons";
+import { IconClipboard, IconLogo, IconMapPin, IconRadar, IconSettings, IconTrending } from "./components/icons";
 import { LoadingPage } from "./components/ui";
 import WelcomePage from "./pages/WelcomePage";
 import LoginPage from "./pages/LoginPage";
@@ -10,7 +10,6 @@ import SettingsPage from "./pages/SettingsPage";
 import DashboardPage from "./pages/DashboardPage";
 import ObligationsPage from "./pages/ObligationsPage";
 import WhatIfPage from "./pages/WhatIfPage";
-import CalendarPage from "./pages/CalendarPage";
 import RadarPage from "./pages/RadarPage";
 import LocalRiskPage from "./pages/LocalRiskPage";
 
@@ -18,7 +17,6 @@ const NAV = [
   { to: "/dashboard", label: "Dashboard", icon: null },
   { to: "/obligations", label: "Obligations", icon: <IconClipboard /> },
   { to: "/growth", label: "Growth Planner", icon: <IconTrending /> },
-  { to: "/calendar", label: "Calendar", icon: <IconCalendar /> },
   { to: "/radar", label: "Radar", icon: <IconRadar /> },
   { to: "/local-risk", label: "Local Risk", icon: <IconMapPin /> },
 ];
@@ -127,7 +125,7 @@ export default function App() {
           <Route path="/obligations" element={<Protected><ObligationsPage /></Protected>} />
           <Route path="/growth" element={<Protected><WhatIfPage /></Protected>} />
           <Route path="/obligations/what-if" element={<Navigate to="/growth" replace />} />
-          <Route path="/calendar" element={<Protected><CalendarPage /></Protected>} />
+          <Route path="/calendar" element={<Navigate to="/obligations" replace />} />
           <Route path="/radar" element={<Protected><RadarPage /></Protected>} />
           <Route path="/local-risk" element={<Protected><LocalRiskPage /></Protected>} />
           <Route path="/settings" element={<Protected><SettingsPage /></Protected>} />

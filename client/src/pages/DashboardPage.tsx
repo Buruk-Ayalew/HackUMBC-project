@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
+import type { RadarResponse, RadarResult } from "../../../shared/types";
 import { apiGet } from "../api";
 import { useAuth } from "../auth";
 import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates";
@@ -26,13 +27,39 @@ function useOptional<T>(path: string, pick: (json: unknown) => T | undefined): L
   return v;
 }
 
-function radarAffectsCount(json: unknown): number | undefined {
-  const items = Array.isArray(json) ? json : (json as { items?: unknown })?.items;
-  if (!Array.isArray(items)) return undefined;
-  return items.filter((i) => {
-    const x = i as { relevance?: string; status?: string };
-    return x?.relevance === "affects" || x?.status === "affects";
-  }).length;
+// Matches the Radar page, which lists only items that affect the business.
+interface RadarSummary {
+  affects: number;
+  top: RadarResult[]; // soonest date first
+  sorting: boolean;
+}
+
+function radarSummary(json: unknown): RadarSummary | undefined {
+  const results = (json as RadarResponse | undefined)?.results;
+  if (!Array.isArray(results)) return undefined;
+  const sorted = results.filter((r) => r.autoSorted);
+  return {
+    affects: sorted.filter((r) => r.relevance === "affects").length,
+    // The server already orders results by soonest date.
+    top: sorted.filter((r) => r.relevance === "affects").slice(0, 3),
+    sorting: !!(json as RadarResponse).sortingInProgress,
+  };
+}
+
+const KIND_LABEL: Record<RadarResult["item"]["kind"], string> = {
+  bill: "Bill",
+  proposed_regulation: "Proposed rule",
+  final_regulation: "Final rule",
+  news: "Agency news",
+};
+
+// The one date that matters most for an item, in plain words.
+function keyDate(r: RadarResult): string | null {
+  const { commentDeadline, hearingDate, effectiveDate } = r.item;
+  if (commentDeadline && daysUntil(commentDeadline) >= 0) return `Comments due ${formatDate(commentDeadline)}`;
+  if (hearingDate && daysUntil(hearingDate) >= 0) return `Hearing ${formatDate(hearingDate)}`;
+  if (effectiveDate) return `${daysUntil(effectiveDate) >= 0 ? "Takes effect" : "In effect since"} ${formatDate(effectiveDate)}`;
+  return null;
 }
 
 function newCount(json: unknown): number | undefined {
@@ -68,7 +95,7 @@ export default function DashboardPage() {
   const { user } = useAuth();
   const { data, profile, error } = useObligations();
   const { milestones } = useMilestones();
-  const radar = useOptional("/api/radar", radarAffectsCount);
+  const radar = useOptional("/api/radar", radarSummary);
   const risk = useOptional("/api/local-risk/new-count", newCount);
 
   if (error) return <Notice tone="red">{error}</Notice>;
@@ -126,8 +153,8 @@ export default function DashboardPage() {
         <ModuleCard to="/radar" icon={<IconRadar />} title="Regulatory Radar" accent="bg-brand-50 text-brand-600">
           {radar.state === "ready" ? (
             <>
-              <p className="text-4xl font-bold tracking-tight text-slate-900">{radar.value}</p>
-              <p className="text-slate-600">changes affect you</p>
+              <p className="text-4xl font-bold tracking-tight text-slate-900">{radar.value.affects}</p>
+              <p className="text-slate-600">{radar.value.affects === 1 ? "change affects" : "changes affect"} you</p>
             </>
           ) : (
             <Unavailable state={radar.state} />
@@ -145,14 +172,52 @@ export default function DashboardPage() {
         </ModuleCard>
       </div>
 
+      <Card className="p-6">
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900">
+            <IconRadar className="text-brand-600" /> From Regulatory Radar
+          </h2>
+          <Link to="/radar" className="text-sm font-semibold text-brand-700 hover:underline">
+            See all changes
+          </Link>
+        </div>
+        {radar.state !== "ready" ? (
+          <Unavailable state={radar.state} />
+        ) : radar.value.top.length === 0 ? (
+          <p className="text-slate-500">
+            {radar.value.sorting ? "Checking new laws and rules against your business…" : "No new law or rule changes affect your business right now."}
+          </p>
+        ) : (
+          <ul className="divide-y divide-slate-100">
+            {radar.value.top.map((r) => {
+              const date = keyDate(r);
+              return (
+                <li key={r.item.id} className="py-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge tone="red">Affects you</Badge>
+                    <span className="text-xs font-medium text-slate-500">
+                      {KIND_LABEL[r.item.kind]}
+                      {r.item.citation ? ` · ${r.item.citation}` : ""}
+                      {date ? ` · ${date}` : ""}
+                    </span>
+                  </div>
+                  <p className="mt-1 font-medium text-slate-900">{r.item.title}</p>
+                  <p className="mt-0.5 text-sm text-slate-600">{r.reason}</p>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </Card>
+
       <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
         <Card className="p-6">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900">
               <IconCalendar className="text-brand-600" /> Coming up
             </h2>
-            <Link to="/calendar" className="text-sm font-semibold text-brand-700 hover:underline">
-              Full calendar
+            <Link to="/obligations" className="text-sm font-semibold text-brand-700 hover:underline">
+              All obligations
             </Link>
           </div>
           {upcoming.length === 0 ? (
