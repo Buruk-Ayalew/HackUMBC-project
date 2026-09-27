@@ -18,7 +18,10 @@
       "rentsLodging": false,
       "servesAlcohol": true,
       "sellsToGovernment": false,
-      "handlesCustomerData": false
+      "handlesCustomerData": false,
+      "servesFood": true,
+      "ownsBusinessProperty": true,
+      "usesTradeName": false
     },
     "updatedAt": "2026-09-26T00:00:00.000Z"
   },
@@ -41,7 +44,10 @@
       "rentsLodging": false,
       "servesAlcohol": false,
       "sellsToGovernment": false,
-      "handlesCustomerData": false
+      "handlesCustomerData": false,
+      "servesFood": false,
+      "ownsBusinessProperty": true,
+      "usesTradeName": false
     },
     "updatedAt": "2026-09-26T00:00:00.000Z"
   },
@@ -64,7 +70,10 @@
       "rentsLodging": false,
       "servesAlcohol": false,
       "sellsToGovernment": false,
-      "handlesCustomerData": false
+      "handlesCustomerData": false,
+      "servesFood": false,
+      "ownsBusinessProperty": false,
+      "usesTradeName": false
     },
     "updatedAt": "2026-09-26T00:00:00.000Z"
   },
@@ -87,7 +96,10 @@
       "rentsLodging": true,
       "servesAlcohol": false,
       "sellsToGovernment": false,
-      "handlesCustomerData": true
+      "handlesCustomerData": true,
+      "servesFood": false,
+      "ownsBusinessProperty": true,
+      "usesTradeName": false
     },
     "updatedAt": "2026-09-26T00:00:00.000Z"
   },
@@ -110,7 +122,10 @@
       "rentsLodging": false,
       "servesAlcohol": false,
       "sellsToGovernment": true,
-      "handlesCustomerData": false
+      "handlesCustomerData": false,
+      "servesFood": false,
+      "ownsBusinessProperty": true,
+      "usesTradeName": false
     },
     "updatedAt": "2026-09-26T00:00:00.000Z"
   }

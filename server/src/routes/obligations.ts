@@ -3,20 +3,27 @@ import { z } from "zod";
 import type { BusinessProfile, NewLocationResponse, ObligationRule, ObligationsResponse } from "../../../shared/types.js";
 import { requireAuth } from "../middleware/auth.js";
 import { getProfileForUser } from "../lib/profile.js";
-import { loadRules } from "../lib/obligations/rules.js";
+import { loadReviewedTowns, loadRules } from "../lib/obligations/rules.js";
 import { coverageNotes, employeeThresholds, evaluate, milestones } from "../lib/obligations/engine.js";
 import { getLiveData, isRefreshing, refreshLiveData } from "../lib/obligations/live/index.js";
 import { buildIcs, collectEvents } from "../lib/obligations/calendar.js";
+import { getCompleted, isOneTime, setCompleted } from "../lib/obligations/completed.js";
 
 const router = Router();
 router.use(requireAuth);
 
 type Snapshot = Awaited<ReturnType<typeof getLiveData>>;
 
-function respond(profile: BusinessProfile, rules: ObligationRule[], live: Snapshot): ObligationsResponse {
+async function respond(profile: BusinessProfile, rules: ObligationRule[], live: Snapshot): Promise<ObligationsResponse> {
+  // One-time items the owner already did are left out everywhere (page,
+  // counts, calendar, Growth Planner), and listed separately so they can undo.
+  const done = await getCompleted(profile.userId);
+  const all = evaluate(profile, rules, live);
+  const isDone = (r: (typeof all)[number]) => isOneTime(r.rule) && done[r.rule.id] !== undefined;
   return {
-    results: evaluate(profile, rules, live),
-    coverageNotes: coverageNotes(profile),
+    results: all.filter((r) => !isDone(r)),
+    completed: all.filter(isDone).map((r) => ({ ruleId: r.rule.id, title: r.rule.title, completedAt: done[r.rule.id]! })),
+    coverageNotes: coverageNotes(profile, rules, await loadReviewedTowns()),
     thresholds: employeeThresholds(rules),
     evaluatedAt: new Date().toISOString(),
     sources: Object.values(live.sources),
@@ -47,7 +54,35 @@ router.post("/refresh", async (req, res) => {
     return;
   }
   const rules = await loadRules();
-  res.json(respond(profile, rules, await refreshLiveData(rules)));
+  res.json(await respond(profile, rules, await refreshLiveData(rules)));
+});
+
+// Mark a one-time obligation as done (or undo it). Repeating ones can't be.
+const doneBody = z.object({ ruleId: z.string().min(1).max(100), done: z.boolean() });
+
+router.post("/done", async (req, res) => {
+  const parsed = doneBody.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Tell us which item to update." });
+    return;
+  }
+  const profile = await getProfileForUser(req.session.userId!);
+  if (!profile) {
+    res.status(404).json({ error: "Set up your business profile first." });
+    return;
+  }
+  const rules = await loadRules();
+  const rule = rules.find((r) => r.id === parsed.data.ruleId);
+  if (!rule) {
+    res.status(404).json({ error: "That item doesn't exist." });
+    return;
+  }
+  if (!isOneTime(rule)) {
+    res.status(400).json({ error: "Only one-time items can be marked done. Repeating ones come back each period." });
+    return;
+  }
+  await setCompleted(profile.userId, rule.id, parsed.data.done);
+  res.json(await respond(profile, rules, await getLiveData(rules)));
 });
 
 // What changes at each headcount on the Growth Planner's single-slider scale.
@@ -140,8 +175,8 @@ router.post("/new-location", async (req, res) => {
   const live = await getLiveData(rules);
   const body: NewLocationResponse = {
     location,
-    atNewLocation: respond({ ...grown, jurisdiction: location }, rules, live),
-    atHome: respond(grown, rules, live),
+    atNewLocation: await respond({ ...grown, jurisdiction: location }, rules, live),
+    atHome: await respond(grown, rules, live),
   };
   res.json(body);
 });

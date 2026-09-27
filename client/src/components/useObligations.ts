@@ -39,7 +39,16 @@ export function useObligations() {
     }
   }, []);
 
-  return { data, profile, error, checking, checkNow };
+  // Mark a one-time obligation done (or undo). The server returns fresh results.
+  const markDone = useCallback(async (ruleId: string, done: boolean) => {
+    try {
+      setData(await apiPost<ObligationsResponse>("/api/obligations/done", { ruleId, done }));
+    } catch (e) {
+      setError((e as Error).message);
+    }
+  }, []);
+
+  return { data, profile, error, checking, checkNow, markDone };
 }
 
 export function useMilestones() {

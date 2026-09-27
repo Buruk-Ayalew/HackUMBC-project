@@ -261,5 +261,41 @@
     "sourceUrl": "https://earlychildhood.marylandpublicschools.org/child-care-providers/licensing",
     "sourceName": "MSDE Office of Child Care: Licensing",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "food-service-license-other",
+    "title": "Get a food service license from your health department",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesFood",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "industry",
+        "op": "not_in",
+        "value": [
+          "restaurant",
+          "food_truck"
+        ]
+      }
+    ],
+    "summary": "Businesses that prepare, serve, or sell food to the public (for example a hotel restaurant or a store with prepared food) need an annual food service facility license from the local health department in {{county}}.",
+    "action": "Ask the {{county}} health department which license you need, and renew it every year.",
+    "agency": "Local health department",
+    "frequency": "yearly",
+    "frequencyNote": "Renewal date set by your county",
+    "filingUrl": "https://health.maryland.gov/phpa/OEHFP/OFPCHS/Pages/FoodLicensePermit.aspx",
+    "filingSiteName": "Your local health department",
+    "verify": [
+      "local Health Department"
+    ],
+    "sourceUrl": "https://health.maryland.gov/phpa/OEHFP/OFPCHS/Pages/FoodLicensePermit.aspx",
+    "sourceName": "Maryland Department of Health: Food licenses and permits",
+    "reviewedOn": "2026-09-26"
   }
 ]

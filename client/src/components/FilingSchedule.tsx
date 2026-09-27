@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { ObligationResult } from "../../../shared/types";
 import { daysLabel, daysUntil, formatDate } from "./dates";
-import { IconChevron, IconExternal } from "./icons";
+import { IconCheck, IconChevron, IconExternal } from "./icons";
 import { VerificationBadge, VerificationNote, needsBadge } from "./LiveStatus";
 import { FREQUENCY_LABELS } from "./schedule";
 
@@ -32,7 +32,14 @@ function When({ r }: { r: ObligationResult }) {
   );
 }
 
-export function Details({ r }: { r: ObligationResult }) {
+// One-time items (no repeating schedule) can be marked done and hidden.
+export function isOneTime(r: ObligationResult): boolean {
+  return r.rule.frequency === "once" && !r.rule.recurring;
+}
+
+export type OnDone = (ruleId: string, done: boolean) => void;
+
+export function Details({ r, onDone }: { r: ObligationResult; onDone?: OnDone }) {
   return (
     <div className="space-y-3 text-sm">
       <div className="rounded-xl bg-white p-4 ring-1 ring-slate-200">
@@ -57,12 +64,24 @@ export function Details({ r }: { r: ObligationResult }) {
       <a href={r.rule.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:underline">
         Official source: {r.rule.sourceName} (checked {formatDate(r.rule.reviewedOn)}) <IconExternal />
       </a>
+      {onDone && isOneTime(r) && r.status !== "not_applicable" && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onDone(r.rule.id, true);
+          }}
+          className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-800 transition hover:bg-emerald-100"
+        >
+          <IconCheck /> I've done this
+        </button>
+      )}
     </div>
   );
 }
 
 // Simple list of filings and renewals: what, how often, when, where.
-export default function FilingSchedule({ results }: { results: ObligationResult[] }) {
+export default function FilingSchedule({ results, onDone }: { results: ObligationResult[]; onDone?: OnDone }) {
   const [open, setOpen] = useState<string | null>(null);
   const toggle = (id: string) => setOpen((o) => (o === id ? null : id));
 
@@ -110,7 +129,7 @@ export default function FilingSchedule({ results }: { results: ObligationResult[
               </button>
               {isOpen && (
                 <div className="animate-fade-up px-5 pb-5 pl-11 md:max-w-3xl">
-                  <Details r={r} />
+                  <Details r={r} onDone={onDone} />
                 </div>
               )}
             </li>

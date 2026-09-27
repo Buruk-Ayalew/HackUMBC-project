@@ -46,6 +46,7 @@ const ruleSchema = z.object({
       month: z.number().int().min(1).max(12).optional(),
       label: z.string().min(1),
       startsOn: isoDate.optional(),
+      exact: z.boolean().optional(),
     })
     .refine((r) => r.every !== "year" || r.month !== undefined, { message: "yearly schedules need a month" })
     .optional(),
@@ -78,4 +79,17 @@ export async function loadRules(): Promise<ObligationRule[]> {
     }
   }
   return rules;
+}
+
+// Towns we checked that have no town-level license rules (so nothing to add),
+// kept in server/data/reviewed-towns.json with their sources.
+export interface ReviewedTown {
+  name: string;
+  reviewedOn: string;
+  finding: string;
+  sourceUrl: string;
+}
+
+export function loadReviewedTowns(): Promise<ReviewedTown[]> {
+  return readJson<ReviewedTown[]>(dataPath("reviewed-towns.json"), []);
 }

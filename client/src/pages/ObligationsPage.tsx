@@ -1,11 +1,12 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import type { ObligationResult } from "../../../shared/types";
-import FilingSchedule, { Details, WhereLink } from "../components/FilingSchedule";
+import FilingSchedule, { Details, WhereLink, type OnDone } from "../components/FilingSchedule";
 import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates";
-import { IconAlert, IconCalendar, IconCheck, IconChevron, IconClipboard, IconDownload, IconMapPin } from "../components/icons";
+import { IconAlert, IconCalendar, IconCheck, IconChevron, IconClipboard, IconDownload, IconInfo, IconMapPin } from "../components/icons";
 import { LiveStatusBar, VerificationBadge, needsBadge } from "../components/LiveStatus";
 import { jurisdictionLabel } from "../components/profileOptions";
+import { firstSentence } from "../components/text";
 import { allUpcoming } from "../components/schedule";
 import { Card, LoadingPage, Notice, PageHeader, buttonStyles } from "../components/ui";
 import { useObligations } from "../components/useObligations";
@@ -32,7 +33,7 @@ function Section({ icon, title, subtitle, children }: { icon: ReactNode; title: 
   );
 }
 
-function ExpandableCard({ r, tone }: { r: ObligationResult; tone: "green" | "amber" }) {
+function ExpandableCard({ r, tone, onDone }: { r: ObligationResult; tone: "green" | "amber"; onDone: OnDone }) {
   const [open, setOpen] = useState(false);
   const bar = tone === "green" ? "bg-emerald-500" : "bg-amber-400";
   return (
@@ -46,13 +47,13 @@ function ExpandableCard({ r, tone }: { r: ObligationResult; tone: "green" | "amb
               <VerificationBadge v={r.verification} />
             </span>
           )}
-          <span className="mt-1 block text-sm text-slate-600">{tone === "amber" ? r.rule.summary.split(". ")[0] + "." : r.rule.action}</span>
+          <span className="mt-1 block text-sm text-slate-600">{tone === "amber" ? firstSentence(r.rule.summary) : r.rule.action}</span>
         </span>
         <IconChevron className={`mt-1 shrink-0 text-slate-400 transition ${open ? "rotate-90" : ""}`} />
       </button>
       {open && (
         <div className="animate-fade-up border-t border-slate-100 bg-slate-50/60 p-4 pl-5">
-          <Details r={r} />
+          <Details r={r} onDone={onDone} />
         </div>
       )}
     </div>
@@ -60,15 +61,14 @@ function ExpandableCard({ r, tone }: { r: ObligationResult; tone: "green" | "amb
 }
 
 export default function ObligationsPage() {
-  const { data, profile, error, checking, checkNow } = useObligations();
-  const [showNA, setShowNA] = useState(false);
+  const { data, profile, error, checking, checkNow, markDone } = useObligations();
+  const [showDone, setShowDone] = useState(false);
 
   if (error) return <Notice tone="red">{error}</Notice>;
   if (!data || !profile) return <LoadingPage />;
 
   const affects = data.results.filter((r) => r.status === "affects");
   const might = data.results.filter((r) => r.status === "might");
-  const na = data.results.filter((r) => r.status === "not_applicable");
   const everyday = affects.filter(isEveryday);
   const schedule = affects.filter((r) => !isEveryday(r));
 
@@ -106,7 +106,7 @@ export default function ObligationsPage() {
 
       <Card className="flex flex-wrap items-center gap-x-8 gap-y-3 px-6 py-5">
         <p className="text-lg text-slate-700">
-          <strong className="text-2xl font-bold text-slate-900">{affects.length}</strong> things apply to your business
+          <strong className="text-2xl font-bold text-slate-900">{affects.length}</strong> {affects.length === 1 ? "thing applies" : "things apply"} to your business
         </p>
         <p className="text-slate-600">
           <strong className="text-rose-600">{soon.length}</strong> due in the next 45 days
@@ -119,11 +119,10 @@ export default function ObligationsPage() {
       </Card>
 
       {data.coverageNotes.length > 0 && (
-        <div className="space-y-2">
-          {data.coverageNotes.map((n) => (
-            <Notice key={n}>{n}</Notice>
-          ))}
-        </div>
+        <p className="-mt-8 flex items-start gap-1.5 text-xs text-slate-500">
+          <IconInfo className="mt-0.5 shrink-0" />
+          <span>{data.coverageNotes.join(" ")}</span>
+        </p>
       )}
 
       <Section icon={<IconCalendar />} title="Coming up" subtitle="Your next deadlines. Handle these first.">
@@ -158,7 +157,7 @@ export default function ObligationsPage() {
         title="Your filings and renewals"
         subtitle="Everything you file, pay, or renew, soonest first. Click a row to see what to do."
       >
-        <FilingSchedule results={schedule} />
+        <FilingSchedule results={schedule} onDone={markDone} />
         <p className="mt-3 text-xs text-slate-500">
           Dates on weekends or holidays move to the next business day. Some agencies set your filing schedule (for example sales tax), so follow any
           notice they send you.
@@ -169,7 +168,7 @@ export default function ObligationsPage() {
         <Section icon={<IconCheck />} title="Rules to follow every day" subtitle="No form to file, but you need to keep doing these.">
           <div className="grid gap-3 md:grid-cols-2">
             {everyday.map((r) => (
-              <ExpandableCard key={r.rule.id} r={r} tone="green" />
+              <ExpandableCard key={r.rule.id} r={r} tone="green" onDone={markDone} />
             ))}
           </div>
         </Section>
@@ -179,28 +178,35 @@ export default function ObligationsPage() {
         <Section icon={<IconAlert />} title="Double-check these" subtitle="These might apply, depending on details we don't ask about.">
           <div className="grid gap-3 md:grid-cols-2">
             {might.map((r) => (
-              <ExpandableCard key={r.rule.id} r={r} tone="amber" />
+              <ExpandableCard key={r.rule.id} r={r} tone="amber" onDone={markDone} />
             ))}
           </div>
         </Section>
       )}
 
-      <section>
-        <button onClick={() => setShowNA(!showNA)} className="flex items-center gap-2 text-left" aria-expanded={showNA}>
-          <IconChevron className={`text-slate-400 transition ${showNA ? "rotate-90" : ""}`} />
-          <span className="font-semibold text-slate-600">Things that don't apply to you ({na.length})</span>
-        </button>
-        {showNA && (
-          <Card className="mt-3 divide-y divide-slate-100">
-            {na.map((r) => (
-              <div key={r.rule.id} className="px-5 py-3">
-                <p className="font-medium text-slate-800">{r.rule.title}</p>
-                <p className="text-sm text-slate-500">{r.reasons.join(" ")}</p>
-              </div>
-            ))}
-          </Card>
-        )}
-      </section>
+      {data.completed.length > 0 && (
+        <section>
+          <button onClick={() => setShowDone(!showDone)} className="flex items-center gap-2 text-left" aria-expanded={showDone}>
+            <IconChevron className={`text-slate-400 transition ${showDone ? "rotate-90" : ""}`} />
+            <span className="font-semibold text-slate-600">Done ({data.completed.length})</span>
+          </button>
+          {showDone && (
+            <Card className="mt-3 divide-y divide-slate-100">
+              {data.completed.map((c) => (
+                <div key={c.ruleId} className="flex items-center justify-between gap-3 px-5 py-3">
+                  <p className="text-sm text-slate-700">
+                    <IconCheck className="mr-1.5 inline text-emerald-600" />
+                    {c.title}
+                  </p>
+                  <button onClick={() => markDone(c.ruleId, false)} className="shrink-0 text-xs font-semibold text-brand-700 hover:underline">
+                    Undo
+                  </button>
+                </div>
+              ))}
+            </Card>
+          )}
+        </section>
+      )}
     </div>
   );
 }

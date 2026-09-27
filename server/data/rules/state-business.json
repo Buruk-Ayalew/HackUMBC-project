@@ -217,5 +217,67 @@
     "sourceUrl": "https://procurement.maryland.gov/how-to-do-business-with-the-state-of-maryland/",
     "sourceName": "Maryland Procurement: How to do business with the State",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "local-personal-property-tax",
+    "title": "Pay your county's business personal property tax bill",
+    "category": "tax",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.ownsBusinessProperty",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "After SDAT values the business property you report on your annual return, your county (and some towns) send a personal property tax bill. If the bill is sent by August 31, pay by September 30 to avoid interest; if it comes later, pay within 30 days.",
+    "action": "Watch for the bill from your county's finance office and pay it by the due date on the bill.",
+    "agency": "County (and town) finance office",
+    "frequency": "yearly",
+    "recurring": {
+      "every": "year",
+      "month": 9,
+      "day": 30,
+      "label": "Business personal property tax bill ({period})",
+      "exact": true
+    },
+    "filingUrl": "https://dat.maryland.gov/realproperty/Pages/Local-Tax-Billing-Collection-Offices.aspx",
+    "filingSiteName": "Your county tax office (SDAT list)",
+    "verify": [
+      "Personal property tax may be paid without interest or penalty"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gtp&section=10-102",
+    "sourceName": "Md. Code, Tax-Property §10-102 (property tax due dates)",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "trade-name-renewal",
+    "title": "Renew your trade name every 5 years",
+    "category": "registration",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.usesTradeName",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "A trade name registered with SDAT is valid for five years. You can renew it online up to 6 months before it expires; if it isn't renewed in time, it's forfeited and you have to register it again.",
+    "action": "Check your trade name's expiration date in Maryland Business Express and renew it before then.",
+    "agency": "State Department of Assessments and Taxation (SDAT)",
+    "frequency": "varies",
+    "frequencyNote": "Every 5 years, from the date SDAT accepted it",
+    "filingUrl": "https://egov.maryland.gov/BusinessExpress/",
+    "filingSiteName": "Maryland Business Express",
+    "verify": [
+      "Trade Names are valid for five years from the date of acceptance by SDAT"
+    ],
+    "sourceUrl": "https://egov.maryland.gov/BusinessExpress/Home/faq",
+    "sourceName": "Maryland Business Express: FAQ (Trade Names)",
+    "reviewedOn": "2026-09-26"
   }
 ]

@@ -10,11 +10,12 @@ import { apiPost } from "../api";
 import { ChangeGroup, diff, type Change } from "./GrowthPlanner";
 import { IconExternal, IconMapPin } from "./icons";
 import { MD_COUNTIES, jurisdictionLabel } from "./profileOptions";
+import { firstSentence as sentence } from "./text";
 import { Badge, buttonStyles } from "./ui";
 
 type Place = BusinessProfile["jurisdiction"];
 
-const firstSentence = (r: ObligationResult) => r.rule.summary.split(". ")[0]!.replace(/\.$/, "") + ".";
+const firstSentence = (r: ObligationResult) => sentence(r.rule.summary);
 const applies = (r: ObligationResult) => r.status === "affects" || r.status === "might";
 const sameText = (a: ObligationResult, b: ObligationResult) => a.rule.title === b.rule.title && a.rule.summary === b.rule.summary;
 

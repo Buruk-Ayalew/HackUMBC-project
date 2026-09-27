@@ -123,6 +123,52 @@ for (const id of ["eeo-1-report", "sam-registration", "emma-registration"]) expe
 expect("contractor@100", run(withEmployees(contractor, { totalAllStates: 100 }))("eeo-1-report"), "affects");
 expect("childcare", run({ ...consultant, industry: "childcare" })("childcare-license"), "affects");
 
+console.log("\n# Local licenses and bills");
+get = run(restaurant);
+expect("restaurant (Baltimore City, alcohol)", get("liquor-renewal-baltimore-city"), "affects");
+expectDate("Baltimore City liquor renewal (statutory window, not moved)", get("liquor-renewal-baltimore-city").upcoming[0]?.date, "2027-03-31");
+for (const id of ["liquor-renewal-feb-mar", "liquor-renewal-default", "ocean-city-business-license"]) expect("restaurant", get(id), "not_applicable");
+expect("restaurant (owns property)", get("local-personal-property-tax"), "affects");
+expectDate("personal property bill", get("local-personal-property-tax").upcoming[0]?.date, "2026-09-30");
+get = run(hotel);
+expect("hotel (Ocean City)", get("ocean-city-business-license"), "affects");
+expect("hotel (Ocean City, rents lodging)", get("ocean-city-rental-license"), "might");
+expect("hotel (no alcohol)", get("liquor-renewal-default"), "not_applicable");
+expect("hotel serving alcohol (Worcester)", run({ ...hotel, flags: { ...hotel.flags, servesAlcohol: true } })("liquor-renewal-default"), "affects");
+const calvert = run({ ...restaurant, jurisdiction: { ...restaurant.jurisdiction, county: "Calvert County", isBaltimoreCity: false } })("liquor-renewal-calvert");
+expectDate("Calvert liquor renewal May 1, 2027 (a Saturday, kept as written)", calvert.upcoming[0]?.date, "2027-05-01");
+expect("salon (Rockville, not Ocean City)", run(salon)("ocean-city-business-license"), "not_applicable");
+
+console.log("\n# New intake questions (food, property, trade name)");
+expect("consultant (no property)", run(consultant)("local-personal-property-tax"), "not_applicable");
+const unanswered = { ...hotel, flags: { ...hotel.flags, servesFood: undefined, ownsBusinessProperty: undefined, usesTradeName: undefined } };
+expect("hotel, questions unanswered", run(unanswered)("local-personal-property-tax"), "might");
+expect("hotel, questions unanswered", run(unanswered)("food-service-license-other"), "might");
+expect("hotel, questions unanswered", run(unanswered)("trade-name-renewal"), "might");
+expect("hotel with a restaurant", run({ ...hotel, flags: { ...hotel.flags, servesFood: true } })("food-service-license-other"), "affects");
+expect("restaurant (industry already covered)", run(restaurant)("food-service-license-other"), "not_applicable");
+expect("restaurant using a trade name", run({ ...restaurant, flags: { ...restaurant.flags, usesTradeName: true } })("trade-name-renewal"), "affects");
+const calvertCafe = { ...salon, industry: "retail", jurisdiction: { ...salon.jurisdiction, county: "Calvert County", municipality: null }, flags: { ...salon.flags, servesFood: true } };
+expectDate("Calvert food license (Oct 31)", run(calvertCafe)("food-license-renewal-calvert").upcoming[0]?.date, "2026-10-31");
+expect("Frederick consultant (no food)", run(consultant)("food-license-renewal-frederick"), "not_applicable");
+
+console.log("\n# Town rules");
+const inTown = (p: BusinessProfile, county: string, municipality: string, extra: Partial<BusinessProfile> = {}): BusinessProfile => ({
+  ...p,
+  ...extra,
+  jurisdiction: { state: "MD", county, isBaltimoreCity: false, municipality },
+});
+expect("salon in College Park (iMAP spelling)", run(inTown(salon, "Prince George's County", "COLLEGE PARK"))("college-park-occupancy-permit"), "affects");
+expect("salon in Annapolis", run(inTown(salon, "Anne Arundel County", "Annapolis"))("annapolis-certificate-of-use"), "affects");
+expect("restaurant in Laurel (alcohol)", run(inTown(restaurant, "Prince George's County", "Laurel"))("laurel-alcohol-license"), "affects");
+expect("salon in Laurel (no alcohol)", run(inTown(salon, "Prince George's County", "Laurel"))("laurel-alcohol-license"), "not_applicable");
+expect("food truck in Gaithersburg", run(inTown(salon, "Montgomery County", "Gaithersburg", { industry: "food_truck" }))("gaithersburg-mobile-food-vendor"), "affects");
+expect("contractor in Hagerstown", run(inTown(contractor, "Washington County", "Hagerstown"))("hagerstown-contractor-license"), "affects");
+expect("salon in Greenbelt", run(inTown(salon, "Prince George's County", "Greenbelt"))("greenbelt-commercial-license"), "might");
+expect("salon in Rockville (not College Park)", run(salon)("college-park-occupancy-permit"), "not_applicable");
+const bowieNotes = coverageNotes(inTown(salon, "Prince George's County", "Bowie"), rules, [{ name: "Bowie", finding: "No separate City business license." }]);
+check(bowieNotes.some((n) => n.startsWith("Bowie: town licenses checked (No separate City business license)")), `Bowie note: ${bowieNotes.at(-1)}`);
+
 console.log("\nthresholds:", employeeThresholds(rules).join(", "));
 
 console.log("\n# Growth milestones for the restaurant (single-slider scale)");

@@ -42,6 +42,11 @@ export interface BusinessProfile {
     servesAlcohol: boolean;
     sellsToGovernment: boolean;
     handlesCustomerData: boolean;
+    // Added later, so optional: missing means "not answered yet", and any rule
+    // that depends on an unanswered question shows as "might".
+    servesFood?: boolean; // prepares, serves, or sells food
+    ownsBusinessProperty?: boolean; // owned furniture, equipment, or other business property on January 1
+    usesTradeName?: boolean; // operates under a name other than its legal name
   };
   updatedAt: string; // ISO date
 }
@@ -131,6 +136,9 @@ export interface RecurringSchedule {
   month?: number; // 1-12, for "year"
   label: string; // e.g. "Sales and use tax return ({period})"
   startsOn?: string; // no due dates before this ISO date
+  // Keep the date exactly as written (a statutory window, e.g. "between April 1
+  // and May 1, inclusive") instead of moving weekend dates to the next business day.
+  exact?: boolean;
 }
 
 export interface ObligationResult {
@@ -199,6 +207,14 @@ export interface ObligationsResponse {
   sources: LiveSourceStatus[];
   liveRefreshedAt: string | null;
   refreshing: boolean;
+  // One-time obligations the owner marked as done (left out of `results`).
+  completed: CompletedObligation[];
+}
+
+export interface CompletedObligation {
+  ruleId: string;
+  title: string;
+  completedAt: string; // ISO
 }
 
 // ---------- Local Risk ----------

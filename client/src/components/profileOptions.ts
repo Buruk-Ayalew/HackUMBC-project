@@ -64,6 +64,9 @@ export const FLAG_QUESTIONS: { key: FlagKey; question: string; why: string }[] =
   { key: "servesAlcohol", question: "Do you serve or sell alcohol?", why: "Alcohol licenses are issued and renewed by local liquor boards." },
   { key: "sellsToGovernment", question: "Do you sell to government agencies?", why: "Government contracts can come with extra requirements." },
   { key: "handlesCustomerData", question: "Do you keep customers' personal information (names, emails, purchase history)?", why: "Maryland's data privacy law may apply above certain customer counts." },
+  { key: "servesFood", question: "Do you prepare, serve, or sell food?", why: "Food businesses need a license from the local health department, renewed every year." },
+  { key: "ownsBusinessProperty", question: "Did your business own furniture, equipment, or other business property on January 1?", why: "Your county sends a personal property tax bill for it each year." },
+  { key: "usesTradeName", question: "Do you operate under a name other than your legal business name?", why: "Trade names are registered with the state and must be renewed every 5 years." },
 ];
 
 export const FMLA_OPTIONS: { value: BusinessProfile["employees"]["coveredByFMLA"]; label: string }[] = [

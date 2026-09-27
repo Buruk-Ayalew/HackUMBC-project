@@ -1,0 +1,385 @@
+[
+  {
+    "id": "ocean-city-business-license",
+    "title": "Get an Ocean City town business license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Ocean City"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      }
+    ],
+    "summary": "Businesses that provide a service inside Ocean City's town limits need a Town of Ocean City business license, in addition to any state or county license.",
+    "action": "Apply for (or renew) your town business license with the Ocean City Finance Department.",
+    "agency": "Town of Ocean City Finance Department",
+    "frequency": "varies",
+    "frequencyNote": "Check the renewal date with the town",
+    "filingUrl": "https://oceancitymd.gov/oc/departments/finance/new-licenses/",
+    "filingSiteName": "Town of Ocean City",
+    "verify": [
+      "the law requires you to obtain a Town of Ocean City business license in addition to any State and/or County license"
+    ],
+    "sourceUrl": "https://oceancitymd.gov/oc/departments/finance/new-licenses/",
+    "sourceName": "Town of Ocean City: Rental & business licenses",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "ocean-city-rental-license",
+    "title": "Ocean City rental license and noise control permit",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Ocean City"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.rentsLodging",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "Ocean City requires anyone who rents out property, for any length of time, to first get an annual town rental license and a noise control permit. Check with the town whether this covers your kind of lodging.",
+    "action": "Ask the Ocean City Finance Department whether your lodging needs a rental license and noise control permit.",
+    "agency": "Town of Ocean City Finance Department",
+    "frequency": "yearly",
+    "filingUrl": "https://oceancitymd.gov/oc/departments/finance/new-licenses/",
+    "filingSiteName": "Town of Ocean City",
+    "verify": [
+      "the law requires you to first obtain an annual Ocean City rental license, and noise control permit"
+    ],
+    "sourceUrl": "https://oceancitymd.gov/oc/departments/finance/new-licenses/",
+    "sourceName": "Town of Ocean City: Rental & business licenses",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "rockville-hotel-license",
+    "title": "Get a Rockville hotel/motel license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Rockville"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.rentsLodging",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "Rockville requires a city Hotel/Motel License to run a hotel or motel inside city limits. Rockville has no general business license, but it licenses a few specific activities like this one.",
+    "action": "Apply for the Hotel/Motel License through the City of Rockville.",
+    "agency": "City of Rockville, Community Planning and Development Services",
+    "frequency": "varies",
+    "frequencyNote": "Check the renewal date with the city",
+    "filingUrl": "https://www.rockvillemd.gov/services/apply-for-a-business-or-rental-license/",
+    "filingSiteName": "City of Rockville",
+    "verify": [
+      "A Hotel/Motel License is required",
+      "hotel/motel business within Rockville city limits"
+    ],
+    "sourceUrl": "https://www.rockvillemd.gov/services/apply-for-a-business-or-rental-license/",
+    "sourceName": "City of Rockville: Apply for a business or rental license",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "college-park-occupancy-permit",
+    "title": "Get College Park's annual Non-Residential Occupancy Permit",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "College Park"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      }
+    ],
+    "summary": "College Park doesn't license businesses, but every business in the city needs two occupancy permits: a Use and Occupancy Permit from Prince George's County (DPIE) and an annual Non-Residential Occupancy Permit from the City.",
+    "action": "Get your county Use and Occupancy Permit first, then apply to the City for the annual Non-Residential Occupancy Permit and renew it each year.",
+    "agency": "City of College Park",
+    "frequency": "yearly",
+    "frequencyNote": "Renew every year",
+    "filingUrl": "https://www.collegeparkmd.gov/215/Business-Licenses-Permits",
+    "filingSiteName": "City of College Park",
+    "verify": [
+      "an annual Non-Residential Occupancy Permit issued by the City of College Park",
+      "The City of College Park does not license businesses"
+    ],
+    "sourceUrl": "https://www.collegeparkmd.gov/215/Business-Licenses-Permits",
+    "sourceName": "City of College Park: Business licenses & permits",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "annapolis-certificate-of-use",
+    "title": "Get an Annapolis Certificate of Use before opening",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Annapolis"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      }
+    ],
+    "summary": "Annapolis requires a Certificate of Use (the city's use and occupancy approval) before a business opens. The city suggests starting it before you sign a lease. Businesses in the downtown Historic District also need approval for most exterior work, including signs.",
+    "action": "Apply for the Certificate of Use in the city's Citizen Self Service portal before you open.",
+    "agency": "City of Annapolis",
+    "frequency": "once",
+    "filingUrl": "https://www.annapolis.gov/1236/Start-a-Business",
+    "filingSiteName": "City of Annapolis",
+    "verify": [
+      "which is required prior to opening your business"
+    ],
+    "sourceUrl": "https://www.annapolis.gov/1236/Start-a-Business",
+    "sourceName": "City of Annapolis: Start a business",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "laurel-alcohol-license",
+    "title": "Get a City of Laurel license to sell alcohol",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Laurel"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "Laurel requires a city business license to sell alcoholic beverages, on top of the primary alcohol license from the Prince George's County Board of License Commissioners.",
+    "action": "Get your county alcohol license, then apply for the City of Laurel license with the Fire Marshal and Permit Services office.",
+    "agency": "City of Laurel, Department of the Fire Marshal and Permit Services",
+    "frequency": "varies",
+    "frequencyNote": "Check the renewal date with the city",
+    "filingUrl": "https://www.cityoflaurel.org/1496/Miscellaneous-Licenses-Including-Alarms",
+    "filingSiteName": "City of Laurel",
+    "verify": [
+      "Must apply and obtain a primary alcohol license through the Prince George's County Board of License Commissioners"
+    ],
+    "sourceUrl": "https://www.cityoflaurel.org/1496/Miscellaneous-Licenses-Including-Alarms",
+    "sourceName": "City of Laurel: Business licenses",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "laurel-amusement-license",
+    "title": "City of Laurel amusement license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Laurel"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.chargesAdmission",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "Laurel requires a city license for amusements such as video games and game machines, billiard or pool rooms, juke boxes, cinema screens, and live entertainment.",
+    "action": "If you offer any of these, apply for the City of Laurel amusement license.",
+    "agency": "City of Laurel, Department of the Fire Marshal and Permit Services",
+    "frequency": "varies",
+    "filingUrl": "https://www.cityoflaurel.org/1496/Miscellaneous-Licenses-Including-Alarms",
+    "filingSiteName": "City of Laurel",
+    "verify": [
+      "billiard or pool rooms, juke boxes, cinema screens, live entertainment"
+    ],
+    "sourceUrl": "https://www.cityoflaurel.org/1496/Miscellaneous-Licenses-Including-Alarms",
+    "sourceName": "City of Laurel: Business licenses",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "laurel-mobile-food-vendor",
+    "title": "Get a City of Laurel mobile food vendor license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Laurel"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "food_truck"
+        ]
+      }
+    ],
+    "summary": "Mobile food vendors need a City of Laurel business license to operate in the city.",
+    "action": "Apply for the City of Laurel mobile food vendor license before selling in the city.",
+    "agency": "City of Laurel, Department of the Fire Marshal and Permit Services",
+    "frequency": "varies",
+    "filingUrl": "https://www.cityoflaurel.org/1496/Miscellaneous-Licenses-Including-Alarms",
+    "filingSiteName": "City of Laurel",
+    "verify": [
+      "Licenses are required for the following business",
+      "Mobile Food Vendors"
+    ],
+    "sourceUrl": "https://www.cityoflaurel.org/1496/Miscellaneous-Licenses-Including-Alarms",
+    "sourceName": "City of Laurel: Business licenses",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "gaithersburg-mobile-food-vendor",
+    "title": "Get a Gaithersburg mobile food vendor license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Gaithersburg"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "food_truck"
+        ]
+      }
+    ],
+    "summary": "Gaithersburg requires a city license to sell food from a truck or street cart.",
+    "action": "Apply for the Mobile Food Vendor License online or at City Hall.",
+    "agency": "City of Gaithersburg, Neighborhood Services",
+    "frequency": "varies",
+    "filingUrl": "https://www.gaithersburgmd.gov/services/licensing",
+    "filingSiteName": "City of Gaithersburg",
+    "verify": [
+      "Mobile Food Vendor License A license to sell food from a truck or street cart"
+    ],
+    "sourceUrl": "https://www.gaithersburgmd.gov/services/licensing",
+    "sourceName": "City of Gaithersburg: Licensing",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "gaithersburg-electrician-registration",
+    "title": "Register with Gaithersburg to do electrical work",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Gaithersburg"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "contractor"
+        ]
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "In Gaithersburg, anyone doing electrical work on a building they don't own must register with the City, which accepts State and Maryland county master electrician licenses.",
+    "action": "If you do electrical work in the city, register with Gaithersburg and renew every two years.",
+    "agency": "City of Gaithersburg",
+    "frequency": "every_2_years",
+    "filingUrl": "https://www.gaithersburgmd.gov/services/licensing",
+    "filingSiteName": "City of Gaithersburg",
+    "verify": [
+      "anyone doing electrical work on a building they do not own must be registered with the City"
+    ],
+    "sourceUrl": "https://www.gaithersburgmd.gov/services/licensing",
+    "sourceName": "City of Gaithersburg: Licensing",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "hagerstown-contractor-license",
+    "title": "Get a Hagerstown contractor license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Hagerstown"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "contractor"
+        ]
+      }
+    ],
+    "summary": "Contractors, electricians, plumbers, and on-site utility contractors must get a Hagerstown license or registration before working in the city.",
+    "action": "Apply for the Hagerstown contractor license (or electrician or plumber registration) before starting work in the city.",
+    "agency": "City of Hagerstown, Permits and Inspections",
+    "frequency": "varies",
+    "filingUrl": "https://www.hagerstownmd.org/213/Licensing-and-Registration",
+    "filingSiteName": "City of Hagerstown",
+    "verify": [
+      "are required to secure a license or registration before they may legally practice their trade within Hagerstown"
+    ],
+    "sourceUrl": "https://www.hagerstownmd.org/213/Licensing-and-Registration",
+    "sourceName": "City of Hagerstown: Licensing and registration",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "greenbelt-commercial-license",
+    "title": "Greenbelt annual commercial license and inspection",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "municipality",
+      "name": "Greenbelt"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      }
+    ],
+    "statusWhenMet": "might",
+    "summary": "Non-residential buildings in Greenbelt must be licensed and inspected every year. The license goes to the property owner, so check with your landlord if you rent.",
+    "action": "If you own your space, apply for the Commercial License and schedule the yearly inspection with Greenbelt Community Development.",
+    "agency": "City of Greenbelt, Community Development",
+    "frequency": "yearly",
+    "filingUrl": "https://www.greenbeltmd.gov/270/Commercial-License",
+    "filingSiteName": "City of Greenbelt",
+    "verify": [
+      "Non-residential structures in Greenbelt must be licensed and inspected on an annual basis"
+    ],
+    "sourceUrl": "https://www.greenbeltmd.gov/270/Commercial-License",
+    "sourceName": "City of Greenbelt: Commercial license",
+    "reviewedOn": "2026-09-26"
+  }
+]

@@ -44,6 +44,16 @@ const FLAG_LABELS: Record<string, [yes: string, no: string]> = {
   "flags.servesAlcohol": ["You serve or sell alcohol.", "You told us you don't serve or sell alcohol."],
   "flags.sellsToGovernment": ["You sell to government agencies.", "You told us you don't sell to government agencies."],
   "flags.handlesCustomerData": ["You keep customers' personal data.", "You told us you don't keep customers' personal data."],
+  "flags.servesFood": ["You serve or sell food.", "You told us you don't serve or sell food."],
+  "flags.ownsBusinessProperty": ["Your business owned property (furniture, equipment, and so on) on January 1.", "You told us your business didn't own business property on January 1."],
+  "flags.usesTradeName": ["You operate under a trade name.", "You told us you don't use a trade name."],
+};
+
+// Plain wording for questions that may not have been answered yet.
+const FLAG_TOPICS: Record<string, string> = {
+  "flags.servesFood": "whether you serve or sell food",
+  "flags.ownsBusinessProperty": "whether your business owned property on January 1",
+  "flags.usesTradeName": "whether you use a trade name",
 };
 
 const ENTITY_LABELS: Record<string, string> = {
@@ -89,11 +99,16 @@ function checkCondition(c: Condition, rule: ObligationRule, profile: BusinessPro
     const where = rule.jurisdiction.name ?? "your area";
     return {
       outcome: ok ? "pass" : "fail",
-      reason: ok ? `Your business is in ${where}.` : `This is a ${where} rule, and your business is in ${jurisdictionName(profile)}.`,
+      reason: ok ? `Your business is in ${where}.` : `This is ${/^[AEIOU]/i.test(where) ? "an" : "a"} ${where} rule, and your business is in ${jurisdictionName(profile)}.`,
     };
   }
 
   const actual = getField(profile, c.field);
+
+  // A question the owner hasn't answered yet also makes the result "might".
+  if (actual === undefined && c.field.startsWith("flags.")) {
+    return { outcome: "unknown", reason: `You haven't told us ${FLAG_TOPICS[c.field] ?? "this"} yet, so this might apply. Answer it in Settings.` };
+  }
 
   // Any "unsure" answer that a rule depends on makes the result "might".
   if (actual === "unsure") {
@@ -161,12 +176,17 @@ function checkCondition(c: Condition, rule: ObligationRule, profile: BusinessPro
   }
 }
 
+// Town names come from Census or MD iMAP ("COLLEGE PARK"), so compare loosely.
+function sameTown(a: string, b: string | null | undefined): boolean {
+  return !!b && a.trim().toLowerCase() === b.trim().toLowerCase();
+}
+
 export function matchesJurisdiction(rule: ObligationRule, profile: BusinessProfile): boolean {
   const { level, name } = rule.jurisdiction;
   if (level === "federal" || level === "state") return true;
   if (level === "county") return !name || name === profile.jurisdiction.county;
   // Municipality rules without a name would apply to every town; require one.
-  return !!name && name === profile.jurisdiction.municipality;
+  return !!name && sameTown(name, profile.jurisdiction.municipality);
 }
 
 function combine(checks: Checked[]): Outcome {
@@ -219,7 +239,8 @@ function fillTemplate(text: string, vars: Record<string, string>): { text: strin
       missing = true;
       return "(not available)";
     });
-  return { text: out, missing };
+  // A dropped opening part ("As of July 1, 2026, ") can leave a lowercase start.
+  return { text: out.charAt(0).toUpperCase() + out.slice(1), missing };
 }
 
 export function evaluateRule(
@@ -307,16 +328,28 @@ export function evaluate(
 }
 
 // Plain-language notes about what we haven't reviewed for this location.
-export function coverageNotes(profile: BusinessProfile): string[] {
+// Kept short: shown as one small line at the top of the page.
+export function coverageNotes(
+  profile: BusinessProfile,
+  rules: ObligationRule[] = [],
+  reviewedTowns: { name: string; finding: string }[] = [],
+): string[] {
   const notes: string[] = [];
   const { county, municipality } = profile.jurisdiction;
   if (!DEEP_COVERAGE.has(county)) {
-    notes.push(
-      `Coverage limited: we've reviewed statewide rules and the ${county} items shown here, but not every ${county} law. Check with the county for other local requirements.`,
-    );
+    notes.push(`Coverage limited: statewide and ${county} rules reviewed, but not every ${county} law.`);
   }
   if (municipality) {
-    notes.push(`We haven't reviewed ${municipality}'s local code yet. Check with the town directly.`);
+    // A town with rules in the library has had its licenses checked (not its whole code).
+    const hasRules = rules.some((r) => r.jurisdiction.level === "municipality" && !!r.jurisdiction.name && sameTown(r.jurisdiction.name, municipality));
+    const reviewed = reviewedTowns.find((t) => sameTown(t.name, municipality));
+    notes.push(
+      reviewed
+        ? `${municipality}: town licenses checked (${reviewed.finding.replace(/\.$/, "")}); full town code not reviewed.`
+        : hasRules
+          ? `${municipality}: town licenses checked; full town code not reviewed.`
+          : `${municipality}: town code not reviewed yet; check with the town.`,
+    );
   }
   return notes;
 }

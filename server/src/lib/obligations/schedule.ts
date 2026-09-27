@@ -106,7 +106,7 @@ function rawOccurrences(s: RecurringSchedule, fromYear: number): { date: Date; p
 export function recurringDates(s: RecurringSchedule, today: string, until: string): DueDate[] {
   const fromYear = Number(today.slice(0, 4));
   return rawOccurrences(s, fromYear)
-    .map((o) => ({ date: nextBusinessDay(iso(o.date)), label: s.label.replace("{period}", o.period) }))
+    .map((o) => ({ date: s.exact ? iso(o.date) : nextBusinessDay(iso(o.date)), label: s.label.replace("{period}", o.period) }))
     .filter((o) => o.date >= today && o.date <= until && (!s.startsOn || o.date >= s.startsOn))
     .sort((a, b) => a.date.localeCompare(b.date));
 }

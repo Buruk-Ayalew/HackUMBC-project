@@ -268,5 +268,110 @@
     "sourceUrl": "https://www.baltimorecity.gov/civil-rights/our-work/community-relations-commission/resources/ban-box",
     "sourceName": "Baltimore City Community Relations Commission: Ban the Box (Ordinance 14-221)",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "food-license-renewal-calvert",
+    "title": "Renew your Calvert County food service license by October 31",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "county",
+      "name": "Calvert County"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.servesFood",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "Calvert County food service facility licenses expire on October 31 each year.",
+    "action": "Send your renewal and fee to the Calvert County Health Department before October 31.",
+    "agency": "Calvert County Health Department",
+    "frequency": "yearly",
+    "recurring": {
+      "every": "year",
+      "month": 10,
+      "day": 31,
+      "label": "Calvert food service license expires ({period})",
+      "exact": true
+    },
+    "verify": [
+      "Licenses to operate a food service facility expires on October 31st"
+    ],
+    "sourceUrl": "https://www.calverthealth.org/community/environmentalhealthservices/PDF/FoodAppPermanent.pdf",
+    "sourceName": "Calvert County Health Department: Food service facility license application",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "food-license-renewal-frederick",
+    "title": "Renew your Frederick County food service license by January 31",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "county",
+      "name": "Frederick County"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.servesFood",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "Frederick County food service facility licenses expire on January 31. Renewal forms are mailed in December, and paperwork and fees received after January 31 get late fees.",
+    "action": "Return your renewal paperwork and fee to the Frederick County Health Department by January 31.",
+    "agency": "Frederick County Health Department",
+    "frequency": "yearly",
+    "recurring": {
+      "every": "year",
+      "month": 1,
+      "day": 31,
+      "label": "Frederick food service license renewal ({period})",
+      "exact": true
+    },
+    "verify": [
+      "All Food Service Facility licenses expire on January 31"
+    ],
+    "sourceUrl": "https://health.frederickcountymd.gov/631/Food-Facility-License-Renewal---2026",
+    "sourceName": "Frederick County Health Department: Food facility license renewal",
+    "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "food-license-renewal-cecil",
+    "title": "Renew your Cecil County food service license each year",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "county",
+      "name": "Cecil County"
+    },
+    "conditions": [
+      {
+        "field": "jurisdiction",
+        "op": "match"
+      },
+      {
+        "field": "flags.servesFood",
+        "op": "is",
+        "value": true
+      }
+    ],
+    "summary": "A Cecil County food service facility license is valid for one year from the date it was issued, so each business has its own renewal date.",
+    "action": "Check the issue date on your license and renew with the Cecil County Health Department before it's a year old.",
+    "agency": "Cecil County Health Department",
+    "frequency": "yearly",
+    "frequencyNote": "One year from the date on your license",
+    "verify": [
+      "A food service facility license is valid for one year based on the date of issuance"
+    ],
+    "sourceUrl": "https://cecilcountyhealth.org/services/environmental-health-services/food-safety/",
+    "sourceName": "Cecil County Health Department: Food safety",
+    "reviewedOn": "2026-09-26"
   }
 ]

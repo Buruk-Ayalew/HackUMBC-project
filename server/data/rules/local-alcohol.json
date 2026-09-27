@@ -1,0 +1,518 @@
+[
+  {
+    "id": "liquor-renewal-default",
+    "title": "Renew your alcohol license (between March 2 and April 1)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Allegany County",
+          "Anne Arundel County",
+          "Caroline County",
+          "Cecil County",
+          "Dorchester County",
+          "Howard County",
+          "Kent County",
+          "Queen Anne's County",
+          "Talbot County",
+          "Wicomico County",
+          "Worcester County"
+        ]
+      }
+    ],
+    "summary": "In your county, state law sets the alcohol license renewal window: file your renewal between March 2 and April 1. Renewed licenses are dated May 1, so a license that isn't renewed ends April 30.",
+    "action": "File your renewal with the liquor board between March 2 and April 1, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "shall be filed between March 2 and April 1, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=4-404",
+    "sourceName": "Md. Code, Alcoholic Beverages §4-404 (renewal filing period)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 4,
+      "day": 1,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-feb-mar",
+    "title": "Renew your alcohol license (between February 1 and March 31)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Baltimore County",
+          "Montgomery County"
+        ]
+      }
+    ],
+    "summary": "In your county, state law sets the alcohol license renewal window: file your renewal between February 1 and March 31. The board may accept late renewals during April with a daily fine.",
+    "action": "File your renewal with the liquor board between February 1 and March 31, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between February 1 and March 31, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=13-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §13-1802 (Baltimore County); §25-1802 (Montgomery County) sets the same window",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 3,
+      "day": 31,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-baltimore-city",
+    "title": "Renew your alcohol license (between March 1 and March 31)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Baltimore City"
+        ]
+      }
+    ],
+    "summary": "In Baltimore City, state law sets the alcohol license renewal window: file your renewal between March 1 and March 31. Renewed licenses are dated May 1.",
+    "action": "File your renewal with the liquor board between March 1 and March 31, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between March 1 and March 31, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=12-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §12-1802 (Baltimore City)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 3,
+      "day": 31,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-charles",
+    "title": "Renew your alcohol license (on or before March 31)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Charles County"
+        ]
+      }
+    ],
+    "summary": "In Charles County, state law sets the alcohol license renewal window: file your renewal on or before March 31. Late renewals are accepted only until the next board meeting after March 31, with a daily fine.",
+    "action": "File your renewal with the liquor board on or before March 31, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "on or before March 31"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=18-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §18-1802 (Charles County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 3,
+      "day": 31,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-harford",
+    "title": "Renew your alcohol license (between February 1 and April 1)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Harford County"
+        ]
+      }
+    ],
+    "summary": "In Harford County, state law sets the alcohol license renewal window: file your renewal between February 1 and April 1.",
+    "action": "File your renewal with the liquor board between February 1 and April 1, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between February 1 and April 1, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=22-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §22-1802 (Harford County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 4,
+      "day": 1,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-frederick",
+    "title": "Renew your alcohol license (between January 1 and April 15)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Frederick County"
+        ]
+      }
+    ],
+    "summary": "In Frederick County, state law sets the alcohol license renewal window: file your renewal between January 1 and April 15. Renewed licenses are dated May 1.",
+    "action": "File your renewal with the liquor board between January 1 and April 15, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between January 1 and April 15, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=20-1803",
+    "sourceName": "Md. Code, Alcoholic Beverages §20-1803 (Frederick County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 4,
+      "day": 15,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-st-marys",
+    "title": "Renew your alcohol license (between February 1 and March 3)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "St. Mary's County"
+        ]
+      }
+    ],
+    "summary": "In St. Mary's County, state law sets the alcohol license renewal window: file your renewal between February 1 and March 3. If your license expires, you have to apply for a new one.",
+    "action": "File your renewal with the liquor board between February 1 and March 3, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between February 1 and March 3, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=28-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §28-1802 (St. Mary's County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 3,
+      "day": 3,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-garrett",
+    "title": "Renew your alcohol license (between March 2 and April 1)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Garrett County"
+        ]
+      }
+    ],
+    "summary": "In Garrett County, state law sets the alcohol license renewal window: file your renewal between March 2 and April 1. Renewed licenses are dated July 1, so the license year runs July 1 to June 30.",
+    "action": "File your renewal with the liquor board between March 2 and April 1, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "All renewed licenses shall be dated July 1"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=21-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §21-1802 (Garrett County); filing period in §4-404",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 4,
+      "day": 1,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-washington",
+    "title": "Renew your alcohol license (between April 1 and June 15)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Washington County"
+        ]
+      }
+    ],
+    "summary": "In Washington County, state law sets the alcohol license renewal window: file your renewal between April 1 and June 15. Filing June 16 to 30 counts as late. Renewed licenses are dated July 1. By June 15 you also need your taxes paid and a certificate of good standing from the Comptroller.",
+    "action": "File your renewal with the liquor board between April 1 and June 15, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between April 1 and June 15, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=31-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §31-1802 (Washington County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 6,
+      "day": 15,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-calvert",
+    "title": "Renew your alcohol license (between April 1 and May 1)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Calvert County"
+        ]
+      }
+    ],
+    "summary": "In Calvert County, state law sets the alcohol license renewal window: file your renewal between April 1 and May 1. The law gives two different end dates for Calvert licenses, so confirm yours with the board.",
+    "action": "File your renewal with the liquor board between April 1 and May 1, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "between April 1 and May 1, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=14-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §14-1802 (Calvert County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 5,
+      "day": 1,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    }
+  },
+  {
+    "id": "liquor-renewal-carroll",
+    "title": "Renew your alcohol license (between February 1 and March 31)",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Carroll County"
+        ]
+      }
+    ],
+    "summary": "In Carroll County, state law sets the alcohol license renewal window: file your renewal between February 1 and March 31. The board's rules set this window, and all state and local taxes must be paid by April 20 or a daily fine applies. State law lists a March 2 to April 1 window, so confirm with the board.",
+    "action": "File your renewal with the liquor board between February 1 and March 31, and pay any state and local taxes you owe first.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "shall be filed between March 2 and April 1, inclusive"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=4-404",
+    "sourceName": "Carroll County Board of License Commissioners Rules §15; Md. Code, Alcoholic Beverages §4-404",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 3,
+      "day": 31,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    },
+    "statusWhenMet": "might"
+  },
+  {
+    "id": "liquor-renewal-prince-georges",
+    "title": "Renew your alcohol license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Prince George's County"
+        ]
+      }
+    ],
+    "summary": "In Prince George's County, state law sets the alcohol license renewal window. The deadline depends on your license class: Class A by March 1 (expires April 30), Class B by April 1 (expires May 31), Class C and D by May 1 (expire June 30). The date shown is the earliest; the board won't accept late renewals.",
+    "action": "Ask your liquor board for its renewal deadline and file on time.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "the application deadline is March 1",
+      "the application deadline is April 1",
+      "the application deadline is May 1"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=26-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §26-1802 (Prince George's County)",
+    "reviewedOn": "2026-09-26",
+    "recurring": {
+      "every": "year",
+      "month": 3,
+      "day": 1,
+      "label": "Alcohol license renewal due ({period})",
+      "exact": true
+    },
+    "statusWhenMet": "might"
+  },
+  {
+    "id": "liquor-renewal-somerset",
+    "title": "Renew your alcohol license",
+    "category": "licensing",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "flags.servesAlcohol",
+        "op": "is",
+        "value": true
+      },
+      {
+        "field": "jurisdiction.county",
+        "op": "in",
+        "value": [
+          "Somerset County"
+        ]
+      }
+    ],
+    "summary": "In Somerset County, state law sets the alcohol license renewal window. The board sets the renewal deadline. A late renewal costs a $100 late fee on top of the $50 renewal fee.",
+    "action": "Ask your liquor board for its renewal deadline and file on time.",
+    "agency": "Your county's liquor board (Board of License Commissioners)",
+    "frequency": "yearly",
+    "verify": [
+      "late renewal fee of $100"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gab&section=29-1802",
+    "sourceName": "Md. Code, Alcoholic Beverages §29-1802 (Somerset County)",
+    "reviewedOn": "2026-09-26",
+    "statusWhenMet": "might"
+  }
+]

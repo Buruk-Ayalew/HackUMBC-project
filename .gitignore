@@ -7,3 +7,4 @@ server/.env
 server/data/users.json
 server/data/profiles.json
 server/data/risk-seen.json
+server/data/completed-obligations.json

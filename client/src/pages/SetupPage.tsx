@@ -151,7 +151,7 @@ function Review({ draft, goTo }: { draft: ProfileDraft; goTo: (step: number) => 
       label: "Covered by FMLA",
       value: FMLA_OPTIONS.find((o) => o.value === draft.employees.coveredByFMLA)?.label ?? "",
     },
-    ...FLAG_QUESTIONS.map((q) => ({ step: 3, label: q.question, value: draft.flags[q.key] ? "Yes" : "No" })),
+    ...FLAG_QUESTIONS.map((q) => ({ step: 3, label: q.question, value: draft.flags[q.key] === undefined ? "Not answered" : draft.flags[q.key] ? "Yes" : "No" })),
   ];
   return (
     <dl className="divide-y divide-slate-100">
