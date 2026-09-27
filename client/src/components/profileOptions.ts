@@ -67,6 +67,11 @@ export const FLAG_QUESTIONS: { key: FlagKey; question: string; why: string }[] =
   { key: "servesFood", question: "Do you prepare, serve, or sell food?", why: "Food businesses need a license from the local health department, renewed every year." },
   { key: "ownsBusinessProperty", question: "Did your business own furniture, equipment, or other business property on January 1?", why: "Your county sends a personal property tax bill for it each year." },
   { key: "usesTradeName", question: "Do you operate under a name other than your legal business name?", why: "Trade names are registered with the state and must be renewed every 5 years." },
+  {
+    key: "meetsPrivacyThreshold",
+    question: "Last year, did you handle personal data of 35,000+ Maryland consumers (or 10,000+ if over 20% of your revenue came from selling personal data)?",
+    why: "Maryland's Online Data Privacy Act applies above these numbers. Data used only to complete a payment doesn't count.",
+  },
 ];
 
 export const FMLA_OPTIONS: { value: BusinessProfile["employees"]["coveredByFMLA"]; label: string }[] = [

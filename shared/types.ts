@@ -47,6 +47,7 @@ export interface BusinessProfile {
     servesFood?: boolean; // prepares, serves, or sells food
     ownsBusinessProperty?: boolean; // owned furniture, equipment, or other business property on January 1
     usesTradeName?: boolean; // operates under a name other than its legal name
+    meetsPrivacyThreshold?: boolean; // handled data of 35,000+ MD consumers (or 10,000+ with >20% revenue from selling data) last year
   };
   updatedAt: string; // ISO date
 }
@@ -110,6 +111,8 @@ export interface ObligationRule {
   filingSiteName?: string;
   // Key facts that must appear on the source page; re-checked live.
   verify?: string[];
+  // What to keep on file and for how long, with its own official source.
+  records?: RecordsNote;
   sourceUrl: string;
   sourceName: string;
   reviewedOn: string; // ISO date
@@ -130,6 +133,13 @@ export type ObligationFrequency =
 //  - month:   due on `day` of the month after each month
 //  - quarter: due on `day` of the month after each calendar quarter
 //  - year:    due every year on `month`/`day`
+export interface RecordsNote {
+  text: string; // our own words, e.g. "Keep payroll records for at least 3 years."
+  sourceUrl: string;
+  sourceName: string;
+  verify?: string[]; // phrases re-checked on sourceUrl, like the rule's own
+}
+
 export interface RecurringSchedule {
   every: "month" | "quarter" | "year";
   day: number | "last";
@@ -352,7 +362,8 @@ export interface LocalContextResponse {
 // ---------- Regulatory Radar ----------
 
 // "mga" = Maryland General Assembly effective-date lists (enacted bills).
-export type RadarSource = "md_register" | "legiscan" | "mga" | "agency_news";
+// rate_change: a wage or tax rate the Obligations live checks saw change.
+export type RadarSource = "md_register" | "legiscan" | "mga" | "agency_news" | "rate_change";
 export type Relevance = "affects" | "might" | "not_applicable";
 
 export interface RadarItem {

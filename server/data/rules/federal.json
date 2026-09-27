@@ -27,6 +27,14 @@
     "verify": [
       "last day of the month that follows the end of the quarter"
     ],
+    "records": {
+      "text": "Keep employment tax records (payroll, deposits, returns) for at least 4 years after the tax is due or paid, whichever is later.",
+      "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
+      "sourceName": "IRS: How long should I keep records?",
+      "verify": [
+        "Keep employment tax records for at least 4 years"
+      ]
+    },
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-due-dates",
     "sourceName": "IRS: Employment tax due dates",
     "reviewedOn": "2026-09-26"
@@ -61,6 +69,14 @@
       "Form 940",
       "10 additional calendar days"
     ],
+    "records": {
+      "text": "Keep employment tax records (payroll, deposits, returns) for at least 4 years after the tax is due or paid, whichever is later.",
+      "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
+      "sourceName": "IRS: How long should I keep records?",
+      "verify": [
+        "Keep employment tax records for at least 4 years"
+      ]
+    },
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-due-dates",
     "sourceName": "IRS: Employment tax due dates",
     "reviewedOn": "2026-09-26"
@@ -94,6 +110,14 @@
     "verify": [
       "Forms W-2 are required to be provided to employees by Jan. 31"
     ],
+    "records": {
+      "text": "Keep employment tax records (payroll, deposits, returns) for at least 4 years after the tax is due or paid, whichever is later.",
+      "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records",
+      "sourceName": "IRS: How long should I keep records?",
+      "verify": [
+        "Keep employment tax records for at least 4 years"
+      ]
+    },
     "sourceUrl": "https://www.irs.gov/businesses/small-businesses-self-employed/employment-tax-due-dates",
     "sourceName": "IRS: Employment tax due dates",
     "reviewedOn": "2026-09-26"
@@ -211,6 +235,14 @@
       "for every individual they hire",
       "for three years after the date of hire"
     ],
+    "records": {
+      "text": "Keep each Form I-9 for 3 years after the hire date, or 1 year after the job ends, whichever is later, and have them ready for inspection.",
+      "sourceUrl": "https://www.uscis.gov/i-9",
+      "sourceName": "USCIS: Form I-9",
+      "verify": [
+        "for three years after the date of hire"
+      ]
+    },
     "sourceUrl": "https://www.uscis.gov/i-9",
     "sourceName": "USCIS: Form I-9, Employment Eligibility Verification",
     "reviewedOn": "2026-09-26"

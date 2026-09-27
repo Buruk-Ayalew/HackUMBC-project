@@ -178,6 +178,15 @@
     "verify": [
       "State Minimum Wage Rate of"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
     "reviewedOn": "2026-09-26"
@@ -228,6 +237,15 @@
       "earning more than $30 per month in tips",
       "Tip Credit Wage Statement"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: Minimum Wage and Overtime Law",
     "reviewedOn": "2026-09-26"
@@ -319,5 +337,95 @@
     "sourceUrl": "https://labor.maryland.gov/labor/mosh/moshempresponsibilities.shtml",
     "sourceName": "MOSH: Employer's responsibilities",
     "reviewedOn": "2026-09-26"
+  },
+  {
+    "id": "md-wage-range-postings",
+    "title": "Put the pay range in every job posting",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "summary": "When you post a job, promotion, or transfer (online, on a sign, or internally) for work done at least partly in Maryland, you must include the pay or pay range and a general description of benefits and other pay. If an applicant never saw a posting, you must give them the same information. This applies to every employer, of any size.",
+    "action": "Add the pay range and a short description of benefits to every job posting, and keep records showing you did.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "frequencyNote": "Every time you post a job",
+    "verify": [
+      "disclose in each public or internal posting for each position the wage range and a general description of benefits"
+    ],
+    "records": {
+      "text": "Keep records showing your job postings included the pay range and benefits.",
+      "sourceUrl": "https://labor.maryland.gov/labor/wages/esswagerangefaq.shtml",
+      "sourceName": "Maryland Department of Labor: Wage Range Transparency FAQ",
+      "verify": [
+        "Employers should retain records reflecting compliance"
+      ]
+    },
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gle&section=3-304.2",
+    "sourceName": "Md. Code, Labor & Employment §3-304.2 (wage range transparency)",
+    "reviewedOn": "2026-09-27"
+  },
+  {
+    "id": "md-noncompete-limit",
+    "title": "Don't use non-competes for lower-wage employees",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "employees.inMaryland",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "summary": "In Maryland, a non-compete clause is void for any employee who earns 150% of the state minimum wage or less[[ (the state minimum wage is currently {{wage.state}} an hour)]]. The law also limits non-competes for licensed health care workers who provide direct patient care.",
+    "action": "Remove non-compete clauses from hiring templates and contracts for employees at or below 150% of the state minimum wage.",
+    "agency": "Maryland Department of Labor",
+    "frequency": "ongoing",
+    "frequencyNote": "Every time you hire or update contracts",
+    "verify": [
+      "150% of the State minimum wage",
+      "null and void as being against the public policy of the State"
+    ],
+    "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/laws/StatuteText?article=gle&section=3-716&enactments=false",
+    "sourceName": "Md. Code, Labor & Employment §3-716 (noncompete clauses)",
+    "reviewedOn": "2026-09-27"
+  },
+  {
+    "id": "md-workplace-fraud-act",
+    "title": "Classify construction workers correctly (Workplace Fraud Act)",
+    "category": "employment",
+    "jurisdiction": {
+      "level": "state"
+    },
+    "conditions": [
+      {
+        "field": "industry",
+        "op": "in",
+        "value": [
+          "contractor"
+        ]
+      }
+    ],
+    "summary": "In construction and landscaping, anyone who works for you for pay is presumed to be your employee. To treat a worker as an independent contractor, you must be able to show they meet the law's test or are an exempt person, and give each one a written notice in English and Spanish explaining what that classification means.",
+    "action": "Review how you classify workers, and give every independent contractor the required notice in English and Spanish.",
+    "agency": "Maryland Department of Labor, Worker Classification Protection Unit",
+    "frequency": "ongoing",
+    "frequencyNote": "Every time you bring on a worker",
+    "verify": [
+      "workers in the construction and landscaping industries are presumed to be employees",
+      "written notice, in both English and Spanish"
+    ],
+    "sourceUrl": "https://www.labor.maryland.gov/workplace/wcpcomplying.shtml",
+    "sourceName": "Maryland Department of Labor: Are you complying with the Workplace Fraud Act?",
+    "reviewedOn": "2026-09-27"
   }
 ]

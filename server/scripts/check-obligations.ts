@@ -169,6 +169,32 @@ expect("salon in Rockville (not College Park)", run(salon)("college-park-occupan
 const bowieNotes = coverageNotes(inTown(salon, "Prince George's County", "Bowie"), rules, [{ name: "Bowie", finding: "No separate City business license." }]);
 check(bowieNotes.some((n) => n.startsWith("Bowie: town licenses checked (No separate City business license)")), `Bowie note: ${bowieNotes.at(-1)}`);
 
+console.log("\n# Employment rules, privacy question, records");
+expect("restaurant (14 staff)", run(restaurant)("md-wage-range-postings"), "affects");
+expect("restaurant", run(restaurant)("md-noncompete-limit"), "affects");
+expect("consultant (0 staff)", run(consultant)("md-wage-range-postings"), "not_applicable");
+expect("contractor", run(contractor)("md-workplace-fraud-act"), "affects");
+expect("salon", run(salon)("md-workplace-fraud-act"), "not_applicable");
+const privacyHotel = (v: boolean | undefined) => run({ ...hotel, flags: { ...hotel.flags, meetsPrivacyThreshold: v } })("online-data-privacy");
+expect("hotel, privacy threshold yes", privacyHotel(true), "affects");
+expect("hotel, privacy threshold no", privacyHotel(false), "not_applicable");
+expect("hotel, privacy threshold unanswered", privacyHotel(undefined), "might");
+check(!!run(restaurant)("federal-i9").rule.records?.text.includes("3 years"), "I-9 shows its records note");
+check(!!run(salon)("montgomery-min-wage-small").rule.records?.sourceUrl.includes("dol.gov"), "county wage rule links the DOL records source");
+
+console.log("\n# Value-change detection (test values only)");
+{
+  const { diffValues, mergeChanges } = await import("../src/lib/obligations/live/changes.js");
+  const urls = { wages: "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml", famli: "https://paidleave.maryland.gov/", taxRates: "https://dls.maryland.gov/" };
+  const base = { state: "$1.00", stateTipped: "$1.00", howard: "$1.00", princeGeorges: "$1.00", mcLarge: "$1.00", mcMid: "$1.00", mcSmall: "$1.00", mcTipped: "$1.00", countyEffective: "July 1, 2027" };
+  const found = diffValues({ wages: base }, { wages: { ...base, mcSmall: "$2.00" } }, urls, "2027-07-02T00:00:00.000Z");
+  check(found.length === 1 && found[0]!.label.includes("10 or fewer") && found[0]!.from === "$1.00" && found[0]!.to === "$2.00", "one changed wage -> one change");
+  check(found[0]?.effectiveDate === "2027-07-01", "county wage change carries its effective date");
+  check(diffValues({}, { wages: base }, urls).length === 0, "first reading is not a change");
+  check(diffValues({ wages: base }, { wages: base }, urls).length === 0, "same values -> no change");
+  check(mergeChanges(found, found).length === 1, "the same change isn't recorded twice");
+}
+
 console.log("\nthresholds:", employeeThresholds(rules).join(", "));
 
 console.log("\n# Growth milestones for the restaurant (single-slider scale)");

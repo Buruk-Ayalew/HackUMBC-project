@@ -6,7 +6,7 @@ import RadarCard from "../components/radar/RadarCard";
 import HaveYourSay from "../components/radar/HaveYourSay";
 import { formatDate, formatDateTime, keyDate } from "../components/radar/format";
 
-type SourceFilter = "all" | "md_register" | "bill" | "agency_news";
+type SourceFilter = "all" | "md_register" | "bill" | "agency_news" | "rate_change";
 
 const SECTIONS: { relevance: Relevance; title: string; heading: string }[] = [
   { relevance: "affects", title: "Affects you", heading: "text-red-700" },
@@ -170,6 +170,7 @@ export default function RadarPage() {
                   <option value="md_register">Maryland Register</option>
                   <option value="bill">Bills and new laws</option>
                   <option value="agency_news">Agency news</option>
+                  <option value="rate_change">Rate changes</option>
                 </select>
               </label>
               <label className="flex items-center gap-2 pb-1">

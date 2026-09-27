@@ -174,9 +174,13 @@
         "field": "flags.handlesCustomerData",
         "op": "is",
         "value": true
+      },
+      {
+        "field": "flags.meetsPrivacyThreshold",
+        "op": "is",
+        "value": true
       }
     ],
-    "statusWhenMet": "might",
     "summary": "The Maryland Online Data Privacy Act applies if, in the prior year, you handled personal data of at least 35,000 Maryland consumers (not counting data used only to complete a payment), or at least 10,000 consumers while getting more than 20% of revenue from selling personal data.",
     "action": "Estimate how many Maryland customers' personal data you keep. If you are over a threshold, you'll need a privacy notice and ways for customers to access, fix, delete, or opt out.",
     "agency": "Maryland Attorney General",

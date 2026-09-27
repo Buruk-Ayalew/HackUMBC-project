@@ -44,6 +44,15 @@
     "verify": [
       "Large employers (51 or more employees)"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://www.montgomerycountymd.gov/office-human-rights/minimum-wage-increase",
     "sourceName": "Montgomery County Office of Human Rights: Minimum wage",
     "reviewedOn": "2026-09-26"
@@ -96,6 +105,15 @@
     "verify": [
       "Mid-size employers (11-50 employees)"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://www.montgomerycountymd.gov/office-human-rights/minimum-wage-increase",
     "sourceName": "Montgomery County Office of Human Rights: Minimum wage",
     "reviewedOn": "2026-09-26"
@@ -130,6 +148,15 @@
     "verify": [
       "Small employers (10 or fewer employees)"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://www.montgomerycountymd.gov/office-human-rights/minimum-wage-increase",
     "sourceName": "Montgomery County Office of Human Rights: Minimum wage",
     "reviewedOn": "2026-09-26"
@@ -160,6 +187,15 @@
     "verify": [
       "pay tipped employees at least"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: County minimum wage laws",
     "reviewedOn": "2026-09-26"
@@ -191,6 +227,15 @@
       "Howard County Minimum Wage",
       "regardless of size"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: County minimum wage laws",
     "reviewedOn": "2026-09-26"
@@ -222,6 +267,15 @@
       "Prince George's County Minimum Wage",
       "regardless of size"
     ],
+    "records": {
+      "text": "Keep payroll records for at least 3 years, and time cards, wage rate tables, and work schedules for 2 years (federal Fair Labor Standards Act).",
+      "sourceUrl": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping",
+      "sourceName": "U.S. Department of Labor: FLSA recordkeeping (Fact Sheet #21)",
+      "verify": [
+        "Each employer shall preserve for at least three years payroll records",
+        "should be retained for two years"
+      ]
+    },
     "sourceUrl": "https://labor.maryland.gov/labor/wages/wagehrfacts.shtml",
     "sourceName": "Maryland Department of Labor: County minimum wage laws",
     "reviewedOn": "2026-09-26"

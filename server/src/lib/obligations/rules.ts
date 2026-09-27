@@ -53,6 +53,14 @@ const ruleSchema = z.object({
   filingUrl: z.url().optional(),
   filingSiteName: z.string().optional(),
   verify: z.array(z.string().min(1)).optional(),
+  records: z
+    .object({
+      text: z.string().min(1),
+      sourceUrl: z.url(),
+      sourceName: z.string().min(1),
+      verify: z.array(z.string().min(1)).optional(),
+    })
+    .optional(),
   sourceUrl: z.url(),
   sourceName: z.string().min(1),
   reviewedOn: isoDate,

@@ -44,6 +44,7 @@ export const profileInput = z
       servesFood: z.boolean().optional(),
       ownsBusinessProperty: z.boolean().optional(),
       usesTradeName: z.boolean().optional(),
+      meetsPrivacyThreshold: z.boolean().optional(),
     }),
   })
   .refine((p) => p.employees.inMaryland <= p.employees.totalAllStates, {

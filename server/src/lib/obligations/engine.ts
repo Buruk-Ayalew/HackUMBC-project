@@ -47,6 +47,7 @@ const FLAG_LABELS: Record<string, [yes: string, no: string]> = {
   "flags.servesFood": ["You serve or sell food.", "You told us you don't serve or sell food."],
   "flags.ownsBusinessProperty": ["Your business owned property (furniture, equipment, and so on) on January 1.", "You told us your business didn't own business property on January 1."],
   "flags.usesTradeName": ["You operate under a trade name.", "You told us you don't use a trade name."],
+  "flags.meetsPrivacyThreshold": ["You handle enough Maryland consumers' data to be covered.", "You told us you handle less Maryland consumer data than the law's thresholds."],
 };
 
 // Plain wording for questions that may not have been answered yet.
@@ -54,6 +55,7 @@ const FLAG_TOPICS: Record<string, string> = {
   "flags.servesFood": "whether you serve or sell food",
   "flags.ownsBusinessProperty": "whether your business owned property on January 1",
   "flags.usesTradeName": "whether you use a trade name",
+  "flags.meetsPrivacyThreshold": "how much Maryland consumer data you handle",
 };
 
 const ENTITY_LABELS: Record<string, string> = {

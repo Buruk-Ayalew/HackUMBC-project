@@ -2,6 +2,7 @@ import type { LiveSourceStatus, ObligationRule, RuleVerification } from "../../.
 import { dataPath, readJson, writeJson } from "../../jsonStore.js";
 import { parseFamli, parseTaxRates, parseWages, type Famli, type TaxRates, type Wages } from "./extract.js";
 import { PageUnavailable, fetchPageText, fetchPdfLines, normalizeText } from "./pageText.js";
+import { diffValues, mergeChanges, type ValueChange } from "./changes.js";
 
 // Live data for the obligations module.
 //  1. Values (tax rates, minimum wages, FAMLI rate) are read from official
@@ -27,6 +28,7 @@ interface Snapshot {
   sources: Record<string, LiveSourceStatus>;
   verification: Record<string, RuleVerification>;
   refreshedAt: string | null;
+  changes?: ValueChange[]; // wages/rates that changed between checks, newest first
 }
 
 let snapshot: Snapshot = { values: {}, sources: {}, verification: {}, refreshedAt: null };
@@ -106,11 +108,19 @@ async function verifyRules(rules: ObligationRule[], pageCache: Map<string, Promi
   const out: Record<string, RuleVerification> = {};
   await Promise.allSettled(
     rules.map(async (rule) => {
-      if (!rule.verify?.length) return;
+      // The rule's own key facts, plus its records note's (on that note's source).
+      const checks = [
+        ...(rule.verify?.length ? [{ url: rule.sourceUrl, phrases: rule.verify }] : []),
+        ...(rule.records?.verify?.length ? [{ url: rule.records.sourceUrl, phrases: rule.records.verify }] : []),
+      ];
+      if (!checks.length) return;
       const checkedAt = new Date().toISOString();
       try {
-        const text = (await getText(rule.sourceUrl, pageCache)).toLowerCase();
-        const missing = rule.verify.filter((phrase) => !text.includes(normalizeText(phrase).toLowerCase()));
+        const missing: string[] = [];
+        for (const c of checks) {
+          const text = (await getText(c.url, pageCache)).toLowerCase();
+          missing.push(...c.phrases.filter((phrase) => !text.includes(normalizeText(phrase).toLowerCase())));
+        }
         out[rule.id] = missing.length ? { status: "changed", checkedAt, missing } : { status: "verified", checkedAt };
       } catch (err) {
         const prev = snapshot.verification[rule.id];
@@ -137,8 +147,18 @@ async function doRefresh(rules: ObligationRule[]): Promise<Snapshot> {
     refreshValue("famli", "FAMLI contributions page", FAMLI_URL, parseFamli, values, sources, pageCache),
   ]);
   const verification = await verifyRules(rules, pageCache);
+  // Only values read live this time count as a new reading.
+  const fresh: LiveValues = {};
+  for (const k of ["wages", "famli", "taxRates"] as const) if (sources[k]?.status === "live") (fresh as Record<string, unknown>)[k] = values[k];
+  const found = diffValues(snapshot.values, fresh, {
+    wages: WAGE_URL,
+    famli: FAMLI_URL,
+    taxRates: sources.taxRates?.url ?? dlsUrl(new Date().getFullYear()),
+  });
+  if (found.length) console.log(`[obligations] ${found.length} value change(s) found: ${found.map((c) => `${c.label} ${c.from} -> ${c.to}`).join("; ")}`);
+  const changes = mergeChanges(found, snapshot.changes);
 
-  snapshot = { values, sources, verification, refreshedAt: new Date().toISOString() };
+  snapshot = { values, sources, verification, refreshedAt: new Date().toISOString(), changes };
   await writeJson(STORE, snapshot);
   const live = Object.values(sources).filter((s) => s.status === "live").length;
   const verified = Object.values(verification).filter((v) => v.status === "verified").length;
@@ -164,6 +184,12 @@ export async function getLiveData(rules: ObligationRule[], waitMs = 20000): Prom
     await Promise.race([p, new Promise((r) => setTimeout(r, snapshot.refreshedAt ? 0 : waitMs))]);
   }
   return snapshot;
+}
+
+// Wage and rate changes found by the live checks (for Regulatory Radar).
+export async function getValueChanges(): Promise<ValueChange[]> {
+  await load();
+  return snapshot.changes ?? [];
 }
 
 export function isRefreshing(): boolean {

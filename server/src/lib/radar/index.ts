@@ -7,6 +7,7 @@ import type { RadarItemInternal, SourceResult } from "./common.js";
 import { fetchMdRegister } from "./mdRegister.js";
 import { fetchMgaBills } from "./mgaBills.js";
 import { fetchMgaEffectiveDates } from "./mgaChapters.js";
+import { fetchRateChanges } from "./rateChanges.js";
 
 const ITEMS_FILE = dataPath("cache", "radar-items.json");
 const MAX_AGE_MS = 24 * 60 * 60 * 1000;
@@ -70,8 +71,9 @@ async function fetchAll(force: boolean): Promise<RadarItemsSnapshot> {
     fetchMgaEffectiveDates(force),
     fetchMgaBills(force),
     fetchAgencyNews(force),
+    fetchRateChanges(),
   ]);
-  const names = ["Maryland Register", "General Assembly effective-date lists", "General Assembly bills", "Agency news"];
+  const names = ["Maryland Register", "General Assembly effective-date lists", "General Assembly bills", "Agency news", "Live wage and tax-rate checks"];
 
   const results: SourceResult[] = [];
   const unavailableSources: string[] = [];

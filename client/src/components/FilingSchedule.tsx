@@ -46,6 +46,21 @@ export function Details({ r, onDone }: { r: ObligationResult; onDone?: OnDone })
         <p className="font-semibold text-slate-900">What to do</p>
         <p className="mt-1 text-slate-700">{r.rule.action}</p>
       </div>
+      {r.rule.records && (
+        <div className="rounded-xl bg-slate-50 p-4 ring-1 ring-slate-200">
+          <p className="font-semibold text-slate-900">Records to keep</p>
+          <p className="mt-1 text-slate-700">{r.rule.records.text}</p>
+          <a
+            href={r.rule.records.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:underline"
+          >
+            Source: {r.rule.records.sourceName} <IconExternal />
+          </a>
+        </div>
+      )}
       <p className="text-slate-600">{r.rule.summary}</p>
       {r.upcoming.length > 1 && (
         <p className="text-slate-600">

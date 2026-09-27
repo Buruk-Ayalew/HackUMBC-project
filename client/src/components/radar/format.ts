@@ -5,6 +5,7 @@ export const SOURCE_LABEL: Record<RadarSource, string> = {
   legiscan: "Bill",
   mga: "Bill",
   agency_news: "Agency news",
+  rate_change: "Rate change",
 };
 
 export const KIND_LABEL: Record<RadarItem["kind"], string> = {
