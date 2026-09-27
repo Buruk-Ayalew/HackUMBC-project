@@ -33,7 +33,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-[1100] border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 md:flex-nowrap">
         <NavLink to={user ? "/dashboard" : "/"} className="flex shrink-0 items-center gap-2">
           <IconLogo className="text-3xl text-brand-600" />
           <span className="text-lg font-bold tracking-tight text-slate-900">
@@ -43,7 +43,7 @@ function Header() {
 
         {user && (
           <>
-            <nav className="-mx-1 flex min-w-0 flex-1 gap-1 overflow-x-auto px-1 text-sm" aria-label="Main">
+            <nav className="-mx-1 order-last flex w-full min-w-0 gap-1 overflow-x-auto px-1 text-sm md:order-none md:w-auto md:flex-1" aria-label="Main">
               {NAV.map((n) => (
                 <NavLink
                   key={n.to}
@@ -59,7 +59,7 @@ function Header() {
                 </NavLink>
               ))}
             </nav>
-            <div className="flex shrink-0 items-center gap-1">
+            <div className="ml-auto flex shrink-0 items-center gap-1 md:ml-0">
               <NavLink
                 to="/settings"
                 title="Settings"

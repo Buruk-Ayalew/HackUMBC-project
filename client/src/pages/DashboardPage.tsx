@@ -115,7 +115,7 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <ModuleCard to="/obligations" icon={<IconClipboard />} title="Obligations" accent="bg-rose-50 text-rose-600">
           <p className="text-4xl font-bold tracking-tight text-slate-900">{affects}</p>
           <p className="text-slate-600">
@@ -144,7 +144,7 @@ export default function DashboardPage() {
         </ModuleCard>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[3fr_2fr]">
         <Card className="p-6">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="flex items-center gap-2 text-lg font-bold text-slate-900">

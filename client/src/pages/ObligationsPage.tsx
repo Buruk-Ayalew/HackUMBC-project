@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import type { ObligationResult } from "../../../shared/types";
-import FilingSchedule, { Details, WhereLink, type OnDone } from "../components/FilingSchedule";
+import FilingSchedule, { Details, FormLink, WhereLink, type OnDone } from "../components/FilingSchedule";
 import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates";
 import { IconAlert, IconCalendar, IconCheck, IconChevron, IconClipboard, IconDownload, IconInfo, IconMapPin } from "../components/icons";
 import { LiveStatusBar, VerificationBadge, needsBadge } from "../components/LiveStatus";
@@ -129,7 +129,7 @@ export default function ObligationsPage() {
         {comingUp.length === 0 ? (
           <p className="text-slate-500">No upcoming deadlines.</p>
         ) : (
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
             {comingUp.map((u) => {
               const d = parseDay(u.date);
               const urgent = daysUntil(u.date) <= 14;
@@ -145,6 +145,7 @@ export default function ObligationsPage() {
                   <p className="mt-3 font-semibold text-slate-900">{u.label}</p>
                   <p className="mt-1 line-clamp-3 flex-1 text-sm text-slate-600">{u.result.rule.action}</p>
                   <WhereLink r={u.result} className="mt-3 text-sm" />
+                  <FormLink r={u.result} className="mt-1 text-xs" />
                 </div>
               );
             })}
@@ -166,7 +167,7 @@ export default function ObligationsPage() {
 
       {everyday.length > 0 && (
         <Section icon={<IconCheck />} title="Rules to follow every day" subtitle="No form to file, but you need to keep doing these.">
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {everyday.map((r) => (
               <ExpandableCard key={r.rule.id} r={r} tone="green" onDone={markDone} />
             ))}
@@ -176,7 +177,7 @@ export default function ObligationsPage() {
 
       {might.length > 0 && (
         <Section icon={<IconAlert />} title="Double-check these" subtitle="These might apply, depending on details we don't ask about.">
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {might.map((r) => (
               <ExpandableCard key={r.rule.id} r={r} tone="amber" onDone={markDone} />
             ))}

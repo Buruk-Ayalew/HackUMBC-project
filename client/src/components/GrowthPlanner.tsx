@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { BusinessProfile, Milestone, ObligationResult, ObligationsResponse } from "../../../shared/types";
 import { apiPost } from "../api";
+import { daysLabel, formatDate } from "./dates";
 import { IconCheck, IconExternal, IconMinus, IconPlus } from "./icons";
 import { employeeErrors } from "./profileOptions";
 import { Badge } from "./ui";
@@ -40,6 +41,22 @@ export function diff(base: ObligationResult[], next: ObligationResult[]) {
     else maybe.push({ result: r, from });
   }
   return { starts, maybe, stops };
+}
+
+// "Hiring 1 more person:" / "With 3 fewer people:"
+function headline(delta: number): string {
+  if (delta > 0) return `Hiring ${delta} more ${delta === 1 ? "person" : "people"}:`;
+  if (delta < 0) return `With ${-delta} fewer ${delta === -1 ? "person" : "people"}:`;
+  return "At your size today:";
+}
+
+function changeSummary(c: { starts: Change[]; maybe: Change[]; stops: Change[] }): string {
+  const parts = [
+    c.starts.length && `${c.starts.length} ${c.starts.length === 1 ? "obligation starts" : "obligations start"}`,
+    c.maybe.length && `${c.maybe.length} might start`,
+    c.stops.length && `${c.stops.length} ${c.stops.length === 1 ? "ends" : "end"}`,
+  ].filter(Boolean);
+  return parts.length ? `${parts.join(", ")}.` : "";
 }
 
 function milestoneSummary(m: Milestone): string {
@@ -106,7 +123,7 @@ export default function GrowthPlanner({
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
       {/* Controls */}
       <div className="space-y-6">
         <div>
@@ -142,7 +159,13 @@ export default function GrowthPlanner({
                     <span className="min-w-0 flex-1">
                       <span className="block font-semibold text-slate-900">
                         {m.employees} employee{m.employees === 1 ? "" : "s"}
-                        {passed && <span className="ml-2 text-xs font-medium text-emerald-700">You're past this</span>}
+                        {passed ? (
+                          <span className="ml-2 text-xs font-medium text-emerald-700">You're past this</span>
+                        ) : (
+                          <span className="ml-2 rounded-full bg-brand-50 px-1.5 py-0.5 text-xs font-semibold text-brand-700">
+                            +{m.employees - current} hire{m.employees - current === 1 ? "" : "s"}
+                          </span>
+                        )}
                       </span>
                       <span className="block truncate text-xs text-slate-500">{m.changes.map((c) => c.title).join(" · ")}</span>
                     </span>
@@ -289,6 +312,13 @@ export default function GrowthPlanner({
           <p className="mt-1 text-xs text-slate-500">Full-time count scaled from today's mix. Use "set the three counts separately" to change it.</p>
         )}
 
+        {!isToday && changes && !validation && (
+          <p className="mt-4 rounded-xl bg-slate-50 px-4 py-3 text-sm text-slate-700 ring-1 ring-slate-200">
+            <strong className="text-slate-900">{headline(counts.inMaryland - current)}</strong>{" "}
+            {changeSummary(changes) || "Nothing changes compared with today."}
+          </p>
+        )}
+
         {validation && <p className="mt-4 rounded-xl bg-rose-50 p-3 text-sm text-rose-800">{validation}</p>}
         {error && <p className="mt-4 rounded-xl bg-rose-50 p-3 text-sm text-rose-800">{error}</p>}
 
@@ -341,6 +371,11 @@ export function ChangeGroup({
             <span className={`absolute inset-y-0 left-0 w-1 ${bar}`} />
             <p className="font-semibold text-slate-900">{result.rule.title}</p>
             <p className="mt-0.5 text-sm text-slate-600">{describe(result)}</p>
+            {result.status !== "not_applicable" && result.upcoming[0] && (
+              <p className="mt-1 text-xs font-semibold text-slate-700">
+                First due {formatDate(result.upcoming[0].date)} ({daysLabel(result.upcoming[0].date)})
+              </p>
+            )}
             <a href={result.rule.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-brand-700 hover:underline">
               Official source <IconExternal />
             </a>

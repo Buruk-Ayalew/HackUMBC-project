@@ -21,7 +21,7 @@ export default function LocationContext({ context, loading, error, radiusLabel, 
   }
   if (loading && !context) {
     return (
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Skeleton className="h-44" />
         <Skeleton className="h-44" />
       </div>
