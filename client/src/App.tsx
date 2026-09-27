@@ -11,6 +11,7 @@ import DashboardPage from "./pages/DashboardPage";
 import ObligationsPage from "./pages/ObligationsPage";
 import WhatIfPage from "./pages/WhatIfPage";
 import RadarPage from "./pages/RadarPage";
+import BriefingPage from "./pages/BriefingPage";
 import LocalRiskPage from "./pages/LocalRiskPage";
 
 const NAV = [
@@ -32,7 +33,7 @@ function Header() {
     .toUpperCase();
 
   return (
-    <header className="sticky top-0 z-[1100] border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
+    <header className="sticky top-0 z-[1100] border-b print:hidden border-slate-200/80 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
         <NavLink to={user ? "/dashboard" : "/"} className="flex shrink-0 items-center gap-2">
           <IconLogo className="text-3xl text-brand-600" />
@@ -92,7 +93,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="mt-16 border-t border-slate-200 bg-white">
+    <footer className="mt-16 border-t border-slate-200 bg-white print:hidden">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-6 text-sm text-slate-500">
         <p>
           <strong className="font-semibold text-slate-700">Information, not legal advice.</strong> Always confirm with the official source.
@@ -116,7 +117,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 print:max-w-none print:p-0">
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -127,6 +128,7 @@ export default function App() {
           <Route path="/obligations/what-if" element={<Navigate to="/growth" replace />} />
           <Route path="/calendar" element={<Navigate to="/obligations" replace />} />
           <Route path="/radar" element={<Protected><RadarPage /></Protected>} />
+          <Route path="/briefing" element={<Protected><BriefingPage /></Protected>} />
           <Route path="/local-risk" element={<Protected><LocalRiskPage /></Protected>} />
           <Route path="/settings" element={<Protected><SettingsPage /></Protected>} />
           <Route path="*" element={<Navigate to="/" replace />} />

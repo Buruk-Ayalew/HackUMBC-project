@@ -67,3 +67,17 @@
 .animate-fade-up {
   animation: fade-up 280ms ease-out both;
 }
+
+/* Printing (e.g. the executive briefing): letter paper, small margins, keep colors. */
+@page {
+  size: letter;
+  margin: 0.45in;
+}
+@media print {
+  html,
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

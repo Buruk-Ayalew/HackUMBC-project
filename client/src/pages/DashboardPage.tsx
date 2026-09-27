@@ -7,7 +7,7 @@ import { daysLabel, daysUntil, formatDate, parseDay } from "../components/dates"
 import { IconArrowRight, IconCalendar, IconClipboard, IconMapPin, IconRadar, IconTrending } from "../components/icons";
 import { industryLabel, jurisdictionLabel } from "../components/profileOptions";
 import { allUpcoming } from "../components/schedule";
-import { Badge, Card, LoadingPage, Notice } from "../components/ui";
+import { Badge, buttonStyles, Card, LoadingPage, Notice } from "../components/ui";
 import { nextDeadlineOf, useMilestones, useObligations } from "../components/useObligations";
 
 type Loadable<T> = { state: "loading" } | { state: "ready"; value: T } | { state: "unavailable" };
@@ -83,6 +83,12 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-8">
+      <div className="flex flex-wrap items-center justify-end gap-3">
+        <p className="text-sm text-slate-500">A one-page summary to share with your CPA, lawyer, or partner.</p>
+        <Link to="/briefing?print=1" className={buttonStyles.secondary}>
+          Download Monthly Executive Briefing
+        </Link>
+      </div>
       <section className="relative overflow-hidden rounded-3xl bg-slate-900 px-6 py-8 text-white sm:px-10 sm:py-10">
         <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-600/40 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl" />
