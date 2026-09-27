@@ -142,5 +142,21 @@
       "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
     ],
     "cachedAt": "2026-09-26T21:32:47.735Z"
+  },
+  "13209 schubert pl silver spring 20904": {
+    "lat": 39.073541665538,
+    "lng": -76.948154789783,
+    "matchedAddress": "13209 SCHUBERT PL, SILVER SPRING, MD, 20904",
+    "jurisdiction": {
+      "state": "MD",
+      "county": "Montgomery County",
+      "isBaltimoreCity": false,
+      "municipality": null
+    },
+    "confidence": "high",
+    "notes": [
+      "Town boundaries come from MD iMAP and are not legal descriptions. Please confirm."
+    ],
+    "cachedAt": "2026-09-27T01:15:06.463Z"
   }
 }
