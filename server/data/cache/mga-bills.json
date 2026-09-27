@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-26T23:08:21.010Z",
+  "fetchedAt": "2026-09-27T01:09:19.035Z",
   "data": [
     {
       "id": "bill-2026RS-HB3",
@@ -14,7 +14,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb3?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Higher Education - Student Financial Assistance - Dependents of State or Local Public Safety Employees (Maryland Fallen Heroes Tuition Benefits Act)"
     },
     {
@@ -30,7 +30,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb7?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Board of Examiners for Audiologists, Hearing Aid Dispensers, Speech-Language Pathologists, and Music Therapists - Authority to Issue Limited Licenses to Practice Music Therapy"
     },
     {
@@ -46,7 +46,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb17?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Estates and Trusts - Venue for Administrative and Judicial Probate and Application of Inheritance Tax"
     },
     {
@@ -62,7 +62,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-29",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb20?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City - Alcoholic Beverages - Related Event Promoter's Permit"
     },
     {
@@ -78,7 +78,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb38?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Financial Institutions - Licensing of Affiliated Insurance Producer-Mortgage Loan Originators - Alterations"
     },
     {
@@ -94,7 +94,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb85?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Corporations and Associations - Cooperative Limited Equity Housing Corporations - Establishment"
     },
     {
@@ -110,7 +110,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-28",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb94?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Safety - Handgun Permits - Expiration and Renewal Periods for Retired Law Enforcement Officer"
     },
     {
@@ -126,7 +126,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb103?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Consumer Protection - Consumer Contracts - Prohibited Waivers"
     },
     {
@@ -142,7 +142,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb121?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore County - Alcoholic Beverages - Sale for Off-Premises Consumption"
     },
     {
@@ -158,7 +158,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb135?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Economic Development - Tax Increment Financing - Noncontiguous Areas"
     },
     {
@@ -174,7 +174,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb149?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Fire Prevention - Assistant Fire Marshals, Residential Rental High-Rise Property Fire Safety Equipment, and Fire Alarm System Technicians"
     },
     {
@@ -190,7 +190,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb161?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax Credit - Retail Service Station Conversions"
     },
     {
@@ -206,7 +206,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb168?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Housing and Community Development - Affordable Housing - Educator Workforce Housing and Municipal Corporations"
     },
     {
@@ -222,7 +222,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb175?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Income Tax Credit - Venison Donation - Alterations"
     },
     {
@@ -238,7 +238,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb191?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Consumer Protection - Retail Transactions for Essential Consumer Goods - Cash Payments"
     },
     {
@@ -254,7 +254,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb193?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Procurement - Transparency and Procedures"
     },
     {
@@ -270,7 +270,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb211?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore County – Property Tax Credit – Fraternal Order of Police Lodge 34"
     },
     {
@@ -286,7 +286,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb228?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Horse Racing - Prohibited Acts - Slaughter of Racehorses for Commercial Purposes"
     },
     {
@@ -302,7 +302,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb234?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Safety - Police Employees and Deputy State Fire Marshals - Repeal of Pay Rate Restriction on Promotion"
     },
     {
@@ -318,7 +318,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb235?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Housing and Community Development - Neighborhood Business Development Program - Local Approval Requirement"
     },
     {
@@ -334,7 +334,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb241?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Business Occupations and Professions - State Boards and Commissions - Sunset Extensions"
     },
     {
@@ -350,7 +350,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb242?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Unemployment Insurance - Confidentiality of Information"
     },
     {
@@ -366,7 +366,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb248?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Motor Vehicle Administration - Identification Cards, Licenses, and Permits - Repeal of Color Photograph Requirement"
     },
     {
@@ -382,7 +382,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb252?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Environment – Lead Paint Abatement Services – Performance Bond and Liability Insurance"
     },
     {
@@ -398,7 +398,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb253?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Vehicle Laws - Heavy Weight Port Corridor Permits - Regulations"
     },
     {
@@ -414,7 +414,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb261?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Procurement - Competitive Proof of Concept Procurement"
     },
     {
@@ -430,7 +430,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb262?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Government – Council for Open Data – Membership and Responsibilities"
     },
     {
@@ -446,7 +446,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb264?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Data Privacy and Protection Act of 2026"
     },
     {
@@ -462,7 +462,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb272?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Food Establishments - Lavatory Requirement and On-Farm Food Service Facility License"
     },
     {
@@ -478,7 +478,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-29",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb273?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance – Small Business Health Options Program (SHOP) Enrollment – Effective Dates"
     },
     {
@@ -494,7 +494,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-29",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb277?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Insurance – Third Party Administrators – Enforcement"
     },
     {
@@ -510,7 +510,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-29",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb280?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Mental Health and Substance Use Disorders - Codification of Federal Requirements"
     },
     {
@@ -526,7 +526,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb284?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Safety - Licensed Firearms Dealers - Notification Regarding Compromising Events"
     },
     {
@@ -542,7 +542,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb293?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Longitudinal Data System Center - External Data Sharing With Third-Party Data Centers for Multistate Reporting - Authorization"
     },
     {
@@ -558,7 +558,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb300?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Contracts - Prohibited Provisions - Exemptions"
     },
     {
@@ -574,7 +574,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb308?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Corporations and Associations - Principal Offices - Private Mailboxes"
     },
     {
@@ -590,7 +590,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb315?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Landlord and Tenant - Discrimination in Housing for Income-Based Housing Subsidies and Positive Rental History Reporting"
     },
     {
@@ -606,7 +606,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb320?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Property Tax Credit - Rural Legacy Program"
     },
     {
@@ -622,7 +622,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb330?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Legal Services Corporation - Board of Directors - Membership"
     },
     {
@@ -638,7 +638,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb340?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "School Psychologist Interstate Licensure Compact"
     },
     {
@@ -654,7 +654,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb342?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Forestry Licenses - Applicant Qualifications - Alterations"
     },
     {
@@ -670,7 +670,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb347?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Workers' Compensation - Occupational Disease Presumptions - Hypertension"
     },
     {
@@ -686,7 +686,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb348?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City - Alcoholic Beverages - License Extension"
     },
     {
@@ -702,7 +702,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb358?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Sales and Use Tax - Elementary or Secondary School Book Fairs - Exemption"
     },
     {
@@ -718,7 +718,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb359?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax Credit - Urban Agricultural Property - Alterations"
     },
     {
@@ -734,7 +734,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb363?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Local Government - Grant for Recipients of State Child Tax Credit - Authorization"
     },
     {
@@ -750,7 +750,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb388?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore County Public Library - Collective Bargaining - Supervisory Employees"
     },
     {
@@ -766,7 +766,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb393?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Scalp Cooling Systems - Required Coverage"
     },
     {
@@ -782,7 +782,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb395?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Water Pollution Control - Discharge Permits - Animal Feeding Operations"
     },
     {
@@ -798,7 +798,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb406?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Prince George's County - Alcoholic Beverages - Multiple Licenses Prohibition - Exceptions PG 313-26"
     },
     {
@@ -814,7 +814,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb422?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Health - Expedited Partner Therapy - Bacterial Vaginosis and Licensed Certified Midwives"
     },
     {
@@ -830,7 +830,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb442?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Professional Liability Insurance Coverage - Nursing Homes, Assisted Living Facilities, Nurse Midwives, and Licensed Certified Midwives - Disclosure (Nyeli Rose Lewis Act of 2026)"
     },
     {
@@ -846,7 +846,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb443?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Prince George's County - Alcoholic Beverages - Class B-SEC (Small Event Center) License PG 312-26"
     },
     {
@@ -862,7 +862,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb445?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Medical Assistance Program and Health Insurance - Coverage for Orthoses and Prostheses (So Every Body Can Move Act)"
     },
     {
@@ -878,7 +878,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb456?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Howard County - Alcoholic Beverages - Gift Basket Permit Ho. Co. 2-26"
     },
     {
@@ -894,7 +894,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb472?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Income Tax - Theatrical Production Tax Credit - Alterations and Sunset Extension"
     },
     {
@@ -910,7 +910,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb478?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration"
     },
     {
@@ -926,7 +926,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb483?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Business Regulation - Charitable Organizations - Audit and Review Thresholds"
     },
     {
@@ -942,7 +942,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb487?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Technology Development Corporation - Investments - Alterations"
     },
     {
@@ -958,7 +958,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb492?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Courtroom Security - Minimum Adequate Security Standard"
     },
     {
@@ -974,7 +974,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb500?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Sales and Use Tax - Precious Metal Bullion or Coins - Exemption"
     },
     {
@@ -990,7 +990,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb512?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Board of License Commissioners and Part-Time Inspectors - Compensation"
     },
     {
@@ -1006,7 +1006,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb519?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Alcoholic Beverages - Entertainment Permits"
     },
     {
@@ -1022,7 +1022,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb522?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Alcoholic Beverages Licenses - Class C Per Diem License Fees"
     },
     {
@@ -1038,7 +1038,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb532?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Employment Standards - Firefighters - Payment of Wages and Payroll Information"
     },
     {
@@ -1054,7 +1054,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb535?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Food Establishments - Cottage Food Businesses - Maximum Annual Revenue"
     },
     {
@@ -1070,7 +1070,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb547?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Income Tax - Enhanced Agricultural Management Equipment Subtraction Modification and Parent of a Stillborn Child Credit"
     },
     {
@@ -1086,7 +1086,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb548?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Land Use - Permitting - Development Rights (Maryland Housing Certainty Act)"
     },
     {
@@ -1102,7 +1102,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb553?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Safety - Elevator Inspection Certificates - Searchable Database"
     },
     {
@@ -1118,7 +1118,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb557?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Occupational Licensing and Certification - Criminal History - Predetermination Review Process"
     },
     {
@@ -1134,7 +1134,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb558?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Prince George's County - Alcoholic Beverages - Wine Festival Licenses PG 316-26"
     },
     {
@@ -1150,7 +1150,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb564?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Pet Cremation and Burial Services - Requirements (Pet Cremation and Burial Services Consumer Protection Act)"
     },
     {
@@ -1166,7 +1166,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb569?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Queen Anne's County - Authorized Uses of Revenues From Development Impact Fees - Expansion"
     },
     {
@@ -1182,7 +1182,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb571?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Nonprofit Housing Corporations - Taxes and Special Assessments Exemptions - Alterations"
     },
     {
@@ -1198,7 +1198,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb583?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Prince George’s County – Alcoholic Beverages – Notice of Issuance of Class C Per Diem Beer, Wine, and Liquor License PG 319–26"
     },
     {
@@ -1214,7 +1214,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb587?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Procurement - Department of Transportation and Maryland Transportation Authority Contracts - Board of Public Works Contract Authority - Study and Report"
     },
     {
@@ -1230,7 +1230,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb590?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Howard County - Transfer Tax - Use of Proceeds Ho. Co. 12-26"
     },
     {
@@ -1246,7 +1246,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb595?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Income Tax - Credit for Physician Preceptors in Areas With Health Care Workforce Shortages - Alterations"
     },
     {
@@ -1262,7 +1262,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-06",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb604?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Arbitration Reform for State Employees Act of 2026"
     },
     {
@@ -1278,7 +1278,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb606?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Residential Property Tax Payment Deferrals - Eligibility"
     },
     {
@@ -1294,7 +1294,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb608?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Judicial and Quasi-Judicial Employees - Compensation"
     },
     {
@@ -1310,7 +1310,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb610?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "St. Mary's County - Gaming by Qualified Organization - Permit Required"
     },
     {
@@ -1326,7 +1326,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb618?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Commercial Law - Self-Service Storage Facilities - Alterations"
     },
     {
@@ -1342,7 +1342,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb619?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Interstate Podiatric Medical Licensure Compact"
     },
     {
@@ -1358,7 +1358,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb622?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Cannabis - Licensees - Dispensary Licenses, Micro Dispensary Employees, and Cannabis Agent Training Programs"
     },
     {
@@ -1374,7 +1374,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb637?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Health - Recommendations for Immunizations, Screenings, and Preventive Services - Pharmacist Administration and Required Health Insurance Coverage (The Vax Act)"
     },
     {
@@ -1390,7 +1390,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb643?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Certified Public Accountants - Licensure - Qualifications"
     },
     {
@@ -1406,7 +1406,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb664?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Cecil County - Alcoholic Beverages - Alteration of License Quota"
     },
     {
@@ -1422,7 +1422,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb682?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County – Alcoholic Beverages – Golf Course License and Sports Activity Venue Licenses"
     },
     {
@@ -1438,7 +1438,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb684?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Material Changes to Provider Networks - Notification and Special Enrollment Period"
     },
     {
@@ -1454,7 +1454,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb711?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Data Privacy - Consumer Data, Public Records, and Message Switching System (Data Privacy Act)"
     },
     {
@@ -1470,7 +1470,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb727?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Alcoholic Beverages - Class C (Veterans' Organization) Licenses - Membership"
     },
     {
@@ -1486,7 +1486,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb730?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Business Regulation - Maryland Franchise Registration and Disclosure Law - Alterations (Franchise Reform Act)"
     },
     {
@@ -1502,7 +1502,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb734?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax - Agricultural Use Assessment - Community Solar Energy Generating Systems"
     },
     {
@@ -1518,7 +1518,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb735?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Earned Income Tax Credit - Assistance Program Implementation Delay and Study"
     },
     {
@@ -1534,7 +1534,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb746?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Medical Assistance Program and Health Insurance - Collaborative Care Model - Cost Sharing Prohibition and Coverage Requirements"
     },
     {
@@ -1550,7 +1550,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb753?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Tax Sales - Homeowner Protections - Revisions"
     },
     {
@@ -1566,7 +1566,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb754?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Wicomico County - Alcoholic Beverages - Class B (Golf Course) License - Hours of Sale"
     },
     {
@@ -1582,7 +1582,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb769?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Board of Social Work Examiners - Provisional License to Practice Social Work - Established"
     },
     {
@@ -1598,7 +1598,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb783?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Washington County - Property Tax Credit - Platoon 22, Incorporated"
     },
     {
@@ -1614,7 +1614,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb798?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Economic Development - Small, Minority, and Women-Owned Business Accounts - Management Fees (Small Business Increased Access to Capital Act)"
     },
     {
@@ -1630,7 +1630,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb816?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Automobile Insurance Fund - Affordability Program and Industry Automobile Insurance Association Assessments"
     },
     {
@@ -1646,7 +1646,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb828?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Board of Education - Membership - Employee of a County Board of Education"
     },
     {
@@ -1662,7 +1662,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb842?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax Credit - Surviving Spouse of Military Service Member"
     },
     {
@@ -1678,7 +1678,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb846?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax - City of Hagerstown and the Hagerstown Multi-Use Sports and Events Facility, Inc. - Exemption"
     },
     {
@@ -1694,7 +1694,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb850?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Home Builders - Open House - Sales Representative Disclosure Requirements"
     },
     {
@@ -1710,7 +1710,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb854?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "School Construction - Nonpublic Special Education School Renovation Program - Established"
     },
     {
@@ -1726,7 +1726,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb864?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Works Contracts - Apprenticeship Requirements (Maryland Workforce Apprenticeship Utilization Act)"
     },
     {
@@ -1742,7 +1742,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb870?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Environment - Permit Applications for New Buildings - Notice (Large Buildings for Tomorrow Act)"
     },
     {
@@ -1758,7 +1758,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb874?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Board of License Commissioners - Alterations"
     },
     {
@@ -1774,7 +1774,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb878?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Workers' Compensation - Heart Disease and Hypertension Presumption and Permanent Partial Disability - Carroll County Correctional Deputies"
     },
     {
@@ -1790,7 +1790,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb882?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Consumer Health Information - Termination Date and Mandatory Funding for the State's Consumer Health Information Hub - Repeal"
     },
     {
@@ -1806,7 +1806,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb889?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Wicomico County - Property Tax Credit - Salisbury Neighborhood Housing Services, Inc."
     },
     {
@@ -1822,7 +1822,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb895?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Food Retailers and Third-Party Delivery Service Providers - Dynamic Pricing and Personal Data (Protection From Predatory Pricing Act)"
     },
     {
@@ -1838,7 +1838,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb899?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Home Detention Monitoring Agencies - Promotion and Solicitation of Business - Prohibition"
     },
     {
@@ -1854,7 +1854,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb914?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Worcester County - Board of License Commissioners - Membership"
     },
     {
@@ -1870,7 +1870,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb929?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Carroll County - Office of Permits and Inspections - Denial of Commercial Permit or License for Unpaid Personal Property Taxes"
     },
     {
@@ -1886,7 +1886,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb933?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Sales and Use Tax - Certificates Indicating Multiple Points of Use - Alterations"
     },
     {
@@ -1902,7 +1902,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb936?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Montgomery County Public Schools - Jane E. Lawton Local Food Procurement MC 7-26"
     },
     {
@@ -1918,7 +1918,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb969?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Electric Vehicle Fuel Sold at Retail - Equipment Requirements, Units of Measure, and Fees"
     },
     {
@@ -1934,7 +1934,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb991?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Harford County - Alcoholic Beverages - Class HC (Health Club) License - Hours of Sale"
     },
     {
@@ -1950,7 +1950,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-11",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb994?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Business Regulation - Travel Services - Special Fund, Fees, and Surety Requirement (Don't You Worry (Wurie) Act)"
     },
     {
@@ -1966,7 +1966,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb996?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Corporations and Associations - Revisions"
     },
     {
@@ -1982,7 +1982,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb998?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City – Alcoholic Beverages – 46th Alcoholic Beverages District"
     },
     {
@@ -1998,7 +1998,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb999?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Alcoholic Beverages - Class 9 Limited Distillery License - Alteration"
     },
     {
@@ -2014,7 +2014,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1016?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Noncompete and Conflict of Interest Clauses - Licensed Architects - Employer Workforce Relocation and Out-of-State Employers"
     },
     {
@@ -2030,7 +2030,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1025?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Board of Cosmetologists - Licensing - Eyelash Extensions"
     },
     {
@@ -2046,7 +2046,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1026?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Business Regulation - Rounding Cash Transactions - Authorization"
     },
     {
@@ -2062,7 +2062,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1091?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance and Dental Plan Organizations - Dentists - Assignment of Benefits and Reimbursement of Nonpreferred Providers"
     },
     {
@@ -2078,7 +2078,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1093?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Provider Panels - Requirements"
     },
     {
@@ -2094,7 +2094,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-13",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1094?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Graduate-Level Clinical Interns - Required Reimbursement"
     },
     {
@@ -2110,7 +2110,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1095?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Calvert County - Property Tax Credit - Tobacco Barns"
     },
     {
@@ -2126,7 +2126,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1096?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax Credits - Notice Through Property Tax Bill"
     },
     {
@@ -2142,7 +2142,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1101?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Worcester County - Alcoholic Beverages - Temporary To-Go Event Permit and Class C Per Diem Municipal To-Go Beer, Wine, and Liquor License"
     },
     {
@@ -2158,7 +2158,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-24",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1110?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Judicial In Rem Tax Foreclosure - Notice Requirements"
     },
     {
@@ -2174,7 +2174,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-13",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1118?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health, Health Insurance, and Health Occupations - Perinatal Behavioral Health Conditions"
     },
     {
@@ -2190,7 +2190,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1120?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Professional Licensing Portability - Members of the Foreign Service and Spouses"
     },
     {
@@ -2206,7 +2206,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1137?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Residential-in-Commercial-Zone Laws - Study (Bring Back Main Street Act)"
     },
     {
@@ -2222,7 +2222,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1148?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Taxes - Tax Sales, Legacy Protection Program, and Tax Credits"
     },
     {
@@ -2238,7 +2238,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1155?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Calvert County - Procurement - Long-Term Contracts for Infrastructure and Asset Management"
     },
     {
@@ -2254,7 +2254,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1165?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Procurement - Apprenticeship Program Accountability and Completion"
     },
     {
@@ -2270,7 +2270,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1186?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Peer-to-Peer Car Sharing Programs - Insurance and Liability"
     },
     {
@@ -2286,7 +2286,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1192?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Board of Sign Language Interpreters - Membership and Licensing"
     },
     {
@@ -2302,7 +2302,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1203?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Garrett County - Alcoholic Beverages Act of 2026"
     },
     {
@@ -2318,7 +2318,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1216?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Insurance – Certificates of Guarantee for County Bond Requirements – All Counties"
     },
     {
@@ -2334,7 +2334,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1219?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Climate Change, Homeowner's Insurance, and Emergency Management - Study"
     },
     {
@@ -2350,7 +2350,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1221?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Public Safety - Short-Term Rental Units - Safety (Jillian and Lindsay Wiener Short-Term Rental Safety Act)"
     },
     {
@@ -2366,7 +2366,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-13",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1230?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Washington Suburban Sanitary Commission - Procurement - Alterations PG/MC 102-26"
     },
     {
@@ -2382,7 +2382,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1232?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City - Economic Development Project in Downtown RISE District - Payment in Lieu of Taxes"
     },
     {
@@ -2398,7 +2398,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1243?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Prince George's County - Personal Property Tax Exemption for Small Manufacturers PG 423-26"
     },
     {
@@ -2414,7 +2414,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1247?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Prince George's County - Tax Increment Financing - Extraordinary Development District - Alterations PG 425-26"
     },
     {
@@ -2430,7 +2430,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1248?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Workgroup for an Inclusive State Workplace - Established"
     },
     {
@@ -2446,7 +2446,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1279?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Catalytic Revitalization Project Tax Credit - Alterations"
     },
     {
@@ -2462,7 +2462,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1286?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Alcoholic Beverages - Barbershop and Beauty Salon License"
     },
     {
@@ -2478,7 +2478,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1330?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Homeowners’ Property Tax Credit – Year–Round Application"
     },
     {
@@ -2494,7 +2494,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1346?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Department of Assessments and Taxation - Expedited Document Processing and Fees"
     },
     {
@@ -2510,7 +2510,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1357?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Consumer Protection - Menstrual Hygiene Products - Labeling Requirements"
     },
     {
@@ -2526,7 +2526,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1365?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Occupations, Public Health, and Insurance - Menopause - Provider Training Coverage Requirements, Policy Initiatives, and Access to Care"
     },
     {
@@ -2542,7 +2542,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1376?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Medical Assistance Program, Maryland Children's Health Program, and Health Insurance - Transfers to Special Pediatric Hospitals - Requirements"
     },
     {
@@ -2558,7 +2558,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1387?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Automobile Insurance Fund - Fund Producer Commission Rate"
     },
     {
@@ -2574,7 +2574,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1395?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Consumer Protection - Agricultural Equipment Warranties"
     },
     {
@@ -2590,7 +2590,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1400?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Shellfish Aquaculture - Penalties - Suspension or Revocation of Permit or Registration Card"
     },
     {
@@ -2606,7 +2606,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-06",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1422?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Procurement and Personnel - Liquidated Damages Documentation Requirements and State Fiscal Leadership Capacity"
     },
     {
@@ -2622,7 +2622,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1425?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City - Alcoholic Beverages Licenses - Revisions"
     },
     {
@@ -2638,7 +2638,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1474?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore County - Alcoholic Beverages Licenses - Transfers and Conversions"
     },
     {
@@ -2654,7 +2654,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-12",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1504?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Highways - Sidewalks and Bicycle Pathways - Construction and Reconstruction (The Honorable Anne Healey Pedestrian Safety Act of 2026)"
     },
     {
@@ -2670,7 +2670,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1523?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Alcohol, Tobacco, and Cannabis Commission - Unauthorized Consumable Products - Enforcement and Seizure"
     },
     {
@@ -2686,7 +2686,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-23",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1526?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Carroll County - Alcoholic Beverages - Class 1 Distillery On-Premises Consumption Permit"
     },
     {
@@ -2702,7 +2702,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-10",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1554?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Sales and Use Tax - Electricity for Agriculture Purposes - Study and Report"
     },
     {
@@ -2718,7 +2718,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-06",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1557?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Procurement - Real Estate Advisory Committee and Property Acquisition and Lease Requirements"
     },
     {
@@ -2734,7 +2734,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1578?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "State Procurement - Procurement Preferences - Reauthorization and Revisions"
     },
     {
@@ -2750,7 +2750,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-18",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1611?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Property Tax - Credit for Dwelling House of Disabled Veterans and Surviving Spouses - Income Eligibility"
     },
     {
@@ -2766,7 +2766,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1616?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Mutual Insurance Holding Companies - Conversion to Mutual Insurers"
     },
     {
@@ -2782,7 +2782,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-17",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1623?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Special Taxing Districts - Village of Drummond - Authority and Organization MC 20-26"
     },
     {
@@ -2798,7 +2798,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-08-03",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb2101?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Arbitration Reform for State Employees Act of 2026 - Withdraw and Repeal of Duplicate Proposed Constitutional Amendment"
     },
     {
@@ -2814,7 +2814,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb13?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Alcoholic Beverages - License Fee Refund Requirements - Alterations"
     },
     {
@@ -2830,7 +2830,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-28",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb68?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Driver’s Licenses – Driver Skills Examination – Motorcycle Safety Awareness (D. Torch Road Safety Act)"
     },
     {
@@ -2846,7 +2846,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb136?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Collective Bargaining - Alcohol, Tobacco, and Cannabis Commission - Police Officers"
     },
     {
@@ -2862,7 +2862,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-27",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb161?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Natural Resources - State Park Entry Fee - Exemptions"
     },
     {
@@ -2878,7 +2878,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-21",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb193?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Washington County - Sales and Use Tax Exemption - Target Redevelopment Area"
     },
     {
@@ -2894,7 +2894,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-01-21",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb194?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Income and Property Tax Incentives - Members and Veterans of the Space Force - Application"
     },
     {
@@ -2910,7 +2910,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb249?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Tobacco Product Licensees - Additional Licensure for Electronic Smoking Devices"
     },
     {
@@ -2926,7 +2926,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb414?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Alcoholic Beverages - Consumption-Only Nonprofit Swim Club License"
     },
     {
@@ -2942,7 +2942,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb442?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Anne Arundel County - Population Ratio Quota for Class A (Off-Sale) and Class D (Off-Sale) Licenses - Exemption"
     },
     {
@@ -2958,7 +2958,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb521?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Material Changes to Provider Networks - Notification and Special Enrollment Period"
     },
     {
@@ -2974,7 +2974,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-19",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb582?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Consumer Protection - Unsolicited Loans"
     },
     {
@@ -2990,7 +2990,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb704?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Estate Tax – Qualified Agricultural Property – Transfer to Limited Liability Company"
     },
     {
@@ -3006,7 +3006,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb757?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Economic Development - Local Sourcing Database"
     },
     {
@@ -3022,7 +3022,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb784?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Financial Institutions - Consumer Credit - Application of Licensing Requirements"
     },
     {
@@ -3038,7 +3038,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-04",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb794?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Health Insurance - Special Enrollment Period for Pregnancy - Coverage Effective Date"
     },
     {
@@ -3054,7 +3054,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-26",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb819?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Judicial In Rem Tax Foreclosure - Notice Requirements"
     },
     {
@@ -3070,7 +3070,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-25",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb865?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Workgroup on the Affordability of Private Passenger Automobile Insurance – Extension and Alteration of Membership and Duties"
     },
     {
@@ -3086,7 +3086,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-05",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb905?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Maryland Technology Development Corporation - Maryland Advanced Manufacturing Grant Program - Established"
     },
     {
@@ -3102,7 +3102,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-02-20",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb927?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City - Alcoholic Beverages - Related Event Promoter's Permit"
     },
     {
@@ -3118,7 +3118,7 @@
       "commentDeadline": null,
       "hearingDate": "2026-03-13",
       "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb972?ys=2026RS",
-      "fetchedAt": "2026-09-26T23:08:21.009Z",
+      "fetchedAt": "2026-09-27T01:09:19.028Z",
       "context": "Baltimore City - 40th Alcoholic Beverages District - Authorizations and Revisions"
     }
   ]

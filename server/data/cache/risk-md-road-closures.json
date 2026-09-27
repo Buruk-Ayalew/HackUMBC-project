@@ -1,6 +1,6 @@
 {
   "statewide": {
-    "fetchedAt": "2026-09-26T23:08:03.727Z",
+    "fetchedAt": "2026-09-27T01:09:11.050Z",
     "items": [
       {
         "id": "md_road_closures:{7E937BCF-2961-45A2-9608-D6FFB3E01BFE}",
@@ -843,25 +843,6 @@
         "reference": "Reported by Frederick City",
         "facts": {
           "fullClosure": false
-        }
-      },
-      {
-        "id": "md_road_closures:{25D07B73-682D-461D-8CD9-9FE0AAA2355E}",
-        "source": "md_road_closures",
-        "sourceName": "Maryland reported road closures",
-        "sourceUrl": "https://data.imap.maryland.gov/datasets/db191c9dd50b47789193759368a4bc5d",
-        "title": "College Pl: Closed (Block Party)",
-        "description": "COLLEGE PL: Closed, all directions. All lanes closed. Block Party College Place closed",
-        "category": "road_closure",
-        "address": "College Pl between Rockwell Terrace and North College Parkway",
-        "lat": 39.418770410713456,
-        "lng": -77.41940648834476,
-        "startDate": "2026-09-26T19:00:57.000Z",
-        "endDate": "2026-09-26T23:30:57.000Z",
-        "status": "Active",
-        "reference": "Reported by Frederick City",
-        "facts": {
-          "fullClosure": true
         }
       },
       {
