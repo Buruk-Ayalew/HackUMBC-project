@@ -3,8 +3,8 @@
 **A compliance and risk assistant that watches everything affecting a Maryland small business, from state labor laws and tax deadlines to roadwork outside the front door.**
 
 🎬 **Demo video:** https://www.youtube.com/watch?v=-JYpbnG1hPA
-🔗 **Live app:** https://regwise.biz
-🔑 **Demo login:** `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (a 14-employee restaurant in Baltimore City), or create your own account with **Sign up**.
+🔗 **Live app:** hosted at regwise.biz during HackUMBC 2026 and now offline. Watch the demo video, or [run it locally](#run-locally).
+🔑 **Demo login (local):** `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (a 14-employee restaurant in Baltimore City), or create your own account with **Sign up**.
 
 > Information, not legal advice. Every item links to its official source.
 
@@ -108,7 +108,7 @@ Compliance advice that's wrong is worse than none, so we set strict rules for ou
 | AI | Google Gemini (`gemini-3.8-flash`) through **Google Cloud Vertex AI**, via the Google Gen AI SDK |
 | Parsing | `cheerio` (HTML), `pdf-parse` (PDFs), `ics` (calendar export) |
 | Data | JSON files (no database), with a cache for every outside source |
-| Hosting | [regwise.biz](https://regwise.biz) on DigitalOcean App Platform with Cloudflare; backup on Google Cloud Run (one container serving the API and the built frontend) |
+| Hosting | During the hackathon: regwise.biz on DigitalOcean App Platform with Cloudflare, plus a Google Cloud Run deployment (one container serving the API and the built frontend). Both have since been shut down. |
 
 ## Data sources
 
@@ -124,7 +124,7 @@ Compliance advice that's wrong is worse than none, so we set strict rules for ou
 
 ## Try it
 
-1. Open the **[live app](https://regwise.biz)** and log in with `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (the login page can fill it in for you), or sign up and enter your own business.
+1. [Run it locally](#run-locally), open http://localhost:5173, and log in with `demo@regwise.test` / `RegWise-tZnc-oecR-7jbE` (the login page can fill it in for you), or sign up and enter your own business.
 2. **Obligations:** see what a 14-person Baltimore City restaurant owes, and why.
 3. **Growth Planner:** slide to 15 employees and watch FAMLI's employer share switch on. Or open a second location in Rockville and see Montgomery County's higher minimum wage.
 4. **Regulatory Radar:** new laws and rules sorted for a restaurant, with open comment deadlines.
@@ -163,17 +163,18 @@ Test login: **demo@regwise.test / RegWise-tZnc-oecR-7jbE**. It is created (or it
 
 Other scripts: `npm run typecheck`, `npm run build`, `npm run check:obligations -w server` (runs the rules engine against all 5 sample profiles and checks the expected results).
 
-**Radar sorting on your own machine (optional).** Visitors to the live app need none of this. Locally, the Radar sorts new items with Gemini on Vertex AI, which needs a Google Cloud login. Without it the app still runs; previously sorted results (committed in `server/data/cache/`) are used, and new items wait until they can be sorted.
-1. The project owner grants your Google account **Vertex AI User** and **Service Usage Consumer** on project `project-79cc0670-01b4-43ca-94d`.
-2. Then run:
+**Radar sorting on your own machine (optional).** The Radar sorts new items with Gemini on Vertex AI, which needs a Google Cloud project with billing enabled. Without it the app still runs; previously sorted results (committed in `server/data/cache/`) are used, and new items wait until they can be sorted. The hackathon's Google Cloud project has been deleted, so use your own:
+1. Create or choose a Google Cloud project, enable the Vertex AI API, and make sure your account has the **Vertex AI User** role on it.
+2. Then run (replace `YOUR_PROJECT_ID`):
    ```bash
    brew install --cask google-cloud-sdk        # or https://cloud.google.com/sdk/docs/install
    gcloud auth login
-   gcloud config set project project-79cc0670-01b4-43ca-94d
+   gcloud config set project YOUR_PROJECT_ID
+   gcloud services enable aiplatform.googleapis.com
    gcloud auth application-default login       # the login the server uses
-   gcloud auth application-default set-quota-project project-79cc0670-01b4-43ca-94d
+   gcloud auth application-default set-quota-project YOUR_PROJECT_ID
    ```
-3. Keep `GCP_LOCATION=global` in `server/.env` (see `server/.env.example`). The Gemini 3.x models aren't served from `us-central1` for this project.
+3. In `server/.env`, set `GCP_PROJECT_ID=YOUR_PROJECT_ID` and keep `GCP_LOCATION=global` (see `server/.env.example`). The Gemini 3.x models are served from the `global` location.
 
 ### Obligations: how rules work
 
@@ -248,18 +249,18 @@ Obligations are **data, not code**. Every `server/data/rules/*.json` file (excep
 ```
 Dates are picked up when they appear next to the link or in its URL. If nothing matches, the source is listed as unavailable. If a site returns HTTP 403, it's skipped. We never try to get around a block.
 
-### Deploying (Google Cloud Run, project owner only)
+### Deploying (Google Cloud Run)
 
-**Visitors don't need any of this.** They just open https://regwise.biz (hosted on DigitalOcean App Platform behind Cloudflare, rebuilt from `main`). The Google Cloud Run service below is a backup copy at https://civicpulse-102365937725.us-east4.run.app. One container serves the API and the built frontend. It runs as the `civicpulse-api` service account, which has Vertex AI access, so Radar sorting works with no keys.
+The hackathon deployments (regwise.biz and a Google Cloud Run copy) have been shut down. The steps below deploy your own copy. One container serves the API and the built frontend, and it runs as a service account with Vertex AI access, so Radar sorting works with no keys.
 
-To publish the latest `main`, run from the repo root:
+One-time setup in your project (replace `YOUR_PROJECT_ID`): enable the Cloud Run, Cloud Build, Artifact Registry, Secret Manager and Vertex AI APIs; create a `regwise-api` service account with the **Vertex AI User** role; and store a random `SESSION_SECRET` in Secret Manager as `session-secret`, readable by that service account. Then run from the repo root:
 ```bash
-gcloud run deploy civicpulse --source . --region us-east4 --allow-unauthenticated \
-  --service-account civicpulse-api@project-79cc0670-01b4-43ca-94d.iam.gserviceaccount.com \
+gcloud run deploy regwise --source . --region us-east4 --allow-unauthenticated \
+  --service-account regwise-api@YOUR_PROJECT_ID.iam.gserviceaccount.com \
   --min-instances 1 --max-instances 1 --no-cpu-throttling --memory 1Gi \
-  --set-secrets SESSION_SECRET=session-secret:latest --set-env-vars NODE_ENV=production
+  --set-secrets SESSION_SECRET=session-secret:latest --set-env-vars NODE_ENV=production,GCP_PROJECT_ID=YOUR_PROJECT_ID
 ```
 - Exactly one instance, because logins live in server memory and data is saved in JSON files inside the container.
 - New accounts and edited profiles reset on every redeploy or restart. The demo login is recreated on start. Commit `server/data/cache/` first so the live app starts with saved results.
 - `.gcloudignore` keeps `server/.env`, local accounts and `node_modules` out of the upload.
-- Logs: `gcloud run services logs read civicpulse --region us-east4`. Shut it down: `gcloud run services delete civicpulse --region us-east4`.
+- Logs: `gcloud run services logs read regwise --region us-east4`. Shut it down: `gcloud run services delete regwise --region us-east4`. `--min-instances 1` keeps one copy running all the time, so delete the service when you're done to stop charges.
